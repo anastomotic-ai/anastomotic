@@ -107,6 +107,38 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 <br />
 
+## Features
+
+### Core Capabilities
+
+| Feature | Description |
+| :--- | :--- |
+| **📁 File Management** | Sort, rename, and move files based on content or rules |
+| **✍️ Document Writing** | Write, summarize, or rewrite documents with AI |
+| **🔗 Tool Connections** | Integrate with Notion, Google Drive, Dropbox via local APIs |
+| **⚙️ Custom Skills** | Define repeatable workflows and save them as skills |
+| **🛡️ Full Control** | Approve every action, view logs, stop anytime |
+
+### Advanced Features
+
+| Feature | Description |
+| :--- | :--- |
+| **📅 Scheduled Tasks** | Schedule AI tasks with cron expressions — run daily reports, weekly cleanups, or hourly checks automatically |
+| **💰 Cost Tracking** | Monitor token usage and API costs per task with detailed breakdowns by model and provider |
+| **🧠 Auto-Learning** | Automatically extracts reusable insights from completed tasks and applies them to improve future results |
+| **🔀 Multi-Agent Pipelines** | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines |
+| **🔧 Git-Aware Code Agent** | Detects current branch and repo status — suggests git-related actions contextually on the home screen |
+| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text — or copy to clipboard with one click |
+| **💡 Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity |
+| **🏪 Skill Marketplace** | Browse and install community skills from a curated marketplace with one-click install |
+| **🔔 Notification Webhooks** | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure |
+
+<br />
+
+---
+
+<br />
+
 ## What it actually does
 
 |                                                                    |                                                                      |                                                                         |
