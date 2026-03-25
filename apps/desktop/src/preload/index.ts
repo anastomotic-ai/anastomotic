@@ -627,6 +627,26 @@ const AnastomoticAPI = {
   installMarketplaceSkill: (githubUrl: string): Promise<Skill | null> =>
     ipcRenderer.invoke('marketplace:install', githubUrl),
 
+  // Webhook Notifications
+  getWebhooks: (): Promise<
+    Array<{
+      url: string;
+      label: string;
+      events: string[];
+      enabled: boolean;
+    }>
+  > => ipcRenderer.invoke('webhooks:list'),
+  saveWebhooks: (
+    webhooks: Array<{
+      url: string;
+      label: string;
+      events: string[];
+      enabled: boolean;
+    }>,
+  ): Promise<void> => ipcRenderer.invoke('webhooks:save', webhooks),
+  testWebhook: (url: string, events: string[]): Promise<void> =>
+    ipcRenderer.invoke('webhooks:test', url, events),
+
   // Daemon / Background Mode
   getRunInBackground: (): Promise<boolean> => ipcRenderer.invoke('daemon:get-run-in-background'),
   setRunInBackground: (enabled: boolean): Promise<void> =>

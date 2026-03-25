@@ -469,6 +469,25 @@ interface AnastomoticAPI {
   >;
   installMarketplaceSkill(githubUrl: string): Promise<Skill | null>;
 
+  // Webhook Notifications
+  getWebhooks(): Promise<
+    Array<{
+      url: string;
+      label: string;
+      events: string[];
+      enabled: boolean;
+    }>
+  >;
+  saveWebhooks(
+    webhooks: Array<{
+      url: string;
+      label: string;
+      events: string[];
+      enabled: boolean;
+    }>,
+  ): Promise<void>;
+  testWebhook(url: string, events: string[]): Promise<void>;
+
   // Sandbox configuration
   getSandboxConfig(): Promise<{
     mode: 'disabled' | 'native' | 'docker';

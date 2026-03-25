@@ -258,7 +258,8 @@
     "schedules": "Schedules",
     "costs": "Cost Tracking",
     "pipelines": "Pipelines",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "webhooks": "Webhooks"
   },
   "notifications": {
     "toggle": {

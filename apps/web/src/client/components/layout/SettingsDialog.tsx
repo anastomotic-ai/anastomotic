@@ -21,6 +21,7 @@ import { CloudBrowsersPanel } from '@/components/settings/CloudBrowsersPanel';
 import { SchedulePanel } from '@/components/settings/SchedulePanel';
 import { CostPanel } from '@/components/settings/CostPanel';
 import { OrchestrationPanel } from '@/components/settings/OrchestrationPanel';
+import { WebhooksPanel } from '@/components/settings/WebhooksPanel';
 import {
   Key,
   Lightning,
@@ -35,6 +36,7 @@ import {
   CurrencyDollar,
   GitBranch,
   Storefront,
+  Bell,
 } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import logoImage from '/assets/logo-1.png';
@@ -50,6 +52,7 @@ const TABS = [
   { id: 'schedules' as const, labelKey: 'tabs.schedules', icon: Clock },
   { id: 'costs' as const, labelKey: 'tabs.costs', icon: CurrencyDollar },
   { id: 'pipelines' as const, labelKey: 'tabs.pipelines', icon: GitBranch },
+  { id: 'webhooks' as const, labelKey: 'tabs.webhooks', icon: Bell },
   { id: 'voice' as const, labelKey: 'tabs.voiceInput', icon: Microphone },
   { id: 'general' as const, labelKey: 'tabs.general', icon: GearSix },
   { id: 'about' as const, labelKey: 'tabs.about', icon: Info },
@@ -78,6 +81,7 @@ interface SettingsDialogProps {
     | 'schedules'
     | 'costs'
     | 'pipelines'
+    | 'webhooks'
     | 'general'
     | 'about';
 }
@@ -106,6 +110,7 @@ export function SettingsDialog({
     | 'schedules'
     | 'costs'
     | 'pipelines'
+    | 'webhooks'
     | 'general'
     | 'about'
   >(initialTab);
@@ -556,6 +561,13 @@ export function SettingsDialog({
               {activeTab === 'pipelines' && (
                 <div className="space-y-6">
                   <OrchestrationPanel />
+                </div>
+              )}
+
+              {/* Webhooks Tab */}
+              {activeTab === 'webhooks' && (
+                <div className="space-y-6">
+                  <WebhooksPanel />
                 </div>
               )}
 

@@ -15,6 +15,7 @@ import { registerOrchestrationHandlers } from './orchestration-handlers';
 import { registerGitHandlers } from './git-handlers';
 import { registerSuggestionHandlers } from './suggestion-handlers';
 import { registerMarketplaceHandlers } from './marketplace-handlers';
+import { registerWebhookHandlers } from './webhook-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -34,4 +35,5 @@ export function registerIPCHandlers(): void {
   registerGitHandlers();
   registerSuggestionHandlers();
   registerMarketplaceHandlers();
+  registerWebhookHandlers();
 }
