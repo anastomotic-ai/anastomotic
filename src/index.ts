@@ -302,6 +302,13 @@ export { extractInsight } from './services/auto-learner.js';
 export { generateSuggestions } from './services/suggestions.js';
 export type { TaskSuggestion, RecentTaskSummary } from './services/suggestions.js';
 
+// Skill Marketplace
+export { getMarketplaceCatalog, searchMarketplace } from './services/marketplace.js';
+export type {
+  MarketplaceSkill,
+  MarketplaceCategory,
+} from './services/marketplace.js';
+
 // Orchestrator
 export { executePipelineRun } from './services/orchestrator.js';
 export type { OrchestratorTaskRunner, OrchestratorCallbacks } from './services/orchestrator.js';
