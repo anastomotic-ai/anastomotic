@@ -51,6 +51,8 @@ export {
   setTheme,
   getAppSettings,
   clearAppSettings,
+  getAutoLearnEnabled,
+  setAutoLearnEnabled,
   type AppSettings,
 } from './repositories/index.js';
 

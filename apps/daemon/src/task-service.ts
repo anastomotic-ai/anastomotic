@@ -19,6 +19,12 @@ import {
   syncApiKeysToOpenCodeAuth,
   getOpenCodeAuthPath,
   getBundledNodePaths,
+  addCostRecord,
+  getAutoLearnEnabled,
+  getTaskWorkspaceId,
+  extractInsight,
+  createKnowledgeNote,
+  listKnowledgeNotes,
   DEV_BROWSER_PORT,
   type TaskManagerAPI,
   type TaskCallbacks,
@@ -280,6 +286,7 @@ export class TaskService extends EventEmitter {
 
         if (result.status === 'success') {
           this.storage.clearTodosForTask(taskId);
+          void this.tryAutoLearn(taskId);
         }
       },
 
@@ -296,7 +303,68 @@ export class TaskService extends EventEmitter {
       onTodoUpdate: (todos) => {
         this.storage.saveTodosForTask(taskId, todos);
       },
+
+      onStepFinish: (data) => {
+        if (data.cost != null && data.model) {
+          const slashIdx = data.model.indexOf('/');
+          const provider = slashIdx > 0 ? data.model.slice(0, slashIdx) : 'unknown';
+          const model = slashIdx > 0 ? data.model.slice(slashIdx + 1) : data.model;
+          try {
+            addCostRecord({
+              taskId,
+              provider,
+              model,
+              inputTokens: data.tokens?.input ?? 0,
+              outputTokens: data.tokens?.output ?? 0,
+              costUsd: data.cost,
+            });
+          } catch (_e) {
+            /* best-effort — don't break task flow */
+          }
+        }
+      },
     };
+  }
+
+  private async tryAutoLearn(taskId: string): Promise<void> {
+    try {
+      if (!getAutoLearnEnabled()) {
+        return;
+      }
+
+      const workspaceId = getTaskWorkspaceId(taskId);
+      if (!workspaceId) {
+        return;
+      }
+
+      const existingNotes = listKnowledgeNotes(workspaceId);
+      if (existingNotes.length >= 20) {
+        return;
+      }
+
+      const task = this.storage.getTask(taskId);
+      if (!task || task.messages.length < 3) {
+        return;
+      }
+
+      const insight = await extractInsight(task.prompt, task.messages, (provider) =>
+        this.storage.getApiKey(provider),
+      );
+      if (!insight) {
+        return;
+      }
+
+      const isDuplicate = existingNotes.some(
+        (note) => note.content.toLowerCase() === insight.content.toLowerCase(),
+      );
+      if (isDuplicate) {
+        return;
+      }
+
+      createKnowledgeNote({ ...insight, workspaceId });
+    } catch (_error) {
+      /* best-effort — don't break task flow */
+    }
   }
 
   private getCliCommand(): { command: string; args: string[] } {

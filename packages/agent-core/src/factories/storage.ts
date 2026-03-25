@@ -55,6 +55,8 @@ import {
   setSandboxConfig,
   getNotificationsEnabled,
   setNotificationsEnabled,
+  getAutoLearnEnabled,
+  setAutoLearnEnabled,
 } from '../storage/repositories/appSettings.js';
 import {
   getProviderSettings,
@@ -163,6 +165,8 @@ export function createStorage(options: StorageOptions = {}): StorageAPI {
     setSandboxConfig: (config) => setSandboxConfig(config),
     getNotificationsEnabled: () => getNotificationsEnabled(),
     setNotificationsEnabled: (enabled) => setNotificationsEnabled(enabled),
+    getAutoLearnEnabled: () => getAutoLearnEnabled(),
+    setAutoLearnEnabled: (enabled) => setAutoLearnEnabled(enabled),
 
     // Provider Settings
     getProviderSettings: () => getProviderSettings(),

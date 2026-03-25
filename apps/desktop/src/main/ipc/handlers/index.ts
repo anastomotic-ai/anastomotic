@@ -9,6 +9,10 @@ import { registerSkillsHandlers } from './skills-handlers';
 import { registerFavoritesHandlers } from './favorites-handlers';
 import { registerConnectorHandlers } from './connector-handlers';
 import { registerWorkspaceHandlers } from './workspace-handlers';
+import { registerScheduleHandlers } from './schedule-handlers';
+import { registerCostHandlers } from './cost-handlers';
+import { registerOrchestrationHandlers } from './orchestration-handlers';
+import { registerGitHandlers } from './git-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -22,4 +26,8 @@ export function registerIPCHandlers(): void {
   registerFavoritesHandlers();
   registerConnectorHandlers();
   registerWorkspaceHandlers();
+  registerScheduleHandlers();
+  registerCostHandlers();
+  registerOrchestrationHandlers();
+  registerGitHandlers();
 }

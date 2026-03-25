@@ -254,12 +254,21 @@
     "about": "À propos",
     "browsers": "Navigateurs cloud",
     "general": "Général",
-    "daemon": "Démon"
+    "daemon": "Démon",
+    "schedules": "Planifications",
+    "costs": "Suivi des coûts",
+    "pipelines": "Pipelines"
   },
   "notifications": {
     "toggle": {
       "label": "Notifications de bureau",
       "description": "Afficher les notifications du système lorsque les tâches se terminent en arrière-plan."
+    }
+  },
+  "autoLearn": {
+    "toggle": {
+      "label": "Auto-apprentissage des tâches",
+      "description": "Extraire automatiquement des informations réutilisables des tâches terminées et les enregistrer comme notes de connaissances."
     }
   },
   "appearance": {
@@ -460,6 +469,10 @@
     "labels": {
       "type": "Type de note",
       "content": "Contenu de la note"
+    },
+    "source": {
+      "manual": "Manuel",
+      "auto": "Auto"
     },
     "errors": {
       "updateFailed": "Note introuvable ou impossible à mettre à jour.",

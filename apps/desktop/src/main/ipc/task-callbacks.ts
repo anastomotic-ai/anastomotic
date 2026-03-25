@@ -6,10 +6,19 @@ import type {
   TodoItem,
   BrowserFramePayload,
 } from '@anastomotic_ai/agent-core';
-import { mapResultToStatus } from '@anastomotic_ai/agent-core';
+import {
+  mapResultToStatus,
+  addCostRecord,
+  getAutoLearnEnabled,
+  getTaskWorkspaceId,
+  extractInsight,
+  createKnowledgeNote,
+  listKnowledgeNotes,
+} from '@anastomotic_ai/agent-core';
 import { getTaskManager, recoverDevBrowserServer } from '../opencode';
 import type { TaskCallbacks } from '../opencode';
 import { getStorage } from '../store/storage';
+import { getApiKey } from '../store/secureStorage';
 import { updateTray } from '../tray';
 import { stopBrowserPreviewStream } from '../services/browserPreview';
 import { notifyTaskCompletion } from '../services/task-notification';
@@ -44,6 +53,58 @@ function isBrowserConnectionFailure(output: string): boolean {
   }
 
   return BROWSER_CONNECTION_ERROR_PATTERNS.some((pattern) => pattern.test(output));
+}
+
+const MAX_AUTO_NOTES = 20;
+
+async function tryAutoLearn(taskId: string, storage: ReturnType<typeof getStorage>): Promise<void> {
+  try {
+    if (!getAutoLearnEnabled()) {
+      return;
+    }
+
+    const workspaceId = getTaskWorkspaceId(taskId);
+    if (!workspaceId) {
+      return;
+    }
+
+    const existingNotes = listKnowledgeNotes(workspaceId);
+    if (existingNotes.length >= MAX_AUTO_NOTES) {
+      return;
+    }
+
+    const task = storage.getTask(taskId);
+    if (!task || task.messages.length < 3) {
+      return;
+    }
+
+    const insight = await extractInsight(task.prompt, task.messages, getApiKey);
+    if (!insight) {
+      return;
+    }
+
+    // Check for duplicate content
+    const isDuplicate = existingNotes.some(
+      (note) => note.content.toLowerCase() === insight.content.toLowerCase(),
+    );
+    if (isDuplicate) {
+      return;
+    }
+
+    createKnowledgeNote({ ...insight, workspaceId });
+  } catch (error) {
+    try {
+      const l = getLogCollector();
+      if (l?.log) {
+        l.log('WARN', 'ipc', '[AutoLearn] Failed to extract insight', {
+          taskId,
+          error: String(error),
+        });
+      }
+    } catch (_e) {
+      /* best-effort logging */
+    }
+  }
 }
 
 export interface TaskCallbacksOptions {
@@ -142,6 +203,11 @@ export function createTaskCallbacks(options: TaskCallbacksOptions): TaskCallback
           label: taskId.slice(0, 8),
         });
       }
+
+      // Auto-learn: extract insights from successful tasks
+      if (result.status === 'success') {
+        void tryAutoLearn(taskId, storage);
+      }
     },
 
     onError: (error: Error) => {
@@ -201,6 +267,26 @@ export function createTaskCallbacks(options: TaskCallbacksOptions): TaskCallback
         taskId,
         ...data,
       });
+    },
+
+    onStepFinish: (data) => {
+      if (data.cost != null && data.model) {
+        const slashIdx = data.model.indexOf('/');
+        const provider = slashIdx > 0 ? data.model.slice(0, slashIdx) : 'unknown';
+        const model = slashIdx > 0 ? data.model.slice(slashIdx + 1) : data.model;
+        try {
+          addCostRecord({
+            taskId,
+            provider,
+            model,
+            inputTokens: data.tokens?.input ?? 0,
+            outputTokens: data.tokens?.output ?? 0,
+            costUsd: data.cost,
+          });
+        } catch (_e) {
+          /* best-effort — don't break task flow */
+        }
+      }
     },
 
     onToolCallComplete: ({ toolName, toolOutput }) => {

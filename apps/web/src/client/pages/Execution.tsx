@@ -30,6 +30,13 @@ import {
   CaretDown,
 } from '@phosphor-icons/react';
 import { isWaitingForUser } from '../lib/waiting-detection';
+import { exportTaskAsMarkdown, exportTaskAsJson } from '../lib/export-task';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu';
 import { SettingsDialog } from '../components/layout/SettingsDialog';
 import { TodoSidebar } from '../components/TodoSidebar';
 import { ModelIndicator } from '../components/ui/ModelIndicator';
@@ -787,6 +794,28 @@ export function ExecutionPage() {
                 <span data-testid="execution-status-badge">{getStatusBadge()}</span>
               </div>
             </div>
+            {isComplete && currentTask && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="shrink-0 no-drag"
+                    title="Export task"
+                  >
+                    <Download className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => exportTaskAsMarkdown(currentTask)}>
+                    Export as Markdown
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => exportTaskAsJson(currentTask)}>
+                    Export as JSON
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
           </div>
         </div>
 

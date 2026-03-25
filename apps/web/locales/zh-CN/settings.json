@@ -226,12 +226,21 @@
     "workspaces": "工作区",
     "appearance": "外观",
     "general": "通用",
-    "about": "关于"
+    "about": "关于",
+    "schedules": "定时任务",
+    "costs": "费用跟踪",
+    "pipelines": "流水线"
   },
   "notifications": {
     "toggle": {
       "label": "桌面通知",
       "description": "当应用在后台运行时，任务完成后显示系统通知。"
+    }
+  },
+  "autoLearn": {
+    "toggle": {
+      "label": "从任务中自动学习",
+      "description": "自动从已完成的任务中提取可复用的见解，并将其保存为知识笔记。"
     }
   },
   "appearance": {
@@ -460,6 +469,10 @@
     "labels": {
       "type": "笔记类型",
       "content": "笔记内容"
+    },
+    "source": {
+      "manual": "手动",
+      "auto": "自动"
     },
     "errors": {
       "updateFailed": "找不到笔记或无法更新。",

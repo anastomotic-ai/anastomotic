@@ -18,6 +18,9 @@ import { SandboxSection } from '@/components/settings/SandboxSection';
 import { ConnectorsPanel } from '@/components/settings/connectors';
 import { DaemonPanel } from '@/components/settings/DaemonPanel';
 import { CloudBrowsersPanel } from '@/components/settings/CloudBrowsersPanel';
+import { SchedulePanel } from '@/components/settings/SchedulePanel';
+import { CostPanel } from '@/components/settings/CostPanel';
+import { OrchestrationPanel } from '@/components/settings/OrchestrationPanel';
 import {
   Key,
   Lightning,
@@ -28,6 +31,9 @@ import {
   FolderSimple,
   Globe,
   GearSix,
+  Clock,
+  CurrencyDollar,
+  GitBranch,
 } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import logoImage from '/assets/logo-1.png';
@@ -39,6 +45,9 @@ const TABS = [
   { id: 'daemon' as const, labelKey: 'tabs.daemon', icon: Robot },
   { id: 'browsers' as const, labelKey: 'tabs.browsers', icon: Globe },
   { id: 'workspaces' as const, labelKey: 'tabs.workspaces', icon: FolderSimple },
+  { id: 'schedules' as const, labelKey: 'tabs.schedules', icon: Clock },
+  { id: 'costs' as const, labelKey: 'tabs.costs', icon: CurrencyDollar },
+  { id: 'pipelines' as const, labelKey: 'tabs.pipelines', icon: GitBranch },
   { id: 'voice' as const, labelKey: 'tabs.voiceInput', icon: Microphone },
   { id: 'general' as const, labelKey: 'tabs.general', icon: GearSix },
   { id: 'about' as const, labelKey: 'tabs.about', icon: Info },
@@ -63,6 +72,9 @@ interface SettingsDialogProps {
     | 'daemon'
     | 'browsers'
     | 'workspaces'
+    | 'schedules'
+    | 'costs'
+    | 'pipelines'
     | 'general'
     | 'about';
 }
@@ -87,6 +99,9 @@ export function SettingsDialog({
     | 'daemon'
     | 'browsers'
     | 'workspaces'
+    | 'schedules'
+    | 'costs'
+    | 'pipelines'
     | 'general'
     | 'about'
   >(initialTab);
@@ -106,6 +121,7 @@ export function SettingsDialog({
   // Debug mode state - stored in appSettings, not providerSettings
   const [debugMode, setDebugModeState] = useState(false);
   const [notificationsEnabled, setNotificationsEnabledState] = useState(true);
+  const [autoLearnEnabled, setAutoLearnEnabledState] = useState(false);
   const api = getAnastomotic();
 
   // Refetch settings and debug mode when dialog opens
@@ -115,6 +131,7 @@ export function SettingsDialog({
     // Load debug mode from appSettings (correct store)
     api.getDebugMode().then(setDebugModeState);
     api.getNotificationsEnabled().then(setNotificationsEnabledState);
+    api.getAutoLearnEnabled().then(setAutoLearnEnabledState);
     // Load app version
     api.getVersion().then(setAppVersion);
   }, [open, refetch, api]);
@@ -256,6 +273,13 @@ export function SettingsDialog({
     await api.setNotificationsEnabled(newValue);
     setNotificationsEnabledState(newValue);
   }, [notificationsEnabled, api]);
+
+  // Handle auto-learn toggle
+  const handleAutoLearnToggle = useCallback(async () => {
+    const newValue = !autoLearnEnabled;
+    await api.setAutoLearnEnabled(newValue);
+    setAutoLearnEnabledState(newValue);
+  }, [autoLearnEnabled, api]);
 
   // Handle done button (close with validation)
   const handleDone = useCallback(() => {
@@ -501,6 +525,27 @@ export function SettingsDialog({
                 </div>
               )}
 
+              {/* Schedules Tab */}
+              {activeTab === 'schedules' && (
+                <div className="space-y-6">
+                  <SchedulePanel />
+                </div>
+              )}
+
+              {/* Cost Tracking Tab */}
+              {activeTab === 'costs' && (
+                <div className="space-y-6">
+                  <CostPanel />
+                </div>
+              )}
+
+              {/* Pipelines (Orchestration) Tab */}
+              {activeTab === 'pipelines' && (
+                <div className="space-y-6">
+                  <OrchestrationPanel />
+                </div>
+              )}
+
               {/* Voice Input Tab */}
               {activeTab === 'voice' && (
                 <div className="space-y-6">
@@ -515,6 +560,8 @@ export function SettingsDialog({
                   onNotificationsToggle={handleNotificationsToggle}
                   debugMode={debugMode}
                   onDebugToggle={handleDebugToggle}
+                  autoLearnEnabled={autoLearnEnabled}
+                  onAutoLearnToggle={handleAutoLearnToggle}
                 />
               )}
 

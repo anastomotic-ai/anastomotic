@@ -36,6 +36,11 @@ export function HomePage() {
   const [showAllFavorites, setShowAllFavorites] = useState(false);
   const [attachments, setAttachments] = useState<FileAttachmentInfo[]>([]);
   const [workingDirectory, setWorkingDirectory] = useState<string | undefined>(undefined);
+  const [gitInfo, setGitInfo] = useState<{
+    branch: string;
+    isDirty: boolean;
+    uncommittedCount: number;
+  } | null>(null);
   const [showSettingsDialog, setShowSettingsDialog] = useState(false);
   const [settingsInitialTab, setSettingsInitialTab] = useState<
     'providers' | 'voice' | 'skills' | 'connectors'
@@ -82,6 +87,38 @@ export function HomePage() {
       unsubscribePermission();
     };
   }, [addTaskUpdate, setPermissionRequest, api]);
+
+  // Fetch git repo info when working directory changes
+  useEffect(() => {
+    if (!workingDirectory) {
+      setGitInfo(null);
+      return;
+    }
+    let cancelled = false;
+    api
+      .getGitRepoInfo?.(workingDirectory)
+      .then((info) => {
+        if (!cancelled) {
+          setGitInfo(
+            info
+              ? {
+                  branch: info.branch,
+                  isDirty: info.isDirty,
+                  uncommittedCount: info.uncommittedCount,
+                }
+              : null,
+          );
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setGitInfo(null);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [workingDirectory, api]);
 
   const buildPromptWithAttachments = useCallback(
     (basePrompt: string, files: FileAttachmentInfo[]): string => {
@@ -288,6 +325,19 @@ export function HomePage() {
                   <span className="truncate max-w-[400px]" title={workingDirectory}>
                     {t('selectedFolder.badge', { folder: workingDirectory })}
                   </span>
+                  {gitInfo && (
+                    <span className="flex items-center gap-1 text-xs">
+                      <span className="text-primary">⎇ {gitInfo.branch}</span>
+                      {gitInfo.isDirty && (
+                        <span
+                          className="text-yellow-500"
+                          title={`${gitInfo.uncommittedCount} uncommitted changes`}
+                        >
+                          •{gitInfo.uncommittedCount}
+                        </span>
+                      )}
+                    </span>
+                  )}
                   <button
                     type="button"
                     onClick={() => setWorkingDirectory(undefined)}

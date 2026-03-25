@@ -171,6 +171,31 @@ export type { TodoItem } from './common/types/todo.js';
 export type { LogLevel, LogSource, LogEntry } from './common/types/logging.js';
 export type { ThoughtEvent, CheckpointEvent } from './common/types/thought-stream.js';
 
+// Daemon types (browser-safe subset)
+export type { ScheduledTask } from './common/types/daemon.js';
+
+// Cost tracking types
+export type {
+  CostRecord,
+  CostRecordInput,
+  CostSummary,
+  CostBreakdown,
+} from './common/types/cost.js';
+
+// Orchestration types
+export type {
+  AgentRolePreset,
+  PipelineStep,
+  Pipeline,
+  PipelineCreateInput,
+  PipelineUpdateInput,
+  PipelineStepRunStatus,
+  PipelineStepRun,
+  PipelineRunStatus,
+  PipelineRun,
+} from './common/types/orchestration.js';
+export { ROLE_PROMPTS } from './common/types/orchestration.js';
+
 // === CONSTANTS ===
 export {
   DEV_BROWSER_PORT,

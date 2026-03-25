@@ -33,6 +33,14 @@ import type {
   KnowledgeNote,
   KnowledgeNoteCreateInput,
   KnowledgeNoteUpdateInput,
+  ScheduledTask,
+  CostSummary,
+  CostBreakdown,
+  CostRecord,
+  Pipeline,
+  PipelineCreateInput,
+  PipelineUpdateInput,
+  PipelineRun,
 } from '@anastomotic_ai/agent-core/common';
 import type { StoredFavorite } from '@anastomotic_ai/agent-core';
 
@@ -77,6 +85,8 @@ interface AnastomoticAPI {
   setNotificationsEnabled(enabled: boolean): Promise<void>;
   getDebugMode(): Promise<boolean>;
   setDebugMode(enabled: boolean): Promise<void>;
+  getAutoLearnEnabled(): Promise<boolean>;
+  setAutoLearnEnabled(enabled: boolean): Promise<void>;
   getTheme(): Promise<string>;
   setTheme(theme: string): Promise<void>;
   onThemeChange?(callback: (data: { theme: string; resolved: string }) => void): () => void;
@@ -501,6 +511,48 @@ interface AnastomoticAPI {
     input: KnowledgeNoteUpdateInput,
   ): Promise<KnowledgeNote | null>;
   deleteKnowledgeNote(id: string, workspaceId: string): Promise<boolean>;
+
+  // Scheduled Tasks
+  createSchedule(cron: string, prompt: string): Promise<ScheduledTask>;
+  listSchedules(): Promise<ScheduledTask[]>;
+  cancelSchedule(scheduleId: string): Promise<boolean>;
+
+  // Cost Tracking
+  getCostSummary(sinceDate?: string): Promise<CostSummary>;
+  getCostBreakdown(sinceDate?: string): Promise<CostBreakdown[]>;
+  getCostForTask(taskId: string): Promise<CostRecord[]>;
+
+  // Pipelines (Multi-Agent Orchestration)
+  listPipelines(): Promise<Pipeline[]>;
+  getPipeline(id: string): Promise<Pipeline | null>;
+  createPipeline(input: PipelineCreateInput): Promise<Pipeline>;
+  updatePipeline(id: string, input: PipelineUpdateInput): Promise<Pipeline | null>;
+  deletePipeline(id: string): Promise<boolean>;
+  listPipelineRuns(pipelineId?: string): Promise<PipelineRun[]>;
+  getPipelineRun(runId: string): Promise<PipelineRun | null>;
+  deletePipelineRun(runId: string): Promise<boolean>;
+  startPipelineRun(pipelineId: string, prompt: string): Promise<PipelineRun>;
+  onPipelineRunStatus(
+    callback: (data: { pipelineId: string; runId?: string; status: string }) => void,
+  ): () => void;
+  onPipelineRunStep(
+    callback: (data: {
+      runId: string;
+      stepIndex: number;
+      stepLabel: string;
+      status: string;
+      error?: string;
+    }) => void,
+  ): () => void;
+
+  // Git
+  getGitRepoInfo(directory: string): Promise<{
+    branch: string;
+    remoteUrl: string | null;
+    isDirty: boolean;
+    uncommittedCount: number;
+    recentCommits: string[];
+  } | null>;
 }
 
 interface AnastomoticShell {

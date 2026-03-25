@@ -88,11 +88,18 @@ export function NoteRow({
       ) : (
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <span
-              className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-medium ${typeBadgeColor(note.type)}`}
-            >
-              {t(`knowledgeNotes.types.${note.type}`)}
-            </span>
+            <div className="flex items-center gap-1">
+              <span
+                className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-medium ${typeBadgeColor(note.type)}`}
+              >
+                {t(`knowledgeNotes.types.${note.type}`)}
+              </span>
+              {note.source === 'auto' && (
+                <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-medium bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
+                  {t('knowledgeNotes.source.auto', 'Auto')}
+                </span>
+              )}
+            </div>
             <p className="mt-1 text-sm text-foreground whitespace-pre-wrap break-words">
               {note.content}
             </p>

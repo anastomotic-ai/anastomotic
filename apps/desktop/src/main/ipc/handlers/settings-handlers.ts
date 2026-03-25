@@ -76,6 +76,22 @@ export function registerSettingsHandlers(): void {
     storage.setRunInBackground(enabled);
   });
 
+  // ── Auto-Learn ──────────────────────────────────────────────────────
+
+  handle('settings:auto-learn-enabled', async (_event: IpcMainInvokeEvent) => {
+    return storage.getAutoLearnEnabled();
+  });
+
+  handle(
+    'settings:set-auto-learn-enabled',
+    async (_event: IpcMainInvokeEvent, enabled: boolean) => {
+      if (typeof enabled !== 'boolean') {
+        throw new Error('Invalid auto-learn-enabled flag');
+      }
+      storage.setAutoLearnEnabled(enabled);
+    },
+  );
+
   handle('daemon:get-socket-path', async () => {
     const { getSocketPath } = await import('../../daemon/server');
     return getSocketPath();

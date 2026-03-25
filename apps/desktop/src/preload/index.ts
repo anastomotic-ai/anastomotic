@@ -17,8 +17,18 @@ import type {
   KnowledgeNote,
   KnowledgeNoteCreateInput,
   KnowledgeNoteUpdateInput,
+  ScheduledTask,
 } from '@anastomotic_ai/agent-core';
-import type { CloudBrowserConfig } from '@anastomotic_ai/agent-core/common';
+import type {
+  CloudBrowserConfig,
+  CostSummary,
+  CostBreakdown,
+  CostRecord,
+  Pipeline,
+  PipelineCreateInput,
+  PipelineUpdateInput,
+  PipelineRun,
+} from '@anastomotic_ai/agent-core/common';
 
 // Expose the anastomotic API to the renderer
 const AnastomoticAPI = {
@@ -68,6 +78,9 @@ const AnastomoticAPI = {
   getDebugMode: (): Promise<boolean> => ipcRenderer.invoke('settings:debug-mode'),
   setDebugMode: (enabled: boolean): Promise<void> =>
     ipcRenderer.invoke('settings:set-debug-mode', enabled),
+  getAutoLearnEnabled: (): Promise<boolean> => ipcRenderer.invoke('settings:auto-learn-enabled'),
+  setAutoLearnEnabled: (enabled: boolean): Promise<void> =>
+    ipcRenderer.invoke('settings:set-auto-learn-enabled', enabled),
   getTheme: (): Promise<string> => ipcRenderer.invoke('settings:theme'),
   setTheme: (theme: string): Promise<void> => ipcRenderer.invoke('settings:set-theme', theme),
   onThemeChange: (callback: (data: { theme: string; resolved: string }) => void) => {
@@ -690,6 +703,79 @@ const AnastomoticAPI = {
     ipcRenderer.invoke('knowledge-notes:update', id, workspaceId, input),
   deleteKnowledgeNote: (id: string, workspaceId: string): Promise<boolean> =>
     ipcRenderer.invoke('knowledge-notes:delete', id, workspaceId),
+
+  // Scheduled Tasks
+  createSchedule: (cron: string, prompt: string): Promise<ScheduledTask> =>
+    ipcRenderer.invoke('schedule:create', cron, prompt),
+  listSchedules: (): Promise<ScheduledTask[]> => ipcRenderer.invoke('schedule:list'),
+  cancelSchedule: (scheduleId: string): Promise<boolean> =>
+    ipcRenderer.invoke('schedule:cancel', scheduleId),
+
+  // Cost Tracking
+  getCostSummary: (sinceDate?: string): Promise<CostSummary> =>
+    ipcRenderer.invoke('cost:summary', sinceDate),
+  getCostBreakdown: (sinceDate?: string): Promise<CostBreakdown[]> =>
+    ipcRenderer.invoke('cost:breakdown', sinceDate),
+  getCostForTask: (taskId: string): Promise<CostRecord[]> =>
+    ipcRenderer.invoke('cost:forTask', taskId),
+
+  // Pipelines (Multi-Agent Orchestration)
+  listPipelines: (): Promise<Pipeline[]> => ipcRenderer.invoke('pipeline:list'),
+  getPipeline: (id: string): Promise<Pipeline | null> => ipcRenderer.invoke('pipeline:get', id),
+  createPipeline: (input: PipelineCreateInput): Promise<Pipeline> =>
+    ipcRenderer.invoke('pipeline:create', input),
+  updatePipeline: (id: string, input: PipelineUpdateInput): Promise<Pipeline | null> =>
+    ipcRenderer.invoke('pipeline:update', id, input),
+  deletePipeline: (id: string): Promise<boolean> => ipcRenderer.invoke('pipeline:delete', id),
+  listPipelineRuns: (pipelineId?: string): Promise<PipelineRun[]> =>
+    ipcRenderer.invoke('pipeline:run:list', pipelineId),
+  getPipelineRun: (runId: string): Promise<PipelineRun | null> =>
+    ipcRenderer.invoke('pipeline:run:get', runId),
+  deletePipelineRun: (runId: string): Promise<boolean> =>
+    ipcRenderer.invoke('pipeline:run:delete', runId),
+  startPipelineRun: (pipelineId: string, prompt: string): Promise<PipelineRun> =>
+    ipcRenderer.invoke('pipeline:run:start', pipelineId, prompt),
+  onPipelineRunStatus: (
+    callback: (data: { pipelineId: string; runId?: string; status: string }) => void,
+  ) => {
+    const listener = (_: unknown, data: { pipelineId: string; runId?: string; status: string }) =>
+      callback(data);
+    ipcRenderer.on('pipeline:run:status', listener);
+    return () => ipcRenderer.removeListener('pipeline:run:status', listener);
+  },
+  onPipelineRunStep: (
+    callback: (data: {
+      runId: string;
+      stepIndex: number;
+      stepLabel: string;
+      status: string;
+      error?: string;
+    }) => void,
+  ) => {
+    const listener = (
+      _: unknown,
+      data: {
+        runId: string;
+        stepIndex: number;
+        stepLabel: string;
+        status: string;
+        error?: string;
+      },
+    ) => callback(data);
+    ipcRenderer.on('pipeline:run:step', listener);
+    return () => ipcRenderer.removeListener('pipeline:run:step', listener);
+  },
+
+  // Git
+  getGitRepoInfo: (
+    directory: string,
+  ): Promise<{
+    branch: string;
+    remoteUrl: string | null;
+    isDirty: boolean;
+    uncommittedCount: number;
+    recentCommits: string[];
+  } | null> => ipcRenderer.invoke('git:repo-info', directory),
 
   // Workspace event subscriptions
   onWorkspaceChanged: (callback: (data: { workspaceId: string }) => void) => {

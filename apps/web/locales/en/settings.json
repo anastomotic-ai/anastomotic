@@ -254,12 +254,21 @@
     "workspaces": "Workspaces",
     "appearance": "Appearance",
     "general": "General",
-    "about": "About"
+    "about": "About",
+    "schedules": "Schedules",
+    "costs": "Cost Tracking",
+    "pipelines": "Pipelines"
   },
   "notifications": {
     "toggle": {
       "label": "Desktop Notifications",
       "description": "Show OS notifications when tasks complete while the app is in the background."
+    }
+  },
+  "autoLearn": {
+    "toggle": {
+      "label": "Auto-Learn from Tasks",
+      "description": "Automatically extract reusable insights from completed tasks and save them as knowledge notes."
     }
   },
   "appearance": {
@@ -460,6 +469,10 @@
     "labels": {
       "type": "Note type",
       "content": "Note content"
+    },
+    "source": {
+      "manual": "Manual",
+      "auto": "Auto"
     },
     "errors": {
       "updateFailed": "Note not found or could not be updated.",

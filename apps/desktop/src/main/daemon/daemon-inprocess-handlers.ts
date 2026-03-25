@@ -9,6 +9,12 @@ import {
   addScheduledTask,
   listScheduledTasks,
   cancelScheduledTask,
+  setSchedulerPersistence,
+  loadScheduledTasks,
+  getAllScheduledTasks,
+  saveScheduledTask,
+  deleteScheduledTaskRecord,
+  updateScheduledTaskRun,
   createTaskId,
 } from '@anastomotic_ai/agent-core';
 import type { TaskManagerAPI, StorageAPI } from '@anastomotic_ai/agent-core';
@@ -24,6 +30,26 @@ export function registerInProcessHandlers(
   taskManager: TaskManagerAPI,
   storage: StorageAPI,
 ): void {
+  // Wire scheduler to DB persistence
+  setSchedulerPersistence({
+    onPersist: (task) => saveScheduledTask(task),
+    onDelete: (id) => deleteScheduledTaskRecord(id),
+    onUpdateRun: (id, lastRunAt, nextRunAt) => updateScheduledTaskRun(id, lastRunAt, nextRunAt),
+  });
+
+  // Load persisted schedules into memory
+  try {
+    const persisted = getAllScheduledTasks();
+    if (persisted.length > 0) {
+      loadScheduledTasks(persisted);
+    }
+  } catch (err) {
+    getLogCollector().logEnv(
+      'WARN',
+      '[DaemonBootstrap] Failed to load scheduled tasks: ' + String(err),
+    );
+  }
+
   srv.registerMethod('task.get', (params) => {
     if (!params) {
       return null;

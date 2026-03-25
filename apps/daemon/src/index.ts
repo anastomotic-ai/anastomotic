@@ -12,6 +12,17 @@ import {
   permissionResponseSchema,
   resumeSessionSchema,
   validate,
+  addScheduledTask,
+  listScheduledTasks,
+  cancelScheduledTask,
+  setSchedulerPersistence,
+  loadScheduledTasks,
+  onScheduledTaskFire,
+  disposeScheduler,
+  getAllScheduledTasks,
+  saveScheduledTask,
+  deleteScheduledTaskRecord,
+  updateScheduledTaskRun,
 } from '@anastomotic_ai/agent-core';
 import { z } from 'zod';
 import { StorageService } from './storage-service.js';
@@ -241,6 +252,53 @@ async function main(): Promise<void> {
     safeHandler(() => Promise.resolve(healthService.getStatus())),
   );
 
+  // ── Scheduling RPC handlers + persistence ─────────────────────────
+  setSchedulerPersistence({
+    onPersist: (task) => saveScheduledTask(task),
+    onDelete: (id) => deleteScheduledTaskRecord(id),
+    onUpdateRun: (id, lastRunAt, nextRunAt) => updateScheduledTaskRun(id, lastRunAt, nextRunAt),
+  });
+
+  try {
+    const persisted = getAllScheduledTasks();
+    if (persisted.length > 0) {
+      loadScheduledTasks(persisted);
+    }
+  } catch (err) {
+    console.warn('[Daemon] Failed to load scheduled tasks:', err);
+  }
+
+  const taskScheduleSchema = z.object({ cron: z.string().min(1), prompt: z.string().min(1) });
+  const cancelScheduledSchema = z.object({ scheduleId: z.string().min(1) });
+
+  rpc.registerMethod(
+    'task.schedule',
+    safeHandler((params) => {
+      const validated = validate(taskScheduleSchema, params);
+      return Promise.resolve(addScheduledTask(validated.cron, validated.prompt));
+    }),
+  );
+  rpc.registerMethod(
+    'task.listScheduled',
+    safeHandler(() => Promise.resolve(listScheduledTasks())),
+  );
+  rpc.registerMethod(
+    'task.cancelScheduled',
+    safeHandler((params) => {
+      const validated = validate(cancelScheduledSchema, params);
+      cancelScheduledTask(validated.scheduleId);
+      return Promise.resolve();
+    }),
+  );
+
+  // Wire scheduled task firing to task.start
+  onScheduledTaskFire((scheduledTask) => {
+    console.log(`[Daemon] Scheduled task fired: ${scheduledTask.id}`);
+    taskService
+      .startTask({ prompt: scheduledTask.prompt })
+      .catch((err) => console.error('[Daemon] Failed to start scheduled task:', err));
+  });
+
   // 10. Forward task events as RPC notifications
   taskService.on('progress', (data) => {
     rpc.notify('task.progress', data);
@@ -341,6 +399,7 @@ async function main(): Promise<void> {
     thoughtStreamService.close();
     permissionService.close();
     taskService.dispose();
+    disposeScheduler();
 
     await rpc.stop();
     storageService.close();
