@@ -545,6 +545,17 @@ interface AnastomoticAPI {
     }) => void,
   ): () => void;
 
+  // Smart Suggestions
+  getSuggestions(): Promise<
+    Array<{
+      id: string;
+      title: string;
+      prompt: string;
+      reason: string;
+      confidence: 'high' | 'medium' | 'low';
+    }>
+  >;
+
   // Git
   getGitRepoInfo(directory: string): Promise<{
     branch: string;

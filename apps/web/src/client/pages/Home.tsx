@@ -10,7 +10,7 @@ import { useTaskStore } from '@/stores/taskStore';
 import { getAnastomotic } from '@/lib/anastomotic';
 import { createLogger } from '@/lib/logger';
 import { springs } from '@/lib/animations';
-import { X, ArrowUpLeft } from '@phosphor-icons/react';
+import { X, ArrowUpLeft, Lightbulb } from '@phosphor-icons/react';
 import { hasAnyReadyProvider } from '@anastomotic_ai/agent-core/common';
 import { PlusMenu } from '@/components/landing/PlusMenu';
 import { IntegrationIcon } from '@/components/landing/IntegrationIcons';
@@ -41,6 +41,9 @@ export function HomePage() {
     isDirty: boolean;
     uncommittedCount: number;
   } | null>(null);
+  const [suggestions, setSuggestions] = useState<
+    Array<{ id: string; title: string; prompt: string; reason: string; confidence: string }>
+  >([]);
   const [showSettingsDialog, setShowSettingsDialog] = useState(false);
   const [settingsInitialTab, setSettingsInitialTab] = useState<
     'providers' | 'voice' | 'skills' | 'connectors'
@@ -71,7 +74,12 @@ export function HomePage() {
     if (location.pathname === '/' && typeof loadFavorites === 'function') {
       void loadFavorites();
     }
-  }, [location.pathname, loadFavorites]);
+    // Fetch smart suggestions
+    api
+      .getSuggestions?.()
+      .then((s) => setSuggestions(s || []))
+      .catch(() => setSuggestions([]));
+  }, [location.pathname, loadFavorites, api]);
 
   useEffect(() => {
     const unsubscribeTask = api.onTaskUpdate((event) => {
@@ -425,6 +433,43 @@ export function HomePage() {
                 </p>
               )}
             </div>
+
+            {/* Smart Suggestions */}
+            {suggestions.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ...springs.gentle, delay: 0.15 }}
+                className="w-full"
+              >
+                <div className="flex flex-col gap-3">
+                  <h2 className="font-apparat text-[22px] font-light tracking-[-0.66px] text-foreground text-center flex items-center justify-center gap-2">
+                    <Lightbulb className="w-5 h-5 text-yellow-500" weight="fill" />
+                    Suggested Tasks
+                  </h2>
+                  <div className="grid grid-cols-3 gap-4 w-full">
+                    {suggestions.map((sug) => (
+                      <motion.button
+                        key={sug.id}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => {
+                          setPrompt(sug.prompt);
+                          focusPromptTextarea();
+                        }}
+                        className="group flex flex-col justify-between rounded-[4px] border border-border hover:border-yellow-500/40 active:border-yellow-500/40 bg-accent pl-3 pr-4 py-3 text-left min-h-[80px] transition-colors"
+                      >
+                        <span className="font-sans text-[14px] leading-[18px] tracking-[-0.28px] text-foreground line-clamp-2">
+                          {sug.title}
+                        </span>
+                        <span className="text-[12px] leading-[14px] text-muted-foreground mt-1 line-clamp-2">
+                          {sug.reason}
+                        </span>
+                      </motion.button>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
 
             <motion.div
               initial={{ opacity: 0 }}

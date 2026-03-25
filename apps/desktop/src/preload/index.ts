@@ -777,6 +777,17 @@ const AnastomoticAPI = {
     recentCommits: string[];
   } | null> => ipcRenderer.invoke('git:repo-info', directory),
 
+  // Smart Suggestions
+  getSuggestions: (): Promise<
+    Array<{
+      id: string;
+      title: string;
+      prompt: string;
+      reason: string;
+      confidence: 'high' | 'medium' | 'low';
+    }>
+  > => ipcRenderer.invoke('suggestions:get'),
+
   // Workspace event subscriptions
   onWorkspaceChanged: (callback: (data: { workspaceId: string }) => void) => {
     const listener = (_: unknown, data: { workspaceId: string }) => callback(data);

@@ -13,6 +13,7 @@ import { registerScheduleHandlers } from './schedule-handlers';
 import { registerCostHandlers } from './cost-handlers';
 import { registerOrchestrationHandlers } from './orchestration-handlers';
 import { registerGitHandlers } from './git-handlers';
+import { registerSuggestionHandlers } from './suggestion-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -30,4 +31,5 @@ export function registerIPCHandlers(): void {
   registerCostHandlers();
   registerOrchestrationHandlers();
   registerGitHandlers();
+  registerSuggestionHandlers();
 }
