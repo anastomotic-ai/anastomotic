@@ -30,6 +30,7 @@ interface AppSettingsRow {
   notifications_enabled: number;
   nim_config: string | null;
   auto_learn_enabled: number;
+  webhook_urls: string;
 }
 
 export interface AppSettings {
@@ -262,6 +263,27 @@ export function getAutoLearnEnabled(): boolean {
 export function setAutoLearnEnabled(enabled: boolean): void {
   const db = getDatabase();
   db.prepare('UPDATE app_settings SET auto_learn_enabled = ? WHERE id = 1').run(enabled ? 1 : 0);
+}
+
+export interface WebhookConfig {
+  url: string;
+  label: string;
+  events: WebhookEvent[];
+  enabled: boolean;
+}
+
+export type WebhookEvent = 'task.completed' | 'task.failed' | 'task.started';
+
+export function getWebhookUrls(): WebhookConfig[] {
+  const row = getRow();
+  return safeParseJsonWithFallback<WebhookConfig[]>(row.webhook_urls) ?? [];
+}
+
+export function setWebhookUrls(webhooks: WebhookConfig[]): void {
+  const db = getDatabase();
+  db.prepare('UPDATE app_settings SET webhook_urls = ? WHERE id = 1').run(
+    JSON.stringify(webhooks),
+  );
 }
 
 export function getAppSettings(): AppSettings {

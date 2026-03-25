@@ -309,6 +309,13 @@ export type {
   MarketplaceCategory,
 } from './services/marketplace.js';
 
+// Webhook Notifications
+export { fireWebhooks } from './services/webhooks.js';
+export type { WebhookPayload, WebhookConfig, WebhookEvent } from './services/webhooks.js';
+
+// Webhook settings
+export { getWebhookUrls, setWebhookUrls } from './storage/repositories/appSettings.js';
+
 // Orchestrator
 export { executePipelineRun } from './services/orchestrator.js';
 export type { OrchestratorTaskRunner, OrchestratorCallbacks } from './services/orchestrator.js';
