@@ -132,3 +132,5 @@ export type {
   BrowserStatusPayload,
   BrowserNavigatePayload,
 } from './browser-view.js';
+
+export type { CostRecord, CostRecordInput, CostSummary, CostBreakdown } from './cost.js';

@@ -29,6 +29,7 @@ interface AppSettingsRow {
   cloud_browser_config: string | null;
   notifications_enabled: number;
   nim_config: string | null;
+  auto_learn_enabled: number;
 }
 
 export interface AppSettings {
@@ -42,6 +43,7 @@ export interface AppSettings {
   openaiBaseUrl: string;
   theme: ThemePreference;
   runInBackground: boolean;
+  autoLearnEnabled: boolean;
 }
 
 function getRow(): AppSettingsRow {
@@ -253,6 +255,15 @@ export function setNotificationsEnabled(enabled: boolean): void {
   db.prepare('UPDATE app_settings SET notifications_enabled = ? WHERE id = 1').run(enabled ? 1 : 0);
 }
 
+export function getAutoLearnEnabled(): boolean {
+  return getRow().auto_learn_enabled === 1;
+}
+
+export function setAutoLearnEnabled(enabled: boolean): void {
+  const db = getDatabase();
+  db.prepare('UPDATE app_settings SET auto_learn_enabled = ? WHERE id = 1').run(enabled ? 1 : 0);
+}
+
 export function getAppSettings(): AppSettings {
   const row = getRow();
   return {
@@ -268,6 +279,7 @@ export function getAppSettings(): AppSettings {
       ? (row.theme as ThemePreference)
       : 'system',
     runInBackground: row.run_in_background === 1,
+    autoLearnEnabled: row.auto_learn_enabled === 1,
   };
 }
 
@@ -291,4 +303,10 @@ export function clearAppSettings(): void {
       notifications_enabled = 1
     WHERE id = 1`,
   ).run();
+  // Reset auto-learn separately (column may not yet exist in older DBs)
+  try {
+    db.prepare('UPDATE app_settings SET auto_learn_enabled = 0 WHERE id = 1').run();
+  } catch {
+    /* column may not exist yet */
+  }
 }

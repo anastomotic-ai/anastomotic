@@ -21,6 +21,8 @@ export {
   listScheduledTasks,
   cancelScheduledTask,
   onScheduledTaskFire,
+  setSchedulerPersistence,
+  loadScheduledTasks,
   disposeScheduler,
   parseCronField,
   matchesCron,

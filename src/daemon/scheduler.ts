@@ -2,10 +2,9 @@
  * Task Scheduler
  *
  * Lightweight cron-based task scheduler for the daemon. Stores scheduled tasks
- * in memory and fires them via a DaemonClient `task.start` call.
+ * in memory (with optional DB persistence) and fires them via a callback.
  *
- * Uses simple cron matching (no external dependencies). For production,
- * consider replacing with a library like `cron` or `node-schedule`.
+ * Uses simple cron matching (no external dependencies).
  *
  * ESM module — use .js extensions on imports.
  */
@@ -16,10 +15,16 @@ import { createLogger } from './logger.js';
 const logger = createLogger('Scheduler');
 
 type ScheduledTaskCallback = (task: ScheduledTask) => void;
+type PersistCallback = (task: ScheduledTask) => void;
+type DeleteCallback = (id: string) => void;
+type UpdateRunCallback = (id: string, lastRunAt: string, nextRunAt?: string) => void;
 
 const schedules = new Map<string, ScheduledTask>();
 let timerId: ReturnType<typeof setInterval> | null = null;
 let onFireCallback: ScheduledTaskCallback | null = null;
+let persistCb: PersistCallback | null = null;
+let deleteCb: DeleteCallback | null = null;
+let updateRunCb: UpdateRunCallback | null = null;
 
 /**
  * Parse a cron expression into its 5 fields.
@@ -33,6 +38,28 @@ export function parseCronField(field: string, min: number, max: number): number[
       result.push(i);
     }
     return result;
+  }
+
+  // Handle step syntax: */N or range/N
+  if (field.includes('/')) {
+    const [base, stepStr] = field.split('/');
+    const step = Number(stepStr);
+    let start = min;
+    let end = max;
+    if (base !== '*') {
+      if (base.includes('-')) {
+        const [rangeStart, rangeEnd] = base.split('-').map(Number);
+        start = rangeStart;
+        end = rangeEnd;
+      } else {
+        start = Number(base);
+      }
+    }
+    const result: number[] = [];
+    for (let i = start; i <= end; i += step) {
+      result.push(i);
+    }
+    return result.filter((v) => v >= min && v <= max);
   }
 
   const values: number[] = [];
@@ -147,6 +174,9 @@ export function addScheduledTask(cron: string, prompt: string): ScheduledTask {
   };
 
   schedules.set(id, task);
+  if (persistCb) {
+    persistCb(task);
+  }
   logger.info('Added schedule:', id, cron, prompt.slice(0, 50));
 
   // Start the timer if not running
@@ -170,6 +200,9 @@ export function listScheduledTasks(): ScheduledTask[] {
 export function cancelScheduledTask(scheduleId: string): boolean {
   const existed = schedules.has(scheduleId);
   schedules.delete(scheduleId);
+  if (existed && deleteCb) {
+    deleteCb(scheduleId);
+  }
   logger.info('Cancelled schedule:', scheduleId);
 
   if (schedules.size === 0 && timerId) {
@@ -186,12 +219,43 @@ export function onScheduledTaskFire(callback: ScheduledTaskCallback): void {
 }
 
 /**
+ * Register persistence callbacks so the scheduler writes through to a DB.
+ */
+export function setSchedulerPersistence(callbacks: {
+  onPersist: PersistCallback;
+  onDelete: DeleteCallback;
+  onUpdateRun: UpdateRunCallback;
+}): void {
+  persistCb = callbacks.onPersist;
+  deleteCb = callbacks.onDelete;
+  updateRunCb = callbacks.onUpdateRun;
+}
+
+/**
+ * Load tasks from an external source (e.g. DB) into the in-memory scheduler.
+ * Starts the timer if any enabled tasks are loaded.
+ */
+export function loadScheduledTasks(tasks: ScheduledTask[]): void {
+  for (const task of tasks) {
+    schedules.set(task.id, { ...task });
+  }
+  const hasEnabled = tasks.some((t) => t.enabled);
+  if (hasEnabled && !timerId) {
+    startTimer();
+  }
+  logger.info('Loaded', tasks.length, 'schedule(s) from storage');
+}
+
+/**
  * Stop the scheduler and clear all schedules.
  */
 export function disposeScheduler(): void {
   stopTimer();
   schedules.clear();
   onFireCallback = null;
+  persistCb = null;
+  deleteCb = null;
+  updateRunCb = null;
   logger.info('Disposed');
 }
 
@@ -226,6 +290,10 @@ function tick(): void {
       logger.info('Firing scheduled task:', task.id, task.prompt.slice(0, 50));
       task.lastRunAt = now.toISOString();
       task.nextRunAt = getNextRunTime(task.cron);
+
+      if (updateRunCb) {
+        updateRunCb(task.id, task.lastRunAt, task.nextRunAt);
+      }
 
       if (onFireCallback) {
         try {

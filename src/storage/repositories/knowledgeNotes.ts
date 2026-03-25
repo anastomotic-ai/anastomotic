@@ -4,6 +4,7 @@ import type {
   KnowledgeNoteCreateInput,
   KnowledgeNoteUpdateInput,
   KnowledgeNoteType,
+  KnowledgeNoteSource,
 } from '../../common/types/workspace.js';
 
 const NOTE_TYPE_LABELS: Record<KnowledgeNoteType, string> = {
@@ -25,6 +26,7 @@ function rowToNote(row: Record<string, unknown>): KnowledgeNote {
     workspaceId: row.workspace_id as string,
     type: row.type as KnowledgeNoteType,
     content: row.content as string,
+    source: (row.source as KnowledgeNoteSource) || 'manual',
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -60,10 +62,12 @@ export function createKnowledgeNote(input: KnowledgeNoteCreateInput): KnowledgeN
   const id = createNoteId();
   const now = new Date().toISOString();
 
+  const source = input.source || 'manual';
+
   db.prepare(
-    `INSERT INTO knowledge_notes (id, workspace_id, type, content, created_at, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-  ).run(id, input.workspaceId, input.type, content, now, now);
+    `INSERT INTO knowledge_notes (id, workspace_id, type, content, source, created_at, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+  ).run(id, input.workspaceId, input.type, content, source, now, now);
 
   return getKnowledgeNote(id, input.workspaceId)!;
 }

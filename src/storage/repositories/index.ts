@@ -23,6 +23,8 @@ export {
   setRunInBackground,
   getAppSettings,
   clearAppSettings,
+  getAutoLearnEnabled,
+  setAutoLearnEnabled,
   type AppSettings,
 } from './appSettings.js';
 
@@ -58,6 +60,7 @@ export {
   getTodosForTask,
   saveTodosForTask,
   clearTodosForTask,
+  getTaskWorkspaceId,
   type StoredTask,
 } from './taskHistory.js';
 
@@ -92,3 +95,32 @@ export {
   deleteKnowledgeNote,
   getKnowledgeNotesForPrompt,
 } from './knowledgeNotes.js';
+
+export {
+  getAllScheduledTasks,
+  getScheduledTask,
+  saveScheduledTask,
+  updateScheduledTaskRun,
+  deleteScheduledTask,
+  setScheduledTaskEnabled,
+} from './scheduledTasks.js';
+
+export {
+  addCostRecord,
+  getCostRecordsForTask,
+  getCostSummary,
+  getCostBreakdown,
+} from './costRecords.js';
+
+export {
+  listPipelines,
+  getPipeline,
+  createPipeline,
+  updatePipeline,
+  deletePipeline,
+  createPipelineRun,
+  getPipelineRun,
+  listPipelineRuns,
+  updatePipelineRun,
+  deletePipelineRun,
+} from './pipelines.js';

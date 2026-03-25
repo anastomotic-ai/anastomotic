@@ -162,6 +162,10 @@ export interface AppSettingsAPI {
   getNotificationsEnabled(): boolean;
   /** Enable or disable desktop notifications */
   setNotificationsEnabled(enabled: boolean): void;
+  /** Get whether auto-learning from completed tasks is enabled */
+  getAutoLearnEnabled(): boolean;
+  /** Enable or disable auto-learning */
+  setAutoLearnEnabled(enabled: boolean): void;
   /** Get all application settings as a snapshot */
   getAppSettings(): AppSettings;
   /** Reset all application settings to defaults */

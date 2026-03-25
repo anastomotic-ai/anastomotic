@@ -183,6 +183,30 @@ export {
   getKnowledgeNotesForPrompt,
 } from './storage/repositories/knowledgeNotes.js';
 
+// Scheduled Tasks repository
+export {
+  getAllScheduledTasks,
+  getScheduledTask,
+  saveScheduledTask,
+  updateScheduledTaskRun,
+  deleteScheduledTask as deleteScheduledTaskRecord,
+  setScheduledTaskEnabled,
+} from './storage/repositories/scheduledTasks.js';
+
+// Cost Records repository
+export {
+  addCostRecord,
+  getCostRecordsForTask,
+  getCostSummary,
+  getCostBreakdown,
+} from './storage/repositories/costRecords.js';
+
+// App Settings (direct exports for non-factory usage)
+export { getAutoLearnEnabled, setAutoLearnEnabled } from './storage/repositories/appSettings.js';
+
+// Task history helpers
+export { getTaskWorkspaceId } from './storage/repositories/taskHistory.js';
+
 // -----------------------------------------------------------------------------
 // Providers Module (from ./providers/)
 // -----------------------------------------------------------------------------
@@ -270,6 +294,27 @@ export type { BrowserServerConfig } from './browser/server.js';
 export { generateTaskSummary } from './services/summarizer.js';
 
 export type { GetApiKeyFn } from './services/summarizer.js';
+
+// Auto-learner
+export { extractInsight } from './services/auto-learner.js';
+
+// Orchestrator
+export { executePipelineRun } from './services/orchestrator.js';
+export type { OrchestratorTaskRunner, OrchestratorCallbacks } from './services/orchestrator.js';
+
+// Pipeline repositories
+export {
+  listPipelines,
+  getPipeline,
+  createPipeline,
+  updatePipeline,
+  deletePipeline,
+  createPipelineRun,
+  getPipelineRun,
+  listPipelineRuns,
+  updatePipelineRun,
+  deletePipelineRun,
+} from './storage/repositories/pipelines.js';
 
 // -----------------------------------------------------------------------------
 // Skills Module (from ./skills/)
@@ -504,6 +549,8 @@ export {
   listScheduledTasks,
   cancelScheduledTask,
   onScheduledTaskFire,
+  setSchedulerPersistence,
+  loadScheduledTasks,
   disposeScheduler,
   parseCronField,
   matchesCron,

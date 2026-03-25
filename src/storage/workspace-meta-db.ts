@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS knowledge_notes (
   workspace_id TEXT NOT NULL,
   type TEXT NOT NULL DEFAULT 'context',
   content TEXT NOT NULL,
+  source TEXT NOT NULL DEFAULT 'manual',
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
   FOREIGN KEY (workspace_id) REFERENCES workspaces(id) ON DELETE CASCADE
@@ -57,6 +58,12 @@ export function initializeMetaDatabase(dbPath: string): Database.Database {
     db.pragma('journal_mode = WAL');
     db.pragma('foreign_keys = ON');
     db.exec(SCHEMA_SQL);
+
+    // Add 'source' column to knowledge_notes if missing (upgrade from older schema)
+    const cols = db.pragma('table_info(knowledge_notes)') as { name: string }[];
+    if (!cols.some((c) => c.name === 'source')) {
+      db.exec("ALTER TABLE knowledge_notes ADD COLUMN source TEXT NOT NULL DEFAULT 'manual'");
+    }
   } catch (err) {
     db.close();
     throw err;
