@@ -201,7 +201,7 @@ export function WebhooksPanel() {
 
         {webhooks.length === 0 && (
           <div className="flex h-[200px] items-center justify-center text-sm text-muted-foreground">
-            No webhooks configured. Click "Add Webhook" to create one.
+            No webhooks configured. Click &quot;Add Webhook&quot; to create one.
           </div>
         )}
       </div>

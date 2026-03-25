@@ -42,7 +42,7 @@ function getMcpToolsPath(): string {
   const mono = path.resolve(DAEMON_ROOT, '../../packages/agent-core/mcp-tools');
   return fs.existsSync(mono)
     ? mono
-    : path.join(DAEMON_ROOT, 'node_modules', '@ANASTOMOTIC_ai', 'agent-core', 'mcp-tools');
+    : path.join(DAEMON_ROOT, 'node_modules', '@anastomotic_ai', 'agent-core', 'mcp-tools');
 }
 
 async function buildEnvironment(taskId: string): Promise<NodeJS.ProcessEnv> {

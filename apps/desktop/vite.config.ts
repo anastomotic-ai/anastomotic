@@ -14,9 +14,9 @@ const nodeExternals = [...builtinModules, ...builtinModules.map((m) => `node:${m
 // Vite 8 (rolldown) does not auto-convert CJS require() to ESM imports,
 // so any bundled third-party package that internally calls require() for
 // Node built-ins will fail at runtime in an ESM context.
-// Workspace packages (@ANASTOMOTIC_ai/*) are aliased to local source and must be bundled.
+// Workspace packages (@anastomotic_ai/*) are aliased to local source and must be bundled.
 const externalizeNodeModules = (id: string) => {
-  if (id.startsWith('@ANASTOMOTIC_ai/') || id.startsWith('@main/')) {
+  if (id.startsWith('@anastomotic_ai/') || id.startsWith('@main/')) {
     return false;
   }
   return !id.startsWith('.') && !id.startsWith('/') && !id.includes('\0') && !path.isAbsolute(id);
@@ -83,14 +83,14 @@ function buildDaemonEntry(): import('vite').Plugin {
         {
           name: 'externalize-node-modules',
           setup(build) {
-            // Bundle @ANASTOMOTIC_ai workspace packages; externalize everything else.
+            // Bundle @anastomotic_ai workspace packages; externalize everything else.
             build.onResolve({ filter: /^[^./]/ }, (args) => {
               // Absolute paths (e.g. Windows drive-letter paths like "D:\...") must not be
               // externalized — they are entry points or resolved files, not package imports.
               if (path.isAbsolute(args.path)) {
                 return null;
               }
-              if (args.path.startsWith('@ANASTOMOTIC_ai/')) {
+              if (args.path.startsWith('@anastomotic_ai/')) {
                 return null; // let esbuild resolve and bundle
               }
               return { path: args.path, external: true };

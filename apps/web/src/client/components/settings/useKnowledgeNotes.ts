@@ -84,6 +84,8 @@ export function useKnowledgeNotes(
         }
       });
     return () => {
+      // Bump the counter to invalidate any in-flight request from this effect.
+      // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: we want to mutate the ref on cleanup
       activeRequestRef.current++;
     };
   }, [api, workspaceId]);
