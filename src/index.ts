@@ -205,7 +205,7 @@ export {
 export { getAutoLearnEnabled, setAutoLearnEnabled } from './storage/repositories/appSettings.js';
 
 // Task history helpers
-export { getTaskWorkspaceId } from './storage/repositories/taskHistory.js';
+export { getTaskWorkspaceId, getTasks } from './storage/repositories/taskHistory.js';
 
 // -----------------------------------------------------------------------------
 // Providers Module (from ./providers/)
@@ -297,6 +297,10 @@ export type { GetApiKeyFn } from './services/summarizer.js';
 
 // Auto-learner
 export { extractInsight } from './services/auto-learner.js';
+
+// Smart Suggestions
+export { generateSuggestions } from './services/suggestions.js';
+export type { TaskSuggestion, RecentTaskSummary } from './services/suggestions.js';
 
 // Orchestrator
 export { executePipelineRun } from './services/orchestrator.js';
