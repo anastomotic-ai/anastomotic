@@ -1,0 +1,313 @@
+<p align="center">
+  <a href="README.md">English</a> | <a href="README.zh-CN.md">中文</a> | <a href="README.ja.md">日本語</a> | <strong>한국어</strong> | <a href="README.ru.md">Русский</a> | <a href="README.es.md">Español</a> | <a href="README.tr.md">Türkçe</a> | <a href="README.ar.md">العربية</a> | <a href="README.id.md">Bahasa Indonesia</a> | <a href="README.ta.md">தமிழ்</a> | <a href="README.hi.md">हिन्दी</a>
+</p>
+
+# Anastomotic™ - 오픈소스 AI 데스크톱 에이전트
+
+Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 작업을 자동화하는 오픈소스 AI 데스크톱 에이전트입니다. 자체 API 키(OpenAI, Anthropic, Google, xAI)를 사용하거나 Ollama를 통해 로컬 모델을 실행하세요.
+
+<p align="center">
+  <strong>로컬 머신에서 실행. 자체 API 키 또는 로컬 모델 사용. MIT 라이선스.</strong>
+</p>
+
+<p align="center">
+  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac용 다운로드 (Apple Silicon)</strong></a>
+  ·
+  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac용 다운로드 (Intel)</strong></a>
+  ·
+  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11용 다운로드</strong></a>
+  ·
+  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux (ARM64) 다운로드</strong></a>
+  ·
+  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux (x64) 다운로드</strong></a>
+  ·
+  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux (.deb x64) 다운로드</strong></a>
+  ·
+  <a href="https://www.anastomotic.ai/">Anastomotic 웹사이트</a>
+  ·
+  <a href="https://www.anastomotic.ai/blog/">Anastomotic 블로그</a>
+  ·
+  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic 릴리스</a>
+</p>
+
+<br />
+
+---
+
+<br />
+
+## 무엇이 다른가
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+
+### 🖥️ 로컬에서 실행
+
+<div align="left">
+
+- 파일은 내 머신에 저장
+- 접근 가능한 폴더를 직접 결정
+- Anastomotic(또는 누구에게도)에 데이터가 전송되지 않음
+
+</div>
+
+</td>
+<td width="50%" valign="top" align="center">
+
+### 🔑 자체 AI 사용
+
+<div align="left">
+
+- 자체 API 키 사용 (OpenAI, Anthropic 등)
+- 또는 [Ollama](https://ollama.com)로 실행 (API 키 불필요)
+- 구독 없음, 업셀 없음
+- 서비스가 아닌 도구
+
+</div>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top" align="center">
+
+### 📖 오픈소스
+
+<div align="left">
+
+- 모든 코드가 GitHub에 공개
+- MIT 라이선스
+- 수정, 포크, 변경, 수정 자유
+
+</div>
+
+</td>
+<td width="50%" valign="top" align="center">
+
+### ⚡ 채팅만이 아닌 실행
+
+<div align="left">
+
+- 파일 관리
+- 문서 작성
+- 커스텀 자동화
+- 스킬 학습
+
+</div>
+
+</td>
+</tr>
+</table>
+
+<br />
+
+---
+
+<br />
+
+## 실제 기능
+
+|                                                 |                                                     |                                                         |
+| :---------------------------------------------- | :-------------------------------------------------- | :------------------------------------------------------ |
+| **📁 파일 관리**                                | **✍️ 문서 작성**                                    | **🔗 도구 연결**                                        |
+| 콘텐츠나 규칙에 따라 파일 정리, 이름 변경, 이동 | 문서 작성, 요약, 재작성 지시                        | Notion, Google Drive, Dropbox 등과 연동 (로컬 API 통해) |
+|                                                 |                                                     |                                                         |
+| **⚙️ 커스텀 스킬**                              | **🛡️ 완전한 제어**                                  |                                                         |
+| 반복 워크플로우를 정의하고 스킬로 저장          | 모든 작업을 승인. 로그 확인 가능. 언제든 중지 가능. |                                                         |
+
+<br />
+
+## 사용 사례
+
+- 프로젝트, 파일 유형, 날짜별로 폴더 정리
+- 문서, 보고서, 회의록 작성, 요약, 재작성
+- 리서치 및 양식 작성 등 브라우저 워크플로우 자동화
+- 파일과 노트에서 주간 업데이트 생성
+- 문서와 캘린더에서 회의 자료 준비
+
+<br />
+
+## 지원 모델 및 제공업체
+
+- Anthropic (Claude)
+- OpenAI (GPT)
+- Google AI (Gemini)
+- xAI (Grok)
+- DeepSeek
+- Moonshot AI (Kimi)
+- Z.AI (GLM)
+- MiniMax
+- Venice.ai
+- Amazon Bedrock
+- Azure Foundry
+- OpenRouter
+- LiteLLM
+- Ollama (로컬 모델)
+- LM Studio (로컬 모델)
+
+<br />
+
+## 프라이버시 및 로컬 우선
+
+Anastomotic는 로컬 머신에서 실행됩니다. 파일은 기기에 저장되며, 접근 가능한 폴더를 선택할 수 있습니다.
+
+<br />
+
+## 시스템 요구 사항
+
+- macOS (Apple Silicon)
+- Windows 11
+- Ubuntu (ARM64)
+- Ubuntu (x64)
+
+<br />
+
+---
+
+<br />
+
+## 사용 방법
+
+> **설정은 2분이면 완료.**
+
+| 단계  | 작업               | 세부사항                                                                                       |
+| :---: | ------------------ | ---------------------------------------------------------------------------------------------- |
+| **1** | **앱 설치**        | DMG 다운로드 후 응용 프로그램 폴더로 드래그                                                    |
+| **2** | **AI 연결**        | Google, OpenAI, Anthropic (또는 기타) API 키 사용 또는 ChatGPT (Plus/Pro)로 로그인. 구독 없음. |
+| **3** | **접근 권한 부여** | 접근 가능한 폴더 선택. 사용자가 제어.                                                          |
+| **4** | **작업 시작**      | 문서 요약, 폴더 정리, 보고서 생성 요청. 모든 작업 승인.                                        |
+
+<br />
+
+<br />
+
+<div align="center">
+
+[**Mac용 다운로드 (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac용 다운로드 (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11용 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux (ARM64) 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux (x64) 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux (.deb x64) 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
+
+</div>
+
+<br />
+
+---
+
+<br />
+
+<br />
+
+## 자주 묻는 질문
+
+**Anastomotic는 로컬에서 실행되나요?**
+네. Anastomotic는 로컬 머신에서 실행되며, 접근 가능한 폴더를 제어할 수 있습니다.
+
+**API 키가 필요한가요?**
+자체 API 키 (OpenAI, Anthropic, Google, xAI 등)를 사용하거나 Ollama를 통해 로컬 모델을 실행할 수 있습니다.
+
+**Anastomotic는 무료인가요?**
+네. Anastomotic는 오픈소스이며 MIT 라이선스입니다.
+
+**어떤 플랫폼을 지원하나요?**
+macOS (Apple Silicon)와 Windows 11이 현재 사용 가능합니다. Ubuntu (ARM64) 및 Ubuntu (x64)도 지원됩니다。
+
+<br />
+
+---
+
+<br />
+
+## 개발
+
+```bash
+pnpm install
+pnpm dev
+```
+
+끝입니다.
+
+<details>
+<summary><strong>사전 요구 사항</strong></summary>
+
+- Node.js 20+
+- pnpm 9+
+
+</details>
+
+<details>
+<summary><strong>모든 명령어</strong></summary>
+
+| 명령어                                       | 설명                                 |
+| -------------------------------------------- | ------------------------------------ |
+| `pnpm dev`                                   | 개발 모드로 데스크톱 앱 실행         |
+| `pnpm dev:clean`                             | 클린 스타트로 개발 모드              |
+| `pnpm build`                                 | 모든 워크스페이스 빌드               |
+| `pnpm build:desktop`                         | 데스크톱 앱만 빌드                   |
+| `pnpm -F @anastomotic/desktop package:win`   | Windows 설치 프로그램 빌드 (x64)     |
+| `pnpm -F @anastomotic/desktop package:linux` | Linux 아티팩트 빌드 (AppImage + deb) |
+| `pnpm lint`                                  | TypeScript 검사                      |
+| `pnpm typecheck`                             | 타입 검증                            |
+| `pnpm -F @anastomotic/desktop test:e2e`      | Playwright E2E 테스트                |
+
+</details>
+
+<details>
+<summary><strong>환경 변수</strong></summary>
+
+| 변수              | 설명                              |
+| ----------------- | --------------------------------- |
+| `CLEAN_START=1`   | 앱 시작 시 모든 저장 데이터 삭제  |
+| `E2E_SKIP_AUTH=1` | 온보딩 플로우 건너뛰기 (테스트용) |
+
+</details>
+
+<details>
+<summary><strong>아키텍처</strong></summary>
+
+```
+apps/
+  desktop/        # Electron 앱 (main + preload + renderer)
+packages/
+  shared/         # 공유 TypeScript 타입
+```
+
+데스크톱 앱은 Vite로 번들링된 React UI와 함께 Electron을 사용합니다. 메인 프로세스는 `node-pty`를 사용하여 [OpenCode](https://github.com/sst/opencode) CLI를 생성하여 작업을 실행합니다. API 키는 OS 키체인에 안전하게 저장됩니다.
+
+자세한 아키텍처 문서는 [CLAUDE.md](CLAUDE.md)를 참조하세요.
+
+</details>
+
+<br />
+
+---
+
+<br />
+
+## 기여
+
+기여를 환영합니다! PR을 자유롭게 열어주세요.
+
+```bash
+# Fork → Clone → Branch → Commit → Push → PR
+git checkout -b feature/amazing-feature
+git commit -m 'Add amazing feature'
+git push origin feature/amazing-feature
+```
+
+<br />
+
+---
+
+<br />
+
+<div align="center">
+
+**[Anastomotic 웹사이트](https://www.anastomotic.ai/)** · **[Anastomotic 블로그](https://www.anastomotic.ai/blog/)** · **[Anastomotic 릴리스](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+
+<br />
+
+MIT 라이선스 · [Anastomotic](https://www.anastomotic.ai) 제작
+
+<br />
+
+**키워드:** AI 에이전트, AI 데스크톱 에이전트, 데스크톱 자동화, 파일 관리, 문서 작성, 브라우저 자동화, 로컬 우선, macOS, 프라이버시 우선, 오픈소스, Electron, 컴퓨터 사용, AI 어시스턴트, 워크플로우 자동화, OpenAI, Anthropic, Google, xAI, Claude, GPT-4, Ollama
+
+</div>

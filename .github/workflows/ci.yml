@@ -1,0 +1,265 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/desktop/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'apps/desktop/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/ci.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  HUSKY: '0'
+
+jobs:
+  # Run core package tests
+  core-tests:
+    name: Core Package Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Rebuild native modules
+        run: pnpm rebuild better-sqlite3 --recursive
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run agent-core tests
+        run: pnpm -F @anastomotic_ai/agent-core test
+
+  # Run unit and integration tests in parallel
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run unit tests
+        run: pnpm -F @anastomotic/desktop test:unit
+
+      - name: Upload unit test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: unit-test-results
+          path: apps/desktop/coverage/
+          retention-days: 7
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run integration tests
+        run: pnpm -F @anastomotic/desktop test:integration
+
+      - name: Upload integration test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: integration-test-results
+          path: apps/desktop/coverage/
+          retention-days: 7
+
+  # Type checking
+  typecheck:
+    name: Type Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run type check
+        run: pnpm typecheck
+
+  # E2E tests (runs in Docker with Xvfb)
+  e2e-tests:
+    name: E2E Tests (Docker)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          package-manager-cache: false
+          # Note: No cache here - E2E tests run in Docker so pnpm store isn't on host
+
+      - name: Cache E2E Docker image
+        id: docker-cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/e2e-image.tar
+          key: e2e-docker-${{ hashFiles('apps/desktop/e2e/docker/Dockerfile') }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('**/package.json', 'pnpm-workspace.yaml') }}-${{ hashFiles('scripts/**', 'apps/desktop/scripts/**', 'packages/agent-core/mcp-tools/**') }}
+
+      - name: Load cached Docker image
+        if: steps.docker-cache.outputs.cache-hit == 'true'
+        run: |
+          docker load -i /tmp/e2e-image.tar
+          # Re-tag to what run-e2e.sh will look for
+          LOADED_TAG="$(docker images 'anastomotic-e2e' --format '{{.Repository}}:{{.Tag}}' | head -1)"
+          EXPECTED_TAG="$(bash apps/desktop/e2e/docker/run-e2e.sh --print-tag)"
+          if [ "$LOADED_TAG" != "$EXPECTED_TAG" ] && [ -n "$LOADED_TAG" ]; then
+            docker tag "$LOADED_TAG" "$EXPECTED_TAG"
+          fi
+
+      - name: Build E2E Docker image
+        if: steps.docker-cache.outputs.cache-hit != 'true'
+        run: bash apps/desktop/e2e/docker/run-e2e.sh --build-only
+
+      - name: Save Docker image to cache
+        if: steps.docker-cache.outputs.cache-hit != 'true'
+        run: |
+          IMAGE="$(docker images 'anastomotic-e2e' --format '{{.Repository}}:{{.Tag}}' | head -1)"
+          if [ -z "$IMAGE" ]; then
+            echo "No anastomotic-e2e image found to cache" >&2
+            exit 1
+          fi
+          docker save "$IMAGE" -o /tmp/e2e-image.tar
+
+      - name: Run E2E tests
+        run: bash apps/desktop/e2e/docker/run-e2e.sh
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: e2e-test-results
+          path: |
+            apps/desktop/e2e/test-results/
+            apps/desktop/e2e/html-report/
+          retention-days: 7
+
+  # Windows CI (unit tests + typecheck only, integration tests have macOS-specific paths)
+  windows-ci:
+    name: Windows CI
+    runs-on: windows-latest
+    env:
+      npm_config_script_shell: pwsh.exe
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Rebuild native modules
+        run: pnpm rebuild better-sqlite3 --recursive
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Verify local dev bootstrap paths
+        timeout-minutes: 10
+        run: |
+          pnpm dev:check
+          pnpm dev:clean:check
+
+      - name: Run unit tests
+        run: pnpm -F @anastomotic/desktop test:unit
+
+      - name: Run typecheck
+        run: pnpm typecheck
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: windows-test-results
+          path: apps/desktop/coverage/
+          retention-days: 7
