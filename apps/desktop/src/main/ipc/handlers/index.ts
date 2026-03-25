@@ -14,6 +14,7 @@ import { registerCostHandlers } from './cost-handlers';
 import { registerOrchestrationHandlers } from './orchestration-handlers';
 import { registerGitHandlers } from './git-handlers';
 import { registerSuggestionHandlers } from './suggestion-handlers';
+import { registerMarketplaceHandlers } from './marketplace-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -32,4 +33,5 @@ export function registerIPCHandlers(): void {
   registerOrchestrationHandlers();
   registerGitHandlers();
   registerSuggestionHandlers();
+  registerMarketplaceHandlers();
 }

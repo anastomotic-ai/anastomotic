@@ -435,6 +435,40 @@ interface AnastomoticAPI {
   openSkillInEditor(filePath: string): Promise<void>;
   showSkillInFolder(filePath: string): Promise<void>;
 
+  // Skill Marketplace
+  getMarketplaceCatalog(): Promise<
+    Array<{
+      id: string;
+      name: string;
+      description: string;
+      author: string;
+      category: string;
+      githubUrl: string;
+      downloads: number;
+      stars: number;
+      tags: string[];
+      verified: boolean;
+    }>
+  >;
+  searchMarketplace(
+    query: string,
+    category?: string,
+  ): Promise<
+    Array<{
+      id: string;
+      name: string;
+      description: string;
+      author: string;
+      category: string;
+      githubUrl: string;
+      downloads: number;
+      stars: number;
+      tags: string[];
+      verified: boolean;
+    }>
+  >;
+  installMarketplaceSkill(githubUrl: string): Promise<Skill | null>;
+
   // Sandbox configuration
   getSandboxConfig(): Promise<{
     mode: 'disabled' | 'native' | 'docker';

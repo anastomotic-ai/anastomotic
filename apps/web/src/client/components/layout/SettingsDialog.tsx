@@ -10,7 +10,7 @@ import { useProviderSettings } from '@/components/settings/hooks/useProviderSett
 import { ProviderGrid } from '@/components/settings/ProviderGrid';
 import { ProviderSettingsPanel } from '@/components/settings/ProviderSettingsPanel';
 import { SpeechSettingsForm } from '@/components/settings/SpeechSettingsForm';
-import { SkillsPanel, AddSkillDropdown } from '@/components/settings/skills';
+import { SkillsPanel, AddSkillDropdown, MarketplacePanel } from '@/components/settings/skills';
 import { WorkspacesPanel } from '@/components/settings/WorkspacesPanel';
 import { AboutTab } from '@/components/settings/AboutTab';
 import { GeneralTab } from '@/components/settings/GeneralTab';
@@ -34,6 +34,7 @@ import {
   Clock,
   CurrencyDollar,
   GitBranch,
+  Storefront,
 } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import logoImage from '/assets/logo-1.png';
@@ -41,6 +42,7 @@ import logoImage from '/assets/logo-1.png';
 const TABS = [
   { id: 'providers' as const, labelKey: 'tabs.providers', icon: Key },
   { id: 'skills' as const, labelKey: 'tabs.skills', icon: Lightning },
+  { id: 'marketplace' as const, labelKey: 'tabs.marketplace', icon: Storefront },
   { id: 'connectors' as const, labelKey: 'tabs.connectors', icon: Plugs },
   { id: 'daemon' as const, labelKey: 'tabs.daemon', icon: Robot },
   { id: 'browsers' as const, labelKey: 'tabs.browsers', icon: Globe },
@@ -68,6 +70,7 @@ interface SettingsDialogProps {
     | 'providers'
     | 'voice'
     | 'skills'
+    | 'marketplace'
     | 'connectors'
     | 'daemon'
     | 'browsers'
@@ -95,6 +98,7 @@ export function SettingsDialog({
     | 'providers'
     | 'voice'
     | 'skills'
+    | 'marketplace'
     | 'connectors'
     | 'daemon'
     | 'browsers'
@@ -494,6 +498,15 @@ export function SettingsDialog({
               {activeTab === 'skills' && (
                 <div className="space-y-4">
                   <SkillsPanel refreshTrigger={skillsRefreshTrigger} />
+                </div>
+              )}
+
+              {/* Marketplace Tab */}
+              {activeTab === 'marketplace' && (
+                <div className="space-y-4">
+                  <MarketplacePanel
+                    onSkillInstalled={() => setSkillsRefreshTrigger((prev) => prev + 1)}
+                  />
                 </div>
               )}
 

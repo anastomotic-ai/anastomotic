@@ -592,6 +592,41 @@ const AnastomoticAPI = {
   showSkillInFolder: (filePath: string): Promise<void> =>
     ipcRenderer.invoke('skills:show-in-folder', filePath),
 
+  // Skill Marketplace
+  getMarketplaceCatalog: (): Promise<
+    Array<{
+      id: string;
+      name: string;
+      description: string;
+      author: string;
+      category: string;
+      githubUrl: string;
+      downloads: number;
+      stars: number;
+      tags: string[];
+      verified: boolean;
+    }>
+  > => ipcRenderer.invoke('marketplace:catalog'),
+  searchMarketplace: (
+    query: string,
+    category?: string,
+  ): Promise<
+    Array<{
+      id: string;
+      name: string;
+      description: string;
+      author: string;
+      category: string;
+      githubUrl: string;
+      downloads: number;
+      stars: number;
+      tags: string[];
+      verified: boolean;
+    }>
+  > => ipcRenderer.invoke('marketplace:search', query, category),
+  installMarketplaceSkill: (githubUrl: string): Promise<Skill | null> =>
+    ipcRenderer.invoke('marketplace:install', githubUrl),
+
   // Daemon / Background Mode
   getRunInBackground: (): Promise<boolean> => ipcRenderer.invoke('daemon:get-run-in-background'),
   setRunInBackground: (enabled: boolean): Promise<void> =>

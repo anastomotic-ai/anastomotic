@@ -257,7 +257,8 @@
     "about": "About",
     "schedules": "Schedules",
     "costs": "Cost Tracking",
-    "pipelines": "Pipelines"
+    "pipelines": "Pipelines",
+    "marketplace": "Marketplace"
   },
   "notifications": {
     "toggle": {

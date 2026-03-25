@@ -117,6 +117,9 @@ export type {
 // Skills types
 export type { SkillSource, Skill, SkillFrontmatter } from './common/types/skills.js';
 
+// Marketplace types
+export type { MarketplaceSkill, MarketplaceCategory } from './services/marketplace.js';
+
 // Workspace types
 export type {
   Workspace,
