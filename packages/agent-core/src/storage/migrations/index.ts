@@ -29,6 +29,12 @@ import { migration as v019 } from './v019-cost-tracking.js';
 import { migration as v020 } from './v020-auto-learn.js';
 import { migration as v021 } from './v021-orchestration.js';
 import { migration as v022 } from './v022-webhooks.js';
+import { migration as v023 } from './v023-deep-memory.js';
+import { migration as v024 } from './v024-proactive-agent.js';
+import { migration as v025 } from './v025-team-enterprise.js';
+import { migration as v026 } from './v026-plugins.js';
+import { migration as v027 } from './v027-multimodal.js';
+import { migration as v028 } from './v028-offline-models.js';
 
 const migrations: Migration[] = [
   v001,
@@ -53,13 +59,19 @@ const migrations: Migration[] = [
   v020,
   v021,
   v022,
+  v023,
+  v024,
+  v025,
+  v026,
+  v027,
+  v028,
 ];
 export function registerMigration(migration: Migration): void {
   migrations.push(migration);
   migrations.sort((a, b) => a.version - b.version);
 }
 
-export const CURRENT_VERSION = 22;
+export const CURRENT_VERSION = 28;
 export function getStoredVersion(db: Database): number {
   try {
     const tableExists = db

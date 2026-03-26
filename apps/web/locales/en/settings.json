@@ -259,7 +259,13 @@
     "costs": "Cost Tracking",
     "pipelines": "Pipelines",
     "marketplace": "Marketplace",
-    "webhooks": "Webhooks"
+    "webhooks": "Webhooks",
+    "memory": "Memory",
+    "proactive": "Proactive Agent",
+    "team": "Teams",
+    "plugins": "Plugins",
+    "multimodal": "Multi-Modal",
+    "offline": "Offline"
   },
   "notifications": {
     "toggle": {

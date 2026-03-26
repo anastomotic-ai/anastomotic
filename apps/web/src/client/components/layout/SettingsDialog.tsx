@@ -22,6 +22,12 @@ import { SchedulePanel } from '@/components/settings/SchedulePanel';
 import { CostPanel } from '@/components/settings/CostPanel';
 import { OrchestrationPanel } from '@/components/settings/OrchestrationPanel';
 import { WebhooksPanel } from '@/components/settings/WebhooksPanel';
+import { MemoryPanel } from '@/components/settings/MemoryPanel';
+import { ProactivePanel } from '@/components/settings/ProactivePanel';
+import { TeamPanel } from '@/components/settings/TeamPanel';
+import { PluginPanel } from '@/components/settings/PluginPanel';
+import { MultimodalPanel } from '@/components/settings/MultimodalPanel';
+import { OfflinePanel } from '@/components/settings/OfflinePanel';
 import {
   Key,
   Lightning,
@@ -37,6 +43,12 @@ import {
   GitBranch,
   Storefront,
   Bell,
+  Brain,
+  Eye,
+  UsersThree,
+  PuzzlePiece,
+  ImageSquare,
+  WifiHigh,
 } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import logoImage from '/assets/logo-1.png';
@@ -53,6 +65,12 @@ const TABS = [
   { id: 'costs' as const, labelKey: 'tabs.costs', icon: CurrencyDollar },
   { id: 'pipelines' as const, labelKey: 'tabs.pipelines', icon: GitBranch },
   { id: 'webhooks' as const, labelKey: 'tabs.webhooks', icon: Bell },
+  { id: 'memory' as const, labelKey: 'tabs.memory', icon: Brain },
+  { id: 'proactive' as const, labelKey: 'tabs.proactive', icon: Eye },
+  { id: 'team' as const, labelKey: 'tabs.team', icon: UsersThree },
+  { id: 'plugins' as const, labelKey: 'tabs.plugins', icon: PuzzlePiece },
+  { id: 'multimodal' as const, labelKey: 'tabs.multimodal', icon: ImageSquare },
+  { id: 'offline' as const, labelKey: 'tabs.offline', icon: WifiHigh },
   { id: 'voice' as const, labelKey: 'tabs.voiceInput', icon: Microphone },
   { id: 'general' as const, labelKey: 'tabs.general', icon: GearSix },
   { id: 'about' as const, labelKey: 'tabs.about', icon: Info },
@@ -82,6 +100,12 @@ interface SettingsDialogProps {
     | 'costs'
     | 'pipelines'
     | 'webhooks'
+    | 'memory'
+    | 'proactive'
+    | 'team'
+    | 'plugins'
+    | 'multimodal'
+    | 'offline'
     | 'general'
     | 'about';
 }
@@ -111,6 +135,12 @@ export function SettingsDialog({
     | 'costs'
     | 'pipelines'
     | 'webhooks'
+    | 'memory'
+    | 'proactive'
+    | 'team'
+    | 'plugins'
+    | 'multimodal'
+    | 'offline'
     | 'general'
     | 'about'
   >(initialTab);
@@ -568,6 +598,48 @@ export function SettingsDialog({
               {activeTab === 'webhooks' && (
                 <div className="space-y-6">
                   <WebhooksPanel />
+                </div>
+              )}
+
+              {/* Deep Memory Tab */}
+              {activeTab === 'memory' && (
+                <div className="space-y-6">
+                  <MemoryPanel />
+                </div>
+              )}
+
+              {/* Proactive Agent Tab */}
+              {activeTab === 'proactive' && (
+                <div className="space-y-6">
+                  <ProactivePanel />
+                </div>
+              )}
+
+              {/* Team Tab */}
+              {activeTab === 'team' && (
+                <div className="space-y-6">
+                  <TeamPanel />
+                </div>
+              )}
+
+              {/* Plugins Tab */}
+              {activeTab === 'plugins' && (
+                <div className="space-y-6">
+                  <PluginPanel />
+                </div>
+              )}
+
+              {/* Multi-Modal Tab */}
+              {activeTab === 'multimodal' && (
+                <div className="space-y-6">
+                  <MultimodalPanel />
+                </div>
+              )}
+
+              {/* Offline Tab */}
+              {activeTab === 'offline' && (
+                <div className="space-y-6">
+                  <OfflinePanel />
                 </div>
               )}
 

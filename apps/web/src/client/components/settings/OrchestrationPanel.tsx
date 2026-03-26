@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Plus, Trash2, Play } from 'lucide-react';
 import { getAnastomotic } from '@/lib/anastomotic';
 import type { Pipeline, PipelineRun } from '@anastomotic_ai/agent-core/common';
-import { PipelineStepEditor, type StepDraft } from './PipelineStepEditor';
+import { type StepDraft } from './PipelineStepEditor';
+import { VisualPipelineBuilder } from './VisualPipelineBuilder';
 
 export function OrchestrationPanel() {
   const api = useMemo(() => getAnastomotic(), []);
@@ -182,7 +183,7 @@ export function OrchestrationPanel() {
             placeholder="Description (optional)"
             className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
           />
-          <PipelineStepEditor steps={steps} onChange={setSteps} />
+          <VisualPipelineBuilder steps={steps} onChange={setSteps} />
           <div className="flex gap-2 pt-1">
             <button
               onClick={handleCreate}

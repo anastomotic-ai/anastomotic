@@ -229,7 +229,15 @@
     "about": "关于",
     "schedules": "定时任务",
     "costs": "费用跟踪",
-    "pipelines": "流水线"
+    "pipelines": "流水线",
+    "marketplace": "应用市场",
+    "webhooks": "Webhooks",
+    "memory": "记忆",
+    "proactive": "主动代理",
+    "team": "团队",
+    "plugins": "插件",
+    "multimodal": "多模态",
+    "offline": "离线"
   },
   "notifications": {
     "toggle": {

@@ -281,9 +281,7 @@ export function getWebhookUrls(): WebhookConfig[] {
 
 export function setWebhookUrls(webhooks: WebhookConfig[]): void {
   const db = getDatabase();
-  db.prepare('UPDATE app_settings SET webhook_urls = ? WHERE id = 1').run(
-    JSON.stringify(webhooks),
-  );
+  db.prepare('UPDATE app_settings SET webhook_urls = ? WHERE id = 1').run(JSON.stringify(webhooks));
 }
 
 export function getAppSettings(): AppSettings {

@@ -647,6 +647,155 @@ const AnastomoticAPI = {
   testWebhook: (url: string, events: string[]): Promise<void> =>
     ipcRenderer.invoke('webhooks:test', url, events),
 
+  // Deep Memory
+  createMemory: (input: {
+    workspaceId?: string | null;
+    scope: string;
+    category: string;
+    content: string;
+    keywords?: string;
+  }): Promise<unknown> => ipcRenderer.invoke('memory:create', input),
+  listMemories: (workspaceId?: string, scope?: string, category?: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('memory:list', workspaceId, scope, category),
+  searchMemory: (query: string, workspaceId?: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('memory:search', query, workspaceId),
+  deleteMemory: (id: string): Promise<boolean> => ipcRenderer.invoke('memory:delete', id),
+  clearMemories: (workspaceId?: string): Promise<void> =>
+    ipcRenderer.invoke('memory:clear', workspaceId),
+  getMemoryStats: (workspaceId?: string): Promise<unknown> =>
+    ipcRenderer.invoke('memory:stats', workspaceId),
+  listPreferences: (workspaceId?: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('memory:preferences:list', workspaceId),
+  upsertPreference: (input: {
+    workspaceId?: string | null;
+    key: string;
+    label: string;
+    value: string;
+  }): Promise<unknown> => ipcRenderer.invoke('memory:preferences:upsert', input),
+  deletePreference: (id: string): Promise<boolean> =>
+    ipcRenderer.invoke('memory:preferences:delete', id),
+
+  // Proactive Agent
+  createFileWatcher: (input: {
+    name: string;
+    path: string;
+    patterns: string[];
+    action: string;
+  }): Promise<unknown> => ipcRenderer.invoke('proactive:watcher:create', input),
+  listFileWatchers: (): Promise<unknown[]> => ipcRenderer.invoke('proactive:watcher:list'),
+  updateFileWatcherStatus: (id: string, status: string): Promise<void> =>
+    ipcRenderer.invoke('proactive:watcher:updateStatus', id, status),
+  deleteFileWatcher: (id: string): Promise<boolean> =>
+    ipcRenderer.invoke('proactive:watcher:delete', id),
+  listAlerts: (status?: string, limit?: number): Promise<unknown[]> =>
+    ipcRenderer.invoke('proactive:alert:list', status, limit),
+  dismissAlert: (id: string): Promise<void> => ipcRenderer.invoke('proactive:alert:dismiss', id),
+  clearDismissedAlerts: (): Promise<void> => ipcRenderer.invoke('proactive:alert:clearDismissed'),
+  startProactiveAgent: (config?: Record<string, unknown>): Promise<void> =>
+    ipcRenderer.invoke('proactive:start', config),
+  stopProactiveAgent: (): Promise<void> => ipcRenderer.invoke('proactive:stop'),
+  getDefaultProactiveConfig: (): Promise<unknown> => ipcRenderer.invoke('proactive:defaultConfig'),
+
+  // Team & Enterprise
+  createTeam: (input: { name: string; description: string; ownerId: string }): Promise<unknown> =>
+    ipcRenderer.invoke('team:create', input),
+  listTeams: (): Promise<unknown[]> => ipcRenderer.invoke('team:list'),
+  deleteTeam: (id: string): Promise<boolean> => ipcRenderer.invoke('team:delete', id),
+  addTeamMember: (input: {
+    teamId: string;
+    name: string;
+    email: string;
+    role: string;
+  }): Promise<unknown> => ipcRenderer.invoke('team:member:add', input),
+  listTeamMembers: (teamId: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('team:member:list', teamId),
+  removeTeamMember: (id: string): Promise<boolean> => ipcRenderer.invoke('team:member:remove', id),
+  shareWorkspace: (teamId: string, workspaceId: string, sharedBy: string): Promise<unknown> =>
+    ipcRenderer.invoke('team:workspace:share', teamId, workspaceId, sharedBy),
+  listSharedWorkspaces: (teamId: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('team:workspace:list', teamId),
+  unshareWorkspace: (id: string): Promise<boolean> =>
+    ipcRenderer.invoke('team:workspace:unshare', id),
+  addAuditLog: (input: {
+    teamId: string;
+    userId: string;
+    action: string;
+    resource: string;
+    details: string;
+  }): Promise<unknown> => ipcRenderer.invoke('team:audit:add', input),
+  listAuditLog: (teamId: string, limit?: number): Promise<unknown[]> =>
+    ipcRenderer.invoke('team:audit:list', teamId, limit),
+
+  // Plugin API
+  installPlugin: (input: {
+    manifestId: string;
+    name: string;
+    version: string;
+    description: string;
+    author: string;
+    entryPoint: string;
+    hooks: Array<{ event: string; handler: string }>;
+    permissions: string[];
+  }): Promise<unknown> => ipcRenderer.invoke('plugin:install', input),
+  listPlugins: (): Promise<unknown[]> => ipcRenderer.invoke('plugin:list'),
+  getPlugin: (id: string): Promise<unknown> => ipcRenderer.invoke('plugin:get', id),
+  updatePluginStatus: (id: string, status: string): Promise<void> =>
+    ipcRenderer.invoke('plugin:updateStatus', id, status),
+  uninstallPlugin: (id: string): Promise<boolean> => ipcRenderer.invoke('plugin:uninstall', id),
+  listPluginEvents: (pluginId: string, limit?: number): Promise<unknown[]> =>
+    ipcRenderer.invoke('plugin:events', pluginId, limit),
+
+  // Multi-Modal Input/Output
+  addMediaAttachment: (input: {
+    type: string;
+    source: string;
+    name: string;
+    mimeType: string;
+    sizeBytes: number;
+    width?: number;
+    height?: number;
+    durationMs?: number;
+  }): Promise<unknown> => ipcRenderer.invoke('multimodal:media:add', input),
+  listMediaAttachments: (limit?: number): Promise<unknown[]> =>
+    ipcRenderer.invoke('multimodal:media:list', limit),
+  deleteMediaAttachment: (id: string): Promise<boolean> =>
+    ipcRenderer.invoke('multimodal:media:delete', id),
+  addStructuredOutput: (input: {
+    taskId: string;
+    outputType: string;
+    title: string;
+    data: string;
+  }): Promise<unknown> => ipcRenderer.invoke('multimodal:output:add', input),
+  listStructuredOutputs: (taskId: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('multimodal:output:list', taskId),
+  deleteStructuredOutput: (id: string): Promise<boolean> =>
+    ipcRenderer.invoke('multimodal:output:delete', id),
+
+  // Offline-First / Local Models
+  addLocalModel: (input: {
+    name: string;
+    provider: string;
+    modelId: string;
+    endpoint: string;
+    contextLength?: number;
+    isDefault?: boolean;
+  }): Promise<unknown> => ipcRenderer.invoke('offline:model:add', input),
+  listLocalModels: (): Promise<unknown[]> => ipcRenderer.invoke('offline:model:list'),
+  toggleLocalModel: (id: string, enabled: boolean): Promise<void> =>
+    ipcRenderer.invoke('offline:model:toggle', id, enabled),
+  deleteLocalModel: (id: string): Promise<boolean> =>
+    ipcRenderer.invoke('offline:model:delete', id),
+  enqueueOfflineTask: (input: {
+    taskPrompt: string;
+    priority?: number;
+    localModelId?: string;
+  }): Promise<unknown> => ipcRenderer.invoke('offline:queue:add', input),
+  listOfflineQueue: (status?: string): Promise<unknown[]> =>
+    ipcRenderer.invoke('offline:queue:list', status),
+  updateQueueItemStatus: (id: string, status: string, errorMessage?: string): Promise<void> =>
+    ipcRenderer.invoke('offline:queue:update', id, status, errorMessage),
+  clearCompletedQueue: (): Promise<void> => ipcRenderer.invoke('offline:queue:clear'),
+
   // Daemon / Background Mode
   getRunInBackground: (): Promise<boolean> => ipcRenderer.invoke('daemon:get-run-in-background'),
   setRunInBackground: (enabled: boolean): Promise<void> =>

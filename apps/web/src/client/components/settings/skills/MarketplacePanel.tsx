@@ -24,7 +24,14 @@ interface MarketplaceItem {
   verified: boolean;
 }
 
-type CategoryFilter = 'all' | 'development' | 'productivity' | 'data' | 'devops' | 'research' | 'writing';
+type CategoryFilter =
+  | 'all'
+  | 'development'
+  | 'productivity'
+  | 'data'
+  | 'devops'
+  | 'research'
+  | 'writing';
 
 const CATEGORY_LABELS: Record<CategoryFilter, string> = {
   all: 'All Categories',
@@ -207,9 +214,7 @@ export function MarketplacePanel({ onSkillInstalled }: MarketplacePanelProps) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-xs text-muted-foreground line-clamp-2">
-                      {item.description}
-                    </p>
+                    <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1">
@@ -227,7 +232,13 @@ export function MarketplacePanel({ onSkillInstalled }: MarketplacePanelProps) {
                     <div className="mt-auto flex items-center justify-between pt-1">
                       <div className="flex items-center gap-3 text-[11px] text-muted-foreground">
                         <span className="flex items-center gap-1">
-                          <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg
+                            className="h-3 w-3"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                             <polyline points="7 10 12 15 17 10" />
                             <line x1="12" y1="15" x2="12" y2="3" />
@@ -235,7 +246,13 @@ export function MarketplacePanel({ onSkillInstalled }: MarketplacePanelProps) {
                           {item.downloads.toLocaleString()}
                         </span>
                         <span className="flex items-center gap-1">
-                          <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg
+                            className="h-3 w-3"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                           </svg>
                           {item.stars}

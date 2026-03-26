@@ -296,7 +296,175 @@ export { generateTaskSummary } from './services/summarizer.js';
 export type { GetApiKeyFn } from './services/summarizer.js';
 
 // Auto-learner
-export { extractInsight } from './services/auto-learner.js';
+export { extractInsight, callProvider as callAutoLearnProvider } from './services/auto-learner.js';
+
+// Proactive Agent Service
+export {
+  startProactiveAgent,
+  stopProactiveAgent,
+  runProactiveChecks,
+  getDefaultProactiveConfig,
+} from './services/proactive-service.js';
+
+// Proactive Store
+export {
+  createFileWatcher,
+  getFileWatcher,
+  listFileWatchers,
+  updateFileWatcherStatus,
+  deleteFileWatcher,
+  createAlert,
+  getAlert,
+  listAlerts,
+  updateAlertStatus,
+  dismissAlert,
+  clearDismissedAlerts,
+} from './storage/repositories/proactiveStore.js';
+
+// Proactive types
+export type {
+  AlertType,
+  AlertPriority,
+  AlertStatus,
+  WatcherStatus,
+  FileWatcherConfig,
+  FileWatcherCreateInput,
+  ProactiveAlert,
+  ProactiveAlertCreateInput,
+  ProactiveConfig,
+} from './common/types/proactive.js';
+
+// Team Store
+export {
+  createTeam,
+  getTeam,
+  listTeams,
+  deleteTeam,
+  addTeamMember,
+  listTeamMembers,
+  removeTeamMember,
+  shareWorkspace,
+  listSharedWorkspaces,
+  unshareWorkspace,
+  addAuditLog,
+  listAuditLog,
+} from './storage/repositories/teamStore.js';
+
+// Team types
+export type {
+  TeamRole,
+  InviteStatus,
+  Team,
+  TeamCreateInput,
+  TeamMember,
+  TeamMemberCreateInput,
+  SharedWorkspace,
+  AuditLogEntry,
+  AuditLogCreateInput,
+} from './common/types/team.js';
+
+// Plugin Store
+export {
+  installPlugin,
+  listPlugins,
+  getPlugin,
+  updatePluginStatus,
+  uninstallPlugin,
+  listPluginEvents,
+} from './storage/repositories/pluginStore.js';
+
+// Plugin types
+export type {
+  PluginStatus,
+  PluginHook,
+  PluginManifest,
+  InstalledPlugin,
+  PluginInstallInput,
+  PluginEvent,
+} from './common/types/plugin.js';
+
+// Multimodal Store
+export {
+  addMediaAttachment,
+  getMediaAttachment,
+  listMediaAttachments,
+  deleteMediaAttachment,
+  addStructuredOutput,
+  listStructuredOutputs,
+  deleteStructuredOutput,
+} from './storage/repositories/multimodalStore.js';
+
+// Multimodal types
+export type {
+  MediaType,
+  MediaAttachment,
+  MediaAttachmentInput,
+  StructuredOutput,
+  StructuredOutputInput,
+  ImageAnalysisRequest,
+  ImageAnalysisResult,
+} from './common/types/multimodal.js';
+
+// Offline Store
+export {
+  addLocalModel,
+  getLocalModel,
+  listLocalModels,
+  updateLocalModelEnabled,
+  deleteLocalModel,
+  enqueueOfflineTask,
+  listOfflineQueue,
+  updateQueueItemStatus,
+  clearCompletedQueue,
+} from './storage/repositories/offlineStore.js';
+
+// Offline types
+export type {
+  OfflineStatus,
+  SyncState,
+  LocalModelConfig,
+  LocalModelCreateInput,
+  OfflineQueueItem,
+  OfflineQueueInput,
+  OfflineConfig,
+} from './common/types/offline.js';
+
+// Deep Memory Service
+export { extractDeepMemory, getEnhancedPromptContext } from './services/memory-service.js';
+
+// Memory Store
+export {
+  createMemoryEntry,
+  getMemoryEntry,
+  listMemoryEntries,
+  searchMemory,
+  deleteMemoryEntry,
+  clearMemoryEntries,
+  getMemoryStats,
+  getMemoryForPrompt,
+} from './storage/repositories/memoryStore.js';
+
+// Behavioral Preferences
+export {
+  listPreferences,
+  getPreference,
+  upsertPreference,
+  deletePreference,
+  getPreferencesForPrompt,
+} from './storage/repositories/preferences.js';
+
+// Memory types
+export type {
+  MemoryEntry,
+  MemoryCreateInput,
+  MemorySearchResult,
+  MemoryCategory,
+  MemoryScope,
+  BehavioralPreference,
+  PreferenceCreateInput,
+  PreferenceKey,
+  MemoryStats,
+} from './common/types/memory.js';
 
 // Smart Suggestions
 export { generateSuggestions } from './services/suggestions.js';
@@ -304,10 +472,7 @@ export type { TaskSuggestion, RecentTaskSummary } from './services/suggestions.j
 
 // Skill Marketplace
 export { getMarketplaceCatalog, searchMarketplace } from './services/marketplace.js';
-export type {
-  MarketplaceSkill,
-  MarketplaceCategory,
-} from './services/marketplace.js';
+export type { MarketplaceSkill, MarketplaceCategory } from './services/marketplace.js';
 
 // Webhook Notifications
 export { fireWebhooks } from './services/webhooks.js';

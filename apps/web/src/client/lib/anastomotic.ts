@@ -41,6 +41,22 @@ import type {
   PipelineCreateInput,
   PipelineUpdateInput,
   PipelineRun,
+  MemoryEntry,
+  MemorySearchResult,
+  MemoryStats,
+  BehavioralPreference,
+  FileWatcherConfig,
+  ProactiveAlert,
+  ProactiveConfig,
+  Team,
+  TeamMember,
+  SharedWorkspace,
+  AuditLogEntry,
+  InstalledPlugin,
+  MediaAttachment,
+  StructuredOutput,
+  LocalModelConfig,
+  OfflineQueueItem,
 } from '@anastomotic_ai/agent-core/common';
 import type { StoredFavorite } from '@anastomotic_ai/agent-core';
 
@@ -487,6 +503,128 @@ interface AnastomoticAPI {
     }>,
   ): Promise<void>;
   testWebhook(url: string, events: string[]): Promise<void>;
+
+  // Deep Memory
+  createMemory(input: {
+    workspaceId?: string | null;
+    scope: string;
+    category: string;
+    content: string;
+    keywords?: string;
+  }): Promise<MemoryEntry>;
+  listMemories(workspaceId?: string, scope?: string, category?: string): Promise<MemoryEntry[]>;
+  searchMemory(query: string, workspaceId?: string): Promise<MemorySearchResult[]>;
+  deleteMemory(id: string): Promise<boolean>;
+  clearMemories(workspaceId?: string): Promise<void>;
+  getMemoryStats(workspaceId?: string): Promise<MemoryStats>;
+  listPreferences(workspaceId?: string): Promise<BehavioralPreference[]>;
+  upsertPreference(input: {
+    workspaceId?: string | null;
+    key: string;
+    label: string;
+    value: string;
+  }): Promise<BehavioralPreference>;
+  deletePreference(id: string): Promise<boolean>;
+
+  // Proactive Agent
+  createFileWatcher(input: {
+    name: string;
+    path: string;
+    patterns: string[];
+    action: string;
+  }): Promise<FileWatcherConfig>;
+  listFileWatchers(): Promise<FileWatcherConfig[]>;
+  updateFileWatcherStatus(id: string, status: string): Promise<void>;
+  deleteFileWatcher(id: string): Promise<boolean>;
+  listAlerts(status?: string, limit?: number): Promise<ProactiveAlert[]>;
+  dismissAlert(id: string): Promise<void>;
+  clearDismissedAlerts(): Promise<void>;
+  startProactiveAgent(config?: Partial<ProactiveConfig>): Promise<void>;
+  stopProactiveAgent(): Promise<void>;
+  getDefaultProactiveConfig(): Promise<ProactiveConfig>;
+
+  // Team & Enterprise
+  createTeam(input: { name: string; description: string; ownerId: string }): Promise<Team>;
+  listTeams(): Promise<Team[]>;
+  deleteTeam(id: string): Promise<boolean>;
+  addTeamMember(input: {
+    teamId: string;
+    name: string;
+    email: string;
+    role: string;
+  }): Promise<TeamMember>;
+  listTeamMembers(teamId: string): Promise<TeamMember[]>;
+  removeTeamMember(id: string): Promise<boolean>;
+  shareWorkspace(teamId: string, workspaceId: string, sharedBy: string): Promise<SharedWorkspace>;
+  listSharedWorkspaces(teamId: string): Promise<SharedWorkspace[]>;
+  unshareWorkspace(id: string): Promise<boolean>;
+  addAuditLog(input: {
+    teamId: string;
+    userId: string;
+    action: string;
+    resource: string;
+    details: string;
+  }): Promise<AuditLogEntry>;
+  listAuditLog(teamId: string, limit?: number): Promise<AuditLogEntry[]>;
+
+  // Plugin API
+  installPlugin(input: {
+    manifestId: string;
+    name: string;
+    version: string;
+    description: string;
+    author: string;
+    entryPoint: string;
+    hooks: Array<{ event: string; handler: string }>;
+    permissions: string[];
+  }): Promise<InstalledPlugin>;
+  listPlugins(): Promise<InstalledPlugin[]>;
+  getPlugin(id: string): Promise<InstalledPlugin | null>;
+  updatePluginStatus(id: string, status: string): Promise<void>;
+  uninstallPlugin(id: string): Promise<boolean>;
+
+  // Multi-Modal Input/Output
+  addMediaAttachment(input: {
+    type: string;
+    source: string;
+    name: string;
+    mimeType: string;
+    sizeBytes: number;
+    width?: number;
+    height?: number;
+    durationMs?: number;
+  }): Promise<MediaAttachment>;
+  listMediaAttachments(limit?: number): Promise<MediaAttachment[]>;
+  deleteMediaAttachment(id: string): Promise<boolean>;
+  addStructuredOutput(input: {
+    taskId: string;
+    outputType: string;
+    title: string;
+    data: string;
+  }): Promise<StructuredOutput>;
+  listStructuredOutputs(taskId: string): Promise<StructuredOutput[]>;
+  deleteStructuredOutput(id: string): Promise<boolean>;
+
+  // Offline-First / Local Models
+  addLocalModel(input: {
+    name: string;
+    provider: string;
+    modelId: string;
+    endpoint: string;
+    contextLength?: number;
+    isDefault?: boolean;
+  }): Promise<LocalModelConfig>;
+  listLocalModels(): Promise<LocalModelConfig[]>;
+  toggleLocalModel(id: string, enabled: boolean): Promise<void>;
+  deleteLocalModel(id: string): Promise<boolean>;
+  enqueueOfflineTask(input: {
+    taskPrompt: string;
+    priority?: number;
+    localModelId?: string;
+  }): Promise<OfflineQueueItem>;
+  listOfflineQueue(status?: string): Promise<OfflineQueueItem[]>;
+  updateQueueItemStatus(id: string, status: string, errorMessage?: string): Promise<void>;
+  clearCompletedQueue(): Promise<void>;
 
   // Sandbox configuration
   getSandboxConfig(): Promise<{

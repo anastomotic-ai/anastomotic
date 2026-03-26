@@ -2,8 +2,6 @@
   <strong>English</strong> | <a href="README.zh-CN.md">中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.ko.md">한국어</a> | <a href="README.ru.md">Русский</a> | <a href="README.es.md">Español</a> | <a href="README.tr.md">Türkçe</a> | <a href="README.ar.md">العربية</a> | <a href="README.id.md">Bahasa Indonesia</a> | <a href="README.ta.md">தமிழ்</a> | <a href="README.hi.md">हिन्दी</a>
 </p>
 
-
-
 # Anastomotic™ - Open Source AI Desktop Agent
 
 Anastomotic is an open source AI desktop agent that automates file management, document creation, and browser tasks locally on your machine. Bring your own API keys (OpenAI, Anthropic, Google, xAI) or run local models via Ollama.
@@ -111,27 +109,27 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 ### Core Capabilities
 
-| Feature | Description |
-| :--- | :--- |
-| **📁 File Management** | Sort, rename, and move files based on content or rules |
-| **✍️ Document Writing** | Write, summarize, or rewrite documents with AI |
+| Feature                 | Description                                                 |
+| :---------------------- | :---------------------------------------------------------- |
+| **📁 File Management**  | Sort, rename, and move files based on content or rules      |
+| **✍️ Document Writing** | Write, summarize, or rewrite documents with AI              |
 | **🔗 Tool Connections** | Integrate with Notion, Google Drive, Dropbox via local APIs |
-| **⚙️ Custom Skills** | Define repeatable workflows and save them as skills |
-| **🛡️ Full Control** | Approve every action, view logs, stop anytime |
+| **⚙️ Custom Skills**    | Define repeatable workflows and save them as skills         |
+| **🛡️ Full Control**     | Approve every action, view logs, stop anytime               |
 
 ### Advanced Features
 
-| Feature | Description |
-| :--- | :--- |
-| **📅 Scheduled Tasks** | Schedule AI tasks with cron expressions — run daily reports, weekly cleanups, or hourly checks automatically |
-| **💰 Cost Tracking** | Monitor token usage and API costs per task with detailed breakdowns by model and provider |
-| **🧠 Auto-Learning** | Automatically extracts reusable insights from completed tasks and applies them to improve future results |
-| **🔀 Multi-Agent Pipelines** | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines |
-| **🔧 Git-Aware Code Agent** | Detects current branch and repo status — suggests git-related actions contextually on the home screen |
-| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text — or copy to clipboard with one click |
-| **💡 Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity |
-| **🏪 Skill Marketplace** | Browse and install community skills from a curated marketplace with one-click install |
-| **🔔 Notification Webhooks** | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure |
+| Feature                       | Description                                                                                                  |
+| :---------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| **📅 Scheduled Tasks**        | Schedule AI tasks with cron expressions — run daily reports, weekly cleanups, or hourly checks automatically |
+| **💰 Cost Tracking**          | Monitor token usage and API costs per task with detailed breakdowns by model and provider                    |
+| **🧠 Auto-Learning**          | Automatically extracts reusable insights from completed tasks and applies them to improve future results     |
+| **🔀 Multi-Agent Pipelines**  | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines                   |
+| **🔧 Git-Aware Code Agent**   | Detects current branch and repo status — suggests git-related actions contextually on the home screen        |
+| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text — or copy to clipboard with one click                   |
+| **💡 Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity        |
+| **🏪 Skill Marketplace**      | Browse and install community skills from a curated marketplace with one-click install                        |
+| **🔔 Notification Webhooks**  | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure             |
 
 <br />
 

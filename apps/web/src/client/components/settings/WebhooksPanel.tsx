@@ -64,9 +64,7 @@ export function WebhooksPanel() {
   }, []);
 
   const handleUpdate = useCallback((index: number, field: keyof WebhookConfig, value: unknown) => {
-    setWebhooks((prev) =>
-      prev.map((w, i) => (i === index ? { ...w, [field]: value } : w)),
-    );
+    setWebhooks((prev) => prev.map((w, i) => (i === index ? { ...w, [field]: value } : w)));
   }, []);
 
   const handleToggleEvent = useCallback((index: number, event: string) => {
@@ -113,7 +111,8 @@ export function WebhooksPanel() {
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">
-          Send HTTP POST notifications to Slack, Discord, or any webhook URL when tasks complete or fail.
+          Send HTTP POST notifications to Slack, Discord, or any webhook URL when tasks complete or
+          fail.
         </p>
         <Button variant="outline" size="sm" onClick={handleAdd}>
           Add Webhook
@@ -154,7 +153,13 @@ export function WebhooksPanel() {
                   onClick={() => handleRemove(index)}
                   className="text-muted-foreground hover:text-destructive transition-colors"
                 >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M18 6L6 18M6 6l12 12" />
                   </svg>
                 </button>

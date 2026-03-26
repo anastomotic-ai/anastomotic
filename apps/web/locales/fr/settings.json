@@ -257,7 +257,15 @@
     "daemon": "Démon",
     "schedules": "Planifications",
     "costs": "Suivi des coûts",
-    "pipelines": "Pipelines"
+    "pipelines": "Pipelines",
+    "marketplace": "Place de marché",
+    "webhooks": "Webhooks",
+    "memory": "Mémoire",
+    "proactive": "Agent proactif",
+    "team": "Équipes",
+    "plugins": "Extensions",
+    "multimodal": "Multi-Modal",
+    "offline": "Hors ligne"
   },
   "notifications": {
     "toggle": {
