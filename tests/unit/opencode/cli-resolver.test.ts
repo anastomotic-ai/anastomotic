@@ -140,20 +140,14 @@ describe('CLI Resolver', () => {
       const realLauncherPath = path.join(launcherStoreRoot, 'opencode-ai');
       const cliPath = path.join(launcherStoreRoot, 'opencode-windows-x64', 'bin', 'opencode.exe');
 
-      fs.mkdirSync(launcherPath, { recursive: true });
+      // Create the real target directory and CLI binary
       fs.mkdirSync(realLauncherPath, { recursive: true });
       fs.mkdirSync(path.dirname(cliPath), { recursive: true });
       fs.writeFileSync(cliPath, 'binary');
 
-      const originalRealpathSync = fs.realpathSync;
-      const realpathSpy = vi.spyOn(fs, 'realpathSync').mockImplementation(((
-        inputPath: fs.PathLike,
-      ) => {
-        if (String(inputPath) === launcherPath) {
-          return realLauncherPath;
-        }
-        return originalRealpathSync(inputPath);
-      }) as typeof fs.realpathSync);
+      // Create the parent for the symlink and use a directory junction (no admin rights needed on Windows)
+      fs.mkdirSync(path.dirname(launcherPath), { recursive: true });
+      fs.symlinkSync(realLauncherPath, launcherPath, 'junction');
 
       const result = resolveCliPath({
         isPackaged: false,
@@ -163,8 +157,6 @@ describe('CLI Resolver', () => {
       expect(result).not.toBeNull();
       expect(result?.source).toBe('local');
       expect(result?.cliPath).toBe(cliPath);
-
-      realpathSpy.mockRestore();
     });
   });
 

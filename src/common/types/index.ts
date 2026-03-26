@@ -126,6 +126,12 @@ export * from './task.js';
 export * from './thought-stream.js';
 export * from './todo.js';
 export * from './workspace.js';
+export * from './memory.js';
+export * from './proactive.js';
+export * from './team.js';
+export * from './plugin.js';
+export * from './multimodal.js';
+export * from './offline.js';
 
 export type {
   BrowserFramePayload,
