@@ -450,7 +450,7 @@ describe('ConfigGenerator', () => {
       // Should use node + dist path instead of tsx + src
       const command = result.mcpServers['file-permission'].command;
       expect(command?.[0]).toContain('node');
-      expect(command?.[1]).toContain('dist/index.mjs');
+      expect(command?.[1]).toContain(path.join('dist', 'index.mjs'));
     });
 
     it('should throw when bundled node is missing in packaged mode', () => {
@@ -477,7 +477,7 @@ describe('ConfigGenerator', () => {
 
       const command = result.mcpServers['file-permission'].command;
       expect(command?.[0]).toContain('node');
-      expect(command?.[1]).toContain('dist/index.mjs');
+      expect(command?.[1]).toContain(path.join('dist', 'index.mjs'));
     });
 
     it('should throw when MCP dist entry is missing', () => {

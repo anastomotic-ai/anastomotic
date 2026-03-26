@@ -29,7 +29,8 @@ const CATALOG: MarketplaceSkill[] = [
     description: 'Automated code review with best-practice checks and improvement suggestions.',
     author: 'Anastomotic',
     category: 'development',
-    githubUrl: 'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/code-review',
+    githubUrl:
+      'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/code-review',
     downloads: 4200,
     stars: 38,
     tags: ['code-quality', 'review', 'best-practices'],
@@ -41,7 +42,8 @@ const CATALOG: MarketplaceSkill[] = [
     description: 'Generate conventional commit messages from staged changes automatically.',
     author: 'Anastomotic',
     category: 'development',
-    githubUrl: 'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/git-commit',
+    githubUrl:
+      'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/git-commit',
     downloads: 3800,
     stars: 32,
     tags: ['git', 'commit', 'conventional-commits'],
@@ -53,7 +55,8 @@ const CATALOG: MarketplaceSkill[] = [
     description: 'Deep web research with source extraction, summarization, and citation tracking.',
     author: 'Anastomotic',
     category: 'research',
-    githubUrl: 'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/web-research',
+    githubUrl:
+      'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/web-research',
     downloads: 5100,
     stars: 45,
     tags: ['research', 'web', 'summarization'],
@@ -65,7 +68,8 @@ const CATALOG: MarketplaceSkill[] = [
     description: 'Download files from URLs with progress tracking and integrity verification.',
     author: 'Anastomotic',
     category: 'productivity',
-    githubUrl: 'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/download-file',
+    githubUrl:
+      'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/download-file',
     downloads: 2900,
     stars: 20,
     tags: ['download', 'files', 'http'],
@@ -77,7 +81,8 @@ const CATALOG: MarketplaceSkill[] = [
     description: 'Read, write, and manipulate Google Sheets spreadsheets with natural language.',
     author: 'Anastomotic',
     category: 'data',
-    githubUrl: 'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/google-sheets',
+    githubUrl:
+      'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/google-sheets',
     downloads: 3200,
     stars: 28,
     tags: ['google-sheets', 'spreadsheet', 'data'],
@@ -89,7 +94,8 @@ const CATALOG: MarketplaceSkill[] = [
     description: 'Build new skills with AI assistance — generates SKILL.md from a description.',
     author: 'Anastomotic',
     category: 'development',
-    githubUrl: 'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/skill-creator',
+    githubUrl:
+      'https://github.com/anastomotic-ai/anastomotic/tree/main/apps/desktop/bundled-skills/skill-creator',
     downloads: 2100,
     stars: 22,
     tags: ['meta', 'skill-builder', 'ai'],
@@ -134,7 +140,8 @@ const CATALOG: MarketplaceSkill[] = [
   {
     id: 'mp-db-explorer',
     name: 'Database Explorer',
-    description: 'Query and explore SQL databases with natural language. Supports Postgres, MySQL, SQLite.',
+    description:
+      'Query and explore SQL databases with natural language. Supports Postgres, MySQL, SQLite.',
     author: 'community',
     category: 'data',
     githubUrl: 'https://github.com/anastomotic-ai/skills-db-explorer',
@@ -173,7 +180,10 @@ export function getMarketplaceCatalog(): MarketplaceSkill[] {
   return CATALOG;
 }
 
-export function searchMarketplace(query: string, category?: MarketplaceCategory): MarketplaceSkill[] {
+export function searchMarketplace(
+  query: string,
+  category?: MarketplaceCategory,
+): MarketplaceSkill[] {
   let results = CATALOG;
 
   if (category) {

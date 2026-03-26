@@ -257,7 +257,15 @@
     "daemon": "Фоновый процесс",
     "schedules": "Расписания",
     "costs": "Учёт затрат",
-    "pipelines": "Конвейеры"
+    "pipelines": "Конвейеры",
+    "marketplace": "Маркетплейс",
+    "webhooks": "Вебхуки",
+    "memory": "Память",
+    "proactive": "Проактивный агент",
+    "team": "Команды",
+    "plugins": "Плагины",
+    "multimodal": "Мультимодальность",
+    "offline": "Офлайн"
   },
   "notifications": {
     "toggle": {

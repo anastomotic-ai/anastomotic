@@ -16,6 +16,7 @@ export default defineConfig({
       ),
       '@anastomotic_ai/agent-core': path.resolve(__dirname, '../../packages/agent-core/src'),
       '@locales': path.resolve(__dirname, 'locales'),
+      '/assets': path.resolve(__dirname, 'public/assets'),
     },
   },
   test: {

@@ -51,6 +51,7 @@ This skill automates email tasks through the browser using Gmail or Outlook Web.
 12. Take a screenshot confirming the email was sent
 
 **Confirmation template:**
+
 > I'm about to send this email:
 > **To:** {recipient}
 > **Subject:** {subject}
@@ -71,6 +72,7 @@ This skill automates email tasks through the browser using Gmail or Outlook Web.
 8. Present the content to the user
 
 **Output format:**
+
 ```
 Inbox ({count} recent):
 1. From: {sender} | Subject: {subject} | {time}
@@ -103,6 +105,7 @@ Inbox ({count} recent):
 5. Extract and present the matching emails
 
 **Search operators:**
+
 - `from:name@email.com` — emails from a specific sender
 - `to:name@email.com` — emails to a specific recipient
 - `subject:keyword` — emails with keyword in subject
@@ -158,59 +161,59 @@ Inbox ({count} recent):
 
 ## Gmail Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `C` | Compose new email |
-| `R` | Reply |
-| `A` | Reply all |
-| `F` | Forward |
-| `/` | Focus search bar |
-| `E` | Archive |
-| `#` | Delete |
-| `Ctrl+Enter` | Send email |
-| `Ctrl+Shift+C` | Add CC |
-| `Ctrl+Shift+B` | Add BCC |
-| `J` / `K` | Next / previous email |
-| `O` or `Enter` | Open email |
-| `U` | Return to inbox |
+| Shortcut       | Action                |
+| -------------- | --------------------- |
+| `C`            | Compose new email     |
+| `R`            | Reply                 |
+| `A`            | Reply all             |
+| `F`            | Forward               |
+| `/`            | Focus search bar      |
+| `E`            | Archive               |
+| `#`            | Delete                |
+| `Ctrl+Enter`   | Send email            |
+| `Ctrl+Shift+C` | Add CC                |
+| `Ctrl+Shift+B` | Add BCC               |
+| `J` / `K`      | Next / previous email |
+| `O` or `Enter` | Open email            |
+| `U`            | Return to inbox       |
 
 ## Outlook Web Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `N` | New email |
-| `R` | Reply |
-| `Ctrl+Shift+R` | Reply all |
-| `Ctrl+Shift+F` | Forward |
-| `Ctrl+Enter` | Send |
-| `Alt+Q` | Search |
-| `Delete` | Delete email |
-| `E` | Archive |
+| Shortcut       | Action       |
+| -------------- | ------------ |
+| `N`            | New email    |
+| `R`            | Reply        |
+| `Ctrl+Shift+R` | Reply all    |
+| `Ctrl+Shift+F` | Forward      |
+| `Ctrl+Enter`   | Send         |
+| `Alt+Q`        | Search       |
+| `Delete`       | Delete email |
+| `E`            | Archive      |
 
 ## UI Reference
 
 ### Gmail
 
-| Element | Location |
-|---------|----------|
-| Compose button | Top-left, above folder list |
-| Search bar | Top center, full width |
-| Inbox list | Center panel |
-| Email view | Center panel (replaces list) |
-| Reply box | Bottom of email thread |
-| Send button | Bottom-left of compose window |
-| CC/BCC | Click "Cc" or "Bcc" links next to "To" field |
+| Element        | Location                                     |
+| -------------- | -------------------------------------------- |
+| Compose button | Top-left, above folder list                  |
+| Search bar     | Top center, full width                       |
+| Inbox list     | Center panel                                 |
+| Email view     | Center panel (replaces list)                 |
+| Reply box      | Bottom of email thread                       |
+| Send button    | Bottom-left of compose window                |
+| CC/BCC         | Click "Cc" or "Bcc" links next to "To" field |
 
 ### Outlook Web
 
-| Element | Location |
-|---------|----------|
-| New mail button | Top-left |
-| Search bar | Top center |
-| Inbox list | Left panel |
-| Email view | Right panel (reading pane) |
-| Reply button | Top of email |
-| Send button | Top-left of compose area |
+| Element         | Location                   |
+| --------------- | -------------------------- |
+| New mail button | Top-left                   |
+| Search bar      | Top center                 |
+| Inbox list      | Left panel                 |
+| Email view      | Right panel (reading pane) |
+| Reply button    | Top of email               |
+| Send button     | Top-left of compose area   |
 
 ## Error Recovery
 

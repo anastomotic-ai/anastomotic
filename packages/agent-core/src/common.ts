@@ -131,6 +131,19 @@ export type {
   KnowledgeNoteUpdateInput,
 } from './common/types/workspace.js';
 
+// Deep Memory types
+export type {
+  MemoryEntry,
+  MemoryCreateInput,
+  MemorySearchResult,
+  MemoryCategory,
+  MemoryScope,
+  BehavioralPreference,
+  PreferenceCreateInput,
+  PreferenceKey,
+  MemoryStats,
+} from './common/types/memory.js';
+
 // Connector types
 export {
   OAuthProviderId,
@@ -198,6 +211,63 @@ export type {
   PipelineRun,
 } from './common/types/orchestration.js';
 export { ROLE_PROMPTS } from './common/types/orchestration.js';
+
+// Proactive Agent types
+export type {
+  AlertType,
+  AlertPriority,
+  AlertStatus,
+  WatcherStatus,
+  FileWatcherConfig,
+  FileWatcherCreateInput,
+  ProactiveAlert,
+  ProactiveAlertCreateInput,
+  ProactiveConfig,
+} from './common/types/proactive.js';
+
+// Team & Enterprise types
+export type {
+  TeamRole,
+  InviteStatus,
+  Team,
+  TeamCreateInput,
+  TeamMember,
+  TeamMemberCreateInput,
+  SharedWorkspace,
+  AuditLogEntry,
+  AuditLogCreateInput,
+} from './common/types/team.js';
+
+// Plugin types
+export type {
+  PluginStatus,
+  PluginHook,
+  PluginManifest,
+  InstalledPlugin,
+  PluginInstallInput,
+  PluginEvent,
+} from './common/types/plugin.js';
+
+// Multi-Modal types
+export type {
+  MediaType,
+  MediaAttachment,
+  MediaAttachmentInput,
+  StructuredOutput,
+  StructuredOutputInput,
+  ImageAnalysisRequest,
+  ImageAnalysisResult,
+} from './common/types/multimodal.js';
+
+export type {
+  OfflineStatus,
+  SyncState,
+  LocalModelConfig,
+  LocalModelCreateInput,
+  OfflineQueueItem,
+  OfflineQueueInput,
+  OfflineConfig,
+} from './common/types/offline.js';
 
 // === CONSTANTS ===
 export {

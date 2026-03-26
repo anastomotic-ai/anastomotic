@@ -46,6 +46,7 @@ This skill automates WhatsApp Web through the browser. Every action requires you
 14. Take a screenshot confirming the message was sent (look for the checkmark)
 
 **Confirmation template:**
+
 > I'm about to send this message to **{contact}**:
 > "{message}"
 > Should I proceed?
@@ -64,6 +65,7 @@ This skill automates WhatsApp Web through the browser. Every action requires you
 8. Compile the messages and present them to the user
 
 **Output format:**
+
 ```
 Last N messages from {contact}:
 1. [sender] (time): message text
@@ -97,6 +99,7 @@ Last N messages from {contact}:
 6. Present a summary to the user
 
 **Output format:**
+
 ```
 Unread messages:
 - {contact}: {count} unread
@@ -105,27 +108,27 @@ Unread messages:
 
 ## WhatsApp Web UI Reference
 
-| Element | Location | How to interact |
-|---------|----------|-----------------|
-| Search bar | Top of left sidebar | Click or press `Ctrl+K` |
-| Chat list | Left sidebar | Click on a contact to open |
-| Message input | Bottom of chat area | Click to focus, type message |
-| Send button | Right side of input box | Click or press `Enter` |
-| Reply arrow | Hover over a message | Click down-arrow icon |
-| Attach button | Left of message input (paperclip) | Click to attach files |
-| Emoji button | Left of message input (smiley) | Click to open emoji picker |
-| Unread badge | On chat list items | Green circle with number |
-| Back arrow | Top of chat area | Click to return to chat list |
+| Element       | Location                          | How to interact              |
+| ------------- | --------------------------------- | ---------------------------- |
+| Search bar    | Top of left sidebar               | Click or press `Ctrl+K`      |
+| Chat list     | Left sidebar                      | Click on a contact to open   |
+| Message input | Bottom of chat area               | Click to focus, type message |
+| Send button   | Right side of input box           | Click or press `Enter`       |
+| Reply arrow   | Hover over a message              | Click down-arrow icon        |
+| Attach button | Left of message input (paperclip) | Click to attach files        |
+| Emoji button  | Left of message input (smiley)    | Click to open emoji picker   |
+| Unread badge  | On chat list items                | Green circle with number     |
+| Back arrow    | Top of chat area                  | Click to return to chat list |
 
 ## Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+K` | Open search |
-| `Enter` | Send message |
-| `Shift+Enter` | New line in message |
-| `Escape` | Close search/panels |
-| `Ctrl+Shift+M` | Mute chat |
+| Shortcut       | Action              |
+| -------------- | ------------------- |
+| `Ctrl+K`       | Open search         |
+| `Enter`        | Send message        |
+| `Shift+Enter`  | New line in message |
+| `Escape`       | Close search/panels |
+| `Ctrl+Shift+M` | Mute chat           |
 
 ## Error Recovery
 

@@ -16,6 +16,12 @@ import { registerGitHandlers } from './git-handlers';
 import { registerSuggestionHandlers } from './suggestion-handlers';
 import { registerMarketplaceHandlers } from './marketplace-handlers';
 import { registerWebhookHandlers } from './webhook-handlers';
+import { registerMemoryHandlers } from './memory-handlers';
+import { registerProactiveHandlers } from './proactive-handlers';
+import { registerTeamHandlers } from './team-handlers';
+import { registerPluginHandlers } from './plugin-handlers';
+import { registerMultimodalHandlers } from './multimodal-handlers';
+import { registerOfflineHandlers } from './offline-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -36,4 +42,10 @@ export function registerIPCHandlers(): void {
   registerSuggestionHandlers();
   registerMarketplaceHandlers();
   registerWebhookHandlers();
+  registerMemoryHandlers();
+  registerProactiveHandlers();
+  registerTeamHandlers();
+  registerPluginHandlers();
+  registerMultimodalHandlers();
+  registerOfflineHandlers();
 }

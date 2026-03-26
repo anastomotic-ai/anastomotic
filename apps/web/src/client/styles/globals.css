@@ -68,39 +68,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Shadcn-inspired theme variables */
+/* Anastomotic theme */
 :root {
-  --background: 60 15% 96.3%; /* #F7F7F4 */
-  --foreground: 0 0% 12.5%; /* #202020 */
-  --card: 0 0% 98.8%; /* #fcfcfc */
-  --card-foreground: 0 0% 12.5%; /* #202020 */
-  --popover: 0 0% 98.8%; /* #fcfcfc */
-  --popover-foreground: 0 0% 12.5%; /* #202020 */
-  --primary: 123 30% 20%; /* #213c20 */
-  --primary-foreground: 0 0% 100%; /* #ffffff */
-  --secondary: 120 14% 85%; /* #d8dfd7 */
-  --secondary-foreground: 100 20% 18%; /* #2b391e */
-  --muted: 0 0% 93.7%; /* #efefef */
-  --muted-foreground: 0 0% 39.2%; /* #646464 */
-  --accent: 60 15% 96.3%; /* #F7F7F4 */
-  --accent-foreground: 0 0% 12.5%; /* #202020 */
-  --destructive: 8 78% 54%; /* #e54d2e */
-  --destructive-foreground: 0 0% 100%; /* #ffffff */
-  --border: 12 8% 90%; /* #eae2e1 */
-  --input: 0 0% 84.7%; /* #d8d8d8 */
-  --ring: 20 25% 33%; /* #644a40 */
-  --radius: 0.25rem;
-  --warning-subtle: 36 95% 95%;
+  --background: 220 20% 97%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 239 84% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 250 100% 97%;
+  --secondary-foreground: 263 70% 42%;
+  --muted: 214 32% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 226 100% 97%;
+  --accent-foreground: 244 47% 20%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 239 84% 67%;
+  --radius: 0.625rem;
+  --warning-subtle: 45 93% 95%;
   --success-subtle: 152 60% 93%;
-  --provider-bg: 40 20% 93%;
-  --provider-bg-active: 130 40% 93%;
-  --provider-bg-hover: 40 15% 96%;
-  --provider-border-active: 40 30% 25%;
-  --provider-accent: 123 30% 30%;
-  --provider-accent-text: 123 30% 15%;
-  --todo-progress-pending: 0 0% 85%;
-  --todo-item-completed: 36 11% 95%;
-  --todo-item-in-progress: 0 0% 98%;
+  --provider-bg: 220 20% 94%;
+  --provider-bg-active: 239 60% 95%;
+  --provider-bg-hover: 220 20% 96%;
+  --provider-border-active: 239 84% 67%;
+  --provider-accent: 239 84% 67%;
+  --provider-accent-text: 239 84% 40%;
+  --todo-progress-pending: 215 20% 85%;
+  --todo-item-completed: 239 60% 97%;
+  --todo-item-in-progress: 220 20% 98%;
+  --sidebar-bg: 226 30% 95%;
 }
 
 .dark {

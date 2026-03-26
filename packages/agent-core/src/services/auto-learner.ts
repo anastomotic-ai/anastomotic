@@ -108,7 +108,7 @@ export async function extractInsight(
   return null;
 }
 
-async function callProvider(
+export async function callProvider(
   provider: ApiKeyProvider,
   apiKey: string,
   prompt: string,

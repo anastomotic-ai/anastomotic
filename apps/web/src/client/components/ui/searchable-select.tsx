@@ -40,8 +40,8 @@ function SelectTrigger({
       type="button"
       onClick={onClick}
       data-testid={testId}
-      className={`w-full rounded-md border bg-background px-3 py-2.5 text-sm text-left flex items-center justify-between ${
-        error ? 'border-destructive' : 'border-input'
+      className={`w-full rounded-lg border bg-background px-3 py-2.5 text-sm text-left flex items-center justify-between transition-all duration-200 ${
+        error ? 'border-destructive' : 'border-input/60 hover:border-primary/30'
       }`}
     >
       <span className={displayValue ? 'text-foreground' : 'text-muted-foreground'}>
