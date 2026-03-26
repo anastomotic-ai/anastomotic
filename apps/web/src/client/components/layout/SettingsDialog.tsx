@@ -16,6 +16,7 @@ import { AboutTab } from '@/components/settings/AboutTab';
 import { GeneralTab } from '@/components/settings/GeneralTab';
 import { SandboxSection } from '@/components/settings/SandboxSection';
 import { ConnectorsPanel } from '@/components/settings/connectors';
+import { IntegrationsPanel } from '@/components/settings/integrations';
 import { DaemonPanel } from '@/components/settings/DaemonPanel';
 import { CloudBrowsersPanel } from '@/components/settings/CloudBrowsersPanel';
 import { SchedulePanel } from '@/components/settings/SchedulePanel';
@@ -49,6 +50,7 @@ import {
   PuzzlePiece,
   ImageSquare,
   WifiHigh,
+  ChatCircle,
 } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import logoImage from '/assets/logo-1.png';
@@ -71,6 +73,7 @@ const TABS = [
   { id: 'plugins' as const, labelKey: 'tabs.plugins', icon: PuzzlePiece },
   { id: 'multimodal' as const, labelKey: 'tabs.multimodal', icon: ImageSquare },
   { id: 'offline' as const, labelKey: 'tabs.offline', icon: WifiHigh },
+  { id: 'integrations' as const, labelKey: 'tabs.integrations', icon: ChatCircle },
   { id: 'voice' as const, labelKey: 'tabs.voiceInput', icon: Microphone },
   { id: 'general' as const, labelKey: 'tabs.general', icon: GearSix },
   { id: 'about' as const, labelKey: 'tabs.about', icon: Info },
@@ -106,6 +109,7 @@ interface SettingsDialogProps {
     | 'plugins'
     | 'multimodal'
     | 'offline'
+    | 'integrations'
     | 'general'
     | 'about';
 }
@@ -141,6 +145,7 @@ export function SettingsDialog({
     | 'plugins'
     | 'multimodal'
     | 'offline'
+    | 'integrations'
     | 'general'
     | 'about'
   >(initialTab);
@@ -640,6 +645,13 @@ export function SettingsDialog({
               {activeTab === 'offline' && (
                 <div className="space-y-6">
                   <OfflinePanel />
+                </div>
+              )}
+
+              {/* Integrations Tab */}
+              {activeTab === 'integrations' && (
+                <div className="space-y-6">
+                  <IntegrationsPanel />
                 </div>
               )}
 

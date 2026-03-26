@@ -265,7 +265,8 @@
     "team": "Teams",
     "plugins": "Plugins",
     "multimodal": "Multi-Modal",
-    "offline": "Offline"
+    "offline": "Offline",
+    "integrations": "Integrations"
   },
   "notifications": {
     "toggle": {
@@ -488,5 +489,10 @@
     },
     "empty": "No knowledge notes yet. Add notes to give your AI persistent context.",
     "maxNotes": "Maximum {{max}} notes per workspace"
+  },
+  "integrations": {
+    "title": "Messaging Integrations",
+    "description": "Connect messaging platforms to interact with Anastomotic via chat. Messages you send to yourself will be routed as tasks.",
+    "comingSoon": "Coming soon"
   }
 }

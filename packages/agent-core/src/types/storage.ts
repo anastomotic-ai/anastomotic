@@ -17,6 +17,7 @@ import type { McpConnector, ConnectorStatus, OAuthTokens } from '../common/types
 import type { SandboxConfig } from '../common/types/sandbox.js';
 import type { CloudBrowserConfig } from '../common/types/cloud-browser.js';
 import type { BlocklistEntry } from '../common/types/desktop.js';
+import type { MessagingConfig } from '../common/types/messaging.js';
 
 /** Options for creating a Storage instance */
 export interface StorageOptions {
@@ -174,6 +175,10 @@ export interface AppSettingsAPI {
   getSandboxConfig(): SandboxConfig;
   /** Set the sandbox configuration */
   setSandboxConfig(config: SandboxConfig): void;
+  /** Get the messaging integration configuration */
+  getMessagingConfig(): MessagingConfig | null;
+  /** Set the messaging integration configuration */
+  setMessagingConfig(config: MessagingConfig | null): void;
 }
 
 /** API for managing AI provider configurations */

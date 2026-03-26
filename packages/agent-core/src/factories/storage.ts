@@ -57,6 +57,8 @@ import {
   setNotificationsEnabled,
   getAutoLearnEnabled,
   setAutoLearnEnabled,
+  getMessagingConfig,
+  setMessagingConfig,
 } from '../storage/repositories/appSettings.js';
 import {
   getProviderSettings,
@@ -167,6 +169,8 @@ export function createStorage(options: StorageOptions = {}): StorageAPI {
     setNotificationsEnabled: (enabled) => setNotificationsEnabled(enabled),
     getAutoLearnEnabled: () => getAutoLearnEnabled(),
     setAutoLearnEnabled: (enabled) => setAutoLearnEnabled(enabled),
+    getMessagingConfig: () => getMessagingConfig(),
+    setMessagingConfig: (config) => setMessagingConfig(config),
 
     // Provider Settings
     getProviderSettings: () => getProviderSettings(),

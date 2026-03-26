@@ -265,7 +265,8 @@
     "team": "Équipes",
     "plugins": "Extensions",
     "multimodal": "Multi-Modal",
-    "offline": "Hors ligne"
+    "offline": "Hors ligne",
+    "integrations": "Intégrations"
   },
   "notifications": {
     "toggle": {
@@ -488,5 +489,10 @@
     },
     "empty": "Aucune note de contexte. Ajoutez des notes pour donner à votre IA un contexte persistant.",
     "maxNotes": "Maximum {{max}} notes par espace de travail"
+  },
+  "integrations": {
+    "title": "Intégrations de messagerie",
+    "description": "Connectez des plateformes de messagerie pour interagir avec Anastomotic via le chat. Les messages que vous vous envoyez seront traités comme des tâches.",
+    "comingSoon": "Bientôt disponible"
   }
 }
