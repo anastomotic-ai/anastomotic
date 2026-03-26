@@ -269,6 +269,17 @@ export type {
   OfflineConfig,
 } from './common/types/offline.js';
 
+// Messaging integration types
+export type {
+  MessagingProviderId,
+  MessagingConnectionStatus,
+  MessagingIntegrationConfig,
+  MessagingConfig,
+  MessagingQRCode,
+  IncomingMessage,
+  ChannelAdapter,
+} from './common/types/messaging.js';
+
 // === CONSTANTS ===
 export {
   DEV_BROWSER_PORT,

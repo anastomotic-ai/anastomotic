@@ -35,6 +35,7 @@ import { migration as v025 } from './v025-team-enterprise.js';
 import { migration as v026 } from './v026-plugins.js';
 import { migration as v027 } from './v027-multimodal.js';
 import { migration as v028 } from './v028-offline-models.js';
+import { migration as v029 } from './v029-messaging.js';
 
 const migrations: Migration[] = [
   v001,
@@ -65,13 +66,14 @@ const migrations: Migration[] = [
   v026,
   v027,
   v028,
+  v029,
 ];
 export function registerMigration(migration: Migration): void {
   migrations.push(migration);
   migrations.sort((a, b) => a.version - b.version);
 }
 
-export const CURRENT_VERSION = 28;
+export const CURRENT_VERSION = 29;
 export function getStoredVersion(db: Database): number {
   try {
     const tableExists = db

@@ -53,6 +53,8 @@ export {
   clearAppSettings,
   getAutoLearnEnabled,
   setAutoLearnEnabled,
+  getMessagingConfig,
+  setMessagingConfig,
   type AppSettings,
 } from './repositories/index.js';
 

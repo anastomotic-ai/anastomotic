@@ -132,6 +132,7 @@ export * from './team.js';
 export * from './plugin.js';
 export * from './multimodal.js';
 export * from './offline.js';
+export * from './messaging.js';
 
 export type {
   BrowserFramePayload,

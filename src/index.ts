@@ -203,6 +203,7 @@ export {
 
 // App Settings (direct exports for non-factory usage)
 export { getAutoLearnEnabled, setAutoLearnEnabled } from './storage/repositories/appSettings.js';
+export { getMessagingConfig, setMessagingConfig } from './storage/repositories/appSettings.js';
 
 // Task history helpers
 export { getTaskWorkspaceId, getTasks } from './storage/repositories/taskHistory.js';
