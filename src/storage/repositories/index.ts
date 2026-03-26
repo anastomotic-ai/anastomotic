@@ -27,6 +27,8 @@ export {
   setAutoLearnEnabled,
   getMessagingConfig,
   setMessagingConfig,
+  getHuggingFaceLocalConfig,
+  setHuggingFaceLocalConfig,
   type AppSettings,
 } from './appSettings.js';
 

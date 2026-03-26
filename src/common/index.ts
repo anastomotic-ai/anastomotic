@@ -41,6 +41,8 @@ export type {
   LiteLLMModel,
   LiteLLMConfig,
   LMStudioConfig,
+  HuggingFaceLocalModelInfo,
+  HuggingFaceLocalConfig,
   NimModel,
   NimConfig,
 } from './types/provider.js';
@@ -52,6 +54,7 @@ export {
   ZAI_ENDPOINTS,
   MINIMAX_DEFAULT_BASE_URL,
   NIM_DEFAULT_BASE_URL,
+  COPILOT_MODELS,
 } from './types/provider.js';
 
 // Provider settings types
@@ -71,12 +74,14 @@ export type {
   LMStudioCredentials,
   AzureFoundryCredentials,
   OAuthCredentials,
+  CopilotOAuthCredentials,
   CustomCredentials,
   NimCredentials,
   ProviderCredentials,
   ToolSupportStatus,
   ConnectedProvider,
   ProviderSettings,
+  HuggingFaceLocalCredentials,
 } from './types/providerSettings.js';
 export {
   PROVIDER_META,

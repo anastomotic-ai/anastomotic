@@ -47,6 +47,8 @@ export type {
   LiteLLMModel,
   LiteLLMConfig,
   LMStudioConfig,
+  HuggingFaceLocalModelInfo,
+  HuggingFaceLocalConfig,
 } from './common/types/provider.js';
 export {
   DEFAULT_PROVIDERS,
@@ -54,6 +56,7 @@ export {
   ALLOWED_API_KEY_PROVIDERS,
   STANDARD_VALIDATION_PROVIDERS,
   ZAI_ENDPOINTS,
+  COPILOT_MODELS,
 } from './common/types/provider.js';
 
 // Provider settings types
@@ -74,11 +77,13 @@ export type {
   LMStudioCredentials,
   AzureFoundryCredentials,
   OAuthCredentials,
+  CopilotOAuthCredentials,
   CustomCredentials,
   ProviderCredentials,
   ToolSupportStatus,
   ConnectedProvider,
   ProviderSettings,
+  HuggingFaceLocalCredentials,
 } from './common/types/providerSettings.js';
 export {
   PROVIDER_META,
