@@ -25,6 +25,7 @@ import { FutureSchemaError } from '@anastomotic_ai/agent-core';
 import { initThoughtStreamApi, startThoughtStreamServer } from './thought-stream-api';
 import type { ProviderId } from '@anastomotic_ai/agent-core';
 import { getTaskManager, disposeTaskManager, cleanupVertexServiceAccountKey } from './opencode';
+import { disposeWhatsAppService } from './services/whatsapp/singleton';
 import { stopAllBrowserPreviewStreams } from './services/browserPreview';
 import { oauthBrowserFlow } from './opencode/auth-browser';
 import { slackMcpOAuthFlow } from './opencode/slack-auth';
@@ -436,6 +437,11 @@ app.on('before-quit', (event) => {
       ]);
     } catch (error: unknown) {
       logger?.logEnv('ERROR', `[Main] Failed to stop browser preview streams: ${String(error)}`);
+    }
+    try {
+      disposeWhatsAppService();
+    } catch (error: unknown) {
+      logger?.logEnv('ERROR', `[Main] Error during disposeWhatsAppService: ${String(error)}`);
     }
     try {
       disposeTaskManager(); // Also cleans up proxies internally

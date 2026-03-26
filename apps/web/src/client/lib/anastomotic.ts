@@ -755,6 +755,19 @@ interface AnastomoticAPI {
     uncommittedCount: number;
     recentCommits: string[];
   } | null>;
+
+  // WhatsApp integration
+  getWhatsAppConfig(): Promise<{
+    enabled: boolean;
+    status: string;
+    phoneNumber?: string;
+    lastConnectedAt?: number;
+  } | null>;
+  connectWhatsApp(): Promise<void>;
+  disconnectWhatsApp(): Promise<void>;
+  setWhatsAppEnabled(enabled: boolean): Promise<void>;
+  onWhatsAppQR(callback: (data: { qr: string; expiresAt: number }) => void): () => void;
+  onWhatsAppStatus(callback: (data: { status: string; phone?: string }) => void): () => void;
 }
 
 interface AnastomoticShell {

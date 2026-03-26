@@ -237,7 +237,8 @@
     "team": "团队",
     "plugins": "插件",
     "multimodal": "多模态",
-    "offline": "离线"
+    "offline": "离线",
+    "integrations": "集成"
   },
   "notifications": {
     "toggle": {
@@ -488,5 +489,10 @@
     },
     "empty": "暂无知识笔记。添加笔记以为 AI 提供持久上下文。",
     "maxNotes": "每个工作空间最多 {{max}} 条笔记"
+  },
+  "integrations": {
+    "title": "消息集成",
+    "description": "连接消息平台以通过聊天与 Anastomotic 交互。您发送给自己的消息将作为任务处理。",
+    "comingSoon": "即将推出"
   }
 }

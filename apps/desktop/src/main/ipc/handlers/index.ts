@@ -22,6 +22,7 @@ import { registerTeamHandlers } from './team-handlers';
 import { registerPluginHandlers } from './plugin-handlers';
 import { registerMultimodalHandlers } from './multimodal-handlers';
 import { registerOfflineHandlers } from './offline-handlers';
+import { registerWhatsAppHandlers } from './whatsapp-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -48,4 +49,5 @@ export function registerIPCHandlers(): void {
   registerPluginHandlers();
   registerMultimodalHandlers();
   registerOfflineHandlers();
+  registerWhatsAppHandlers();
 }

@@ -1003,6 +1003,23 @@ const AnastomoticAPI = {
     ipcRenderer.on('workspace:deleted', listener);
     return () => ipcRenderer.removeListener('workspace:deleted', listener);
   },
+
+  // WhatsApp integration
+  getWhatsAppConfig: () => ipcRenderer.invoke('integrations:whatsapp:get-config'),
+  connectWhatsApp: () => ipcRenderer.invoke('integrations:whatsapp:connect'),
+  disconnectWhatsApp: () => ipcRenderer.invoke('integrations:whatsapp:disconnect'),
+  setWhatsAppEnabled: (enabled: boolean) =>
+    ipcRenderer.invoke('integrations:whatsapp:set-enabled', enabled),
+  onWhatsAppQR: (callback: (data: { qr: string; expiresAt: number }) => void) => {
+    const listener = (_: unknown, data: { qr: string; expiresAt: number }) => callback(data);
+    ipcRenderer.on('integrations:whatsapp:qr', listener);
+    return () => ipcRenderer.removeListener('integrations:whatsapp:qr', listener);
+  },
+  onWhatsAppStatus: (callback: (data: { status: string; phone?: string }) => void) => {
+    const listener = (_: unknown, data: { status: string; phone?: string }) => callback(data);
+    ipcRenderer.on('integrations:whatsapp:status', listener);
+    return () => ipcRenderer.removeListener('integrations:whatsapp:status', listener);
+  },
 };
 
 // Expose the API to the renderer
