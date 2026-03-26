@@ -6,7 +6,7 @@ export const taskConfigSchema = z.object({
   workingDirectory: z.string().optional(),
   allowedTools: z.array(z.string()).optional(),
   systemPromptAppend: z.string().optional(),
-  outputSchema: z.record(z.any()).optional(),
+  outputSchema: z.record(z.string(), z.any()).optional(),
   sessionId: z.string().optional(),
   chrome: z.boolean().optional(),
 });
