@@ -116,6 +116,14 @@ interface AnastomoticAPI {
   getSlackMcpOauthStatus(): Promise<{ connected: boolean; pendingAuthorization: boolean }>;
   loginSlackMcp(): Promise<{ ok: boolean }>;
   logoutSlackMcp(): Promise<void>;
+  getCopilotOAuthStatus(): Promise<{ connected: boolean; username?: string; expiresAt?: number }>;
+  loginGithubCopilot(): Promise<{
+    ok: boolean;
+    userCode?: string;
+    verificationUri?: string;
+    expiresIn?: number;
+  }>;
+  logoutGithubCopilot(): Promise<void>;
 
   // API Key management
   hasApiKey(): Promise<boolean>;
@@ -768,6 +776,27 @@ interface AnastomoticAPI {
   setWhatsAppEnabled(enabled: boolean): Promise<void>;
   onWhatsAppQR(callback: (data: { qr: string; expiresAt: number }) => void): () => void;
   onWhatsAppStatus(callback: (data: { status: string; phone?: string }) => void): () => void;
+
+  // HuggingFace Local LLM
+  startHuggingFaceServer(modelId: string): Promise<{ success: boolean; error?: string }>;
+  stopHuggingFaceServer(): Promise<{ success: boolean }>;
+  getHuggingFaceServerStatus(): Promise<{
+    running: boolean;
+    modelId?: string;
+    port?: number;
+  }>;
+  testHuggingFaceConnection(): Promise<{ success: boolean; error?: string }>;
+  downloadHuggingFaceModel(modelId: string): Promise<{ success: boolean; error?: string }>;
+  listHuggingFaceModels(): Promise<{
+    cached: Array<{ id: string; displayName: string; downloaded: boolean; sizeBytes?: number }>;
+    suggested: Array<{ id: string; displayName: string; downloaded: boolean; sizeBytes?: number }>;
+  }>;
+  deleteHuggingFaceModel(modelId: string): Promise<{ success: boolean; error?: string }>;
+  getHuggingFaceConfig(): Promise<unknown>;
+  setHuggingFaceConfig(config: unknown): Promise<void>;
+  onHuggingFaceDownloadProgress(
+    callback: (progress: { status: string; progress: number; error?: string }) => void,
+  ): () => void;
 }
 
 interface AnastomoticShell {

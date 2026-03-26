@@ -23,6 +23,7 @@ import { registerPluginHandlers } from './plugin-handlers';
 import { registerMultimodalHandlers } from './multimodal-handlers';
 import { registerOfflineHandlers } from './offline-handlers';
 import { registerWhatsAppHandlers } from './whatsapp-handlers';
+import { registerHuggingFaceHandlers } from './huggingface-handlers';
 
 export function registerIPCHandlers(): void {
   registerTaskHandlers();
@@ -50,4 +51,5 @@ export function registerIPCHandlers(): void {
   registerMultimodalHandlers();
   registerOfflineHandlers();
   registerWhatsAppHandlers();
+  registerHuggingFaceHandlers();
 }

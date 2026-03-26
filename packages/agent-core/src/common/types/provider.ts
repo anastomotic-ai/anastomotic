@@ -23,13 +23,15 @@ export type ProviderType =
   | 'litellm'
   | 'minimax'
   | 'lmstudio'
+  | 'huggingface-local'
   | 'vertex'
   | 'nebius'
   | 'together'
   | 'fireworks'
   | 'groq'
   | 'venice'
-  | 'nim';
+  | 'nim'
+  | 'copilot';
 
 export type ApiKeyProvider =
   | 'anthropic'
@@ -207,6 +209,21 @@ export interface LMStudioConfig {
   enabled: boolean;
   lastValidated?: number;
   models?: LMStudioModel[];
+}
+
+export interface HuggingFaceLocalModelInfo {
+  id: string;
+  displayName: string;
+  sizeBytes?: number;
+  downloaded: boolean;
+}
+
+export interface HuggingFaceLocalConfig {
+  selectedModelId: string | null;
+  serverPort: number | null;
+  enabled: boolean;
+  quantization: string | null;
+  devicePreference: string | null;
 }
 
 export const DEFAULT_PROVIDERS: ProviderConfig[] = [
@@ -462,9 +479,28 @@ export const DEFAULT_PROVIDERS: ProviderConfig[] = [
     },
     models: [],
   },
+  {
+    id: 'copilot',
+    name: 'GitHub Copilot',
+    requiresApiKey: false,
+    defaultModelId: 'copilot/gpt-4o',
+    models: [],
+  },
 ];
 
 export const NIM_DEFAULT_BASE_URL = 'https://integrate.api.nvidia.com/v1';
+
+// GitHub Copilot provider configuration
+export const COPILOT_MODELS: Array<{ id: string; displayName: string }> = [
+  { id: 'copilot/gpt-4o', displayName: 'GPT-4o' },
+  { id: 'copilot/gpt-4o-mini', displayName: 'GPT-4o mini' },
+  { id: 'copilot/o1', displayName: 'o1' },
+  { id: 'copilot/o1-mini', displayName: 'o1 mini' },
+  { id: 'copilot/o3-mini', displayName: 'o3 mini' },
+  { id: 'copilot/claude-3.5-sonnet', displayName: 'Claude 3.5 Sonnet' },
+  { id: 'copilot/claude-3.7-sonnet', displayName: 'Claude 3.7 Sonnet' },
+  { id: 'copilot/gemini-2.0-flash-001', displayName: 'Gemini 2.0 Flash' },
+];
 
 export interface NimModel {
   id: string;

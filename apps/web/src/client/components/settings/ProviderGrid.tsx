@@ -18,6 +18,7 @@ const PROVIDER_ORDER: ProviderId[] = [
   'zai',
   'ollama',
   'lmstudio',
+  'huggingface-local',
   'xai',
   'openrouter',
   'litellm',
@@ -28,6 +29,7 @@ const PROVIDER_ORDER: ProviderId[] = [
   'groq',
   'venice',
   'nim',
+  'copilot',
   'custom',
 ];
 

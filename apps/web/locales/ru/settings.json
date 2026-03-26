@@ -50,6 +50,7 @@
     "ollama": "Ollama",
     "openrouter": "OpenRouter",
     "lmstudio": "LM Studio",
+    "huggingface-local": "HuggingFace Local",
     "minimax": "MiniMax",
     "moonshot": "Moonshot",
     "litellm": "LiteLLM",
@@ -58,7 +59,8 @@
     "nebius": "Nebius AI",
     "together": "Together AI",
     "fireworks": "Fireworks AI",
-    "groq": "Groq"
+    "groq": "Groq",
+    "copilot": "GitHub Copilot"
   },
   "providerLabels": {
     "anthropic": "Модели Claude",
@@ -71,6 +73,7 @@
     "ollama": "Локальный вывод",
     "openrouter": "200+ моделей",
     "lmstudio": "Локальные модели",
+    "huggingface-local": "Локальные ONNX модели",
     "minimax": "Модели MiniMax",
     "moonshot": "Модели Kimi",
     "litellm": "Единый прокси",
@@ -79,7 +82,8 @@
     "nebius": "Модели Llama и DeepSeek",
     "together": "Модели Llama и Mixtral",
     "fireworks": "Модели быстрого вывода",
-    "groq": "Сверхбыстрые модели Llama"
+    "groq": "Сверхбыстрые модели Llama",
+    "copilot": "OAuth авторизация"
   },
   "status": {
     "connected": "Подключено",

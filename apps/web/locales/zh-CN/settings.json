@@ -50,6 +50,7 @@
     "ollama": "Ollama",
     "openrouter": "OpenRouter",
     "lmstudio": "LM Studio",
+    "huggingface-local": "HuggingFace 本地",
     "minimax": "MiniMax",
     "moonshot": "Moonshot",
     "litellm": "LiteLLM",
@@ -58,7 +59,8 @@
     "nebius": "Nebius AI",
     "together": "Together AI",
     "fireworks": "Fireworks AI",
-    "groq": "Groq"
+    "groq": "Groq",
+    "copilot": "GitHub Copilot"
   },
   "providerLabels": {
     "anthropic": "Claude 系列模型",
@@ -71,6 +73,7 @@
     "ollama": "本地推理",
     "openrouter": "200+ 模型",
     "lmstudio": "本地模型",
+    "huggingface-local": "本地 ONNX 模型",
     "minimax": "MiniMax 系列模型",
     "moonshot": "Kimi 系列模型",
     "litellm": "统一代理",
@@ -79,7 +82,8 @@
     "nebius": "Llama 和 DeepSeek 模型",
     "together": "Llama 和 Mixtral 模型",
     "fireworks": "快速推理模型",
-    "groq": "超快速 Llama 模型"
+    "groq": "超快 Llama 模型",
+    "copilot": "OAuth 设备授权"
   },
   "status": {
     "connected": "已连接",

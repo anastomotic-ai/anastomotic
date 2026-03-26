@@ -50,6 +50,7 @@
     "ollama": "Ollama",
     "openrouter": "OpenRouter",
     "lmstudio": "LM Studio",
+    "huggingface-local": "HuggingFace Local",
     "minimax": "MiniMax",
     "moonshot": "Moonshot",
     "litellm": "LiteLLM",
@@ -58,7 +59,8 @@
     "nebius": "Nebius AI",
     "together": "Together AI",
     "fireworks": "Fireworks AI",
-    "groq": "Groq"
+    "groq": "Groq",
+    "copilot": "GitHub Copilot"
   },
   "providerLabels": {
     "anthropic": "Modèles Claude",
@@ -71,6 +73,7 @@
     "ollama": "Inférence locale",
     "openrouter": "200+ modèles",
     "lmstudio": "Modèles locaux",
+    "huggingface-local": "Modèles ONNX locaux",
     "minimax": "Modèles MiniMax",
     "moonshot": "Modèles Kimi",
     "litellm": "Proxy unifié",
@@ -79,7 +82,8 @@
     "nebius": "Modèles Llama et DeepSeek",
     "together": "Modèles Llama et Mixtral",
     "fireworks": "Modèles d'inférence rapide",
-    "groq": "Modèles Llama ultra-rapides"
+    "groq": "Modèles Llama ultra-rapides",
+    "copilot": "Flux OAuth appareil"
   },
   "status": {
     "connected": "Connecté",

@@ -35,6 +35,8 @@ const PROVIDER_COLORS: Record<string, string> = {
   fireworks: 'bg-[#EF4444]', // Red
   groq: 'bg-[#F55036]', // Red-orange
   nim: 'bg-[#76B900]', // NVIDIA green
+  'huggingface-local': 'bg-[#FF9D00]', // HuggingFace yellow-orange
+  copilot: 'bg-[#24292F]', // GitHub dark
   custom: 'bg-[#6B7280]', // Gray
 };
 
@@ -61,6 +63,8 @@ const PROVIDER_INITIALS: Record<string, string> = {
   fireworks: 'F',
   groq: 'G',
   nim: 'N',
+  'huggingface-local': 'H',
+  copilot: 'C',
   custom: 'C',
 };
 

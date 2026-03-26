@@ -27,6 +27,7 @@ import type { ProviderId } from '@anastomotic_ai/agent-core';
 import { getTaskManager, disposeTaskManager, cleanupVertexServiceAccountKey } from './opencode';
 import { disposeWhatsAppService } from './services/whatsapp/singleton';
 import { stopAllBrowserPreviewStreams } from './services/browserPreview';
+import { stopHuggingFaceServer } from './providers/huggingface-local';
 import { oauthBrowserFlow } from './opencode/auth-browser';
 import { slackMcpOAuthFlow } from './opencode/slack-auth';
 import { migrateLegacyData } from './store/legacyMigration';
@@ -442,6 +443,11 @@ app.on('before-quit', (event) => {
       disposeWhatsAppService();
     } catch (error: unknown) {
       logger?.logEnv('ERROR', `[Main] Error during disposeWhatsAppService: ${String(error)}`);
+    }
+    try {
+      await stopHuggingFaceServer();
+    } catch (error: unknown) {
+      logger?.logEnv('ERROR', `[Main] Error during stopHuggingFaceServer: ${String(error)}`);
     }
     try {
       disposeTaskManager(); // Also cleans up proxies internally

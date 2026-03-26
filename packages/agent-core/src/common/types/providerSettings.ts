@@ -13,6 +13,7 @@ export type ProviderId =
   | 'litellm'
   | 'minimax'
   | 'lmstudio'
+  | 'huggingface-local'
   | 'vertex'
   | 'nebius'
   | 'together'
@@ -20,7 +21,8 @@ export type ProviderId =
   | 'groq'
   | 'venice'
   | 'nim'
-  | 'custom';
+  | 'custom'
+  | 'copilot';
 
 export type ProviderCategory = 'classic' | 'aws' | 'gcp' | 'azure' | 'local' | 'proxy' | 'hybrid';
 
@@ -137,6 +139,14 @@ export const PROVIDER_META: Record<ProviderId, ProviderMeta> = {
     logoKey: 'lmstudio',
     helpUrl: 'https://lmstudio.ai/',
   },
+  'huggingface-local': {
+    id: 'huggingface-local',
+    name: 'HuggingFace Local',
+    category: 'local',
+    label: 'Local Models',
+    logoKey: 'huggingface',
+    helpUrl: 'https://huggingface.co/docs/transformers.js',
+  },
   nebius: {
     id: 'nebius',
     name: 'Nebius AI',
@@ -192,6 +202,14 @@ export const PROVIDER_META: Record<ProviderId, ProviderMeta> = {
     label: 'Custom',
     logoKey: 'custom',
   },
+  copilot: {
+    id: 'copilot',
+    name: 'GitHub Copilot',
+    category: 'classic',
+    label: 'Service',
+    logoKey: 'github-copilot',
+    helpUrl: 'https://github.com/settings/copilot',
+  },
 };
 
 export type ConnectionStatus = 'disconnected' | 'connecting' | 'connected' | 'error';
@@ -240,6 +258,12 @@ export interface LMStudioCredentials {
   serverUrl: string;
 }
 
+export interface HuggingFaceLocalCredentials {
+  type: 'huggingface-local';
+  serverUrl: string;
+  modelId?: string;
+}
+
 export interface CustomCredentials {
   type: 'custom';
   baseUrl: string;
@@ -275,6 +299,10 @@ export interface OAuthCredentials {
   oauthProvider: 'chatgpt';
 }
 
+export interface CopilotOAuthCredentials {
+  type: 'copilot-oauth';
+}
+
 export type ProviderCredentials =
   | ApiKeyCredentials
   | BedrockProviderCredentials
@@ -285,7 +313,9 @@ export type ProviderCredentials =
   | ZaiCredentials
   | AzureFoundryCredentials
   | LMStudioCredentials
+  | HuggingFaceLocalCredentials
   | OAuthCredentials
+  | CopilotOAuthCredentials
   | CustomCredentials
   | NimCredentials;
 
@@ -346,6 +376,7 @@ export const DEFAULT_MODELS: Partial<Record<ProviderId, string>> = {
   groq: 'groq/llama3-70b-8192',
   venice: 'venice/llama-3.3-70b',
   nim: 'nim/meta/llama-3.1-70b-instruct',
+  copilot: 'copilot/gpt-4o',
 };
 
 export function getDefaultModelForProvider(providerId: ProviderId): string | null {
@@ -371,6 +402,7 @@ export const PROVIDER_ID_TO_OPENCODE: Record<ProviderId, string> = {
   litellm: 'litellm',
   minimax: 'minimax',
   lmstudio: 'lmstudio',
+  'huggingface-local': 'openai',
   vertex: 'vertex',
   nebius: 'nebius',
   together: 'together',
@@ -379,4 +411,5 @@ export const PROVIDER_ID_TO_OPENCODE: Record<ProviderId, string> = {
   venice: 'venice',
   nim: 'nim',
   custom: 'custom',
+  copilot: 'github-copilot',
 };

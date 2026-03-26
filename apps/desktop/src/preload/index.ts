@@ -105,6 +105,18 @@ const AnastomoticAPI = {
     ipcRenderer.invoke('opencode:auth:slack:status'),
   loginSlackMcp: (): Promise<{ ok: boolean }> => ipcRenderer.invoke('opencode:auth:slack:login'),
   logoutSlackMcp: (): Promise<void> => ipcRenderer.invoke('opencode:auth:slack:logout'),
+  getCopilotOAuthStatus: (): Promise<{
+    connected: boolean;
+    username?: string;
+    expiresAt?: number;
+  }> => ipcRenderer.invoke('opencode:auth:copilot:status'),
+  loginGithubCopilot: (): Promise<{
+    ok: boolean;
+    userCode?: string;
+    verificationUri?: string;
+    expiresIn?: number;
+  }> => ipcRenderer.invoke('opencode:auth:copilot:login'),
+  logoutGithubCopilot: (): Promise<void> => ipcRenderer.invoke('opencode:auth:copilot:logout'),
 
   // API Key management (new simplified handlers)
   hasApiKey: (): Promise<boolean> => ipcRenderer.invoke('api-key:exists'),
@@ -1019,6 +1031,38 @@ const AnastomoticAPI = {
     const listener = (_: unknown, data: { status: string; phone?: string }) => callback(data);
     ipcRenderer.on('integrations:whatsapp:status', listener);
     return () => ipcRenderer.removeListener('integrations:whatsapp:status', listener);
+  },
+
+  // HuggingFace Local LLM
+  startHuggingFaceServer: (modelId: string): Promise<{ success: boolean; error?: string }> =>
+    ipcRenderer.invoke('huggingface-local:start-server', modelId),
+  stopHuggingFaceServer: (): Promise<{ success: boolean }> =>
+    ipcRenderer.invoke('huggingface-local:stop-server'),
+  getHuggingFaceServerStatus: (): Promise<{
+    running: boolean;
+    modelId?: string;
+    port?: number;
+  }> => ipcRenderer.invoke('huggingface-local:server-status'),
+  testHuggingFaceConnection: (): Promise<{ success: boolean; error?: string }> =>
+    ipcRenderer.invoke('huggingface-local:test-connection'),
+  downloadHuggingFaceModel: (modelId: string): Promise<{ success: boolean; error?: string }> =>
+    ipcRenderer.invoke('huggingface-local:download-model', modelId),
+  listHuggingFaceModels: (): Promise<{
+    cached: Array<{ id: string; displayName: string; downloaded: boolean; sizeBytes?: number }>;
+    suggested: Array<{ id: string; displayName: string; downloaded: boolean; sizeBytes?: number }>;
+  }> => ipcRenderer.invoke('huggingface-local:list-models'),
+  deleteHuggingFaceModel: (modelId: string): Promise<{ success: boolean; error?: string }> =>
+    ipcRenderer.invoke('huggingface-local:delete-model', modelId),
+  getHuggingFaceConfig: (): Promise<unknown> => ipcRenderer.invoke('huggingface-local:get-config'),
+  setHuggingFaceConfig: (config: unknown): Promise<void> =>
+    ipcRenderer.invoke('huggingface-local:set-config', config),
+  onHuggingFaceDownloadProgress: (
+    callback: (progress: { status: string; progress: number; error?: string }) => void,
+  ) => {
+    const listener = (_: unknown, progress: { status: string; progress: number; error?: string }) =>
+      callback(progress);
+    ipcRenderer.on('huggingface-local:download-progress', listener);
+    return () => ipcRenderer.removeListener('huggingface-local:download-progress', listener);
   },
 };
 
