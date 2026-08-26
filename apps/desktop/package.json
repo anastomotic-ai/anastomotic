@@ -50,7 +50,7 @@
     "@aws-sdk/client-bedrock": "^3.971.0",
     "@aws-sdk/credential-providers": "^3.971.0",
     "@azure/identity": "^4.13.0",
-    "@huggingface/transformers": "^3.8.1",
+    "@huggingface/transformers": "^4.2.0",
     "@whiskeysockets/baileys": "7.0.0-rc.9",
     "better-sqlite3": "catalog:",
     "dotenv": "^17.2.3",
@@ -62,7 +62,7 @@
     "proxy-from-env": "^2.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "undici": "^7.0.0",
+    "undici": "^8.10.0",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -73,13 +73,13 @@
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vitest/coverage-v8": "^4.1.0",
-    "concurrently": "^9.1.2",
-    "electron": "^41.0.2",
+    "concurrently": "^10.0.5",
+    "electron": "^43.4.1",
     "electron-builder": "^26.8.1",
     "esbuild": "^0.27.3",
-    "typescript": "^6.0.2",
+    "typescript": "^7.0.2",
     "vite": "^8.0.0",
-    "vite-plugin-electron": "^0.29.1",
+    "vite-plugin-electron": "^1.1.1",
     "vitest": "^4.1.0"
   },
   "optionalDependencies": {
