@@ -4,7 +4,7 @@
 
 This repository contains open source software. While the source code is made available under an open source license (see [LICENSE](LICENSE)), the trademarks associated with the project are not licensed for unrestricted use.
 
-This document describes the trademarks owned by Anastomotic Ltd. and provides guidelines for their permitted and prohibited use.
+This document describes the trademarks owned by Rajdeep Singh and provides guidelines for their permitted and prohibited use.
 
 ## Trademark Ownership
 
@@ -27,7 +27,7 @@ Any permitted use must be consistent with honest commercial practices and must n
 
 You may not use the Anastomotic Trademarks in any manner that:
 
-- Suggests sponsorship, endorsement, or affiliation with Anastomotic Ltd. where none exists.
+- Suggests sponsorship, endorsement, or affiliation with Rajdeep Singh where none exists.
 - Is likely to cause confusion regarding the source of goods or services.
 - Is used as part of the name of a product, service, company, or domain name.
 - Is used in a logo, branding, or marketing material for a derived or competing product.
@@ -39,7 +39,7 @@ The [open source license](LICENSE) applicable to this repository grants rights t
 
 ## Reservation of Rights
 
-All rights in and to the Anastomotic Trademarks are reserved by Anastomotic Ltd. Any goodwill arising from use of the Anastomotic Trademarks inures exclusively to the benefit of Anastomotic Ltd.
+All rights in and to the Anastomotic Trademarks are reserved by Rajdeep Singh. Any goodwill arising from use of the Anastomotic Trademarks inures exclusively to the benefit of Rajdeep Singh.
 
 ## Questions and Contact
 
