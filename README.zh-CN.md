@@ -27,7 +27,7 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomotic 博客</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic 发布版本</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic 发布版本</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic 官网](https://www.anastomotic.ai/)** · **[Anastomotic 博客](https://www.anastomotic.ai/blog/)** · **[Anastomotic 发布版本](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[问题反馈](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic 官网](https://www.anastomotic.ai/)** · **[Anastomotic 博客](https://www.anastomotic.ai/blog/)** · **[Anastomotic 发布版本](https://github.com/anastomotic-ai/anastomotic/releases)** · **[问题反馈](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

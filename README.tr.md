@@ -27,7 +27,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomotic blogu</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic sürümleri</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic sürümleri</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic web sitesi](https://www.anastomotic.ai/)** · **[Anastomotic blogu](https://www.anastomotic.ai/blog/)** · **[Anastomotic sürümleri](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic web sitesi](https://www.anastomotic.ai/)** · **[Anastomotic blogu](https://www.anastomotic.ai/blog/)** · **[Anastomotic sürümleri](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

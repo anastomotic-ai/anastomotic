@@ -27,7 +27,7 @@ Anastomotic என்பது உங்கள் கணினியிலேய
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomotic வலைப்பதிவு</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic வெளியீடுகள்</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic வெளியீடுகள்</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic வலைத்தளம்](https://www.anastomotic.ai/)** · **[Anastomotic வலைப்பதிவு](https://www.anastomotic.ai/blog/)** · **[Anastomotic வெளியீடுகள்](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic வலைத்தளம்](https://www.anastomotic.ai/)** · **[Anastomotic வலைப்பதிவு](https://www.anastomotic.ai/blog/)** · **[Anastomotic வெளியீடுகள்](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

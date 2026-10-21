@@ -27,7 +27,7 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
   ·
   <a href="https://www.anastomotic.ai/blog/">Blog Anastomotic</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Rilis Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Rilis Anastomotic</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Website Anastomotic](https://www.anastomotic.ai/)** · **[Blog Anastomotic](https://www.anastomotic.ai/blog/)** · **[Rilis Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Website Anastomotic](https://www.anastomotic.ai/)** · **[Blog Anastomotic](https://www.anastomotic.ai/blog/)** · **[Rilis Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

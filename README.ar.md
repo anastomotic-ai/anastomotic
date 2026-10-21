@@ -27,7 +27,7 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
   ·
   <a href="https://www.anastomotic.ai/blog/">مدونة Anastomotic</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">إصدارات Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">إصدارات Anastomotic</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[موقع Anastomotic](https://www.anastomotic.ai/)** · **[مدونة Anastomotic](https://www.anastomotic.ai/blog/)** · **[إصدارات Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[المشكلات](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[موقع Anastomotic](https://www.anastomotic.ai/)** · **[مدونة Anastomotic](https://www.anastomotic.ai/blog/)** · **[إصدارات Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[المشكلات](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

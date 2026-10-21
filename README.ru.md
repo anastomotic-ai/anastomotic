@@ -27,7 +27,7 @@ Anastomotic — это открытый ИИ-агент для рабочего 
   ·
   <a href="https://www.anastomotic.ai/blog/">Блог Anastomotic</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Релизы Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Релизы Anastomotic</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Сайт Anastomotic](https://www.anastomotic.ai/)** · **[Блог Anastomotic](https://www.anastomotic.ai/blog/)** · **[Релизы Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Сайт Anastomotic](https://www.anastomotic.ai/)** · **[Блог Anastomotic](https://www.anastomotic.ai/blog/)** · **[Релизы Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

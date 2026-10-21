@@ -27,7 +27,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomotic blog</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic releases</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic releases</a>
 </p>
 
 <br />
@@ -46,9 +46,9 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 <div align="left">
 
-- Your files stay on your machine
+- Your task history and settings are stored on your machine
 - You decide which folders it can touch
-- Nothing gets sent to Anastomotic (or anyone else)
+- Cloud models receive task content and tool results needed to carry out your request; local models are available
 
 </div>
 
@@ -181,7 +181,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 ## Privacy and local-first
 
-Anastomotic runs locally on your machine. Your files stay on your device, and you choose which folders it can access.
+Anastomotic runs locally on your machine and stores task history locally. When you select a cloud AI provider, prompts and relevant file content or tool results are sent to that provider. Browser tasks and connectors communicate with the services you use. Local models are available; review your chosen model, tools, and connectors when working with private data.
 
 <br />
 
@@ -253,13 +253,13 @@ pnpm install
 pnpm dev
 ```
 
-That's it.
+See [Contributing](CONTRIBUTING.md) for setup, platform notes, and verification, and the [December 2026 roadmap](docs/roadmap-december-2026.md) for proposed release goals and contributor projects.
 
 <details>
 <summary><strong>Prerequisites</strong></summary>
 
-- Node.js 20+
-- pnpm 9+
+- Node.js 22.13.0 (see `.nvmrc`; the current Vite toolchain requires a recent Node.js release)
+- pnpm 9.15.0 (pinned in `packageManager`)
 
 </details>
 
@@ -295,14 +295,16 @@ That's it.
 
 ```
 apps/
-  desktop/        # Electron app (main + preload + renderer)
+  desktop/        # Electron main process and preload bridge
+  web/            # React interface, embedded by desktop
+  daemon/         # Background task execution service
 packages/
-  shared/         # Shared TypeScript types
+  agent-core/     # Agent runtime, storage, providers, types, and MCP tools
 ```
 
-The desktop app uses Electron with a React UI bundled via Vite. The main process spawns [OpenCode](https://github.com/sst/opencode) CLI using `node-pty` to execute tasks. API keys are stored securely in the OS keychain.
+The desktop app uses Electron with a React UI bundled via Vite. Its agent runtime spawns OpenCode CLI using `node-pty` to execute tasks. API keys are encrypted locally with AES-256-GCM and a machine-derived key.
 
-See [CLAUDE.md](CLAUDE.md) for detailed architecture documentation.
+See [docs/architecture.md](docs/architecture.md) for architecture and [the project assessment](docs/project-assessment.md) for observed limitations and verification results.
 
 </details>
 
@@ -331,7 +333,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic website](https://www.anastomotic.ai/)** · **[Anastomotic blog](https://www.anastomotic.ai/blog/)** · **[Anastomotic releases](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic website](https://www.anastomotic.ai/)** · **[Anastomotic blog](https://www.anastomotic.ai/blog/)** · **[Anastomotic releases](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

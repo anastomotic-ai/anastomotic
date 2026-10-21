@@ -8,21 +8,18 @@ This document describes the trademarks owned by Anastomotic Ltd. and provides gu
 
 ## Trademark Ownership
 
-ACCOMPLISH™ is a trademark of Anastomotic Ltd.
-OPENWORK™ is also a trademark of Anastomotic Ltd.
+This policy covers the Anastomotic name and project logo.
 
-Additional trademarks, service marks, logos, product names, or other brand identifiers may be owned or used by Anastomotic Ltd. now or in the future. All such marks, including ACCOMPLISH™ and OPENWORK™, are collectively referred to in this document as the "Anastomotic Trademarks".
-
-ACCOMPLISH™ and OPENWORK™ are currently the subject of pending trademark applications in the United States. Use of these marks prior to registration does not imply that they are registered trademarks.
+The Anastomotic name and project logo are collectively referred to in this document as the "Anastomotic Trademarks". This policy does not assert registration or pending trademark applications.
 
 ## Permitted Use
 
 You may use the Anastomotic Trademarks without prior written permission solely for the following purposes:
 
-- To refer to the ACCOMPLISH™ project or the OPENWORK™ brand in a factual and descriptive manner.
-- To identify an unmodified copy of the ACCOMPLISH™ software (including releases formerly branded as OPENWORK™).
-- To indicate compatibility with ACCOMPLISH™ or OPENWORK™, provided such use is truthful and non-misleading.
-- To discuss or review the ACCOMPLISH™ project or the OPENWORK™ brand, including in documentation, articles, or presentations.
+- To refer to the Anastomotic project in a factual and descriptive manner.
+- To identify an unmodified copy of the Anastomotic software.
+- To indicate compatibility with Anastomotic, provided such use is truthful and non-misleading.
+- To discuss or review the Anastomotic project, including in documentation, articles, or presentations.
 
 Any permitted use must be consistent with honest commercial practices and must not create confusion as to source, sponsorship, affiliation, or endorsement.
 

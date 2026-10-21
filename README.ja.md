@@ -27,7 +27,7 @@ Anastomoticは、お使いのマシン上でローカルにファイル管理、
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomoticブログ</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomoticリリース</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomoticリリース</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomoticウェブサイト](https://www.anastomotic.ai/)** · **[Anastomoticブログ](https://www.anastomotic.ai/blog/)** · **[Anastomoticリリース](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomoticウェブサイト](https://www.anastomotic.ai/)** · **[Anastomoticブログ](https://www.anastomotic.ai/blog/)** · **[Anastomoticリリース](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

@@ -27,7 +27,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
   ·
   <a href="https://www.anastomotic.ai/blog/">Blog de Anastomotic</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Versiones de Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Versiones de Anastomotic</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Sitio web de Anastomotic](https://www.anastomotic.ai/)** · **[Blog de Anastomotic](https://www.anastomotic.ai/blog/)** · **[Versiones de Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Sitio web de Anastomotic](https://www.anastomotic.ai/)** · **[Blog de Anastomotic](https://www.anastomotic.ai/blog/)** · **[Versiones de Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

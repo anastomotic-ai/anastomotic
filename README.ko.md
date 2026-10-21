@@ -27,7 +27,7 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomotic 블로그</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic 릴리스</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic 릴리스</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic 웹사이트](https://www.anastomotic.ai/)** · **[Anastomotic 블로그](https://www.anastomotic.ai/blog/)** · **[Anastomotic 릴리스](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic 웹사이트](https://www.anastomotic.ai/)** · **[Anastomotic 블로그](https://www.anastomotic.ai/blog/)** · **[Anastomotic 릴리스](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 

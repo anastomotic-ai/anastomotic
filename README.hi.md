@@ -27,7 +27,7 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
   ·
   <a href="https://www.anastomotic.ai/blog/">Anastomotic ब्लॉग</a>
   ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic रिलीज़</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic रिलीज़</a>
 </p>
 
 <br />
@@ -300,7 +300,7 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic वेबसाइट](https://www.anastomotic.ai/)** · **[Anastomotic ब्लॉग](https://www.anastomotic.ai/blog/)** · **[Anastomotic रिलीज़](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic वेबसाइट](https://www.anastomotic.ai/)** · **[Anastomotic ब्लॉग](https://www.anastomotic.ai/blog/)** · **[Anastomotic रिलीज़](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
