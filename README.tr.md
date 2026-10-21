@@ -26,7 +26,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ Yerel olarak çalışır
+### Yerel olarak çalışır
 
 <div align="left">
 
@@ -39,7 +39,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 Kendi AI'ınızı getirin
+### Kendi AI'ınızı getirin
 
 <div align="left">
 
@@ -55,7 +55,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 Açık kaynak
+### Açık kaynak
 
 <div align="left">
 
@@ -68,7 +68,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ Sadece sohbet değil, eylem
+### Sadece sohbet değil, eylem
 
 <div align="left">
 
@@ -93,10 +93,10 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 
 |                                                                                           |                                                                                          |                                                                                       |
 | :---------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ |
-| **📁 Dosya Yönetimi**                                                                     | **✍️ Belge Yazma**                                                                       | **🔗 Araç Bağlantıları**                                                              |
+| **Dosya Yönetimi**                                                                        | **Belge Yazma**                                                                          | **Araç Bağlantıları**                                                                 |
 | İçeriğe veya belirlediğiniz kurallara göre dosyaları sıralar, yeniden adlandırır ve taşır | Belge yazmasını, özetlemesini veya yeniden yazmasını isteyin                             | Notion, Google Drive, Dropbox ve daha fazlasıyla çalışır (yerel API'ler aracılığıyla) |
 |                                                                                           |                                                                                          |                                                                                       |
-| **⚙️ Özel Beceriler**                                                                     | **🛡️ Tam Kontrol**                                                                       |                                                                                       |
+| **Özel Beceriler**                                                                        | **Tam Kontrol**                                                                          |                                                                                       |
 | Tekrarlanabilir iş akışları tanımlayın, beceri olarak kaydedin                            | Her eylemi onaylarsınız. Günlükleri görebilirsiniz. İstediğiniz zaman durdurabilirsiniz. |                                                                                       |
 
 <br />

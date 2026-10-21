@@ -10,9 +10,9 @@
     "noConnectors": "Aucun connecteur",
     "manage": "Gérer",
     "dropFilesHere": "Déposez les fichiers ici pour les joindre",
-    "dropFilesHint": "(max {max} fichiers, {size}Mo chacun)",
-    "fileTooLarge": "{name} dépasse la limite de taille {limit}",
-    "tooManyFiles": "Maximum {max} fichiers autorisés",
+    "dropFilesHint": "(max {{max}} fichiers, {{size}}Mo chacun)",
+    "fileTooLarge": "{{name}} dépasse la limite de taille {{limit}}",
+    "tooManyFiles": "Maximum {{max}} fichiers autorisés",
     "selectFolder": "Sélectionner un dossier"
   },
   "examplePrompts": "Exemples de requêtes",
@@ -74,8 +74,8 @@
   },
   "selectFolder": "Sélectionner un dossier",
   "selectedFolder": {
-    "badge": "📁 {folder}",
+    "badge": "{{folder}}",
     "clearAriaLabel": "Effacer le dossier sélectionné",
-    "clearButton": "✕"
+    "clearButton": "Effacer"
   }
 }

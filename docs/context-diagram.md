@@ -16,16 +16,16 @@ graph TB
     classDef external fill:#999,color:#fff,stroke:#6B6B6B,stroke-width:2px
     classDef local fill:#438DD5,color:#fff,stroke:#3C7FC0,stroke-width:2px
 
-    User["👤 <b>User</b><br/><i>[Person]</i>"]:::person
+    User["<b>User</b><br/><i>[Person]</i>"]:::person
 
     Anastomotic["<b>Anastomotic</b><br/><i>[Software System]</i><br/><br/>AI desktop agent that automates<br/>tasks via natural language"]:::system
 
-    AI["☁️ <b>AI Providers</b><br/><i>Anthropic · OpenAI · Google<br/>+ 12 more (cloud & local)</i>"]:::external
-    FS["💾 <b>Local File System</b><br/><i>User's files & folders</i>"]:::local
-    BROWSER["🌐 <b>Web / SaaS</b><br/><i>Gmail · Slack · Notion<br/>Any website (via Playwright)</i>"]:::external
-    MCP["🔌 <b>MCP Connectors</b><br/><i>Remote tools (OAuth 2.0)</i>"]:::external
-    VOICE["🎤 <b>ElevenLabs</b><br/><i>Speech-to-text</i>"]:::external
-    SKILLS["📦 <b>GitHub</b><br/><i>Skill imports</i>"]:::external
+    AI["<b>AI Providers</b><br/><i>Anthropic · OpenAI · Google<br/>+ 12 more (cloud & local)</i>"]:::external
+    FS["<b>Local File System</b><br/><i>User's files & folders</i>"]:::local
+    BROWSER["<b>Web / SaaS</b><br/><i>Gmail · Slack · Notion<br/>Any website (via Playwright)</i>"]:::external
+    MCP["<b>MCP Connectors</b><br/><i>Remote tools (OAuth 2.0)</i>"]:::external
+    VOICE["<b>ElevenLabs</b><br/><i>Speech-to-text</i>"]:::external
+    SKILLS["<b>GitHub</b><br/><i>Skill imports</i>"]:::external
 
     User -->|"natural language tasks<br/>+ approvals"| Anastomotic
     Anastomotic -->|"progress · results<br/>· permission requests"| User

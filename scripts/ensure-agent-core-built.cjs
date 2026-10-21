@@ -259,5 +259,5 @@ if (missingMcpDistOutputs.length > 0) {
   }
 }
 
-console.log('✓ @anastomotic_ai/agent-core and MCP dist outputs found');
+console.log('@anastomotic_ai/agent-core and MCP dist outputs found');
 process.exit(0);

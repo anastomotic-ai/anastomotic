@@ -47,7 +47,7 @@ export async function handleCliCommand(args: string[]): Promise<void> {
       } else {
         console.log('Scheduled tasks:');
         for (const s of schedules) {
-          const status = s.enabled ? '✅' : '⏸️';
+          const status = s.enabled ? '[enabled]' : '[paused]';
           console.log(`  ${status} [${s.id}] "${s.prompt}" @ ${s.cron}`);
           if (s.nextRunAt) {
             console.log(`     Next run: ${s.nextRunAt}`);

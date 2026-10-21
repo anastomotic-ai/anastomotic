@@ -26,7 +26,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ It runs locally
+### It runs locally
 
 <div align="left">
 
@@ -39,7 +39,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 You bring your own AI
+### You bring your own AI
 
 <div align="left">
 
@@ -55,7 +55,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 It's open source
+### It's open source
 
 <div align="left">
 
@@ -68,7 +68,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ It acts, not just chats
+### It acts, not just chats
 
 <div align="left">
 
@@ -93,27 +93,27 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 ### Core Capabilities
 
-| Feature                 | Description                                                 |
-| :---------------------- | :---------------------------------------------------------- |
-| **📁 File Management**  | Sort, rename, and move files based on content or rules      |
-| **✍️ Document Writing** | Write, summarize, or rewrite documents with AI              |
-| **🔗 Tool Connections** | Integrate with Notion, Google Drive, Dropbox via local APIs |
-| **⚙️ Custom Skills**    | Define repeatable workflows and save them as skills         |
-| **🛡️ Full Control**     | Approve every action, view logs, stop anytime               |
+| Feature              | Description                                                 |
+| :------------------- | :---------------------------------------------------------- |
+| **File Management**  | Sort, rename, and move files based on content or rules      |
+| **Document Writing** | Write, summarize, or rewrite documents with AI              |
+| **Tool Connections** | Integrate with Notion, Google Drive, Dropbox via local APIs |
+| **Custom Skills**    | Define repeatable workflows and save them as skills         |
+| **Full Control**     | Approve every action, view logs, stop anytime               |
 
 ### Advanced Features
 
-| Feature                       | Description                                                                                                  |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| **📅 Scheduled Tasks**        | Schedule AI tasks with cron expressions - run daily reports, weekly cleanups, or hourly checks automatically |
-| **💰 Cost Tracking**          | Monitor token usage and API costs per task with detailed breakdowns by model and provider                    |
-| **🧠 Auto-Learning**          | Automatically extracts reusable insights from completed tasks and applies them to improve future results     |
-| **🔀 Multi-Agent Pipelines**  | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines                   |
-| **🔧 Git-Aware Code Agent**   | Detects current branch and repo status - suggests git-related actions contextually on the home screen        |
-| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text - or copy to clipboard with one click                   |
-| **💡 Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity        |
-| **🏪 Skill Marketplace**      | Browse and install community skills from a curated marketplace with one-click install                        |
-| **🔔 Notification Webhooks**  | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure             |
+| Feature                    | Description                                                                                                  |
+| :------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| **Scheduled Tasks**        | Schedule AI tasks with cron expressions - run daily reports, weekly cleanups, or hourly checks automatically |
+| **Cost Tracking**          | Monitor token usage and API costs per task with detailed breakdowns by model and provider                    |
+| **Auto-Learning**          | Automatically extracts reusable insights from completed tasks and applies them to improve future results     |
+| **Multi-Agent Pipelines**  | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines                   |
+| **Git-Aware Code Agent**   | Detects current branch and repo status - suggests git-related actions contextually on the home screen        |
+| **Export & Share Results** | Export task results as Markdown, JSON, or plain text - or copy to clipboard with one click                   |
+| **Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity        |
+| **Skill Marketplace**      | Browse and install community skills from a curated marketplace with one-click install                        |
+| **Notification Webhooks**  | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure             |
 
 <br />
 
@@ -125,10 +125,10 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 |                                                                    |                                                                      |                                                                         |
 | :----------------------------------------------------------------- | :------------------------------------------------------------------- | :---------------------------------------------------------------------- |
-| **📁 File Management**                                             | **✍️ Document Writing**                                              | **🔗 Tool Connections**                                                 |
+| **File Management**                                                | **Document Writing**                                                 | **Tool Connections**                                                    |
 | Sort, rename, and move files based on content or rules you give it | Prompt it to write, summarize, or rewrite documents                  | Works with Notion, Google Drive, Dropbox, and more (through local APIs) |
 |                                                                    |                                                                      |                                                                         |
-| **⚙️ Custom Skills**                                               | **🛡️ Full Control**                                                  |                                                                         |
+| **Custom Skills**                                                  | **Full Control**                                                     |                                                                         |
 | Define repeatable workflows, save them as skills                   | You approve every action. You can see logs. You can stop it anytime. |                                                                         |
 
 <br />

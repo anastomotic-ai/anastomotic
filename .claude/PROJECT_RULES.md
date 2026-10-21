@@ -11,9 +11,9 @@ Referenced from `CLAUDE.md` and the `address-ticket` skill.
 - **No `require()` in agent-core** - it is `"type": "module"`; use `import` everywhere
 - **`.js` extensions required** on every internal import inside agent-core
   ```ts
-  // ✅
+  // Good
   import { foo } from './utils/bar.js'
-  // ❌
+  // Bad
   import { foo } from './utils/bar'
   ```
 - Do not use internal classes directly - always go through factories:
@@ -32,9 +32,9 @@ Referenced from `CLAUDE.md` and the `address-ticket` skill.
 ### Image assets
 - Always use ES module imports in the web UI:
   ```ts
-  // ✅
+  // Good
   import logo from '/assets/logo.png'
-  // ❌  (breaks in packaged app)
+  // Bad  (breaks in packaged app)
   const logo = '/assets/logo.png'
   ```
 

@@ -10,9 +10,9 @@
     "noConnectors": "Нет коннекторов",
     "manage": "Управление",
     "dropFilesHere": "Перетащите файлы для прикрепления",
-    "dropFilesHint": "(макс. {max} файлов, по {size}МБ)",
-    "fileTooLarge": "{name} превышает ограничение {limit}",
-    "tooManyFiles": "Максимум {max} файлов",
+    "dropFilesHint": "(макс. {{max}} файлов, по {{size}}МБ)",
+    "fileTooLarge": "{{name}} превышает ограничение {{limit}}",
+    "tooManyFiles": "Максимум {{max}} файлов",
     "selectFolder": "Выбрать папку"
   },
   "examplePrompts": "Примеры запросов",
@@ -74,8 +74,8 @@
   },
   "selectFolder": "Выбрать папку",
   "selectedFolder": {
-    "badge": "📁 {folder}",
+    "badge": "{{folder}}",
     "clearAriaLabel": "Очистить выбранную папку",
-    "clearButton": "✕"
+    "clearButton": "Очистить"
   }
 }

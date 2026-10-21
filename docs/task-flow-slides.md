@@ -12,7 +12,7 @@ The complete happy path in one diagram - from user prompt to completion.
 
 ```mermaid
 graph LR
-  A["👤 User types prompt"] --> B["React UI"]
+  A["User types prompt"] --> B["React UI"]
   B -->|"IPC"| C["Electron Main"]
   C -->|"spawn PTY"| D["OpenCode CLI"]
   D -->|"API call"| E["AI Provider"]
@@ -29,7 +29,7 @@ graph LR
 
   D -->|"complete_task<br/>via MCP stdio"| C
   C -->|"persist + notify"| B
-  B --> I["✅ Task Complete"]
+  B --> I["Task Complete"]
 
   classDef user fill:#e1f5fe,stroke:#0277bd
   classDef ui fill:#fce4ec,stroke:#e53935
@@ -133,7 +133,7 @@ sequenceDiagram
   Main->>Main: CompletionEnforcer validates
   Main->>Main: Persist status + session ID
   Main->>UI: Task complete
-  UI->>User: "✅ You have 3 meetings tomorrow:<br/>9am Standup, 11am Design Review,<br/>2pm Sprint Planning"
+  UI->>User: "You have 3 meetings tomorrow:<br/>9am Standup, 11am Design Review,<br/>2pm Sprint Planning"
 ```
 
 ---
@@ -151,14 +151,14 @@ graph TD
   CHECK -->|"Yes, status=success"| TODO_CHECK{"All todos<br/>completed?"}
   CHECK -->|"No"| TOOLS_CHECK{"Did AI use<br/>any tools?"}
 
-  TODO_CHECK -->|"Yes"| DONE["✅ DONE<br/><i>Task succeeds</i>"]
+  TODO_CHECK -->|"Yes"| DONE["DONE<br/><i>Task succeeds</i>"]
   TODO_CHECK -->|"No"| DOWNGRADE["Downgrade to partial<br/><i>Force continuation</i>"]
 
   TOOLS_CHECK -->|"Yes"| RETRY_CHECK{"Attempts<br/>< 10?"}
   TOOLS_CHECK -->|"No tools,<br/>no todos"| CONVERSATIONAL["Treat as conversational<br/><i>Complete normally</i>"]
 
   RETRY_CHECK -->|"Yes"| CONTINUE["Spawn new PTY<br/><i>Same session ID<br/>+ continuation prompt</i>"]
-  RETRY_CHECK -->|"No"| MAX["⛔ MAX RETRIES<br/><i>Give up</i>"]
+  RETRY_CHECK -->|"No"| MAX["MAX RETRIES<br/><i>Give up</i>"]
 
   DOWNGRADE --> PARTIAL_RETRY{"Attempts<br/>< 10?"}
   PARTIAL_RETRY -->|"Yes"| PARTIAL_CONTINUE["Spawn new PTY<br/><i>+ partial continuation prompt<br/>(includes remaining work)</i>"]
@@ -251,7 +251,7 @@ sequenceDiagram
 
   UI->>User: "Allow create ~/Downloads/Docs?"
 
-  Note over OC: ⏳ Blocked waiting
+  Note over OC: Blocked waiting
 
   User->>UI: Click "Allow"
   UI->>Main: IPC: permission:respond { allow }

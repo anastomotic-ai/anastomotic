@@ -10,7 +10,7 @@ import { useTaskStore } from '@/stores/taskStore';
 import { getAnastomotic } from '@/lib/anastomotic';
 import { createLogger } from '@/lib/logger';
 import { springs } from '@/lib/animations';
-import { X, ArrowUpLeft, Lightbulb } from '@phosphor-icons/react';
+import { X, ArrowUpLeft, Lightbulb, Folder, GitBranch } from '@phosphor-icons/react';
 import { hasAnyReadyProvider } from '@anastomotic_ai/agent-core/common';
 import { PlusMenu } from '@/components/landing/PlusMenu';
 import { IntegrationIcon } from '@/components/landing/IntegrationIcons';
@@ -330,12 +330,16 @@ export function HomePage() {
               />
               {workingDirectory && (
                 <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
+                  <Folder className="h-3.5 w-3.5 shrink-0" />
                   <span className="truncate max-w-[400px]" title={workingDirectory}>
                     {t('selectedFolder.badge', { folder: workingDirectory })}
                   </span>
                   {gitInfo && (
                     <span className="flex items-center gap-1 text-xs">
-                      <span className="text-primary">⎇ {gitInfo.branch}</span>
+                      <span className="flex items-center gap-0.5 text-primary">
+                        <GitBranch className="h-3 w-3" />
+                        {gitInfo.branch}
+                      </span>
                       {gitInfo.isDirty && (
                         <span
                           className="text-yellow-500"
@@ -352,7 +356,7 @@ export function HomePage() {
                     className="ml-1 hover:text-foreground transition-colors"
                     aria-label={t('selectedFolder.clearAriaLabel')}
                   >
-                    ✕
+                    <X className="h-3 w-3" />
                   </button>
                 </div>
               )}

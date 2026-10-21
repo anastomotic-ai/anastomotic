@@ -607,7 +607,7 @@ jobs:
                   type: "section",
                   text: {
                     type: "mrkdwn",
-                    text: "✅ *Anastomotic v\($version) Released!*\n\nDownload the latest version from GitHub."
+                    text: "*Anastomotic v\($version) Released!*\n\nDownload the latest version from GitHub."
                   },
                   accessory: {
                     type: "button",

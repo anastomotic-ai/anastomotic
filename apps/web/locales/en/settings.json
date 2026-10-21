@@ -121,6 +121,8 @@
     "toolUnknown": "Tool support could not be verified",
     "toolUnknownDetail": "This model may or may not support tool/function calling. Test it to confirm.",
     "functionCallingVerified": "Function calling verified",
+    "toolsTag": "tools",
+    "noToolsTag": "no tools",
     "contextLengthWarning": "Context length requirement",
     "contextLengthWarningDetail": "Ensure your model is loaded with a large enough context length (max available recommended) in LM Studio settings."
   },

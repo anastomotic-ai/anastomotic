@@ -34,10 +34,7 @@ export function wireTaskBridge(service: WhatsAppService): { bridge: TaskBridge }
     try {
       bridge.setActiveTask(senderId, taskId);
       service
-        .sendMessage(
-          senderId,
-          `⏳ Task started: "${text.slice(0, 80)}${text.length > 80 ? '…' : ''}"`,
-        )
+        .sendMessage(senderId, `Task started: "${text.slice(0, 80)}${text.length > 80 ? '…' : ''}"`)
         .catch(() => {});
 
       const activeModel = storage.getActiveProviderModel();
@@ -80,7 +77,7 @@ export function wireTaskBridge(service: WhatsAppService): { bridge: TaskBridge }
                 lastAssistantContent.length > 200
                   ? lastAssistantContent.substring(0, 200) + '…'
                   : lastAssistantContent;
-              service.sendMessage(senderId, `⏳ ${preview}`).catch(() => {});
+              service.sendMessage(senderId, `In progress: ${preview}`).catch(() => {});
             }
           },
           onProgress: () => {},

@@ -121,6 +121,8 @@
     "toolUnknown": "无法验证工具支持",
     "toolUnknownDetail": "此模型可能支持也可能不支持工具/函数调用。请测试以确认。",
     "functionCallingVerified": "函数调用已验证",
+    "toolsTag": "支持工具",
+    "noToolsTag": "不支持工具",
     "contextLengthWarning": "上下文长度要求",
     "contextLengthWarningDetail": "请确保在 LM Studio 设置中加载模型时使用足够大的上下文长度（建议使用最大可用长度）。"
   },

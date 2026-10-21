@@ -12,7 +12,7 @@ Start here. This diagram shows the four major building blocks, their single-sent
 
 ```mermaid
 graph TB
-  USER(["👤 User"])
+  USER(["User"])
 
   subgraph ELECTRON["Anastomotic Desktop App"]
     direction TB
@@ -30,22 +30,22 @@ graph TB
 
     subgraph STORAGE["Storage"]
       direction LR
-      DB["🗄️ SQLite DB<br/><i>Tasks · messages · todos<br/>providers · skills · connectors</i>"]
-      KEYS["🔐 Secure Storage<br/><i>AES-256-GCM<br/>API keys · OAuth tokens</i>"]
+      DB["SQLite DB<br/><i>Tasks · messages · todos<br/>providers · skills · connectors</i>"]
+      KEYS["Secure Storage<br/><i>AES-256-GCM<br/>API keys · OAuth tokens</i>"]
     end
   end
 
   subgraph OC["OpenCode CLI  (PTY subprocess)"]
     OC_DESC["AI agent runtime<br/><i>LLM conversations · tool execution<br/>Bash · Read · Write · Edit · Glob · Grep</i>"]
-    OC_DB["🗄️ OpenCode DB<br/><i>~/.local/share/opencode/<br/>Sessions · conversation history</i>"]
+    OC_DB["OpenCode DB<br/><i>~/.local/share/opencode/<br/>Sessions · conversation history</i>"]
   end
 
   subgraph EXTERNAL["External Systems"]
     direction LR
-    AI["☁️ AI Providers<br/><i>Anthropic · OpenAI · Google<br/>+ 12 more</i>"]
-    FS["💾 Local Files"]
-    BROWSER["🌐 Browser<br/><i>Playwright</i>"]
-    MCP_EXT["🔌 MCP Connectors<br/><i>OAuth 2.0</i>"]
+    AI["AI Providers<br/><i>Anthropic · OpenAI · Google<br/>+ 12 more</i>"]
+    FS["Local Files"]
+    BROWSER["Browser<br/><i>Playwright</i>"]
+    MCP_EXT["MCP Connectors<br/><i>OAuth 2.0</i>"]
   end
 
   USER -->|"natural language task"| UI

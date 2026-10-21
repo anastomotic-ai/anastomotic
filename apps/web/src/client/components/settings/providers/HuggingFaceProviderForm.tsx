@@ -170,7 +170,7 @@ export function HuggingFaceProviderForm({
   };
 
   const allModels = [
-    ...cachedModels.map((m) => ({ id: m.id, name: `${m.displayName} ✓` })),
+    ...cachedModels.map((m) => ({ id: m.id, name: `${m.displayName} (downloaded)` })),
     ...suggestedModels
       .filter((s) => !cachedModels.some((c) => c.id === s.id))
       .map((m) => ({ id: m.id, name: m.displayName })),

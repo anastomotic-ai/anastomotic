@@ -26,7 +26,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ Se ejecuta localmente
+### Se ejecuta localmente
 
 <div align="left">
 
@@ -39,7 +39,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 Trae tu propia IA
+### Trae tu propia IA
 
 <div align="left">
 
@@ -55,7 +55,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 Es de código abierto
+### Es de código abierto
 
 <div align="left">
 
@@ -68,7 +68,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ Actúa, no solo chatea
+### Actúa, no solo chatea
 
 <div align="left">
 
@@ -93,10 +93,10 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 
 |                                                                        |                                                                                        |                                                                             |
 | :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **📁 Gestión de Archivos**                                             | **✍️ Escritura de Documentos**                                                         | **🔗 Conexiones de Herramientas**                                           |
+| **Gestión de Archivos**                                                | **Escritura de Documentos**                                                            | **Conexiones de Herramientas**                                              |
 | Ordena, renombra y mueve archivos según contenido o reglas que definas | Pídele que escriba, resuma o reescriba documentos                                      | Funciona con Notion, Google Drive, Dropbox y más (a través de APIs locales) |
 |                                                                        |                                                                                        |                                                                             |
-| **⚙️ Habilidades Personalizadas**                                      | **🛡️ Control Total**                                                                   |                                                                             |
+| **Habilidades Personalizadas**                                         | **Control Total**                                                                      |                                                                             |
 | Define flujos de trabajo repetibles, guárdalos como habilidades        | Apruebas cada acción. Puedes ver los registros. Puedes detenerlo en cualquier momento. |                                                                             |
 
 <br />

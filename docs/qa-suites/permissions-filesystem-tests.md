@@ -15,7 +15,7 @@ Tests covering the filesystem permission inline card and related access-control 
 | PERM-UI-05 | Permission inline card dismisses on denial        | 1. Trigger a permission request 2. Click **Deny**                                                     | Inline card disappears; task receives a permission-denied error                   |
 | PERM-UI-06 | Missing or empty file path renders fallback       | 1. Trigger a permission request with an empty file path                                               | Inline card displays "No file path provided" fallback text without crashing       |
 | PERM-UI-07 | Very long file path does not overflow             | 1. Trigger a permission request with a path ≥ 300 characters                                          | Inline card wraps or truncates the path without breaking the card layout          |
-| PERM-UI-08 | File path with special/Unicode characters renders | 1. Trigger a permission request for a path such as `/tmp/文件/émoji 🎉/file.txt`                      | Inline card renders the full path correctly without garbling or layout issues     |
+| PERM-UI-08 | File path with special/Unicode characters renders | 1. Trigger a permission request for a path such as `/tmp/文件/naïve café/file.txt`                    | Inline card renders the full path correctly without garbling or layout issues     |
 
 ---
 

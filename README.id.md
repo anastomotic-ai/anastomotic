@@ -26,7 +26,7 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ Berjalan secara lokal
+### Berjalan secara lokal
 
 <div align="left">
 
@@ -39,7 +39,7 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 Bawa AI Anda sendiri
+### Bawa AI Anda sendiri
 
 <div align="left">
 
@@ -55,7 +55,7 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 Open source
+### Open source
 
 <div align="left">
 
@@ -68,7 +68,7 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ Bertindak, bukan hanya mengobrol
+### Bertindak, bukan hanya mengobrol
 
 <div align="left">
 
@@ -93,10 +93,10 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 
 |                                                                                          |                                                                                               |                                                                               |
 | :--------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
-| **📁 Manajemen File**                                                                    | **✍️ Penulisan Dokumen**                                                                      | **🔗 Koneksi Tools**                                                          |
+| **Manajemen File**                                                                       | **Penulisan Dokumen**                                                                         | **Koneksi Tools**                                                             |
 | Urutkan, ganti nama, dan pindahkan file berdasarkan konten atau aturan yang Anda berikan | Minta untuk menulis, meringkas, atau menulis ulang dokumen                                    | Bekerja dengan Notion, Google Drive, Dropbox, dan lainnya (melalui API lokal) |
 |                                                                                          |                                                                                               |                                                                               |
-| **⚙️ Skill Kustom**                                                                      | **🛡️ Kontrol Penuh**                                                                          |                                                                               |
+| **Skill Kustom**                                                                         | **Kontrol Penuh**                                                                             |                                                                               |
 | Tentukan workflow yang dapat diulang, simpan sebagai skill                               | Anda menyetujui setiap tindakan. Anda bisa melihat log. Anda bisa menghentikannya kapan saja. |                                                                               |
 
 <br />

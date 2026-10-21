@@ -84,21 +84,21 @@ Work through each popup category below. Multiple may appear sequentially.
 | ------------------------------------------------- | ----------------------------------------------- |
 | "This type of file can harm your computer. Keep?" | Click **Keep** (only if user confirmed intent)  |
 | "Keep" / "Discard" warning on .exe .dmg .msi .bat | Click **Keep**                                  |
-| Download blocked by admin/policy                  | ⛔ Inform user. Cannot bypass. Stop skill.      |
+| Download blocked by admin/policy                  | STOP. Inform user. Cannot bypass. Stop skill.   |
 | "Download multiple files?"                        | Click **Allow** if user requested bulk download |
 
 #### 5b. Website Interstitials
 
 | Popup Type                          | Detection                           | Action                                                                 |
 | ----------------------------------- | ----------------------------------- | ---------------------------------------------------------------------- |
-| Login wall                          | Redirect to /login or modal         | ⛔ Stop. Inform user. Do not enter credentials.                        |
-| CAPTCHA                             | reCAPTCHA, hCaptcha widget visible  | ⛔ Stop. Ask user to complete it, then resume.                         |
+| Login wall                          | Redirect to /login or modal         | STOP. Inform user. Do not enter credentials.                           |
+| CAPTCHA                             | reCAPTCHA, hCaptcha widget visible  | STOP. Ask user to complete it, then resume.                            |
 | "Click here to start download" page | Countdown timer or redirect page    | Wait up to 10s for redirect. Click real download button if it appears. |
 | Terms of Service modal              | "I agree" checkbox or Accept button | Ask user for explicit confirmation before clicking Accept.             |
-| Email / survey gate                 | Form required before download       | ⛔ Stop. Inform user.                                                  |
+| Email / survey gate                 | Form required before download       | STOP. Inform user.                                                     |
 | Cookie / GDPR banner                | Overlaps download button            | Dismiss banner (decline non-essential). Retry click.                   |
 | Ad popup / rogue new tab            | Unwanted tab opens on click         | Close rogue tab. Return to original tab. Retry download.               |
-| Paywall                             | Subscription required message       | ⛔ Stop. Inform user.                                                  |
+| Paywall                             | Subscription required message       | STOP. Inform user.                                                     |
 
 #### 5c. OS-Level Dialogs (outside browser - inform user only)
 
@@ -138,7 +138,7 @@ States to handle:
   "Paused"      → click Resume
   "Failed"      → report error to user, offer to retry
   "Removed"     → file was cleared from list; check filesystem manually
-  "Complete"    ✅ → proceed to STEP 7
+  "Complete"    → proceed to STEP 7
 
 Also observable via:
   - Chrome download shelf (bottom bar, Windows)
@@ -151,9 +151,9 @@ Also observable via:
 
 ```
 Confirm on chrome://downloads:
-  ✅ Filename matches expected_filename (if provided)
-  ✅ Status = "Complete"
-  ✅ File path shown below filename
+  [x] Filename matches expected_filename (if provided)
+  [x] Status = "Complete"
+  [x] File path shown below filename
 
 Report to user:
   "Download complete: <filename> saved to <path>"

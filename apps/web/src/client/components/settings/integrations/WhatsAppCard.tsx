@@ -3,6 +3,7 @@
  *
  * State logic extracted to useWhatsAppCard hook for modularity.
  */
+import { Warning } from '@phosphor-icons/react';
 import { QRCodeDisplay } from './QRCodeDisplay';
 import { useWhatsAppCard } from './useWhatsAppCard';
 
@@ -148,8 +149,9 @@ export function WhatsAppCard() {
       {!isConnected && !isLoggedOut && !isQrReady && (
         <div className="space-y-3">
           <div className="rounded-lg bg-yellow-500/10 p-3">
-            <p className="text-xs text-yellow-700 dark:text-yellow-400">
-              ⚠️ This integration uses an unofficial WhatsApp Web protocol. Use at your own risk.
+            <p className="flex items-start gap-1.5 text-xs text-yellow-700 dark:text-yellow-400">
+              <Warning className="h-4 w-4 shrink-0" />
+              This integration uses an unofficial WhatsApp Web protocol. Use at your own risk.
             </p>
           </div>
           <button

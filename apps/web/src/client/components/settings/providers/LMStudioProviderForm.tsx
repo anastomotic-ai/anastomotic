@@ -104,14 +104,16 @@ function LMStudioModelSelector({
     return order[a.toolSupport] - order[b.toolSupport];
   });
 
-  const selectorModels = sortedModels.map((model) => {
-    const toolIcon =
-      model.toolSupport === 'supported' ? '✓' : model.toolSupport === 'unsupported' ? '✗' : '?';
-    return {
-      id: `lmstudio/${model.id}`,
-      name: `${model.name} ${toolIcon}`,
-    };
-  });
+  const toolTag: Record<ToolSupportStatus, string> = {
+    supported: ` (${t('common.toolsTag')})`,
+    unsupported: ` (${t('common.noToolsTag')})`,
+    unknown: '',
+  };
+
+  const selectorModels = sortedModels.map((model) => ({
+    id: `lmstudio/${model.id}`,
+    name: `${model.name}${toolTag[model.toolSupport]}`,
+  }));
 
   const selectedModel = models.find((m) => `lmstudio/${m.id}` === value);
   const hasUnsupportedSelected = selectedModel?.toolSupport === 'unsupported';

@@ -182,7 +182,7 @@ sequenceDiagram
   HTTP->>IPC: webContents.send('permission:request', req)
   IPC->>USER: Permission dialog shown
 
-  Note over OC,USER: ⏳ OpenCode PTY is blocked<br/>HTTP connection held open<br/>Main process event loop continues
+  Note over OC,USER: OpenCode PTY is blocked<br/>HTTP connection held open<br/>Main process event loop continues
 
   USER->>IPC: Click Allow/Deny
   IPC->>PRH: resolvePermissionRequest(id, allowed)
