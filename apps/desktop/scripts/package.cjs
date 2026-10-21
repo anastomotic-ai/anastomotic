@@ -12,7 +12,7 @@ const path = require('path');
 
 const isWindows = process.platform === 'win32';
 const nodeModulesPath = path.join(__dirname, '..', 'node_modules');
-const anastomoticPath = path.join(nodeModulesPath, '@ANASTOMOTIC_ai');
+const anastomoticPath = path.join(nodeModulesPath, '@anastomotic_ai');
 
 // Save symlink targets for restoration
 const workspacePackages = ['agent-core'];
@@ -51,7 +51,7 @@ try {
     }
   }
 
-  // Remove empty @ANASTOMOTIC_ai directory if it exists
+  // Remove empty @anastomotic_ai directory if it exists
   if (Object.keys(symlinkTargets).length > 0) {
     try {
       fs.rmdirSync(anastomoticPath);
@@ -113,7 +113,7 @@ try {
   if (packagesToRestore.length > 0) {
     console.log('Restoring workspace symlinks');
 
-    // Recreate @ANASTOMOTIC_ai directory if needed
+    // Recreate @anastomotic_ai directory if needed
     if (!fs.existsSync(anastomoticPath)) {
       fs.mkdirSync(anastomoticPath, { recursive: true });
     }

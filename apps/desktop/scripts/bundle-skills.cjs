@@ -25,7 +25,7 @@ const skillsDir = path.join(
   __dirname,
   '..',
   'node_modules',
-  '@ANASTOMOTIC_ai',
+  '@anastomotic_ai',
   'agent-core',
   'mcp-tools',
 );
