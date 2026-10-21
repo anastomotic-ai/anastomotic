@@ -2530,7 +2530,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: 'browser_script',
-      description: `⚡ PREFERRED: Execute complete browser workflows in ONE call. 5-10x faster than individual tools.
+      description: `PREFERRED: Execute complete browser workflows in ONE call. 5-10x faster than individual tools.
 
 ALWAYS use this for multi-step tasks. Actions find elements at RUNTIME using CSS selectors.
 Final page snapshot is AUTO-RETURNED - no need to add snapshot action.
@@ -2805,7 +2805,7 @@ The page has loaded. Use browser_snapshot() to see the page elements and find in
           }
 
           if (detectedCoordApp) {
-            output += `\n⚠️ COORDINATE-CLICK APP: ${detectedCoordApp}\n`;
+            output += `\nWARNING: COORDINATE-CLICK APP: ${detectedCoordApp}\n`;
             output += `Showing viewport-only elements. Scroll to reveal more. Clicks use coordinate-based clicking.\n`;
           }
 
