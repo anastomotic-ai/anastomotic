@@ -166,8 +166,7 @@ describe('Permission API Integration', () => {
 
       // Resolve the pending permission so the handler completes and the connection closes cleanly
       const capturedReq = send.mock.calls.find(([event]) => event === 'permission:request')?.[1] as
-        | { id: string }
-        | undefined;
+        { id: string } | undefined;
       if (capturedReq) {
         resolvePermission(capturedReq.id, true);
       }
@@ -216,8 +215,7 @@ describe('Permission API Integration', () => {
       });
 
       const capturedReq = send.mock.calls.find(([event]) => event === 'permission:request')?.[1] as
-        | { id: string }
-        | undefined;
+        { id: string } | undefined;
       if (capturedReq) {
         resolvePermission(capturedReq.id, true);
       }
@@ -284,8 +282,7 @@ describe('Permission API Integration', () => {
       });
 
       const capturedReq = send.mock.calls.find(([event]) => event === 'permission:request')?.[1] as
-        | { id: string }
-        | undefined;
+        { id: string } | undefined;
       if (capturedReq) {
         resolveQuestion(capturedReq.id, { selectedOptions: [], denied: false });
       }
@@ -338,8 +335,7 @@ describe('Permission API Integration', () => {
       });
 
       const capturedReq = send.mock.calls.find(([event]) => event === 'permission:request')?.[1] as
-        | { id: string }
-        | undefined;
+        { id: string } | undefined;
       if (capturedReq) {
         resolveQuestion(capturedReq.id, { selectedOptions: [], denied: false });
       }

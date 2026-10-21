@@ -267,8 +267,7 @@ export async function onBeforeStart(): Promise<void> {
   const azureFoundryConfig = storage.getAzureFoundryConfig();
   const azureFoundryProvider = storage.getConnectedProvider('azure-foundry');
   const azureFoundryCredentials = azureFoundryProvider?.credentials as
-    | AzureFoundryCredentials
-    | undefined;
+    AzureFoundryCredentials | undefined;
 
   const isAzureFoundryEntraId =
     (selectedModel?.provider === 'azure-foundry' &&

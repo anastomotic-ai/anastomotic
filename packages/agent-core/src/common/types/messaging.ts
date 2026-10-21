@@ -8,12 +8,7 @@
 export type MessagingProviderId = 'whatsapp' | 'slack' | 'telegram' | 'teams';
 
 export type MessagingConnectionStatus =
-  | 'connecting'
-  | 'qr_ready'
-  | 'connected'
-  | 'disconnected'
-  | 'logged_out'
-  | 'reconnecting';
+  'connecting' | 'qr_ready' | 'connected' | 'disconnected' | 'logged_out' | 'reconnecting';
 
 export interface MessagingIntegrationConfig {
   platform: MessagingProviderId;

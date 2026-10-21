@@ -2485,11 +2485,9 @@ describe('IPC Handlers Integration', () => {
       // Second call: JSON report
       const calls = (fs.promises.writeFile as unknown as Mock).mock.calls;
       const jsonCall = calls.find((c: unknown[]) => typeof c[1] === 'string') as
-        | [string, string]
-        | undefined;
+        [string, string] | undefined;
       const pngCall = calls.find((c: unknown[]) => Buffer.isBuffer(c[1])) as
-        | [string, Buffer]
-        | undefined;
+        [string, Buffer] | undefined;
 
       expect(jsonCall).toBeDefined();
       const jsonContent = JSON.parse(jsonCall![1]) as { hasScreenshot: boolean };

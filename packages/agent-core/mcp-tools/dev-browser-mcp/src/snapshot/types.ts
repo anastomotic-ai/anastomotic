@@ -73,8 +73,7 @@ export interface SnapshotDiff {
 }
 
 export type SnapshotResult =
-  | { type: 'full'; content: string }
-  | { type: 'diff'; content: string; unchangedRefs: string[] };
+  { type: 'full'; content: string } | { type: 'diff'; content: string; unchangedRefs: string[] };
 
 export interface SessionHistoryEntry {
   url: string;

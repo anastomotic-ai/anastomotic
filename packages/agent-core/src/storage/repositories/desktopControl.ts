@@ -17,8 +17,7 @@ interface BlocklistRow {
 function getBlocklistJson(): string | null {
   const db = getDatabase();
   const row = db.prepare('SELECT desktop_blocklist FROM app_settings WHERE id = 1').get() as
-    | BlocklistRow
-    | undefined;
+    BlocklistRow | undefined;
   return row?.desktop_blocklist ?? null;
 }
 

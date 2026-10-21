@@ -37,8 +37,7 @@ export function addMediaAttachment(input: MediaAttachmentInput): MediaAttachment
 export function getMediaAttachment(id: string): MediaAttachment | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM media_attachments WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   if (!row) {
     return null;
   }

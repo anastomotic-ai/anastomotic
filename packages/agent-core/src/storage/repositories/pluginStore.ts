@@ -75,8 +75,7 @@ export function listPlugins(): InstalledPlugin[] {
 export function getPlugin(id: string): InstalledPlugin | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM plugins WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToPlugin(row) : null;
 }
 

@@ -78,8 +78,7 @@ export function getActiveProviderId(): ProviderId | null {
 export function getConnectedProvider(providerId: ProviderId): ConnectedProvider | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM providers WHERE provider_id = ?').get(providerId) as
-    | ProviderRow
-    | undefined;
+    ProviderRow | undefined;
 
   return row ? rowToProvider(row) : null;
 }

@@ -14,13 +14,7 @@ export interface MarketplaceSkill {
 }
 
 export type MarketplaceCategory =
-  | 'development'
-  | 'productivity'
-  | 'data'
-  | 'devops'
-  | 'research'
-  | 'writing'
-  | 'other';
+  'development' | 'productivity' | 'data' | 'devops' | 'research' | 'writing' | 'other';
 
 const CATALOG: MarketplaceSkill[] = [
   {

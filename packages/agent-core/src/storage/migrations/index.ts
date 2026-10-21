@@ -89,8 +89,7 @@ export function getStoredVersion(db: Database): number {
     }
 
     const row = db.prepare("SELECT value FROM schema_meta WHERE key = 'version'").get() as
-      | { value: string }
-      | undefined;
+      { value: string } | undefined;
 
     return row ? parseInt(row.value, 10) : 0;
   } catch {

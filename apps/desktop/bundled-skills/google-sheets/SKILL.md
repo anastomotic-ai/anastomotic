@@ -62,17 +62,18 @@ Before writing anything, read what's already there:
 **DO NOT type cell references into the Name Box** - it often enters text into cells instead of navigating.
 
 **Preferred navigation methods:**
-| Goal | Method |
-|------|--------|
-| Go to A1 | `Cmd+Home` |
-| Go to start of row | `Home` |
-| Go to last data cell | `Cmd+End` |
-| Move right | `Tab` |
-| Move down | `Enter` |
-| Move by one cell | Arrow keys |
-| Select entire row | Click the row number on the left (e.g., "2") |
-| Select entire column | Click the column letter at top (e.g., "A") |
-| Select a range | Click start cell, then `Shift+click` end cell |
+
+| Goal                             | Method                                        |
+| -------------------------------- | --------------------------------------------- |
+| Go to A1                         | `Cmd+Home`                                    |
+| Go to start of row               | `Home`                                        |
+| Go to last data cell             | `Cmd+End`                                     |
+| Move right                       | `Tab`                                         |
+| Move down                        | `Enter`                                       |
+| Move by one cell                 | Arrow keys                                    |
+| Select entire row                | Click the row number on the left (e.g., "2")  |
+| Select entire column             | Click the column letter at top (e.g., "A")    |
+| Select a range                   | Click start cell, then `Shift+click` end cell |
 | Select column range (for resize) | Click first column letter, `Shift+click` last |
 
 **Confirming current cell location:**
@@ -256,13 +257,14 @@ Sheet tabs appear at the **bottom** of the screen.
 4. Re-read the data before retrying
 
 **Common problems and fixes:**
-| Problem | Fix |
-|---------|-----|
-| Text entered into wrong cell | `Cmd+Z`, then navigate correctly and re-enter |
+
+| Problem                                                   | Fix                                                                       |
+| --------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Text entered into wrong cell                              | `Cmd+Z`, then navigate correctly and re-enter                             |
 | Formula shows as text (starts with `=` but not computing) | Click cell, press F2 to edit, confirm cell is not formatted as plain text |
-| Dialog appeared unexpectedly | Screenshot to read it, then press `Escape` or respond appropriately |
-| Sheet opened in new browser tab | Use `browser_tabs` / tabs tool to switch to the new tab |
-| Cell stuck in edit mode | Press `Escape` to cancel edit, or `Enter` to confirm |
+| Dialog appeared unexpectedly                              | Screenshot to read it, then press `Escape` or respond appropriately       |
+| Sheet opened in new browser tab                           | Use `browser_tabs` / tabs tool to switch to the new tab                   |
+| Cell stuck in edit mode                                   | Press `Escape` to cancel edit, or `Enter` to confirm                      |
 
 ---
 
