@@ -43,6 +43,6 @@ All rights in and to the Anastomotic Trademarks are reserved by Rajdeep Singh. A
 
 ## Questions and Contact
 
-If you have questions about use of the Anastomotic Trademarks, or wish to request permission for a use not covered by this policy, please contact:
+If you have questions about use of the Anastomotic Trademarks, or wish to request permission for a use not covered by this policy, please open an issue at:
 
-support@anastomotic.ai
+https://github.com/anastomotic-ai/anastomotic/issues
