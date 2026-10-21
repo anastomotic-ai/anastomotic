@@ -1,12 +1,12 @@
 /**
- * Desktop Control MCP Tool — Strict TypeScript Types
+ * Desktop Control MCP Tool - Strict TypeScript Types
  *
  * All types used across the desktop-control package.
  * An identical copy of these types exists at
  * packages/agent-core/src/common/types/desktop.ts for re-export
  * via common.ts to web/desktop consumers.
  *
- * No `any` — enforced by tsconfig strict mode.
+ * No `any` - enforced by tsconfig strict mode.
  */
 
 // ─── Action Types ───────────────────────────────────────────────────

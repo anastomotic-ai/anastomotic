@@ -1,5 +1,5 @@
 /**
- * Sandbox module barrel — re-exports types and providers.
+ * Sandbox module barrel - re-exports types and providers.
  */
 export type {
   SandboxMode,

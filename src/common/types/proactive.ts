@@ -1,5 +1,5 @@
 /**
- * Proactive agent types — file watchers, alerts, and anomaly detection.
+ * Proactive agent types - file watchers, alerts, and anomaly detection.
  */
 
 export type AlertType =

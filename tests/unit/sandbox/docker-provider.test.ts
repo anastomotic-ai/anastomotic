@@ -54,7 +54,7 @@ describe('DockerSandboxProvider', () => {
     expect(await winProvider.isAvailable()).toBe(false);
   });
 
-  describe('buildDockerArgs — working directory', () => {
+  describe('buildDockerArgs - working directory', () => {
     it('should mount working directory as /workspace', () => {
       const args = provider.buildDockerArgs(BASE_SPAWN_ARGS, DOCKER_CONFIG);
       expect(args).toContain('-v');
@@ -64,7 +64,7 @@ describe('DockerSandboxProvider', () => {
     });
   });
 
-  describe('buildDockerArgs — allowed paths (SaaiAravindhRaja, PR #612)', () => {
+  describe('buildDockerArgs - allowed paths (SaaiAravindhRaja, PR #612)', () => {
     it('should mount additional allowed paths as extra volumes', () => {
       const config: SandboxConfig = {
         ...DOCKER_CONFIG,
@@ -76,7 +76,7 @@ describe('DockerSandboxProvider', () => {
     });
   });
 
-  describe('buildDockerArgs — network policy (SaaiAravindhRaja, PR #612)', () => {
+  describe('buildDockerArgs - network policy (SaaiAravindhRaja, PR #612)', () => {
     it('should add --network none when allowOutbound is false', () => {
       const config: SandboxConfig = {
         ...DOCKER_CONFIG,
@@ -104,7 +104,7 @@ describe('DockerSandboxProvider', () => {
     });
   });
 
-  describe('buildDockerArgs — Docker image (SaaiAravindhRaja, PR #612)', () => {
+  describe('buildDockerArgs - Docker image (SaaiAravindhRaja, PR #612)', () => {
     it('should use custom Docker image when specified', () => {
       const config: SandboxConfig = { ...DOCKER_CONFIG, dockerImage: 'ubuntu:22.04' };
       const args = provider.buildDockerArgs(BASE_SPAWN_ARGS, config);
@@ -118,7 +118,7 @@ describe('DockerSandboxProvider', () => {
     });
   });
 
-  describe('buildDockerArgs — command construction', () => {
+  describe('buildDockerArgs - command construction', () => {
     it('should use basename of spawnFile inside the container', () => {
       const spawnArgs: SpawnArgs = { ...BASE_SPAWN_ARGS, file: '/usr/local/bin/opencode' };
       const args = provider.buildDockerArgs(spawnArgs, DOCKER_CONFIG);
@@ -131,7 +131,7 @@ describe('DockerSandboxProvider', () => {
     });
   });
 
-  describe('buildDockerArgs — env var forwarding (preeeetham, PR #430)', () => {
+  describe('buildDockerArgs - env var forwarding (preeeetham, PR #430)', () => {
     it('should forward API key env vars', () => {
       const spawnArgs: SpawnArgs = {
         ...BASE_SPAWN_ARGS,

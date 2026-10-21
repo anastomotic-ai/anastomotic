@@ -1,5 +1,5 @@
 /**
- * Desktop Control MCP Tool — HTTP Server
+ * Desktop Control MCP Tool - HTTP Server
  *
  * Express HTTP server that exposes desktop automation actions.
  * Every action goes through:
@@ -130,7 +130,7 @@ async function requestPermission(
 }
 
 /**
- * Validate a DesktopActionRequest — returns an error string or null if valid.
+ * Validate a DesktopActionRequest - returns an error string or null if valid.
  */
 function validateRequest(
   body: unknown,

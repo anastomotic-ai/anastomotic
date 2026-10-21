@@ -6,7 +6,7 @@
  *
  * Uses simple cron matching (no external dependencies).
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 import type { ScheduledTask } from '../common/types/daemon.js';
@@ -143,7 +143,7 @@ function getNextRunTime(cron: string): string | undefined {
 export function addScheduledTask(cron: string, prompt: string): ScheduledTask {
   const parts = cron.trim().split(/\s+/);
   if (parts.length !== 5) {
-    throw new Error(`Invalid cron expression: "${cron}" — must have exactly 5 fields`);
+    throw new Error(`Invalid cron expression: "${cron}" - must have exactly 5 fields`);
   }
   const ranges: [number, number][] = [
     [0, 59], // minute
@@ -158,7 +158,7 @@ export function addScheduledTask(cron: string, prompt: string): ScheduledTask {
     const values = parseCronField(field, ranges[i][0], ranges[i][1]);
     if (values.length === 0) {
       throw new Error(
-        `Invalid cron expression: "${cron}" — field ${i + 1} ("${field}") has no valid values`,
+        `Invalid cron expression: "${cron}" - field ${i + 1} ("${field}") has no valid values`,
       );
     }
   }

@@ -171,7 +171,7 @@ describe('CompletionEnforcer', () => {
       expect(result).toBe('complete');
       expect(onDebugMock).toHaveBeenCalledWith(
         'skip_continuation',
-        'No tools used and no complete_task called — treating as conversational response',
+        'No tools used and no complete_task called - treating as conversational response',
       );
     });
 
@@ -196,7 +196,7 @@ describe('CompletionEnforcer', () => {
       expect(result).toBe('complete');
       expect(onDebugMock).toHaveBeenCalledWith(
         'skip_continuation',
-        'No tools used and no complete_task called — treating as conversational response',
+        'No tools used and no complete_task called - treating as conversational response',
       );
     });
 
@@ -527,7 +527,7 @@ describe('CompletionEnforcer', () => {
     });
   });
 
-  describe('isInContinuation — suppress duplicate messages during continuation', () => {
+  describe('isInContinuation - suppress duplicate messages during continuation', () => {
     it('should return false before any continuation', () => {
       expect(enforcer.isInContinuation()).toBe(false);
     });
@@ -620,7 +620,7 @@ describe('CompletionEnforcer', () => {
       expect(limitedEnforcer.getContinuationAttempts()).toBe(3);
       expect(onStartContinuationMock).toHaveBeenCalledTimes(3);
 
-      // Exceeds maxAttempts — circuit breaker kicks in
+      // Exceeds maxAttempts - circuit breaker kicks in
       limitedEnforcer.markToolsUsed();
       const action = limitedEnforcer.handleStepFinish('stop');
 

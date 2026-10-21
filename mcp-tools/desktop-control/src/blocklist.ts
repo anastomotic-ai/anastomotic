@@ -13,39 +13,39 @@ export const DEFAULT_BLOCKLIST: readonly BlocklistEntry[] = [
   {
     appName: '1Password',
     pattern: '1Password',
-    reason: 'Password manager — contains sensitive credentials',
+    reason: 'Password manager - contains sensitive credentials',
   },
   {
     appName: 'Bitwarden',
     pattern: 'Bitwarden',
-    reason: 'Password manager — contains sensitive credentials',
+    reason: 'Password manager - contains sensitive credentials',
   },
   {
     appName: 'LastPass',
     pattern: 'LastPass',
-    reason: 'Password manager — contains sensitive credentials',
+    reason: 'Password manager - contains sensitive credentials',
   },
   {
     appName: 'KeePass',
     pattern: 'KeePass',
-    reason: 'Password manager — contains sensitive credentials',
+    reason: 'Password manager - contains sensitive credentials',
   },
   {
     appName: 'Dashlane',
     pattern: 'Dashlane',
-    reason: 'Password manager — contains sensitive credentials',
+    reason: 'Password manager - contains sensitive credentials',
   },
 
   // System security
   {
     appName: 'Keychain Access',
     pattern: 'Keychain Access',
-    reason: 'macOS keychain — contains sensitive system credentials',
+    reason: 'macOS keychain - contains sensitive system credentials',
   },
   {
     appName: 'Credential Manager',
     pattern: 'Credential Manager',
-    reason: 'Windows credential store — contains sensitive system credentials',
+    reason: 'Windows credential store - contains sensitive system credentials',
   },
   {
     appName: 'Windows Security',
@@ -57,7 +57,7 @@ export const DEFAULT_BLOCKLIST: readonly BlocklistEntry[] = [
   {
     appName: 'Registry Editor',
     pattern: 'Registry Editor',
-    reason: 'System registry — modifications can damage the OS',
+    reason: 'System registry - modifications can damage the OS',
   },
 ] as const;
 

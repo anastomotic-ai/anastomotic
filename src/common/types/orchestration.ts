@@ -79,7 +79,7 @@ export interface PipelineRun {
 /** Default system-prompt fragments for preset roles. */
 export const ROLE_PROMPTS: Record<Exclude<AgentRolePreset, 'custom'>, string> = {
   researcher:
-    'You are a Research Agent. Your job is to gather information, search codebases, read documentation, and produce a structured research summary. Do NOT write or modify code — only research and report findings.',
+    'You are a Research Agent. Your job is to gather information, search codebases, read documentation, and produce a structured research summary. Do NOT write or modify code - only research and report findings.',
   coder:
     'You are a Coding Agent. Using the research and context provided, implement the required changes. Write clean, tested code. Follow existing project conventions.',
   reviewer:

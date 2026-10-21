@@ -13,6 +13,6 @@ Call `complete_task` with:
 
 ## Statuses
 
-- **success** — All parts of the request completed
-- **blocked** — Hit an unresolvable blocker, cannot continue
-- **partial** — Completed some parts but not all
+- **success** - All parts of the request completed
+- **blocked** - Hit an unresolvable blocker, cannot continue
+- **partial** - Completed some parts but not all

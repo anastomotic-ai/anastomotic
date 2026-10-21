@@ -1,5 +1,5 @@
 /**
- * Migration v030 — add huggingface_local_config column to app_settings
+ * Migration v030 - add huggingface_local_config column to app_settings
  *
  * Stores HuggingFace Local inference configuration (model selection, server port,
  * quantization preferences) as a JSON blob.

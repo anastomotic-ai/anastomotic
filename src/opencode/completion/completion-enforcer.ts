@@ -109,7 +109,7 @@ export class CompletionEnforcer {
       if (this.isConversationalTurn()) {
         this.callbacks.onDebug(
           'skip_continuation',
-          'No tools used and no complete_task called — treating as conversational response',
+          'No tools used and no complete_task called - treating as conversational response',
         );
         return 'complete';
       }

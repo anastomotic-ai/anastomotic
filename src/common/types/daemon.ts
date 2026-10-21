@@ -4,7 +4,7 @@
  * JSON-RPC 2.0 message types for communication between the Electron UI
  * (thin client) and the always-on daemon process.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 import type {
@@ -198,7 +198,7 @@ export interface DaemonMethodMap {
   // Permission
   'permission.respond': { params: PermissionRespondParams; result: void };
 
-  // Storage — task persistence
+  // Storage - task persistence
   'storage.saveTask': { params: StorageSaveTaskParams; result: void };
   'storage.updateTaskStatus': { params: StorageUpdateTaskStatusParams; result: void };
   'storage.updateTaskSummary': { params: StorageUpdateTaskSummaryParams; result: void };

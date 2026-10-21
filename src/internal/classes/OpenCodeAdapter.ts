@@ -29,7 +29,7 @@ const log = createConsoleLogger({ prefix: 'OpenCodeAdapter' });
 
 const LOG_TRUNCATION_LIMIT = 500;
 
-/** Windows STATUS_CONTROL_C_EXIT — exit code produced when a process is
+/** Windows STATUS_CONTROL_C_EXIT - exit code produced when a process is
  *  terminated via Ctrl+C (0xC000013A). On Windows this is not an error;
  *  treat it the same as a clean exit (code === 0). */
 export const WINDOWS_CTRL_C_EXIT_CODE = -1073741510;
@@ -85,7 +85,7 @@ export interface OpenCodeAdapterEvents {
   debug: [{ type: string; message: string; data?: unknown }];
   'todo:update': [TodoItem[]];
   'auth-error': [{ providerId: string; message: string }];
-  /** Live browser preview frame — emitted when the dev-browser-mcp tool writes a JSON frame to stdout.
+  /** Live browser preview frame - emitted when the dev-browser-mcp tool writes a JSON frame to stdout.
    *  Contributed by samarthsinh2660 (PR #414) for ENG-695. */
   'browser-frame': [BrowserFramePayload];
   reasoning: [string];
@@ -188,7 +188,7 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
             isBrowserFrame = true;
           }
         } catch {
-          // Not JSON or not a browser-frame — pass through as-is
+          // Not JSON or not a browser-frame - pass through as-is
         }
 
         if (!isBrowserFrame) {
@@ -417,7 +417,7 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
           .replace(/\x1B\][^\x1B]*\x1B\\/g, '');
         /* eslint-enable no-control-regex */
         // Check for embedded browser-frame JSON lines (even for split PTY chunks).
-        // Use the returned value — browser-frame lines are stripped so they don't
+        // Use the returned value - browser-frame lines are stripped so they don't
         // pollute outputBuffer or StreamParser with large base64 payloads.
         const passthroughData = this.checkForBrowserFrame(cleanData);
 
@@ -776,7 +776,7 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
         this.handleToolCall(rejectedTool, toolInput, sessionID);
         return;
       }
-      // rejectedTool is absent or resolves to an invalid name — stop here.
+      // rejectedTool is absent or resolves to an invalid name - stop here.
       this.emit('debug', {
         type: 'warning',
         message: `[OpenCode Adapter] Skipping unresolvable rejected tool call: toolName="${toolName}", rejectedTool="${rejectedTool}"`,
@@ -823,7 +823,7 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
     this.completionEnforcer.markToolsUsed(!this.isNonTaskContinuationTool(toolName));
 
     // Intercept invalid tool calls where model tried to call complete_task but opencode rejected it.
-    // This happens with local models (e.g. Ollama) that don't support function calling natively —
+    // This happens with local models (e.g. Ollama) that don't support function calling natively
     // opencode returns toolName='invalid' with { tool: 'complete_task' } in the input, causing
     // CompletionEnforcer to never detect completion and enter a "Retrying..." loop.
     if (toolName === 'invalid' || toolName === 'unknown') {
@@ -864,7 +864,7 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
     if (toolName === 'todowrite' || toolName.endsWith('_todowrite')) {
       const input = toolInput as { todos?: Array<Partial<TodoItem> & { content: string }> };
       if (input?.todos && Array.isArray(input.todos) && input.todos.length > 0) {
-        // OpenCode's todowrite doesn't include an id field — synthesize a unique one
+        // OpenCode's todowrite doesn't include an id field - synthesize a unique one
         const todos: TodoItem[] = input.todos.map((todo) => ({
           id: todo.id || crypto.randomUUID(),
           content: todo.content,

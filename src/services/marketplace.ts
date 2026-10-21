@@ -1,4 +1,4 @@
-// Skill Marketplace — curated catalog of community skills
+// Skill Marketplace - curated catalog of community skills
 
 export interface MarketplaceSkill {
   id: string;
@@ -91,7 +91,7 @@ const CATALOG: MarketplaceSkill[] = [
   {
     id: 'mp-skill-creator',
     name: 'Skill Creator',
-    description: 'Build new skills with AI assistance — generates SKILL.md from a description.',
+    description: 'Build new skills with AI assistance - generates SKILL.md from a description.',
     author: 'Anastomotic',
     category: 'development',
     githubUrl:
@@ -116,7 +116,7 @@ const CATALOG: MarketplaceSkill[] = [
   {
     id: 'mp-api-tester',
     name: 'API Tester',
-    description: 'Test REST and GraphQL APIs interactively — send requests, inspect responses.',
+    description: 'Test REST and GraphQL APIs interactively - send requests, inspect responses.',
     author: 'community',
     category: 'development',
     githubUrl: 'https://github.com/anastomotic-ai/skills-api-tester',

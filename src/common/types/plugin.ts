@@ -1,5 +1,5 @@
 /**
- * Plugin API/SDK types — extensible plugin system for third-party integrations.
+ * Plugin API/SDK types - extensible plugin system for third-party integrations.
  */
 
 export type PluginStatus = 'installed' | 'active' | 'disabled' | 'error';

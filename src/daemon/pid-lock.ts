@@ -63,7 +63,7 @@ function isLockStale(payload: PidLockPayload | null): boolean {
     return !isPidAlive(payload.pid);
   }
 
-  // Unparseable lock file — treat as stale
+  // Unparseable lock file - treat as stale
   return true;
 }
 

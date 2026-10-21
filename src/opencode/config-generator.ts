@@ -178,18 +178,18 @@ other tools will fail until start_task is called.
 Set \`needs_planning: true\` if completing the request will require tools beyond start_task and complete_task (e.g., file operations, browser actions, bash commands, desktop automation).
 
 ## Desktop Automation Safety
-- ALL desktop.* tools require per-action user approval — the user will see each action before it executes.
+- ALL desktop.* tools require per-action user approval - the user will see each action before it executes.
 - NEVER automate password managers (1Password, Bitwarden, etc.), banking apps, or system security tools.
 - ALWAYS use desktop.screenshot() to verify screen state before and after actions.
 - ALWAYS use desktop.listWindows() before interacting with a window to confirm it exists.
 - Use desktop.type() only after focusing the target input with desktop.click().
-- **CRITICAL:** Any task that involves desktop.* tools MUST use \`needs_planning: true\` in the start_task call. Desktop automation is inherently destructive — plan your steps before executing.
+- **CRITICAL:** Any task that involves desktop.* tools MUST use \`needs_planning: true\` in the start_task call. Desktop automation is inherently destructive - plan your steps before executing.
 
 Set \`needs_planning: false\` for conversational responses that do not require tools.
 In this mode, respond directly and stop (no \`start_task\`, no \`complete_task\`).
 This includes greetings, short knowledge questions, meta-questions about capabilities, help requests, and conversational messages.
 
-**When needs_planning is TRUE** — provide goal, steps, verification:
+**When needs_planning is TRUE** - provide goal, steps, verification:
 
 start_task requires:
 - original_request: Echo the user's request exactly as stated
@@ -215,7 +215,7 @@ CORRECT: Call start_task FIRST, update todos as you work, then complete_task
 
 Do not list capabilities unless the user explicitly asks.
 
-**When needs_planning is FALSE** — skip goal, steps, verification. Respond directly with your text answer and stop. Do NOT call complete_task for conversational responses.
+**When needs_planning is FALSE** - skip goal, steps, verification. Respond directly with your text answer and stop. Do NOT call complete_task for conversational responses.
 
 ##############################################################################
 </behavior>
@@ -319,7 +319,7 @@ If the user gave you a task with specific criteria (e.g., "find 8-15 results", "
 
 **TASK COMPLETION - CRITICAL:**
 
-You MUST call the \`complete_task\` tool when \`needs_planning\` was true. For conversational responses (\`needs_planning: false\`), do NOT call complete_task — just respond and stop naturally.
+You MUST call the \`complete_task\` tool when \`needs_planning\` was true. For conversational responses (\`needs_planning: false\`), do NOT call complete_task - just respond and stop naturally.
 
 When to call \`complete_task\`:
 
@@ -474,7 +474,7 @@ ${options.knowledgeNotes}
       environment: {
         QUESTION_API_PORT: String(questionApiPort),
       },
-      timeout: 600000, // 10 minutes — user needs time to read and respond
+      timeout: 600000, // 10 minutes - user needs time to read and respond
     },
     'request-connector-auth': {
       type: 'local',
@@ -650,7 +650,7 @@ Example too terse (avoid):
     },
     mcp: mcpServers,
     experimental: {
-      mcp_timeout: 600000, // 10 minutes — allow long-running MCP tools like AskUserQuestion
+      mcp_timeout: 600000, // 10 minutes - allow long-running MCP tools like AskUserQuestion
     },
   };
 
@@ -725,7 +725,7 @@ export function buildCliArgs(options: BuildCliArgsOptions): string[] {
       const modelId = selectedModel.model.replace(/^lmstudio\//, '');
       args.push('--model', `lmstudio/${modelId}`);
     } else if (selectedModel.provider === 'vertex') {
-      // Model IDs stored as "vertex/{publisher}/{model}" — strip publisher for @ai-sdk/google-vertex
+      // Model IDs stored as "vertex/{publisher}/{model}" - strip publisher for @ai-sdk/google-vertex
       const modelId = selectedModel.model.replace(/^vertex\/[^/]+\//, '');
       args.push('--model', `vertex/${modelId}`);
     } else if (selectedModel.provider === 'custom') {

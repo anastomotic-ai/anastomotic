@@ -4,12 +4,12 @@
  * Installs global process-level error handlers that log fatal errors before the
  * process exits. This prevents silent crashes in the daemon process.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 /**
  * Install global crash / unhandled-rejection handlers.
- * Safe to call multiple times — subsequent calls are no-ops.
+ * Safe to call multiple times - subsequent calls are no-ops.
  */
 let installed = false;
 
