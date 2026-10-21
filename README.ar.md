@@ -11,22 +11,6 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>تحميل لـ Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>تحميل لـ Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>تحميل لـ Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>تحميل لـ Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>تحميل لـ Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>تحميل لـ Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">موقع Anastomotic</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">مدونة Anastomotic</a>
-  ·
   <a href="https://github.com/anastomotic-ai/anastomotic/releases">إصدارات Anastomotic</a>
 </p>
 
@@ -181,14 +165,6 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 
 <br />
 
-<div align="center">
-
-[**تحميل لـ Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**تحميل لـ Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**تحميل لـ Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**تحميل لـ Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**تحميل لـ Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**تحميل لـ Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
-
-<br />
-
 ---
 
 <br />
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[موقع Anastomotic](https://www.anastomotic.ai/)** · **[مدونة Anastomotic](https://www.anastomotic.ai/blog/)** · **[إصدارات Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[المشكلات](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[إصدارات Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[المشكلات](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-رخصة MIT · صنع بواسطة [Anastomotic](https://www.anastomotic.ai)
+رخصة MIT · صنع بواسطة [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

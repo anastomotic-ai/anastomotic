@@ -11,22 +11,6 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Descargar para Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Descargar para Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Descargar para Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Descargar para Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Descargar para Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Descargar para Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Sitio web de Anastomotic</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Blog de Anastomotic</a>
-  ·
   <a href="https://github.com/anastomotic-ai/anastomotic/releases">Versiones de Anastomotic</a>
 </p>
 
@@ -181,14 +165,6 @@ Anastomotic se ejecuta localmente en tu máquina. Tus archivos permanecen en tu 
 
 <br />
 
-<div align="center">
-
-[**Descargar para Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Descargar para Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Descargar para Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Descargar para Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Descargar para Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Descargar para Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
-
-<br />
-
 ---
 
 <br />
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Sitio web de Anastomotic](https://www.anastomotic.ai/)** · **[Blog de Anastomotic](https://www.anastomotic.ai/blog/)** · **[Versiones de Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Versiones de Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-Licencia MIT · Creado por [Anastomotic](https://www.anastomotic.ai)
+Licencia MIT · Creado por [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

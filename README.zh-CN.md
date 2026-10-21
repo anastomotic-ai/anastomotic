@@ -11,22 +11,6 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>下载 Mac 版（Apple Silicon）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>下载 Mac 版（Intel）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>下载 Windows 11 版</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>下载 Linux 版（ARM64）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>下载 Linux 版（x64）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>下载 Linux 版（.deb x64）</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic 官网</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic 博客</a>
-  ·
   <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic 发布版本</a>
 </p>
 
@@ -181,14 +165,6 @@ Anastomotic 在您的机器上本地运行。您的文件保留在您的设备�
 
 <br />
 
-<div align="center">
-
-[**下载 Mac 版（Apple Silicon）**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**下载 Mac 版（Intel）**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**下载 Windows 11 版**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**下载 Linux 版（ARM64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**下载 Linux 版（x64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**下载 Linux 版（.deb x64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
-
-<br />
-
 ---
 
 <br />
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic 官网](https://www.anastomotic.ai/)** · **[Anastomotic 博客](https://www.anastomotic.ai/blog/)** · **[Anastomotic 发布版本](https://github.com/anastomotic-ai/anastomotic/releases)** · **[问题反馈](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic 发布版本](https://github.com/anastomotic-ai/anastomotic/releases)** · **[问题反馈](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT 许可证 · 由 [Anastomotic](https://www.anastomotic.ai) 构建
+MIT 许可证 · 由 [Anastomotic](https://github.com/anastomotic-ai) 构建
 
 <br />
 

@@ -11,22 +11,6 @@ Anastomoticは、お使いのマシン上でローカルにファイル管理、
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac用ダウンロード（Apple Silicon）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac用ダウンロード（Intel）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11用ダウンロード</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux用ダウンロード（ARM64）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux用ダウンロード（x64）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux用ダウンロード（.deb x64）</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomoticウェブサイト</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomoticブログ</a>
-  ·
   <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomoticリリース</a>
 </p>
 
@@ -181,14 +165,6 @@ Anastomoticはお使いのマシン上でローカルに実行されます。フ
 
 <br />
 
-<div align="center">
-
-[**Mac用ダウンロード（Apple Silicon）**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac用ダウンロード（Intel）**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11用ダウンロード**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux用ダウンロード（ARM64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux用ダウンロード（x64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux用ダウンロード（.deb x64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
-
-<br />
-
 ---
 
 <br />
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomoticウェブサイト](https://www.anastomotic.ai/)** · **[Anastomoticブログ](https://www.anastomotic.ai/blog/)** · **[Anastomoticリリース](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomoticリリース](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MITライセンス · [Anastomotic](https://www.anastomotic.ai)製
+MITライセンス · [Anastomotic](https://github.com/anastomotic-ai)製
 
 <br />
 

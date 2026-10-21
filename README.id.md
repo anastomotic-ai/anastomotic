@@ -11,22 +11,6 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Unduh untuk Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Unduh untuk Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Unduh untuk Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Unduh untuk Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Unduh untuk Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Unduh untuk Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Website Anastomotic</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Blog Anastomotic</a>
-  ·
   <a href="https://github.com/anastomotic-ai/anastomotic/releases">Rilis Anastomotic</a>
 </p>
 
@@ -181,14 +165,6 @@ Anastomotic berjalan secara lokal di mesin Anda. File Anda tetap di perangkat An
 
 <br />
 
-<div align="center">
-
-[**Unduh untuk Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Unduh untuk Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Unduh untuk Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Unduh untuk Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Unduh untuk Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Unduh untuk Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
-
-<br />
-
 ---
 
 <br />
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Website Anastomotic](https://www.anastomotic.ai/)** · **[Blog Anastomotic](https://www.anastomotic.ai/blog/)** · **[Rilis Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Rilis Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-Lisensi MIT · Dibuat oleh [Anastomotic](https://www.anastomotic.ai)
+Lisensi MIT · Dibuat oleh [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

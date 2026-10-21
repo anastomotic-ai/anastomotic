@@ -11,22 +11,6 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac için İndirin (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac için İndirin (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11 için İndirin</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux için İndirin (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux için İndirin (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux için İndirin (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic web sitesi</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic blogu</a>
-  ·
   <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic sürümleri</a>
 </p>
 
@@ -181,14 +165,6 @@ Anastomotic bilgisayarınızda yerel olarak çalışır. Dosyalarınız cihazın
 
 <br />
 
-<div align="center">
-
-[**Mac için İndirin (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac için İndirin (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11 için İndirin**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux için İndirin (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux için İndirin (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux için İndirin (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
-
-<br />
-
 ---
 
 <br />
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic web sitesi](https://www.anastomotic.ai/)** · **[Anastomotic blogu](https://www.anastomotic.ai/blog/)** · **[Anastomotic sürümleri](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic sürümleri](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT Lisansı · [Anastomotic](https://www.anastomotic.ai) tarafından yapıldı
+MIT Lisansı · [Anastomotic](https://github.com/anastomotic-ai) tarafından yapıldı
 
 <br />
 
