@@ -6,7 +6,7 @@ import { ApiKeySecrets } from '../types';
 const config = getProviderTestConfig('openai');
 
 test.describe('OpenAI Provider', () => {
-  test.skip(!config?.secrets, 'No OpenAI secrets configured — skipping');
+  test.skip(!config?.secrets, 'No OpenAI secrets configured - skipping');
 
   test('should connect with API key and complete a task', async ({ window }) => {
     const secrets = config.secrets as ApiKeySecrets;

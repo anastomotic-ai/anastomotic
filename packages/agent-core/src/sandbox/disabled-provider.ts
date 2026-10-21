@@ -1,5 +1,5 @@
 /**
- * Disabled sandbox provider — passthrough, no restrictions.
+ * Disabled sandbox provider - passthrough, no restrictions.
  *
  * Returns spawn arguments unchanged. This is the default provider
  * when sandbox mode is 'disabled'.

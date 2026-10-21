@@ -1,5 +1,5 @@
 /**
- * Auto-learning service — extracts reusable insights from completed tasks.
+ * Auto-learning service - extracts reusable insights from completed tasks.
  *
  * After a successful task, this service analyses the conversation messages
  * and generates a concise knowledge note that captures useful context,

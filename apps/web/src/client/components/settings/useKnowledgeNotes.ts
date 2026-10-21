@@ -40,7 +40,7 @@ export function useKnowledgeNotes(
   const [editType, setEditType] = useState<KnowledgeNoteType>('context');
   const [editContent, setEditContent] = useState('');
 
-  // Shared request counter — incrementing it abandons any in-flight fetch.
+  // Shared request counter - incrementing it abandons any in-flight fetch.
   const activeRequestRef = useRef(0);
   // Tracks the active workspace. Updated via useLayoutEffect (runs synchronously
   // after each commit, before microtasks) so async callbacks can detect a

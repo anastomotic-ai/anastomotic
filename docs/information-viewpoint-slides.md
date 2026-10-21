@@ -1,4 +1,4 @@
-# Information Viewpoint — Slide-Ready Diagrams
+# Information Viewpoint - Slide-Ready Diagrams
 
 > Simplified versions of the diagrams in `information-viewpoint.md`, designed for presentation slides.
 > For full detail, refer to the complete document.
@@ -20,7 +20,7 @@ graph TB
     subgraph EPHEMERAL["In-Memory Only"]
       CE["⚙️ <b>Completion State</b><br/><i>Flow state · retry count<br/>Lost on crash</i>"]
       PERM["⏳ <b>Permission Promises</b><br/><i>Deferred HTTP responses<br/>5 min timeout</i>"]
-      UI_STATE["🖥️ <b>React Store</b><br/><i>Zustand — rebuilt<br/>from IPC on restart</i>"]
+      UI_STATE["🖥️ <b>React Store</b><br/><i>Zustand - rebuilt<br/>from IPC on restart</i>"]
     end
   end
 
@@ -155,7 +155,7 @@ graph LR
 
 ---
 
-## 5. Data Flow — Task Execution
+## 5. Data Flow - Task Execution
 
 ```mermaid
 graph LR

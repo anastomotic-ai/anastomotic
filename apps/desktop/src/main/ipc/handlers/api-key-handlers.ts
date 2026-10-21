@@ -1,5 +1,5 @@
 /**
- * api-key-handlers.ts — thin orchestrator
+ * api-key-handlers.ts - thin orchestrator
  *
  * Delegates to focused sub-modules. All publicly-consumed symbols are
  * re-exported from here so existing import sites continue to work unchanged.

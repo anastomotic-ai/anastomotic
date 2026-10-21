@@ -21,7 +21,7 @@ This skill automates email tasks through the browser using Gmail or Outlook Web.
 - **ALWAYS** confirm the recipient, subject, and body before sending
 - **NEVER** open or forward emails to addresses the user did not specify
 - **NEVER** delete emails without explicit permission
-- **NEVER** enter passwords or credentials — the user must already be signed in
+- **NEVER** enter passwords or credentials - the user must already be signed in
 - If a login screen appears, stop and tell the user to sign in manually first
 
 ## Detecting the Email Provider
@@ -106,12 +106,12 @@ Inbox ({count} recent):
 
 **Search operators:**
 
-- `from:name@email.com` — emails from a specific sender
-- `to:name@email.com` — emails to a specific recipient
-- `subject:keyword` — emails with keyword in subject
-- `has:attachment` — emails with attachments
-- `newer_than:7d` — emails from the last 7 days
-- `is:unread` — unread emails only
+- `from:name@email.com` - emails from a specific sender
+- `to:name@email.com` - emails to a specific recipient
+- `subject:keyword` - emails with keyword in subject
+- `has:attachment` - emails with attachments
+- `newer_than:7d` - emails from the last 7 days
+- `is:unread` - unread emails only
 
 ## Outlook Web Actions
 
@@ -226,8 +226,8 @@ Inbox ({count} recent):
 ## Browser Automation Tips
 
 - Always take screenshots before and after significant actions
-- Gmail and Outlook use heavy JavaScript rendering — wait for pages to settle
-- Use keyboard shortcuts over clicking when possible — they are more reliable
+- Gmail and Outlook use heavy JavaScript rendering - wait for pages to settle
+- Use keyboard shortcuts over clicking when possible - they are more reliable
 - Coordinate-based clicks for buttons when DOM references are unreliable
-- Gmail may show different layouts (default, compact, comfortable) — adapt accordingly
-- Outlook may show a reading pane on the right — emails open inline, not as a new page
+- Gmail may show different layouts (default, compact, comfortable) - adapt accordingly
+- Outlook may show a reading pane on the right - emails open inline, not as a new page

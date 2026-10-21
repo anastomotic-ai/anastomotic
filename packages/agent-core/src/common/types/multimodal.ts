@@ -1,5 +1,5 @@
 /**
- * Multi-Modal I/O types — image analysis, media previews, and structured outputs.
+ * Multi-Modal I/O types - image analysis, media previews, and structured outputs.
  */
 
 export type MediaType = 'image' | 'audio' | 'video' | 'document' | 'chart';

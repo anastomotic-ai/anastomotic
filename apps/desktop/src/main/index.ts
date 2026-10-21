@@ -340,7 +340,7 @@ if (!gotTheLock) {
       const storage = getStorage();
       nativeTheme.themeSource = storage.getTheme();
     } catch {
-      // First launch or corrupt DB — nativeTheme stays 'system'
+      // First launch or corrupt DB - nativeTheme stays 'system'
     }
 
     // Bootstrap the daemon RPC layer (child-process with in-process fallback)
@@ -403,7 +403,7 @@ app.on('window-all-closed', () => {
   // With system tray, the app stays alive when all windows are closed.
   // On macOS this was already the default behavior.
   // On Windows/Linux the tray keeps the app running.
-  logMain('INFO', '[Main] All windows closed — app continues in system tray');
+  logMain('INFO', '[Main] All windows closed - app continues in system tray');
 });
 
 app.on('before-quit', (event) => {

@@ -31,7 +31,7 @@ export {
 } from './daemon/daemon-lifecycle';
 
 /**
- * Boot the daemon — tries child process first, falls back to in-process.
+ * Boot the daemon - tries child process first, falls back to in-process.
  */
 export async function bootstrapDaemon(options: DaemonBootstrapOptions): Promise<DaemonClient> {
   const { taskManager, storage } = options;

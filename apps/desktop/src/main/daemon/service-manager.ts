@@ -137,7 +137,7 @@ function uninstallSystemdService(): void {
     execSync(`systemctl --user stop ${SYSTEMD_SERVICE_NAME}`, { stdio: 'pipe' });
     logD('INFO', '[ServiceManager] systemd user service disabled and stopped');
   } catch {
-    // Service might not be running — that's fine
+    // Service might not be running - that's fine
   }
 
   if (fs.existsSync(servicePath)) {

@@ -1,5 +1,5 @@
 /**
- * Deep Memory Service — enhanced auto-learning with semantic memory,
+ * Deep Memory Service - enhanced auto-learning with semantic memory,
  * behavioral preferences, and cross-workspace knowledge transfer.
  */
 

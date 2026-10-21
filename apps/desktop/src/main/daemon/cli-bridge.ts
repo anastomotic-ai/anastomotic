@@ -93,7 +93,7 @@ export async function handleCliCommand(args: string[]): Promise<void> {
       } else {
         console.log('Tasks:');
         for (const t of tasks) {
-          console.log(`  [${t.status}] ${t.id} — ${t.prompt?.slice(0, 60) ?? '(no prompt)'}`);
+          console.log(`  [${t.status}] ${t.id} - ${t.prompt?.slice(0, 60) ?? '(no prompt)'}`);
         }
       }
       break;

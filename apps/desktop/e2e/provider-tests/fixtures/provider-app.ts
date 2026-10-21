@@ -37,7 +37,7 @@ export const test = base.extend<ProviderTestFixtures>({
   // eslint-disable-next-line no-empty-pattern
   electronApp: async ({}, use) => {
     // Pass the app directory (not the compiled entry file) so that
-    // app.getAppPath() returns 'apps/desktop/' — needed for correct
+    // app.getAppPath() returns 'apps/desktop/' - needed for correct
     // MCP tool path resolution in getMcpToolsPath().
     const appDir = resolve(__dirname, '../../..');
 

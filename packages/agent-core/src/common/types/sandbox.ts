@@ -85,7 +85,7 @@ export interface SandboxProvider {
    * Wrap spawn arguments to apply sandbox restrictions.
    *
    * Implementations must include any sandbox-specific environment variables
-   * in the returned SpawnArgs.env — there is no separate hook for env-building.
+   * in the returned SpawnArgs.env - there is no separate hook for env-building.
    *
    * - Native provider: injects env vars and/or wraps command with OS sandbox
    * - Disabled provider: returns args unchanged (passthrough)

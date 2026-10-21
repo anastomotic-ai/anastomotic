@@ -98,7 +98,7 @@ export interface TaskAdapterOptions {
   getModelDisplayName?: (modelId: string) => string;
   /**
    * Lazy sandbox factory, called once per adapter/task instance.
-   * Preferred over static sandboxProvider/sandboxConfig — ensures runtime
+   * Preferred over static sandboxProvider/sandboxConfig - ensures runtime
    * changes (e.g. via sandbox:set-config) are reflected without recreating
    * the TaskManager. Overrides sandboxProvider/sandboxConfig when present.
    */

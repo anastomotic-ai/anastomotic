@@ -1,5 +1,5 @@
 /**
- * Smart Task Suggestions — generates contextual next-task suggestions
+ * Smart Task Suggestions - generates contextual next-task suggestions
  * based on recent task history, knowledge notes, and workspace context.
  */
 
@@ -24,7 +24,7 @@ const MAX_SUGGESTIONS = 5;
 
 /**
  * Build contextual suggestions from recent tasks and knowledge notes.
- * Uses heuristic pattern matching — no LLM required.
+ * Uses heuristic pattern matching - no LLM required.
  */
 export function generateSuggestions(
   recentTasks: RecentTaskSummary[],
@@ -88,7 +88,7 @@ export function generateSuggestions(
         suggestions.push({
           id: `sug_${Date.now()}_${suggestions.length}`,
           title: 'Retry failed task with more context',
-          prompt: `${task.prompt}\n\n(This task failed previously — please try a different approach)`,
+          prompt: `${task.prompt}\n\n(This task failed previously - please try a different approach)`,
           reason: 'A recent task failed and may succeed with a revised approach',
           confidence: 'medium',
         });

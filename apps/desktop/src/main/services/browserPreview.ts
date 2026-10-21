@@ -1,5 +1,5 @@
 /**
- * Browser Preview Service — Embedded Live Browser View (ENG-695)
+ * Browser Preview Service - Embedded Live Browser View (ENG-695)
  *
  * Streams live CDP screencast frames from the dev-browser server to the Electron
  * renderer via IPC, enabling an embedded browser view inside the chat UI.
@@ -62,7 +62,7 @@ interface BrowserPreviewSession {
 }
 
 // ---------------------------------------------------------------------------
-// CdpClient — lightweight WebSocket-based CDP client
+// CdpClient - lightweight WebSocket-based CDP client
 // Contributed by Dev0907 (PR #480) for ENG-695.
 // ---------------------------------------------------------------------------
 
@@ -457,6 +457,6 @@ export async function autoStartScreencast(taskId: string): Promise<void> {
       await startBrowserPreviewStream(taskId, pageName);
     }
   } catch {
-    // Server not ready yet — will be triggered later via IPC
+    // Server not ready yet - will be triggered later via IPC
   }
 }

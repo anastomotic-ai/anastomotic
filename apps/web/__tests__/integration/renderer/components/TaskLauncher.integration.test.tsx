@@ -430,7 +430,7 @@ describe('TaskLauncher', () => {
       );
 
       // Assert
-      expect(screen.queryByText(/—/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/“/)).not.toBeInTheDocument();
     });
 
     it('should show Plus icon in new task option', () => {

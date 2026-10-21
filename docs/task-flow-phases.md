@@ -1,4 +1,4 @@
-# Anastomotic Task Flow — Phase-by-Phase Sequence Diagrams
+# Anastomotic Task Flow - Phase-by-Phase Sequence Diagrams
 
 > Example: User types **"Please organize my Download folder"**, then follows up with **"Leave the pictures as is"**
 
@@ -80,7 +80,7 @@ sequenceDiagram
 
 ---
 
-## Phase 3: AI Responds — start_task (Planning)
+## Phase 3: AI Responds - start_task (Planning)
 
 The AI's first response is a `start_task` tool call declaring its plan. The StreamParser extracts JSON from the PTY byte stream, the adapter processes the tool call, and todo items appear in the UI.
 
@@ -180,7 +180,7 @@ sequenceDiagram
     PermAPI->>IPC: mainWindow.webContents.send(<br/>'permission:request', req)
     IPC->>React: Permission popup appears
 
-    Note over MCP_FP, PermAPI: BLOCKED — waiting for user decision
+    Note over MCP_FP, PermAPI: BLOCKED - waiting for user decision
 
     User->>React: Clicks "Allow"
     React->>Preload: anastomotic.respondToPermission(<br/>{ decision:'allow' })
@@ -296,7 +296,7 @@ sequenceDiagram
 
 ---
 
-## Phase 8: Follow-Up — "Leave the pictures as is"
+## Phase 8: Follow-Up - "Leave the pictures as is"
 
 The user sends a follow-up. The UI extracts the session ID from the completed task, a new PTY is spawned with `--session` flag, and the OpenCode CLI reloads the full conversation history so the AI has complete context.
 

@@ -1,4 +1,4 @@
-# Task Flow — Slide-Ready Diagrams
+# Task Flow - Slide-Ready Diagrams
 
 > Simplified versions of `task-flow-phases.md` for presentations. The detailed 8-phase diagrams remain in that file for deep reference.
 
@@ -8,7 +8,7 @@ Example tasks: **"Please organize my Download folder"** (diagrams 1, 3–5) · *
 
 ## 1. End-to-End Task Lifecycle (Single Slide)
 
-The complete happy path in one diagram — from user prompt to completion.
+The complete happy path in one diagram - from user prompt to completion.
 
 ```mermaid
 graph LR
@@ -48,7 +48,7 @@ graph LR
 
 ---
 
-## 2a. Phase 1 — Setup
+## 2a. Phase 1 - Setup
 
 Example: **"What are the meetings on my Google Calendar for tomorrow?"**
 
@@ -71,9 +71,9 @@ sequenceDiagram
 
 ---
 
-## 2b. Phase 2 — Execution
+## 2b. Phase 2 - Execution
 
-The AI plans the task, then uses the dev-browser-mcp tool (stdio) to automate a Chromium browser — navigating to Google Calendar and reading the page via ARIA accessibility snapshots. If it needs clarification, it uses the `ask_user` MCP tool (stdio → HTTP :9227).
+The AI plans the task, then uses the dev-browser-mcp tool (stdio) to automate a Chromium browser - navigating to Google Calendar and reading the page via ARIA accessibility snapshots. If it needs clarification, it uses the `ask_user` MCP tool (stdio → HTTP :9227).
 
 ```mermaid
 sequenceDiagram
@@ -116,7 +116,7 @@ sequenceDiagram
 
 ---
 
-## 2c. Phase 3 — Completion
+## 2c. Phase 3 - Completion
 
 The AI calls `complete_task` via MCP, the CompletionEnforcer validates, and the result is persisted and shown to the user.
 
@@ -138,7 +138,7 @@ sequenceDiagram
 
 ---
 
-## 3. Completion Enforcement — What Happens When Things Go Wrong
+## 3. Completion Enforcement - What Happens When Things Go Wrong
 
 Three paths after the AI stops: happy path, missing completion, and partial completion.
 
@@ -184,7 +184,7 @@ graph TD
 
 ## 4. Follow-Up Message Flow
 
-How a user continues an existing conversation — same task row, new PTY, full history loaded.
+How a user continues an existing conversation - same task row, new PTY, full history loaded.
 
 ```mermaid
 sequenceDiagram
@@ -224,7 +224,7 @@ sequenceDiagram
 
 ---
 
-## 5. Permission Gate — The Blocking Pattern
+## 5. Permission Gate - The Blocking Pattern
 
 The simplest view of how a human-in-the-loop permission works.
 
@@ -260,5 +260,5 @@ sequenceDiagram
   MCP_FP-->>OC: "allowed"
   OC-->>AI: Tool result: "allowed"
 
-  Note over AI: Resumes — proceeds to<br/>create the folder
+  Note over AI: Resumes - proceeds to<br/>create the folder
 ```

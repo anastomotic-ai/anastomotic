@@ -81,7 +81,7 @@ describe('daemon/scheduler', () => {
     it('uses OR semantics when both dom and dow are restricted', () => {
       // Jan 15, 2025 is a Wednesday (dow=3). Cron: 1st of month OR Friday (dow=5)
       const wed15 = new Date(2025, 0, 15, 9, 0);
-      // "0 9 1 * 5" = 1st of month OR every Friday — Wednesday the 15th matches neither
+      // "0 9 1 * 5" = 1st of month OR every Friday - Wednesday the 15th matches neither
       expect(matchesCron('0 9 1 * 5', wed15)).toBe(false);
 
       // Jan 1, 2025 is a Wednesday (dow=3). Matches dom=1 via OR
@@ -94,7 +94,7 @@ describe('daemon/scheduler', () => {
     });
 
     it('uses AND semantics when dom is * (only dow restricts)', () => {
-      // Weekday check: * for dom, 1-5 for dow — Wednesday matches, Saturday doesn't
+      // Weekday check: * for dom, 1-5 for dow - Wednesday matches, Saturday doesn't
       const wednesday = new Date(2025, 0, 15, 9, 0);
       const saturday = new Date(2025, 0, 18, 9, 0);
       expect(matchesCron('0 9 * * 1-5', wednesday)).toBe(true);

@@ -1,4 +1,4 @@
-# Information Viewpoint — Rozanski & Woods
+# Information Viewpoint - Rozanski & Woods
 
 This document captures all stateful data, information models, state machines, and data flows within the Anastomotic system. It follows the Rozanski & Woods Information Viewpoint to document data ownership, lifecycle, and structure.
 
@@ -773,13 +773,13 @@ flowchart TB
 
 ## Key Architectural Decisions
 
-1. **SQLite with WAL mode** — Enables concurrent reads during writes; critical for IPC-heavy architecture where UI reads while tasks write.
-2. **Singleton settings rows** — `app_settings` and `provider_meta` use `CHECK id=1` constraint to prevent accidental multi-row configs.
-3. **JSON-in-TEXT columns** — Provider credentials, model configs, and OAuth metadata stored as serialized JSON in TEXT columns. Trade-off: no SQL querying into JSON, but simpler schema evolution.
-4. **Denormalized favorites** — `task_favorites` copies `prompt` and `summary` from `tasks` to allow independent display without JOIN. Trade-off: potential staleness vs. query simplicity.
-5. **In-memory completion state** — `CompletionFlowState` deliberately not persisted. If the app crashes mid-task, the task is marked failed rather than attempting to reconstruct continuation state.
-6. **Machine-derived encryption key** — SecureStorage uses PBKDF2 with machine-specific inputs (platform, homedir, username). Not as secure as OS keychain but avoids macOS permission prompts. Suitable for rotatable API keys.
-7. **Ephemeral React state** — Zustand store is purely derived from IPC events. On restart, task history is reloaded from SQLite, but in-flight execution state (currentTool, startupStage, etc.) is lost.
+1. **SQLite with WAL mode** - Enables concurrent reads during writes; critical for IPC-heavy architecture where UI reads while tasks write.
+2. **Singleton settings rows** - `app_settings` and `provider_meta` use `CHECK id=1` constraint to prevent accidental multi-row configs.
+3. **JSON-in-TEXT columns** - Provider credentials, model configs, and OAuth metadata stored as serialized JSON in TEXT columns. Trade-off: no SQL querying into JSON, but simpler schema evolution.
+4. **Denormalized favorites** - `task_favorites` copies `prompt` and `summary` from `tasks` to allow independent display without JOIN. Trade-off: potential staleness vs. query simplicity.
+5. **In-memory completion state** - `CompletionFlowState` deliberately not persisted. If the app crashes mid-task, the task is marked failed rather than attempting to reconstruct continuation state.
+6. **Machine-derived encryption key** - SecureStorage uses PBKDF2 with machine-specific inputs (platform, homedir, username). Not as secure as OS keychain but avoids macOS permission prompts. Suitable for rotatable API keys.
+7. **Ephemeral React state** - Zustand store is purely derived from IPC events. On restart, task history is reloaded from SQLite, but in-flight execution state (currentTool, startupStage, etc.) is lost.
 
 ---
 
@@ -793,13 +793,13 @@ All files and folders found in this directory at runtime:
 
 | Path                     | Owner               | Description                                                                                                                                                                         |
 | ------------------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `anastomotic.db`         | agent-core (SQLite) | Main database — tasks, messages, todos, providers, settings, skills, connectors. All application state.                                                                             |
-| `anastomotic.db-wal`     | SQLite engine       | Write-Ahead Log — buffered writes not yet checkpointed to main DB. Auto-managed.                                                                                                    |
+| `anastomotic.db`         | agent-core (SQLite) | Main database - tasks, messages, todos, providers, settings, skills, connectors. All application state.                                                                             |
+| `anastomotic.db-wal`     | SQLite engine       | Write-Ahead Log - buffered writes not yet checkpointed to main DB. Auto-managed.                                                                                                    |
 | `anastomotic.db-shm`     | SQLite engine       | Shared memory index for WAL. Enables concurrent readers. Auto-managed.                                                                                                              |
 | `anastomotic-dev.db`     | agent-core (SQLite) | Development-mode database (used when running `pnpm dev`). Same schema as prod.                                                                                                      |
 | `anastomotic-dev.db-wal` | SQLite engine       | WAL for dev database.                                                                                                                                                               |
 | `anastomotic-dev.db-shm` | SQLite engine       | Shared memory for dev database.                                                                                                                                                     |
-| `opencode/`              | config-generator.ts | Contains `opencode.json` — generated OpenCode CLI config (system prompt, MCP servers, provider settings). Regenerated before each task. Single file shared across concurrent tasks. |
+| `opencode/`              | config-generator.ts | Contains `opencode.json` - generated OpenCode CLI config (system prompt, MCP servers, provider settings). Regenerated before each task. Single file shared across concurrent tasks. |
 | `skills/`                | SkillsManager       | Skill markdown files (official, community, custom). Each skill is a `.md` with frontmatter.                                                                                         |
 | `logs/`                  | log-file-writer.ts  | Application log files written by Electron main process.                                                                                                                             |
 | `dev-browser/`           | dev-browser-mcp     | Playwright browser profile data (cookies, localStorage) for the bundled Chromium used in browser automation tasks.                                                                  |
@@ -839,7 +839,7 @@ These are standard Chromium storage directories created automatically by Electro
 | Task not completing / wrong status | `anastomotic.db` → `tasks` table (status, session_id)                             |
 | Messages missing or corrupt        | `anastomotic.db` → `task_messages` table (sort_order, content)                    |
 | Provider connection issues         | `anastomotic.db` → `providers` table (connection_status, credentials_type)        |
-| API key not working                | `secure-storage.json` (encrypted — verify key exists, can't read value)           |
+| API key not working                | `secure-storage.json` (encrypted - verify key exists, can't read value)           |
 | OpenCode config wrong              | `opencode/opencode.json` (inspect generated system prompt, MCP servers)           |
 | Browser automation state           | `dev-browser/` (Playwright profile with cookies/sessions from automated browsing) |
 | App crashes                        | `Crashpad/` minidumps + `logs/` directory                                         |

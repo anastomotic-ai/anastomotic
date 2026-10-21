@@ -1,5 +1,5 @@
 /**
- * StatusBadge — Connection status indicator for BrowserPreview.
+ * StatusBadge - Connection status indicator for BrowserPreview.
  *
  * Displays a small visual badge reflecting the current ViewStatus.
  * Extracted from BrowserPreview as part of ENG-982 refactor.

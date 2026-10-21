@@ -1005,7 +1005,7 @@ export function ExecutionPage() {
                   elapsedTime={elapsedTime}
                 />
 
-                {/* Inline permission / question card — scoped to this task */}
+                {/* Inline permission / question card - scoped to this task */}
                 <AnimatePresence>
                   {permissionRequest && (
                     <PermissionDialog

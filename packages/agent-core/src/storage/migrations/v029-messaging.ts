@@ -1,5 +1,5 @@
 /**
- * Migration v029 — add messaging_config column to app_settings
+ * Migration v029 - add messaging_config column to app_settings
  *
  * Stores per-platform messaging integration configuration (WhatsApp, Slack, etc.)
  * as a JSON blob.

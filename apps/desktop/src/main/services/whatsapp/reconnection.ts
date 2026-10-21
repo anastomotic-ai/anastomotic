@@ -1,5 +1,5 @@
 /**
- * reconnection — exponential-backoff reconnect scheduler for WhatsAppService.
+ * reconnection - exponential-backoff reconnect scheduler for WhatsAppService.
  *
  * Extracted from WhatsAppService for modularity.
  */

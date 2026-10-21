@@ -26,12 +26,12 @@ pnpm lint:eslint                                # ESLint only (flat config)
 pnpm format:check                               # Prettier check (no writes)
 pnpm format                                     # Prettier write (auto-fix)
 
-# Testing (web workspace — renderer/UI tests)
+# Testing (web workspace - renderer/UI tests)
 pnpm -F @anastomotic/web test                    # Run all web Vitest tests
 pnpm -F @anastomotic/web test:unit               # Web unit tests only
 pnpm -F @anastomotic/web test:integration        # Web integration tests only
 
-# Testing (desktop workspace — main process + preload tests)
+# Testing (desktop workspace - main process + preload tests)
 pnpm -F @anastomotic/desktop test                # Run all desktop Vitest tests
 pnpm -F @anastomotic/desktop test:unit           # Desktop unit tests only
 pnpm -F @anastomotic/desktop test:integration    # Desktop integration tests only
@@ -50,7 +50,7 @@ pnpm clean                                      # Clean build outputs and node_m
 Always verify before committing. Run the relevant commands for what you changed:
 
 ```bash
-# After ANY code change — always run typecheck + lint
+# After ANY code change - always run typecheck + lint
 pnpm typecheck && pnpm lint:eslint && pnpm format:check
 
 # After changing web UI code (components, pages, stores, styles)
@@ -68,11 +68,11 @@ pnpm lint && pnpm format:check && pnpm -F @anastomotic/web test && pnpm -F @anas
 
 ## Do NOT
 
-- **Do NOT use `require()`** in agent-core — it is ESM (`"type": "module"`)
+- **Do NOT use `require()`** in agent-core - it is ESM (`"type": "module"`)
 - **Do NOT forget `.js` extensions** on imports within agent-core (e.g., `import { foo } from './utils/bar.js'` NOT `./utils/bar`)
-- **Do NOT use absolute paths for images** in the web UI — use ES module imports (see Image Assets below)
-- **Do NOT modify released migration files** — create a new migration instead
-- **Do NOT add root-level test scripts** — tests are workspace-scoped (`-F @anastomotic/web`, `-F @anastomotic/desktop`, or `-F @anastomotic_ai/agent-core`)
+- **Do NOT use absolute paths for images** in the web UI - use ES module imports (see Image Assets below)
+- **Do NOT modify released migration files** - create a new migration instead
+- **Do NOT add root-level test scripts** - tests are workspace-scoped (`-F @anastomotic/web`, `-F @anastomotic/desktop`, or `-F @anastomotic_ai/agent-core`)
 - **Do NOT spawn `npx`/`node`** without adding bundled Node.js bin to PATH (see [architecture.md](docs/architecture.md#spawning-npxnode-in-main-process))
 
 ## Architecture
@@ -81,14 +81,14 @@ See [docs/architecture.md](docs/architecture.md) for full architecture details (
 
 Key packages:
 
-- `@anastomotic_ai/agent-core` — Core business logic, types, storage, MCP tools (ESM, internal workspace package)
-- `@anastomotic/web` — Standalone React UI (Vite + React Router + Zustand)
-- `@anastomotic/desktop` — Thin Electron shell (main process + preload), loads web's build output
+- `@anastomotic_ai/agent-core` - Core business logic, types, storage, MCP tools (ESM, internal workspace package)
+- `@anastomotic/web` - Standalone React UI (Vite + React Router + Zustand)
+- `@anastomotic/desktop` - Thin Electron shell (main process + preload), loads web's build output
 
 ## Code Conventions
 
 - TypeScript everywhere (no JS for app logic)
-- **ESM package**: `@anastomotic_ai/agent-core` uses `"type": "module"` — all imports MUST use `.js` extensions
+- **ESM package**: `@anastomotic_ai/agent-core` uses `"type": "module"` - all imports MUST use `.js` extensions
 - Shared types go in `packages/agent-core/src/common/types/`
 - Core business logic goes in `packages/agent-core/src/`
 - UI state via Zustand store actions (in `apps/web/src/client/stores/`)
@@ -157,7 +157,7 @@ Static assets go in `apps/web/public/assets/`.
 "@anastomotic_ai/agent-core/common" → "../../packages/agent-core/src/common.ts"
 ```
 
-Note: Desktop no longer has `@/*` alias — UI code lives in `apps/web`.
+Note: Desktop no longer has `@/*` alias - UI code lives in `apps/web`.
 
 ## Environment Variables
 

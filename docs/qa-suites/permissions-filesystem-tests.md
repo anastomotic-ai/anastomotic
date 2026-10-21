@@ -4,7 +4,7 @@ Tests covering the filesystem permission inline card and related access-control 
 
 ---
 
-## Permission Inline Card — Display
+## Permission Inline Card - Display
 
 | ID         | Scenario                                          | Steps                                                                                                 | Expected                                                                          |
 | ---------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -19,7 +19,7 @@ Tests covering the filesystem permission inline card and related access-control 
 
 ---
 
-## Permission Inline Card — Scoping
+## Permission Inline Card - Scoping
 
 | ID            | Scenario                                                    | Steps                                                                                                                                  | Expected                                                                                                           |
 | ------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -32,7 +32,7 @@ Tests covering the filesystem permission inline card and related access-control 
 
 ---
 
-## Filesystem Access — Allowed Paths
+## Filesystem Access - Allowed Paths
 
 | ID         | Scenario                             | Steps                                                                                            | Expected                                                    |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
@@ -43,7 +43,7 @@ Tests covering the filesystem permission inline card and related access-control 
 
 ---
 
-## Filesystem Access — Persistence
+## Filesystem Access - Persistence
 
 > **Session definition**: A session lasts until the application is restarted or the workspace is changed. Approved paths are retained in memory for the current session and cleared on restart.
 

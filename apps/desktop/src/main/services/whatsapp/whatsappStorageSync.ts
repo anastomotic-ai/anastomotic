@@ -1,5 +1,5 @@
 /**
- * whatsappStorageSync — storage mutation helpers for WhatsApp events
+ * whatsappStorageSync - storage mutation helpers for WhatsApp events
  *
  * Handles persistence of phoneNumber, connectionStatus, and lastConnectedAt
  * in response to WhatsApp service events.

@@ -55,7 +55,7 @@ export function ThemeSelector() {
         }
       })
       .catch(() => {
-        // Ignore — keep the localStorage fallback already set in useState.
+        // Ignore - keep the localStorage fallback already set in useState.
       });
 
     // Subscribe to live theme changes (e.g. changed from another window/process).

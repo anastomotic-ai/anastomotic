@@ -377,7 +377,7 @@ describe('TaskHistory Integration', () => {
         </MemoryRouter>,
       );
 
-      // Assert — target specifically the delete button, not the favorite star button
+      // Assert - target specifically the delete button, not the favorite star button
       const deleteButton = screen.getByTestId('task-delete-button');
       expect(deleteButton).toBeInTheDocument();
     });

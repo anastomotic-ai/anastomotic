@@ -1,5 +1,5 @@
 /**
- * wireTaskBridge — connects WhatsAppService events to task creation
+ * wireTaskBridge - connects WhatsAppService events to task creation
  *
  * Wraps task-manager integration and relays progress back to WhatsApp.
  * Storage persistence helpers live in whatsappStorageSync.ts.

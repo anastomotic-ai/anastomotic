@@ -1,4 +1,4 @@
-// Notification webhook service — fires HTTP POST on task events
+// Notification webhook service - fires HTTP POST on task events
 
 import { validateHttpUrl } from '../utils/url.js';
 import {

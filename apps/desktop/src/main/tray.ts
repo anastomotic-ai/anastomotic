@@ -85,7 +85,7 @@ export function updateTaskCount(count: number, mainWindow: BrowserWindow | null)
   activeTaskCount = count;
   if (tray && !tray.isDestroyed()) {
     tray.setContextMenu(buildContextMenu(mainWindow));
-    const tooltip = count > 0 ? `Anastomotic — ${count} task(s) running` : 'Anastomotic';
+    const tooltip = count > 0 ? `Anastomotic - ${count} task(s) running` : 'Anastomotic';
     tray.setToolTip(tooltip);
   }
 }

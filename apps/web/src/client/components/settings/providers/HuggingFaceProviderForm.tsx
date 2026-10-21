@@ -214,7 +214,7 @@ export function HuggingFaceProviderForm({
                   />
                 </svg>
                 <span>
-                  Runs ONNX models locally via Transformers.js — no cloud API required. First run
+                  Runs ONNX models locally via Transformers.js - no cloud API required. First run
                   downloads the model (~0.5–4 GB).
                 </span>
               </div>

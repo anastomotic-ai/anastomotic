@@ -4,7 +4,7 @@
  * Lightweight structured logger for daemon internals.
  * Wraps console methods with a consistent prefix / level format.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 export interface DaemonLogger {

@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nodeExternals = [...builtinModules, ...builtinModules.map((m) => `node:${m}`)];
 
-// Externalize all node_modules — only bundle local source files.
+// Externalize all node_modules - only bundle local source files.
 // Vite 8 (rolldown) does not auto-convert CJS require() to ESM imports,
 // so any bundled third-party package that internally calls require() for
 // Node built-ins will fail at runtime in an ESM context.
@@ -86,7 +86,7 @@ function buildDaemonEntry(): import('vite').Plugin {
             // Bundle @anastomotic_ai workspace packages; externalize everything else.
             build.onResolve({ filter: /^[^./]/ }, (args) => {
               // Absolute paths (e.g. Windows drive-letter paths like "D:\...") must not be
-              // externalized — they are entry points or resolved files, not package imports.
+              // externalized - they are entry points or resolved files, not package imports.
               if (path.isAbsolute(args.path)) {
                 return null;
               }

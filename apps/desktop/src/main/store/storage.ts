@@ -1,7 +1,7 @@
 import { app } from 'electron';
 import path from 'path';
 import { createStorage, type StorageAPI } from '@anastomotic_ai/agent-core';
-// Deep import for legacy migration only — getDatabase is intentionally not part of StorageAPI
+// Deep import for legacy migration only - getDatabase is intentionally not part of StorageAPI
 import { getDatabase as coreGetDatabase } from '@anastomotic_ai/agent-core/storage/database';
 import type { Database } from 'better-sqlite3';
 import { importLegacyElectronStoreData } from './electronStoreImport';

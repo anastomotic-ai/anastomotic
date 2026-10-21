@@ -1,4 +1,4 @@
-# Completion Enforcer — Control Flow Diagrams
+# Completion Enforcer - Control Flow Diagrams
 
 > The CompletionEnforcer is Anastomotic's guardrail layer on top of OpenCode.
 > It ensures tasks reach a defined endpoint by tracking a state machine, validating
@@ -31,7 +31,7 @@ stateDiagram-v2
 
 ---
 
-## Flow 1: Happy Path — `complete_task(success)`, All Todos Done
+## Flow 1: Happy Path - `complete_task(success)`, All Todos Done
 
 The agent calls `complete_task` with `status: 'success'` and every todo is completed or cancelled. The enforcer validates and lets the task end normally.
 
@@ -177,7 +177,7 @@ sequenceDiagram
 
     CE->>CE: getPartialContinuationPrompt(...)
 
-    Note over CE: Prompt includes:<br/>"## Original Request<br/>'Organize Downloads folder'<br/><br/>## What You Completed<br/>Created folders but could not identify<br/>all file types<br/><br/>## What You Said Remains<br/>Need to categorize .dat and .tmp files<br/><br/>## REQUIRED: Create a Continuation Plan<br/>1. Review the original request<br/>2. Create a TODO list<br/>3. Execute the plan<br/>4. Call complete_task(success)<br/><br/>## IMPORTANT RULES<br/>- Do NOT call complete_task with 'partial'<br/>  again unless actual TECHNICAL blocker<br/>- Do NOT ask user 'would you like me to<br/>  continue?' — just continue working"
+    Note over CE: Prompt includes:<br/>"## Original Request<br/>'Organize Downloads folder'<br/><br/>## What You Completed<br/>Created folders but could not identify<br/>all file types<br/><br/>## What You Said Remains<br/>Need to categorize .dat and .tmp files<br/><br/>## REQUIRED: Create a Continuation Plan<br/>1. Review the original request<br/>2. Create a TODO list<br/>3. Execute the plan<br/>4. Call complete_task(success)<br/><br/>## IMPORTANT RULES<br/>- Do NOT call complete_task with 'partial'<br/>  again unless actual TECHNICAL blocker<br/>- Do NOT ask user 'would you like me to<br/>  continue?' - just continue working"
 
     CE->>CS: startPartialContinuation()
     CE->>OCA: callbacks.onStartContinuation(prompt)
@@ -247,7 +247,7 @@ sequenceDiagram
 
 ---
 
-## Flow 5: Conversational Turn — No Enforcement Needed
+## Flow 5: Conversational Turn - No Enforcement Needed
 
 The agent responds with only text (no tools used, no todos created). The enforcer recognizes this as a conversational exchange and lets it end without requiring `complete_task`.
 
@@ -344,7 +344,7 @@ sequenceDiagram
 
 ---
 
-## Flow 7: Session Resumption Mechanism — `spawnSessionResumption()`
+## Flow 7: Session Resumption Mechanism - `spawnSessionResumption()`
 
 This is the engine behind all continuation flows. When the CompletionEnforcer decides the task isn't done, it calls back into the adapter which spawns a brand new PTY process using the same session ID, so OpenCode loads the full conversation history plus the continuation prompt.
 

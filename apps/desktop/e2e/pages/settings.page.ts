@@ -218,7 +218,7 @@ export class SettingsPage {
       // Native <select> element
       await this.modelSelector.selectOption(modelId);
     } else {
-      // Custom SearchableSelect — click to open, then click the option
+      // Custom SearchableSelect - click to open, then click the option
       await this.modelSelector.click();
       const option = this.page.locator(`[data-model-id="${modelId}"]`);
       await option.waitFor({ state: 'visible', timeout: 5000 });
@@ -234,7 +234,7 @@ export class SettingsPage {
     const tagName = await this.modelSelector.evaluate((el) => el.tagName.toLowerCase());
 
     if (tagName === 'select') {
-      // Native select — pick the first non-empty option
+      // Native select - pick the first non-empty option
       await this.modelSelector.evaluate((el) => {
         const select = el as HTMLSelectElement;
         if (select.options.length > 1) {
@@ -243,7 +243,7 @@ export class SettingsPage {
         }
       });
     } else {
-      // Custom SearchableSelect — click to open, then click first option
+      // Custom SearchableSelect - click to open, then click first option
       await this.modelSelector.click();
       const firstOption = this.page.locator('[data-model-id]').first();
       await firstOption.waitFor({ state: 'visible', timeout: 5000 });

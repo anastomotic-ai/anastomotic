@@ -13,7 +13,7 @@
  * (API keys from secure storage, app paths, etc.). This will be migrated in
  * a future step once the adapter is decoupled.
  *
- * This file MUST NOT import from 'electron' — it runs as a plain Node.js process.
+ * This file MUST NOT import from 'electron' - it runs as a plain Node.js process.
  */
 
 import {

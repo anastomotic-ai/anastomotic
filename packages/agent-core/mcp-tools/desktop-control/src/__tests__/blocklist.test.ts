@@ -115,7 +115,7 @@ describe('checkBlocklist', () => {
     expect(result?.appName).toBe('BadRegex');
   });
 
-  it('falls back to string includes for invalid regex — no match', () => {
+  it('falls back to string includes for invalid regex - no match', () => {
     const invalidRegexList: BlocklistEntry[] = [
       {
         appName: 'BadRegex',
@@ -152,7 +152,7 @@ describe('mergeBlocklists', () => {
       },
     ];
     const merged = mergeBlocklists(custom);
-    // Should not duplicate — same appName
+    // Should not duplicate - same appName
     const passwordEntries = merged.filter((e) => e.appName === '1Password');
     expect(passwordEntries.length).toBe(1);
     // Custom should override default

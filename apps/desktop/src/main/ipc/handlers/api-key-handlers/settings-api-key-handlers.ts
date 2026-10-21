@@ -114,7 +114,7 @@ export function registerSettingsApiKeyHandlers(): void {
       }
 
       // Cloud-browser providers (aws-agentcore, browserbase, steel) store their keys
-      // in app_settings.cloud_browser_config — not in secure storage.
+      // in app_settings.cloud_browser_config - not in secure storage.
       if (CLOUD_BROWSER_PROVIDERS.has(provider)) {
         throw new Error(
           `Provider '${provider}' keys must be saved via the cloud browser settings panel`,
@@ -145,7 +145,7 @@ export function registerSettingsApiKeyHandlers(): void {
     const provider = sanitizedId.replace('local-', '');
 
     // Config-backed entries (e.g. local-azure-foundry synthesized from AzureFoundryConfig)
-    // are not stored in secure storage — routing them to deleteApiKey() would be a no-op
+    // are not stored in secure storage - routing them to deleteApiKey() would be a no-op
     // and the entry would reappear on next load. Instead, update the backing config.
     if (provider === 'azure-foundry') {
       const existingConfig = storage.getAzureFoundryConfig();

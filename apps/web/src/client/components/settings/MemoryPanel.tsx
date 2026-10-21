@@ -35,7 +35,7 @@ export function MemoryPanel() {
       </div>
 
       <p className="text-sm text-muted-foreground">
-        The agent automatically learns from your tasks — building long-term memory of your
+        The agent automatically learns from your tasks - building long-term memory of your
         preferences, patterns, and project context across sessions.
       </p>
 

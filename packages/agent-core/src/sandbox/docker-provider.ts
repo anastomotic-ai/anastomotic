@@ -1,5 +1,5 @@
 /**
- * Docker sandbox provider — runs the agent inside a Docker container.
+ * Docker sandbox provider - runs the agent inside a Docker container.
  *
  * Contributed by:
  *   - preeeetham (PR #430): spawnDocker / spawnNormal helper logic,
@@ -149,7 +149,7 @@ export class DockerSandboxProvider implements SandboxProvider {
       dockerArgs.push('--network', 'none');
     }
 
-    // Warn if per-host allowlists are set — Docker mode doesn't support them
+    // Warn if per-host allowlists are set - Docker mode doesn't support them
     const hasAllowedHosts =
       (config.allowedHosts && config.allowedHosts.length > 0) ||
       (netPolicy?.allowedHosts && netPolicy.allowedHosts.length > 0);
@@ -168,7 +168,7 @@ export class DockerSandboxProvider implements SandboxProvider {
       }
     }
 
-    // Docker image (SaaiAravindhRaja, PR #612 — defaults to node:20-slim)
+    // Docker image (SaaiAravindhRaja, PR #612 - defaults to node:20-slim)
     const image = config.dockerImage || 'node:20-slim';
     dockerArgs.push(image);
 

@@ -226,7 +226,7 @@ export function registerOrchestrationHandlers(): void {
         },
       };
 
-      // Launch execution — the orchestrator creates the run and returns it
+      // Launch execution - the orchestrator creates the run and returns it
       // We kick off async execution and return the first snapshot
       const initialRun = await new Promise<PipelineRun>((resolve, reject) => {
         let resolved = false;
@@ -262,7 +262,7 @@ export function registerOrchestrationHandlers(): void {
         // the promise above will resolve first.
         setTimeout(() => {
           if (!resolved) {
-            // The run hasn't completed yet — look up the latest run for this pipeline
+            // The run hasn't completed yet - look up the latest run for this pipeline
             const runs = listPipelineRuns(pipeline.id);
             if (runs.length > 0) {
               resolved = true;

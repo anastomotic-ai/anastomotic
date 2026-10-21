@@ -284,7 +284,7 @@ export function createTaskCallbacks(options: TaskCallbacksOptions): TaskCallback
             costUsd: data.cost,
           });
         } catch (_e) {
-          /* best-effort — don't break task flow */
+          /* best-effort - don't break task flow */
         }
       }
     },
@@ -366,7 +366,7 @@ export function createTaskCallbacks(options: TaskCallbacksOptions): TaskCallback
   };
 }
 
-// ── Daemon Task Callbacks (SaaiAravindhRaja / ChaiAndCode — PR #613) ───────────
+// ── Daemon Task Callbacks (SaaiAravindhRaja / ChaiAndCode - PR #613) ───────────
 
 export interface DaemonTaskCallbacksOptions {
   taskId: string;
@@ -389,7 +389,7 @@ export function createDaemonTaskCallbacks(options: DaemonTaskCallbacksOptions): 
         win.webContents.send(channel, data);
       }
     } catch {
-      // Window or webContents torn down between check and send — safe to ignore
+      // Window or webContents torn down between check and send - safe to ignore
     }
   };
 

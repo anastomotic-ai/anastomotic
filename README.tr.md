@@ -62,7 +62,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 - Kendi API anahtarınızı kullanın (OpenAI, Anthropic, vb.)
 - Veya [Ollama](https://ollama.com) ile çalıştırın (API anahtarı gerekmez)
 - Abonelik yok, ek satış yok
-- Bu bir araç—hizmet değil
+- Bu bir araç - hizmet değil
 
 </div>
 
@@ -173,7 +173,7 @@ Anastomotic bilgisayarınızda yerel olarak çalışır. Dosyalarınız cihazın
 | Adım  | Eylem                  | Detaylar                                                                                                                        |
 | :---: | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **1** | **Uygulamayı Kurun**   | DMG'yi indirin ve Uygulamalar'a sürükleyin                                                                                      |
-| **2** | **AI'ınızı Bağlayın**  | Kendi Google, OpenAI, Anthropic (veya diğer) API anahtarınızı kullanın — veya ChatGPT (Plus/Pro) ile giriş yapın. Abonelik yok. |
+| **2** | **AI'ınızı Bağlayın**  | Kendi Google, OpenAI, Anthropic (veya diğer) API anahtarınızı kullanın - veya ChatGPT (Plus/Pro) ile giriş yapın. Abonelik yok. |
 | **3** | **Erişim Verin**       | Hangi klasörleri görebileceğini seçin. Kontrol sizde.                                                                           |
 | **4** | **Çalışmaya Başlayın** | Bir belgeyi özetlemesini, klasör düzenlemesini veya rapor oluşturmasını isteyin. Her şeyi onaylarsınız.                         |
 

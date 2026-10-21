@@ -1,6 +1,6 @@
 ---
 name: git-workflow
-description: Full git workflow assistant — branching, PRs, conflict resolution, rebasing, cherry-picking, bisecting, stashing, and GitHub CLI integration.
+description: Full git workflow assistant - branching, PRs, conflict resolution, rebasing, cherry-picking, bisecting, stashing, and GitHub CLI integration.
 command: /git-workflow
 verified: true
 ---
@@ -24,10 +24,10 @@ git checkout -b fix/<ticket>-<short-description>
 
 ### Branch Naming Convention
 
-- `feat/ENG-123-add-login` — new feature
-- `fix/ENG-456-null-pointer` — bug fix
-- `refactor/ENG-789-extract-service` — refactoring
-- `chore/update-deps` — maintenance
+- `feat/ENG-123-add-login` - new feature
+- `fix/ENG-456-null-pointer` - bug fix
+- `refactor/ENG-789-extract-service` - refactoring
+- `chore/update-deps` - maintenance
 
 ## Pull Request Workflow
 
@@ -102,7 +102,7 @@ git stash drop stash@{0}     # Remove a stash
 git bisect start
 git bisect bad                # Current commit is bad
 git bisect good <commit>      # Known good commit
-# Git checks out mid-point — test and mark:
+# Git checks out mid-point - test and mark:
 git bisect good   # or
 git bisect bad
 # Repeat until the offending commit is found

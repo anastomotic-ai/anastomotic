@@ -113,10 +113,10 @@ The config generator accepts a `browser` option to control how the agent connect
 ```typescript
 import { generateConfig, type BrowserConfig } from '@anastomotic_ai/agent-core';
 
-// Default — uses the dev-browser HTTP server
+// Default - uses the dev-browser HTTP server
 generateConfig({ browser: { mode: 'builtin' } });
 
-// Remote CDP — connect to any Chrome DevTools Protocol endpoint
+// Remote CDP - connect to any Chrome DevTools Protocol endpoint
 generateConfig({
   browser: {
     mode: 'remote',
@@ -125,7 +125,7 @@ generateConfig({
   },
 });
 
-// No browser — omits browser tools entirely
+// No browser - omits browser tools entirely
 generateConfig({ browser: { mode: 'none' } });
 ```
 

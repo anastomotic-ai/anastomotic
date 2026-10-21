@@ -4,7 +4,7 @@
  * Listens for JSON-RPC 2.0 requests on a DaemonTransport, dispatches them
  * to registered method handlers, and pushes notifications to connected clients.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 import type {

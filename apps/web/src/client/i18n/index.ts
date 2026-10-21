@@ -88,7 +88,7 @@ function resolveStoredLanguage(): SupportedLanguage {
   if (stored === 'en' || stored === 'zh-CN' || stored === 'ru' || stored === 'fr') {
     return stored;
   }
-  // 'auto' or missing — detect from browser
+  // 'auto' or missing - detect from browser
   const nav = typeof navigator !== 'undefined' ? navigator.language : 'en';
   if (nav.startsWith('zh')) {
     return 'zh-CN';

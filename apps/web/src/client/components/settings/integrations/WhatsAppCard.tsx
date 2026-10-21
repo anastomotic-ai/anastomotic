@@ -1,5 +1,5 @@
 /**
- * WhatsAppCard — connection management UI for WhatsApp integration
+ * WhatsAppCard - connection management UI for WhatsApp integration
  *
  * State logic extracted to useWhatsAppCard hook for modularity.
  */

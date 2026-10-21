@@ -173,7 +173,7 @@ Anastomotic se ejecuta localmente en tu máquina. Tus archivos permanecen en tu 
 | Paso  | Acción                 | Detalles                                                                                                                   |
 | :---: | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **1** | **Instala la App**     | Descarga el DMG y arrástralo a Aplicaciones                                                                                |
-| **2** | **Conecta tu IA**      | Usa tu propia clave API de Google, OpenAI, Anthropic (u otra) — o inicia sesión con ChatGPT (Plus/Pro). Sin suscripciones. |
+| **2** | **Conecta tu IA**      | Usa tu propia clave API de Google, OpenAI, Anthropic (u otra) - o inicia sesión con ChatGPT (Plus/Pro). Sin suscripciones. |
 | **3** | **Dale Acceso**        | Elige qué carpetas puede ver. Tú mantienes el control.                                                                     |
 | **4** | **Empieza a Trabajar** | Pídele que resuma un documento, organice una carpeta o cree un informe. Apruebas todo.                                     |
 

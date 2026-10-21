@@ -6,7 +6,7 @@
  *
  * This is cross-platform (macOS, Windows, Linux) without sockets or named pipes.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 import type { ChildProcess } from 'child_process';

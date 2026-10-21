@@ -1,5 +1,5 @@
 /**
- * TaskBridge — routes incoming WhatsApp messages to task creation.
+ * TaskBridge - routes incoming WhatsApp messages to task creation.
  *
  * - Rate-limiting (per-sender and global)
  * - Self-chat-only access control via ownerJid/ownerLid

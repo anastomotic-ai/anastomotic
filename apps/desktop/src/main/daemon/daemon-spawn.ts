@@ -1,7 +1,7 @@
 /**
  * Daemon Spawn
  *
- * Child process spawning logic — forks a separate Node.js daemon process via IPC.
+ * Child process spawning logic - forks a separate Node.js daemon process via IPC.
  */
 
 import { fork } from 'child_process';

@@ -3,7 +3,7 @@
  *
  * A DaemonTransport implementation that passes messages directly
  * between server and client within the same process via callbacks.
- * This is the Step 2 transport — no sockets, no serialization overhead.
+ * This is the Step 2 transport - no sockets, no serialization overhead.
  *
  * In Step 3, this will be swapped for a socket-based transport.
  */

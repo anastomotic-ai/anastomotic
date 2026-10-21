@@ -40,7 +40,7 @@ function interpolate(text: string, options?: Record<string, unknown>): string {
   });
 }
 
-// Mock react-i18next for all tests — resolves keys to actual English text
+// Mock react-i18next for all tests - resolves keys to actual English text
 vi.mock('react-i18next', () => ({
   useTranslation: (ns?: string) => ({
     t: (key: string, options?: Record<string, unknown>) => {

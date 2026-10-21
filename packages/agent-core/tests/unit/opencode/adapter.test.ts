@@ -178,7 +178,7 @@ describe('Shell escaping utilities', () => {
   // buildPtySpawnArgs on win32 now spawns opencode.exe DIRECTLY in node-pty
   // without any shell wrapper (no cmd.exe, no powershell.exe).  When args are
   // passed as an array the OS hands each element to the process as a raw argv
-  // entry — no shell quoting is ever needed regardless of what characters the
+  // entry - no shell quoting is ever needed regardless of what characters the
   // strings contain.
   // ---------------------------------------------------------------------------
   describe('Windows direct spawn – Issue #596 (paths with spaces + arbitrary task text)', () => {

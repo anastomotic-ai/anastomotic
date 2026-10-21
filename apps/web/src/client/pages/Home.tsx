@@ -70,7 +70,7 @@ export function HomePage() {
   }, [t]);
 
   useEffect(() => {
-    // Single effect — Home only renders at '/', so the pathname guard also covers initial mount
+    // Single effect - Home only renders at '/', so the pathname guard also covers initial mount
     if (location.pathname === '/' && typeof loadFavorites === 'function') {
       void loadFavorites();
     }

@@ -1,5 +1,5 @@
 /**
- * Messaging integration types — WhatsApp, Slack, Telegram, Teams
+ * Messaging integration types - WhatsApp, Slack, Telegram, Teams
  *
  * Defines the common interface for messaging platform integrations,
  * connection lifecycle status, and channel adapter contract.

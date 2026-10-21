@@ -1,6 +1,6 @@
 /**
  * Lightweight git utilities that shell out to `git` and return parsed results.
- * All functions are safe to call on non-git directories — they return null.
+ * All functions are safe to call on non-git directories - they return null.
  */
 
 import { execFile } from 'node:child_process';

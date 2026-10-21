@@ -62,7 +62,7 @@ Anastomotic adalah agen desktop AI open source yang mengotomatisasi manajemen fi
 - Gunakan kunci API Anda sendiri (OpenAI, Anthropic, dll.)
 - Atau jalankan dengan [Ollama](https://ollama.com) (tanpa kunci API)
 - Tanpa langganan, tanpa upsell
-- Ini alat—bukan layanan
+- Ini alat - bukan layanan
 
 </div>
 
@@ -173,7 +173,7 @@ Anastomotic berjalan secara lokal di mesin Anda. File Anda tetap di perangkat An
 | Langkah | Aksi                  | Detail                                                                                                              |
 | :-----: | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
 |  **1**  | **Install Aplikasi**  | Unduh DMG dan seret ke Applications                                                                                 |
-|  **2**  | **Hubungkan AI Anda** | Gunakan kunci API Google, OpenAI, Anthropic (atau lainnya) — atau masuk dengan ChatGPT (Plus/Pro). Tanpa langganan. |
+|  **2**  | **Hubungkan AI Anda** | Gunakan kunci API Google, OpenAI, Anthropic (atau lainnya) - atau masuk dengan ChatGPT (Plus/Pro). Tanpa langganan. |
 |  **3**  | **Berikan Akses**     | Pilih folder mana yang bisa dilihat. Anda tetap memegang kontrol.                                                   |
 |  **4**  | **Mulai Bekerja**     | Minta untuk meringkas dokumen, membersihkan folder, atau membuat laporan. Anda menyetujui semuanya.                 |
 

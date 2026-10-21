@@ -62,7 +62,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 - Use your own API key (OpenAI, Anthropic, etc.)
 - Or run with [Ollama](https://ollama.com) (no API key needed)
 - No subscription, no upsell
-- It's a tool—not a service
+- It's a tool - not a service
 
 </div>
 
@@ -121,12 +121,12 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 | Feature                       | Description                                                                                                  |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| **📅 Scheduled Tasks**        | Schedule AI tasks with cron expressions — run daily reports, weekly cleanups, or hourly checks automatically |
+| **📅 Scheduled Tasks**        | Schedule AI tasks with cron expressions - run daily reports, weekly cleanups, or hourly checks automatically |
 | **💰 Cost Tracking**          | Monitor token usage and API costs per task with detailed breakdowns by model and provider                    |
 | **🧠 Auto-Learning**          | Automatically extracts reusable insights from completed tasks and applies them to improve future results     |
 | **🔀 Multi-Agent Pipelines**  | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines                   |
-| **🔧 Git-Aware Code Agent**   | Detects current branch and repo status — suggests git-related actions contextually on the home screen        |
-| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text — or copy to clipboard with one click                   |
+| **🔧 Git-Aware Code Agent**   | Detects current branch and repo status - suggests git-related actions contextually on the home screen        |
+| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text - or copy to clipboard with one click                   |
 | **💡 Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity        |
 | **🏪 Skill Marketplace**      | Browse and install community skills from a curated marketplace with one-click install                        |
 | **🔔 Notification Webhooks**  | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure             |
@@ -206,7 +206,7 @@ Anastomotic runs locally on your machine and stores task history locally. When y
 | Step  | Action              | Details                                                                                                           |
 | :---: | ------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **1** | **Install the App** | Download the DMG and drag it into Applications                                                                    |
-| **2** | **Connect Your AI** | Use your own Google, OpenAI, Anthropic (or other) API key — or sign in with ChatGPT (Plus/Pro). No subscriptions. |
+| **2** | **Connect Your AI** | Use your own Google, OpenAI, Anthropic (or other) API key - or sign in with ChatGPT (Plus/Pro). No subscriptions. |
 | **3** | **Give It Access**  | Choose which folders it can see. You stay in control.                                                             |
 | **4** | **Start Working**   | Ask it to summarize a doc, clean a folder, or create a report. You approve everything.                            |
 

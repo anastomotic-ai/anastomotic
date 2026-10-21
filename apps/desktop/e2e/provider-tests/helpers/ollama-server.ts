@@ -166,7 +166,7 @@ export class OllamaTestDriver {
     return this._modelId;
   }
 
-  /** Wire into test.beforeAll — starts server + pulls model */
+  /** Wire into test.beforeAll - starts server + pulls model */
   beforeAll = async (): Promise<void> => {
     console.log(`[Ollama] Checking server at ${this._serverUrl}...`);
 
@@ -220,7 +220,7 @@ export class OllamaTestDriver {
     }
   };
 
-  /** Wire into test.afterAll — stops server if we started it */
+  /** Wire into test.afterAll - stops server if we started it */
   afterAll = async (): Promise<void> => {
     if (!this.serverStartedByUs || !this.ollamaProcess) return;
 
