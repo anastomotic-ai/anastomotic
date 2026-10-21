@@ -53,7 +53,7 @@ import {
   ChatCircle,
 } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
-import logoImage from '/assets/logo-1.png';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 const TABS = [
   { id: 'providers' as const, labelKey: 'tabs.providers', icon: Key },
@@ -410,12 +410,7 @@ export function SettingsDialog({
         {/* Left sidebar navigation */}
         <nav className="w-48 shrink-0 border-r border-border bg-muted/30 p-3 flex flex-col gap-1">
           <div className="px-3 py-2 mb-1">
-            <img
-              src={logoImage}
-              alt="Anastomotic"
-              className="dark:invert"
-              style={{ height: '20px', paddingLeft: '6px' }}
-            />
+            <BrandLogo />
           </div>
           {TABS.map((tab) => (
             <button
