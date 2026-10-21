@@ -276,7 +276,7 @@ export async function buildProviderConfigs(
     log.info(`[OpenCode Config Builder] Moonshot configured: ${modelId}`);
   }
 
-  // xAI provider — register selected model so OpenCode can resolve it.
+  // xAI provider - register selected model so OpenCode can resolve it.
   // OpenCode's @ai-sdk/xai only knows its built-in model list; dynamically-fetched
   // models (e.g. "grok-4-fast-reasoning") would otherwise cause
   // ProviderModelNotFoundError at runtime. The xAI native API expects model names
@@ -314,7 +314,7 @@ export async function buildProviderConfigs(
     }
   }
 
-  // Google AI provider — register selected model so OpenCode can resolve it.
+  // Google AI provider - register selected model so OpenCode can resolve it.
   // OpenCode's @ai-sdk/google only knows its built-in model list; dynamically-fetched
   // models (e.g. "gemini-3.1-flash-lite-preview") would otherwise cause
   // ProviderModelNotFoundError at runtime.

@@ -11,23 +11,7 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac용 다운로드 (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac용 다운로드 (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11용 다운로드</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux (ARM64) 다운로드</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux (x64) 다운로드</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux (.deb x64) 다운로드</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic 웹사이트</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic 블로그</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic 릴리스</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic 릴리스</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ 로컬에서 실행
+### 로컬에서 실행
 
 <div align="left">
 
@@ -55,7 +39,7 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 자체 AI 사용
+### 자체 AI 사용
 
 <div align="left">
 
@@ -71,7 +55,7 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 오픈소스
+### 오픈소스
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ 채팅만이 아닌 실행
+### 채팅만이 아닌 실행
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic는 로컬 머신에서 파일 관리, 문서 작성, 브라우저 �
 
 |                                                 |                                                     |                                                         |
 | :---------------------------------------------- | :-------------------------------------------------- | :------------------------------------------------------ |
-| **📁 파일 관리**                                | **✍️ 문서 작성**                                    | **🔗 도구 연결**                                        |
+| **파일 관리**                                   | **문서 작성**                                       | **도구 연결**                                           |
 | 콘텐츠나 규칙에 따라 파일 정리, 이름 변경, 이동 | 문서 작성, 요약, 재작성 지시                        | Notion, Google Drive, Dropbox 등과 연동 (로컬 API 통해) |
 |                                                 |                                                     |                                                         |
-| **⚙️ 커스텀 스킬**                              | **🛡️ 완전한 제어**                                  |                                                         |
+| **커스텀 스킬**                                 | **완전한 제어**                                     |                                                         |
 | 반복 워크플로우를 정의하고 스킬로 저장          | 모든 작업을 승인. 로그 확인 가능. 언제든 중지 가능. |                                                         |
 
 <br />
@@ -178,14 +162,6 @@ Anastomotic는 로컬 머신에서 실행됩니다. 파일은 기기에 저장�
 | **4** | **작업 시작**      | 문서 요약, 폴더 정리, 보고서 생성 요청. 모든 작업 승인.                                        |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Mac용 다운로드 (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac용 다운로드 (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11용 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux (ARM64) 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux (x64) 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux (.deb x64) 다운로드**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic 웹사이트](https://www.anastomotic.ai/)** · **[Anastomotic 블로그](https://www.anastomotic.ai/blog/)** · **[Anastomotic 릴리스](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic 릴리스](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT 라이선스 · [Anastomotic](https://www.anastomotic.ai) 제작
+MIT 라이선스 · [Anastomotic](https://github.com/anastomotic-ai) 제작
 
 <br />
 

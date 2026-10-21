@@ -1,4 +1,4 @@
-# Development Viewpoint — Anastomotic Architecture
+# Development Viewpoint - Anastomotic Architecture
 
 > Rozanski & Woods Development Viewpoint: describes the code structure, module organization, build pipeline, and technology choices that developers need to understand.
 
@@ -87,22 +87,22 @@ graph LR
 
 ```mermaid
 graph TB
-  subgraph UI_LAYER["UI Layer — Renderer Process"]
+  subgraph UI_LAYER["UI Layer - Renderer Process"]
     direction LR
     REACT["React 19"] ~~~ ZUSTAND["Zustand 5"] ~~~ ROUTER["React Router 7"] ~~~ TAILWIND["Tailwind CSS 3"] ~~~ RADIX["Radix UI"] ~~~ I18N["i18next"] ~~~ FRAMER["Framer Motion"]
   end
 
-  subgraph MAIN_LAYER["Application Layer — Electron Main Process"]
+  subgraph MAIN_LAYER["Application Layer - Electron Main Process"]
     direction LR
     ELECTRON["Electron 35"] ~~~ SQLITE["better-sqlite3"] ~~~ NODE_PTY["node-pty"] ~~~ ZOD["Zod 3"] ~~~ CRYPTO["AES-256-GCM<br/>(secure storage)"]
   end
 
-  subgraph AGENT_LAYER["Agent Layer — PTY + MCP Tools"]
+  subgraph AGENT_LAYER["Agent Layer - PTY + MCP Tools"]
     direction LR
     OPENCODE["OpenCode CLI<br/>(Go binary)"] ~~~ MCP_SDK["MCP SDK 1.27"] ~~~ HONO["Hono 4<br/>(HTTP server)"] ~~~ PLAYWRIGHT["Playwright<br/>(rebrowser fork)"]
   end
 
-  subgraph PROVIDER_LAYER["External — AI Providers"]
+  subgraph PROVIDER_LAYER["External - AI Providers"]
     direction LR
     ANTHROPIC["Anthropic"] ~~~ OPENAI["OpenAI"] ~~~ BEDROCK["AWS Bedrock"] ~~~ VERTEX["Google Vertex"] ~~~ AZURE["Azure Foundry"] ~~~ OLLAMA["Ollama / LM Studio"]
   end
@@ -126,7 +126,7 @@ graph TB
 
 ## 4. Build Pipeline
 
-From source to distributable — how each package is compiled and how they combine.
+From source to distributable - how each package is compiled and how they combine.
 
 ```mermaid
 graph LR
@@ -176,7 +176,7 @@ graph LR
 
 ---
 
-## 5. Module Structure — electron-app
+## 5. Module Structure - electron-app
 
 Key directories inside `apps/desktop/src/main/` and their responsibilities.
 
@@ -192,7 +192,7 @@ graph TD
   MAIN --> SERVICES["services/<br/><i>Permission handler<br/>Thought stream · Speech</i>"]
   MAIN --> SKILLS["skills/<br/><i>SkillsManager<br/>Discovery · Loading</i>"]
 
-  PRELOAD["src/preload/index.ts<br/><i>contextBridge — ~70 API methods</i>"]
+  PRELOAD["src/preload/index.ts<br/><i>contextBridge - ~70 API methods</i>"]
   MAIN -.-> PRELOAD
 
   classDef dir fill:#e8f4fd,stroke:#1e88e5
@@ -205,7 +205,7 @@ graph TD
 
 ---
 
-## 6. Module Structure — Web (Renderer)
+## 6. Module Structure - Web (Renderer)
 
 Key directories inside `apps/web/src/client/`.
 
@@ -226,7 +226,7 @@ graph TD
 
 ---
 
-## 7. Module Structure — agent-core
+## 7. Module Structure - agent-core
 
 Key directories inside `packages/agent-core/src/`.
 

@@ -29,7 +29,7 @@ function safeLog(level: 'INFO' | 'WARN' | 'ERROR', message: string, data?: unkno
     /* ignore */
   }
   // fallback
-  // Logger not yet initialized — silently skip
+  // Logger not yet initialized - silently skip
 }
 
 export type { MethodHandler } from './rpc-dispatcher';
@@ -100,8 +100,8 @@ export function startDaemonServer(): void {
 
       // Guard against runaway payloads
       if (Buffer.byteLength(buffer, 'utf8') > MAX_SOCKET_BUFFER_BYTES) {
-        safeLog('WARN', 'Socket buffer overflow — destroying connection');
-        socket.destroy(new Error('Buffer overflow — payload too large'));
+        safeLog('WARN', 'Socket buffer overflow - destroying connection');
+        socket.destroy(new Error('Buffer overflow - payload too large'));
         return;
       }
 

@@ -1,5 +1,5 @@
 /**
- * QRCodeDisplay — real QR code with expiry countdown
+ * QRCodeDisplay - real QR code with expiry countdown
  *
  * Renders a standards-compliant QR code from the pairing string using the
  * `qrcode` library, with an expiry timer and an "expired" overlay.
@@ -34,7 +34,7 @@ export function QRCodeDisplay({ qrString, expiresAt, onExpired, size = 200 }: QR
         }
       })
       .catch(() => {
-        // Silently ignore — expired overlay will show if qrString is bad
+        // Silently ignore - expired overlay will show if qrString is bad
       });
     return () => {
       cancelled = true;
@@ -95,7 +95,7 @@ export function QRCodeDisplay({ qrString, expiresAt, onExpired, size = 200 }: QR
             width={size}
             height={size}
             className="block"
-            alt="WhatsApp QR code — scan with your phone"
+            alt="WhatsApp QR code - scan with your phone"
             aria-label="WhatsApp QR code"
           />
         ) : (

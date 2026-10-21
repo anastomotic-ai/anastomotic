@@ -2,18 +2,29 @@
 
 import { useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
-import { Plus, Trash2, ArrowDown } from 'lucide-react';
+import {
+  Plus,
+  Trash2,
+  ArrowDown,
+  Search,
+  Code,
+  FileText,
+  FlaskConical,
+  PenLine,
+  Settings,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import type { AgentRolePreset } from '@anastomotic_ai/agent-core/common';
 import { ROLE_PROMPTS } from '@anastomotic_ai/agent-core/common';
 import type { StepDraft } from './PipelineStepEditor';
 
-const ROLE_META: Record<AgentRolePreset, { color: string; emoji: string }> = {
-  researcher: { color: 'bg-blue-500/20 border-blue-500/40 text-blue-300', emoji: '🔍' },
-  coder: { color: 'bg-green-500/20 border-green-500/40 text-green-300', emoji: '💻' },
-  reviewer: { color: 'bg-yellow-500/20 border-yellow-500/40 text-yellow-300', emoji: '📝' },
-  tester: { color: 'bg-purple-500/20 border-purple-500/40 text-purple-300', emoji: '🧪' },
-  writer: { color: 'bg-pink-500/20 border-pink-500/40 text-pink-300', emoji: '✍️' },
-  custom: { color: 'bg-gray-500/20 border-gray-500/40 text-gray-300', emoji: '⚙️' },
+const ROLE_META: Record<AgentRolePreset, { color: string; icon: LucideIcon }> = {
+  researcher: { color: 'bg-blue-500/20 border-blue-500/40 text-blue-300', icon: Search },
+  coder: { color: 'bg-green-500/20 border-green-500/40 text-green-300', icon: Code },
+  reviewer: { color: 'bg-yellow-500/20 border-yellow-500/40 text-yellow-300', icon: FileText },
+  tester: { color: 'bg-purple-500/20 border-purple-500/40 text-purple-300', icon: FlaskConical },
+  writer: { color: 'bg-pink-500/20 border-pink-500/40 text-pink-300', icon: PenLine },
+  custom: { color: 'bg-gray-500/20 border-gray-500/40 text-gray-300', icon: Settings },
 };
 
 const ROLE_LABELS: { value: AgentRolePreset; label: string }[] = [
@@ -115,7 +126,7 @@ export function VisualPipelineBuilder({ steps, onChange }: VisualPipelineBuilder
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-lg">{meta.emoji}</span>
+                        <meta.icon className="h-5 w-5" />
                         <div>
                           <span className="text-xs font-bold uppercase tracking-wider opacity-60">
                             Step {i + 1}

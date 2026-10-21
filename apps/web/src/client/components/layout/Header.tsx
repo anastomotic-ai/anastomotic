@@ -44,7 +44,7 @@ export default function Header() {
           </NavLink>
         </nav>
 
-        {/* Theme toggle — right-aligned to balance the logo */}
+        {/* Theme toggle - right-aligned to balance the logo */}
         <div className="no-drag flex items-center justify-end w-24">
           <ThemeToggle />
         </div>

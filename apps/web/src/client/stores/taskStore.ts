@@ -54,7 +54,7 @@ interface TaskState {
   addFavorite: (taskId: string) => Promise<void>;
   removeFavorite: (taskId: string) => Promise<void>;
 
-  // Permission handling — keyed by taskId so concurrent tasks each retain their own request
+  // Permission handling - keyed by taskId so concurrent tasks each retain their own request
   permissionRequests: Record<string, PermissionRequest>;
   setupProgress: string | null;
   setupProgressTaskId: string | null;
@@ -551,7 +551,7 @@ export const useTaskStore = create<TaskState>((set, get) => ({
   },
 
   loadFavorites: async () => {
-    // Skip if already loaded — prevents redundant IPC calls from multiple components
+    // Skip if already loaded - prevents redundant IPC calls from multiple components
     if (get().favoritesLoaded) {
       return;
     }

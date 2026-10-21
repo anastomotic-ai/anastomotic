@@ -170,7 +170,7 @@ export function HuggingFaceProviderForm({
   };
 
   const allModels = [
-    ...cachedModels.map((m) => ({ id: m.id, name: `${m.displayName} ✓` })),
+    ...cachedModels.map((m) => ({ id: m.id, name: `${m.displayName} (downloaded)` })),
     ...suggestedModels
       .filter((s) => !cachedModels.some((c) => c.id === s.id))
       .map((m) => ({ id: m.id, name: m.displayName })),
@@ -214,7 +214,7 @@ export function HuggingFaceProviderForm({
                   />
                 </svg>
                 <span>
-                  Runs ONNX models locally via Transformers.js — no cloud API required. First run
+                  Runs ONNX models locally via Transformers.js - no cloud API required. First run
                   downloads the model (~0.5–4 GB).
                 </span>
               </div>

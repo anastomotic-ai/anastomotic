@@ -201,7 +201,7 @@ async function callXAI(apiKey: string, prompt: string): Promise<string> {
  * returns multiple titles or additional explanation text.
  */
 function cleanSummary(text: string): string {
-  // Take only the first non-empty line — LLMs sometimes return multiple titles
+  // Take only the first non-empty line - LLMs sometimes return multiple titles
   const firstLine =
     text
       .split('\n')

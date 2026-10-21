@@ -1,5 +1,5 @@
 /**
- * Native sandbox provider — OS-level FS/network restriction.
+ * Native sandbox provider - OS-level FS/network restriction.
  *
  * macOS: wraps spawn command with sandbox-exec and a generated profile.
  * Windows: injects ANASTOMOTIC_SANDBOX_* env vars consumed by file-permission MCP;
@@ -44,7 +44,7 @@ export class NativeSandboxProvider implements SandboxProvider {
       return this.wrapDarwin(args, config, mergedEnv);
     }
 
-    // Windows and Linux — env-var enforcement only (no command wrapping)
+    // Windows and Linux - env-var enforcement only (no command wrapping)
     return {
       ...args,
       env: mergedEnv,

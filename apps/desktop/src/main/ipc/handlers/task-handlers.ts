@@ -239,7 +239,7 @@ export function registerTaskHandlers(): void {
         storage.addTaskMessage(validatedExistingTaskId, userMessage);
         storage.updateTaskStatus(validatedExistingTaskId, task.status, new Date().toISOString());
       } else {
-        // New task created by session:resume — persist it so it appears in task history.
+        // New task created by session:resume - persist it so it appears in task history.
         task.messages = [userMessage];
         storage.saveTask(task, workspaceManager.getActiveWorkspace());
       }

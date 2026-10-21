@@ -3,7 +3,7 @@
  *
  * Each entry defines how to configure and authenticate a provider
  * for E2E testing with real API calls. Only providers with actual
- * spec files are included — add configs when you add specs.
+ * spec files are included - add configs when you add specs.
  */
 
 import type { ProviderTestConfig, ResolvedProviderTestConfig } from './types';

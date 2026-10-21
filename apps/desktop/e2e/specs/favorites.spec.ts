@@ -43,7 +43,7 @@ test.describe('Favorites', () => {
     // Click the favorite toggle
     await executionPage.favoriteToggle.first().click();
 
-    // Capture favorited state — wait via async matchers (no fixed sleep)
+    // Capture favorited state - wait via async matchers (no fixed sleep)
     await captureForAI(window, 'favorites-toggle', 'after-favorite', [
       'Star icon is now filled (favorited)',
       'aria-pressed is true',
@@ -71,7 +71,7 @@ test.describe('Favorites', () => {
     // Unfavorite the task
     await executionPage.favoriteToggle.first().click();
 
-    // Capture unfavorited state — wait via async matchers
+    // Capture unfavorited state - wait via async matchers
     await captureForAI(window, 'favorites-toggle', 'after-unfavorite', [
       'Star icon is no longer filled',
       'aria-pressed is false',

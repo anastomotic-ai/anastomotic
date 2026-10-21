@@ -106,14 +106,16 @@ function OllamaModelSelector({
     return aOrder - bOrder;
   });
 
-  const selectorModels = sortedModels.map((model) => {
-    const toolSupport = model.toolSupport || 'unknown';
-    const toolIcon = toolSupport === 'supported' ? '✓' : toolSupport === 'unsupported' ? '✗' : '?';
-    return {
-      id: model.id,
-      name: `${model.name} ${toolIcon}`,
-    };
-  });
+  const toolTag: Record<ToolSupportStatus, string> = {
+    supported: ` (${t('common.toolsTag')})`,
+    unsupported: ` (${t('common.noToolsTag')})`,
+    unknown: '',
+  };
+
+  const selectorModels = sortedModels.map((model) => ({
+    id: model.id,
+    name: `${model.name}${toolTag[model.toolSupport || 'unknown']}`,
+  }));
 
   const selectedModel = models.find((m) => m.id === value);
   const hasUnsupportedSelected = selectedModel?.toolSupport === 'unsupported';

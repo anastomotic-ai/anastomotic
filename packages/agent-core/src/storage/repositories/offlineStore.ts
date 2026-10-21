@@ -34,8 +34,7 @@ export function addLocalModel(input: LocalModelCreateInput): LocalModelConfig {
 export function getLocalModel(id: string): LocalModelConfig | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM local_models WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? mapModel(row) : null;
 }
 
@@ -76,8 +75,7 @@ export function enqueueOfflineTask(input: OfflineQueueInput): OfflineQueueItem {
 export function getQueueItem(id: string): OfflineQueueItem | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM offline_queue WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? mapQueue(row) : null;
 }
 

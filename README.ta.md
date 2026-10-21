@@ -11,23 +11,7 @@ Anastomotic என்பது உங்கள் கணினியிலேய
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac (Apple Silicon) க்கான பதிவிறக்கம்</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac (Intel) க்கான பதிவிறக்கம்</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11 க்கான பதிவிறக்கம்</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux (ARM64) க்கான பதிவிறக்கம்</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux (x64) க்கான பதிவிறக்கம்</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux (.deb x64) க்கான பதிவிறக்கம்</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic வலைத்தளம்</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic வலைப்பதிவு</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic வெளியீடுகள்</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic வெளியீடுகள்</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic என்பது உங்கள் கணினியிலேய
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ உங்கள் கணினியிலேயே இயங்குகிறது
+### உங்கள் கணினியிலேயே இயங்குகிறது
 
 <div align="left">
 
@@ -55,14 +39,14 @@ Anastomotic என்பது உங்கள் கணினியிலேய
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 உங்கள் சொந்த AI ஐக் கொண்டு வாருங்கள்
+### உங்கள் சொந்த AI ஐக் கொண்டு வாருங்கள்
 
 <div align="left">
 
 - உங்கள் சொந்த API விசையைப் பயன்படுத்தவும் (OpenAI, Anthropic, முதலியன)
 - அல்லது [Ollama](https://ollama.com) உடன் இயக்கவும் (API விசை தேவையில்லை)
 - சந்தா இல்லை, அதிக விற்பனை இல்லை
-- இது ஒரு கருவி—சேவை அல்ல
+- இது ஒரு கருவி - சேவை அல்ல
 
 </div>
 
@@ -71,7 +55,7 @@ Anastomotic என்பது உங்கள் கணினியிலேய
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 இது திறந்த மூலமாகும்
+### இது திறந்த மூலமாகும்
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic என்பது உங்கள் கணினியிலேய
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ இது செயல்படுகிறது, வெறும் அரட்டைகள் மட்டுமல்ல
+### இது செயல்படுகிறது, வெறும் அரட்டைகள் மட்டுமல்ல
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic என்பது உங்கள் கணினியிலேய
 
 |                                                                                                                            |                                                                                                                          |                                                                                   |
 | :------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| **📁 கோப்பு மேலாண்மை**                                                                                                     | **✍️ ஆவண எழுத்து**                                                                                                       | **🔗 கருவி இணைப்புகள்**                                                           |
+| **கோப்பு மேலாண்மை**                                                                                                        | **ஆவண எழுத்து**                                                                                                          | **கருவி இணைப்புகள்**                                                              |
 | நீங்கள் கொடுக்கும் உள்ளடக்கம் அல்லது விதிகளின் அடிப்படையில் கோப்புகளை வரிசைப்படுத்தவும், மறுபெயரிடவும் மற்றும் நகர்த்தவும் | ஆவணங்களை எழுத, சுருக்க அல்லது மீண்டும் எழுத அதை தூண்டவும்                                                                | Notion, Google Drive, Dropbox மற்றும் பலவற்றுடன் (local APIs மூலம்) செயல்படுகிறது |
 |                                                                                                                            |                                                                                                                          |                                                                                   |
-| **⚙️ தனிப்பயன் திறன்கள்**                                                                                                  | **🛡️ முழு கட்டுப்பாடு**                                                                                                  |                                                                                   |
+| **தனிப்பயன் திறன்கள்**                                                                                                     | **முழு கட்டுப்பாடு**                                                                                                     |                                                                                   |
 | மீண்டும் மீண்டும் செய்யக்கூடிய பணிப்பாய்வுகளை வரையறுக்கவும், அவற்றை திறன்களாக சேமிக்கவும்                                  | நீங்கள் ஒவ்வொரு செயலையும் அங்கீகரிக்கிறீர்கள். நீங்கள் பதிவுகளைப் பார்க்கலாம். நீங்கள் அதை எந்த நேரத்திலும் நிறுத்தலாம். |                                                                                   |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic உங்கள் கணினியிலேயே இயங்க
 |  படி  | செயல்                         | விவரங்கள்                                                                                                                                                  |
 | :---: | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **1** | **பயன்பாட்டை நிறுவவும்**      | DMG ஐ பதிவிறக்கி அதை Applications இல் இழுக்கவும்                                                                                                           |
-| **2** | **உங்கள் AI ஐ இணைக்கவும்**    | உங்கள் சொந்த Google, OpenAI, Anthropic (அல்லது பிற) API விசையைப் பயன்படுத்தவும் — அல்லது ChatGPT (Plus/Pro) மூலம் உள்நுழையவும். சந்தாக்கள் இல்லை.          |
+| **2** | **உங்கள் AI ஐ இணைக்கவும்**    | உங்கள் சொந்த Google, OpenAI, Anthropic (அல்லது பிற) API விசையைப் பயன்படுத்தவும் - அல்லது ChatGPT (Plus/Pro) மூலம் உள்நுழையவும். சந்தாக்கள் இல்லை.          |
 | **3** | **அதற்கு அணுகலை வழங்கவும்**   | அது எந்த கோப்புறைகளைப் பார்க்க முடியும் என்பதைத் தேர்வுசெய்யவும். நீங்கள் கட்டுப்பாட்டில் இருக்கிறீர்கள்.                                                  |
 | **4** | **வேலை செய்யத் தொடங்குங்கள்** | ஒரு ஆவணத்தைச் சுருக்கவும், ஒரு கோப்புறையை சுத்தம் செய்யவும் அல்லது ஒரு அறிக்கையை உருவாக்கவும் அதைக் கேளுங்கள். நீங்கள் எல்லாவற்றையும் அங்கீகரிக்கிறீர்கள். |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Mac (Apple Silicon) க்கான பதிவிறக்கம்**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac (Intel) க்கான பதிவிறக்கம்**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11 க்கான பதிவிறக்கம்**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux (ARM64) க்கான பதிவிறக்கம்**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux (x64) க்கான பதிவிறக்கம்**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux (.deb x64) க்கான பதிவிறக்கம்**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic வலைத்தளம்](https://www.anastomotic.ai/)** · **[Anastomotic வலைப்பதிவு](https://www.anastomotic.ai/blog/)** · **[Anastomotic வெளியீடுகள்](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic வெளியீடுகள்](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT உரிமம் · [Anastomotic](https://www.anastomotic.ai) உருவாக்கியது
+MIT உரிமம் · [Anastomotic](https://github.com/anastomotic-ai) உருவாக்கியது
 
 <br />
 

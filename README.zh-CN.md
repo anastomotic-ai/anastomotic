@@ -11,23 +11,7 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>下载 Mac 版（Apple Silicon）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>下载 Mac 版（Intel）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>下载 Windows 11 版</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>下载 Linux 版（ARM64）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>下载 Linux 版（x64）</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>下载 Linux 版（.deb x64）</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic 官网</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic 博客</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic 发布版本</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic 发布版本</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ 本地运行
+### 本地运行
 
 <div align="left">
 
@@ -55,14 +39,14 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 自带 AI
+### 自带 AI
 
 <div align="left">
 
 - 使用您自己的 API 密钥（OpenAI、Anthropic 等）
 - 或使用 [Ollama](https://ollama.com) 运行（无需 API 密钥）
 - 无订阅，无追加销售
-- 这是一个工具——不是服务
+- 这是一个工具，不是服务
 
 </div>
 
@@ -71,7 +55,7 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 开源
+### 开源
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ 行动派，不只是聊天
+### 行动派，不只是聊天
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic 是一款开源 AI 桌面代理，可在您的本地机器上自动�
 
 |                                                    |                                                      |                                                             |
 | :------------------------------------------------- | :--------------------------------------------------- | :---------------------------------------------------------- |
-| **📁 文件管理**                                    | **✍️ 文档撰写**                                      | **🔗 工具连接**                                             |
+| **文件管理**                                       | **文档撰写**                                         | **工具连接**                                                |
 | 根据内容或您设定的规则对文件进行排序、重命名和移动 | 提示它撰写、总结或重写文档                           | 与 Notion、Google Drive、Dropbox 等配合使用（通过本地 API） |
 |                                                    |                                                      |                                                             |
-| **⚙️ 自定义技能**                                  | **🛡️ 完全控制**                                      |                                                             |
+| **自定义技能**                                     | **完全控制**                                         |                                                             |
 | 定义可重复的工作流程，保存为技能                   | 您批准每一个操作。您可以查看日志。您可以随时停止它。 |                                                             |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic 在您的机器上本地运行。您的文件保留在您的设备�
 | 步骤  | 操作             | 详情                                                                                               |
 | :---: | ---------------- | -------------------------------------------------------------------------------------------------- |
 | **1** | **安装应用**     | 下载 DMG 并将其拖入应用程序文件夹                                                                  |
-| **2** | **连接您的 AI**  | 使用您自己的 Google、OpenAI、Anthropic（或其他）API 密钥——或使用 ChatGPT（Plus/Pro）登录。无订阅。 |
+| **2** | **连接您的 AI**  | 使用您自己的 Google、OpenAI、Anthropic（或其他）API 密钥，或使用 ChatGPT（Plus/Pro）登录。无订阅。 |
 | **3** | **授予访问权限** | 选择它可以查看哪些文件夹。您保持控制权。                                                           |
 | **4** | **开始工作**     | 让它总结文档、整理文件夹或创建报告。您批准所有操作。                                               |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**下载 Mac 版（Apple Silicon）**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**下载 Mac 版（Intel）**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**下载 Windows 11 版**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**下载 Linux 版（ARM64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**下载 Linux 版（x64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**下载 Linux 版（.deb x64）**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic 官网](https://www.anastomotic.ai/)** · **[Anastomotic 博客](https://www.anastomotic.ai/blog/)** · **[Anastomotic 发布版本](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[问题反馈](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic 发布版本](https://github.com/anastomotic-ai/anastomotic/releases)** · **[问题反馈](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT 许可证 · 由 [Anastomotic](https://www.anastomotic.ai) 构建
+MIT 许可证 · 由 [Anastomotic](https://github.com/anastomotic-ai) 构建
 
 <br />
 

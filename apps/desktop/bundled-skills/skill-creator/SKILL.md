@@ -14,7 +14,7 @@ This skill provides guidance for creating effective skills.
 
 Skills are modular, self-contained packages that extend AI capabilities by providing
 specialized knowledge, workflows, and tools. Think of them as "onboarding guides" for specific
-domains or tasks—they transform a general-purpose agent into a specialized agent
+domains or tasks - they transform a general-purpose agent into a specialized agent
 equipped with procedural knowledge.
 
 ### What Skills Provide
@@ -66,7 +66,7 @@ skill-name/
 
 Every SKILL.md consists of:
 
-- **Frontmatter** (YAML): Contains `name`, `description`, and optional `command` fields. These determine when the skill gets used—be clear and comprehensive.
+- **Frontmatter** (YAML): Contains `name`, `description`, and optional `command` fields. These determine when the skill gets used - be clear and comprehensive.
 - **Body** (Markdown): Instructions and guidance for using the skill. Only loaded AFTER the skill triggers.
 
 #### Bundled Resources (optional)

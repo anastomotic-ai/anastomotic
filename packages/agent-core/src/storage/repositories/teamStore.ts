@@ -28,8 +28,7 @@ export function createTeam(input: TeamCreateInput): Team {
 export function getTeam(id: string): Team | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM teams WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   if (!row) {
     return null;
   }

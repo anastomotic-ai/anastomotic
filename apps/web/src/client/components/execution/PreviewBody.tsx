@@ -1,5 +1,5 @@
 /**
- * PreviewBody — Main content/frame area for BrowserPreview.
+ * PreviewBody - Main content/frame area for BrowserPreview.
  *
  * Renders the live browser frame image or a placeholder state view
  * depending on the current ViewStatus.

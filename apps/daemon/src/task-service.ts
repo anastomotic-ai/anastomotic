@@ -319,7 +319,7 @@ export class TaskService extends EventEmitter {
               costUsd: data.cost,
             });
           } catch (_e) {
-            /* best-effort — don't break task flow */
+            /* best-effort - don't break task flow */
           }
         }
       },
@@ -363,7 +363,7 @@ export class TaskService extends EventEmitter {
 
       createKnowledgeNote({ ...insight, workspaceId });
     } catch (_error) {
-      /* best-effort — don't break task flow */
+      /* best-effort - don't break task flow */
     }
   }
 

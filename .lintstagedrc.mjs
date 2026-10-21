@@ -3,4 +3,6 @@ export default {
   '*.{ts,tsx,js,jsx}': ['eslint --fix --no-warn-ignored', 'prettier --write'],
   // Format everything else
   '*.{json,md,yml,yaml,css,html}': ['prettier --write'],
+  // Block em dashes and emojis
+  '*': ['node scripts/check-text-symbols.cjs'],
 };

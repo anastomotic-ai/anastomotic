@@ -225,7 +225,7 @@ export async function pollCopilotDeviceToken(params: {
     }
 
     if (data.error) {
-      throw new Error(`GitHub OAuth error: ${data.error} — ${data.error_description ?? ''}`);
+      throw new Error(`GitHub OAuth error: ${data.error} - ${data.error_description ?? ''}`);
     }
   }
 

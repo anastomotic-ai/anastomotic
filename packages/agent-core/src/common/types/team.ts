@@ -1,5 +1,5 @@
 /**
- * Team & Enterprise types — shared workspaces, team members, and audit logging.
+ * Team & Enterprise types - shared workspaces, team members, and audit logging.
  */
 
 export type TeamRole = 'owner' | 'admin' | 'member' | 'viewer';

@@ -1,4 +1,4 @@
-# Anastomotic — System Context Diagram
+# Anastomotic - System Context Diagram
 
 > **Viewpoint**: Context (Rozanski & Woods)
 >
@@ -16,16 +16,16 @@ graph TB
     classDef external fill:#999,color:#fff,stroke:#6B6B6B,stroke-width:2px
     classDef local fill:#438DD5,color:#fff,stroke:#3C7FC0,stroke-width:2px
 
-    User["👤 <b>User</b><br/><i>[Person]</i>"]:::person
+    User["<b>User</b><br/><i>[Person]</i>"]:::person
 
     Anastomotic["<b>Anastomotic</b><br/><i>[Software System]</i><br/><br/>AI desktop agent that automates<br/>tasks via natural language"]:::system
 
-    AI["☁️ <b>AI Providers</b><br/><i>Anthropic · OpenAI · Google<br/>+ 12 more (cloud & local)</i>"]:::external
-    FS["💾 <b>Local File System</b><br/><i>User's files & folders</i>"]:::local
-    BROWSER["🌐 <b>Web / SaaS</b><br/><i>Gmail · Slack · Notion<br/>Any website (via Playwright)</i>"]:::external
-    MCP["🔌 <b>MCP Connectors</b><br/><i>Remote tools (OAuth 2.0)</i>"]:::external
-    VOICE["🎤 <b>ElevenLabs</b><br/><i>Speech-to-text</i>"]:::external
-    SKILLS["📦 <b>GitHub</b><br/><i>Skill imports</i>"]:::external
+    AI["<b>AI Providers</b><br/><i>Anthropic · OpenAI · Google<br/>+ 12 more (cloud & local)</i>"]:::external
+    FS["<b>Local File System</b><br/><i>User's files & folders</i>"]:::local
+    BROWSER["<b>Web / SaaS</b><br/><i>Gmail · Slack · Notion<br/>Any website (via Playwright)</i>"]:::external
+    MCP["<b>MCP Connectors</b><br/><i>Remote tools (OAuth 2.0)</i>"]:::external
+    VOICE["<b>ElevenLabs</b><br/><i>Speech-to-text</i>"]:::external
+    SKILLS["<b>GitHub</b><br/><i>Skill imports</i>"]:::external
 
     User -->|"natural language tasks<br/>+ approvals"| Anastomotic
     Anastomotic -->|"progress · results<br/>· permission requests"| User
@@ -41,7 +41,7 @@ graph TB
 
 ### Detailed View
 
-The same context exploded — every individual provider, SaaS app, and integration method.
+The same context exploded - every individual provider, SaaS app, and integration method.
 
 ```mermaid
 graph TB
@@ -143,8 +143,8 @@ graph TB
 
 2. **Bring-your-own-AI**: Users provide their own API keys or run local models. Anastomotic is a tool, not a service.
 
-3. **Browser as integration layer**: SaaS apps (Gmail, Sheets, Notion, Slack) are accessed via browser automation, not dedicated API integrations. This means no OAuth per service and no stored SaaS credentials — the user's existing browser sessions are reused.
+3. **Browser as integration layer**: SaaS apps (Gmail, Sheets, Notion, Slack) are accessed via browser automation, not dedicated API integrations. This means no OAuth per service and no stored SaaS credentials - the user's existing browser sessions are reused.
 
 4. **MCP for extensibility**: For direct API-level integrations, users can connect any MCP-compatible remote server with OAuth 2.0. This is the structured alternative to browser automation.
 
-5. **Permission-gated file access**: Every file operation requires explicit user approval via a dialog. The gate is prompt-instructed (not hard-enforced) — see `task-flow-phases.md` Phase 5.
+5. **Permission-gated file access**: Every file operation requires explicit user approval via a dialog. The gate is prompt-instructed (not hard-enforced) - see `task-flow-phases.md` Phase 5.

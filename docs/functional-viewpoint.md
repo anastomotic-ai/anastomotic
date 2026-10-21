@@ -1,4 +1,4 @@
-# Functional Viewpoint — Anastomotic Architecture
+# Functional Viewpoint - Anastomotic Architecture
 
 > Rozanski & Woods Functional Viewpoint: identifies the system's functional elements, their responsibilities, interfaces, and primary interactions.
 
@@ -8,11 +8,11 @@ These diagrams are **prerequisite reading** before diving into the sequence-leve
 
 ## 1. High-Level Architecture Overview
 
-Start here. This diagram shows the four major building blocks, their single-sentence purpose, and the communication channels between them. No internal details — just the shape of the system.
+Start here. This diagram shows the four major building blocks, their single-sentence purpose, and the communication channels between them. No internal details - just the shape of the system.
 
 ```mermaid
 graph TB
-  USER(["👤 User"])
+  USER(["User"])
 
   subgraph ELECTRON["Anastomotic Desktop App"]
     direction TB
@@ -30,22 +30,22 @@ graph TB
 
     subgraph STORAGE["Storage"]
       direction LR
-      DB["🗄️ SQLite DB<br/><i>Tasks · messages · todos<br/>providers · skills · connectors</i>"]
-      KEYS["🔐 Secure Storage<br/><i>AES-256-GCM<br/>API keys · OAuth tokens</i>"]
+      DB["SQLite DB<br/><i>Tasks · messages · todos<br/>providers · skills · connectors</i>"]
+      KEYS["Secure Storage<br/><i>AES-256-GCM<br/>API keys · OAuth tokens</i>"]
     end
   end
 
   subgraph OC["OpenCode CLI  (PTY subprocess)"]
     OC_DESC["AI agent runtime<br/><i>LLM conversations · tool execution<br/>Bash · Read · Write · Edit · Glob · Grep</i>"]
-    OC_DB["🗄️ OpenCode DB<br/><i>~/.local/share/opencode/<br/>Sessions · conversation history</i>"]
+    OC_DB["OpenCode DB<br/><i>~/.local/share/opencode/<br/>Sessions · conversation history</i>"]
   end
 
   subgraph EXTERNAL["External Systems"]
     direction LR
-    AI["☁️ AI Providers<br/><i>Anthropic · OpenAI · Google<br/>+ 12 more</i>"]
-    FS["💾 Local Files"]
-    BROWSER["🌐 Browser<br/><i>Playwright</i>"]
-    MCP_EXT["🔌 MCP Connectors<br/><i>OAuth 2.0</i>"]
+    AI["AI Providers<br/><i>Anthropic · OpenAI · Google<br/>+ 12 more</i>"]
+    FS["Local Files"]
+    BROWSER["Browser<br/><i>Playwright</i>"]
+    MCP_EXT["MCP Connectors<br/><i>OAuth 2.0</i>"]
   end
 
   USER -->|"natural language task"| UI
@@ -86,11 +86,11 @@ graph TB
 
 ## 2. Detailed Functional Component Map
 
-The same system exploded — every internal component, its responsibility, and data/control arrows. Refer back to Diagram 1 to stay oriented.
+The same system exploded - every internal component, its responsibility, and data/control arrows. Refer back to Diagram 1 to stay oriented.
 
 ```mermaid
 graph TB
-  subgraph DESKTOP["<b>apps/desktop</b> — Electron Shell"]
+  subgraph DESKTOP["<b>apps/desktop</b> - Electron Shell"]
     direction TB
     MAIN["Electron Main Process"]
     PRELOAD["Preload Bridge<br/><i>(contextBridge)</i>"]
@@ -106,7 +106,7 @@ graph TB
     SUMMARIZER_DESKTOP["Summarizer Wiring"]
   end
 
-  subgraph WEB["<b>apps/web</b> — React UI"]
+  subgraph WEB["<b>apps/web</b> - React UI"]
     direction TB
     ROUTER["Router<br/><i>Home · Execution</i>"]
     TASK_STORE["Task Store<br/><i>(Zustand)</i>"]
@@ -115,7 +115,7 @@ graph TB
     LAUNCHER["Task Launcher<br/><i>(Cmd+K)</i>"]
   end
 
-  subgraph CORE["<b>packages/agent-core</b> — Core Logic (ESM)"]
+  subgraph CORE["<b>packages/agent-core</b> - Core Logic (ESM)"]
     direction TB
     TASK_MGR["TaskManager"]
     OC_ADAPTER["OpenCodeAdapter"]
@@ -137,7 +137,7 @@ graph TB
     DB["SQLite Database<br/><i>WAL mode · 8 migrations</i>"]
   end
 
-  subgraph OPENCODE["<b>OpenCode CLI</b> — External Process"]
+  subgraph OPENCODE["<b>OpenCode CLI</b> - External Process"]
     direction TB
     OC_SESSION["Session + Conversation"]
     OC_LLM["LLM Interaction"]
@@ -203,7 +203,7 @@ graph TB
 
 ## 3. Agent-Core Functional Decomposition
 
-A focused view of `packages/agent-core` — the heart of the system — showing every class, its single responsibility, and the dependency arrows.
+A focused view of `packages/agent-core` - the heart of the system - showing every class, its single responsibility, and the dependency arrows.
 
 ```mermaid
 graph LR
@@ -298,7 +298,7 @@ graph LR
 
 ## 4. IPC & Communication Channel Map
 
-Shows every communication mechanism in the system — IPC channels, HTTP ports, PTY streams, and event buses.
+Shows every communication mechanism in the system - IPC channels, HTTP ports, PTY streams, and event buses.
 
 ```mermaid
 graph TB
@@ -639,6 +639,6 @@ graph LR
 
 **Three distinct boundaries:**
 
-1. **Security boundary** — Renderer is sandboxed; can only call methods explicitly exposed via `contextBridge`. No `require()`, no `fs`, no direct IPC.
-2. **Process boundary** — OpenCode runs as a separate PTY subprocess. Communication is limited to stdin/stdout text streams + HTTP (MCP).
-3. **Network boundary** — Only OpenCode makes outbound HTTPS calls to AI providers. API keys are injected as environment variables, never sent via IPC or stored in the renderer.
+1. **Security boundary** - Renderer is sandboxed; can only call methods explicitly exposed via `contextBridge`. No `require()`, no `fs`, no direct IPC.
+2. **Process boundary** - OpenCode runs as a separate PTY subprocess. Communication is limited to stdin/stdout text streams + HTTP (MCP).
+3. **Network boundary** - Only OpenCode makes outbound HTTPS calls to AI providers. API keys are injected as environment variables, never sent via IPC or stored in the renderer.

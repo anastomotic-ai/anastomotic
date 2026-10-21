@@ -9,7 +9,7 @@
  * typed so that it can serve any JSON-RPC method without requiring every
  * method to be pre-declared in `DaemonMethodMap`.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 import { createServer, type Server, type Socket } from 'node:net';
@@ -207,7 +207,7 @@ export class DaemonRpcServer {
     try {
       await unlink(this.socketPath);
     } catch {
-      // File doesn't exist — that's fine
+      // File doesn't exist - that's fine
     }
   }
 }

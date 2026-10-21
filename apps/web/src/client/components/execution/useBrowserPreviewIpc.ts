@@ -1,5 +1,5 @@
 /**
- * useBrowserPreviewIpc — IPC subscription sub-hook for useBrowserPreview.
+ * useBrowserPreviewIpc - IPC subscription sub-hook for useBrowserPreview.
  *
  * Handles subscribing/unsubscribing to browser:frame, browser:navigate, and
  * browser:status events from the main process, and stops the preview stream
@@ -38,7 +38,7 @@ export function useBrowserPreviewIpc({
   handleNavigate,
   handleStatus,
 }: UseBrowserPreviewIpcOptions): void {
-  // Register IPC listeners — re-run when any handler reference changes (e.g. pageName change).
+  // Register IPC listeners - re-run when any handler reference changes (e.g. pageName change).
   useEffect(() => {
     const api = window.anastomotic;
     if (!api) {

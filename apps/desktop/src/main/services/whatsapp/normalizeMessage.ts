@@ -1,5 +1,5 @@
 /**
- * normalizeMessage — extracts a normalized message payload from a raw Baileys
+ * normalizeMessage - extracts a normalized message payload from a raw Baileys
  * `messages.upsert` entry.
  *
  * Extracted from WhatsAppService for modularity.

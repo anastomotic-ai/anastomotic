@@ -47,9 +47,9 @@ Before continuing, you MUST:
 2. **Create a TODO list** showing what's done and what remains:
 
 **Continuation Plan:**
-✓ [Items you already completed]
-□ [Next step] → verify: [how to confirm it's done]
-□ [Following step] → verify: [how to confirm it's done]
+[x] [Items you already completed]
+[ ] [Next step] → verify: [how to confirm it's done]
+[ ] [Following step] → verify: [how to confirm it's done]
 ...
 
 3. **Execute the plan** - Work through each remaining step

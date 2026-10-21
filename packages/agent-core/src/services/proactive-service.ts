@@ -1,5 +1,5 @@
 /**
- * Proactive agent service — file system monitoring, anomaly detection,
+ * Proactive agent service - file system monitoring, anomaly detection,
  * and intelligent alert generation.
  */
 

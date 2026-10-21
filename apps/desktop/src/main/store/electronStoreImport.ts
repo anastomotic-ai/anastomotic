@@ -29,15 +29,13 @@ function hasExistingUserData(db: Database): boolean {
     }
 
     const providerCount = db.prepare('SELECT COUNT(*) as count FROM providers').get() as
-      | { count: number }
-      | undefined;
+      { count: number } | undefined;
     if (providerCount && providerCount.count > 0) {
       return true;
     }
 
     const taskCount = db.prepare('SELECT COUNT(*) as count FROM tasks').get() as
-      | { count: number }
-      | undefined;
+      { count: number } | undefined;
     if (taskCount && taskCount.count > 0) {
       return true;
     }

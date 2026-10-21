@@ -1,5 +1,5 @@
 /**
- * Pure early-boot theme initialisation — no Electron bridge or React dependencies.
+ * Pure early-boot theme initialisation - no Electron bridge or React dependencies.
  * Safe to run at HTML-parse time, before the app loads.
  *
  * This module is compiled to `public/theme-init.js` by the Vite build plugin

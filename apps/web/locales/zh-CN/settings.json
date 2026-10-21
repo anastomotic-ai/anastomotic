@@ -121,6 +121,8 @@
     "toolUnknown": "无法验证工具支持",
     "toolUnknownDetail": "此模型可能支持也可能不支持工具/函数调用。请测试以确认。",
     "functionCallingVerified": "函数调用已验证",
+    "toolsTag": "支持工具",
+    "noToolsTag": "不支持工具",
     "contextLengthWarning": "上下文长度要求",
     "contextLengthWarningDetail": "请确保在 LM Studio 设置中加载模型时使用足够大的上下文长度（建议使用最大可用长度）。"
   },
@@ -429,7 +431,7 @@
   "about": {
     "title": "关于",
     "version": "版本 {{version}}",
-    "description": "Anastomotic 是一款本地计算机使用 AI 助手，适用于 Mac。它可以读取您的文件、创建文档并自动化重复性知识工作——完全开源，支持您选择的 AI 模型。",
+    "description": "Anastomotic 是一款本地计算机使用 AI 助手，适用于 Mac。它可以读取您的文件、创建文档并自动化重复性知识工作，完全开源，支持您选择的 AI 模型。",
     "contact": "有问题或反馈？点击此处联系我们",
     "visitUs": "访问我们",
     "haveQuestion": "有问题？",

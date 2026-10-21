@@ -1,5 +1,5 @@
 /**
- * BrowserPreview — Embedded live CDP screencast in the execution chat.
+ * BrowserPreview - Embedded live CDP screencast in the execution chat.
  *
  * Receives base64 JPEG frames from the main process via IPC (browser:frame),
  * URL navigation events (browser:navigate), and status events (browser:status).
@@ -13,9 +13,9 @@
  *  - Smooth Framer Motion transitions (david-mamani, PR #553)
  *
  * Contributed by:
- *  - david-mamani (PR #553) — component structure, animation, status indicator
- *  - dhruvawani17 (PR #489) — auto-start on browser_* tool, visibility pause
- *  - samarthsinh2660 (PR #414) — taskStore integration, collapse/expand
+ *  - david-mamani (PR #553) - component structure, animation, status indicator
+ *  - dhruvawani17 (PR #489) - auto-start on browser_* tool, visibility pause
+ *  - samarthsinh2660 (PR #414) - taskStore integration, collapse/expand
  *
  * ENG-695
  */
@@ -31,9 +31,9 @@ import { useBrowserPreview } from './useBrowserPreview';
 
 interface BrowserPreviewProps {
   taskId: string;
-  /** The page name that this preview is scoped to — IPC events not matching this page are ignored. */
+  /** The page name that this preview is scoped to - IPC events not matching this page are ignored. */
   pageName?: string | null;
-  /** The currently active tool name — auto-starts the screencast when a browser_* tool is detected. */
+  /** The currently active tool name - auto-starts the screencast when a browser_* tool is detected. */
   currentTool?: string | null;
   className?: string;
 }

@@ -4,7 +4,7 @@ import type { Migration } from './index.js';
 /**
  * Migration v031: GitHub Copilot provider support.
  *
- * No schema changes needed — Copilot credentials are stored in OpenCode's
+ * No schema changes needed - Copilot credentials are stored in OpenCode's
  * auth.json file (not in SQLite), and provider settings use the existing
  * connected_providers JSON column.
  */

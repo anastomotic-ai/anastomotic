@@ -18,7 +18,7 @@ import { handle, API_KEY_VALIDATION_TIMEOUT_MS } from '../utils';
 export interface ProviderOptions {
   baseUrl?: string;
   zaiRegion?: ZaiRegion;
-  /** Legacy alias — normalised to zaiRegion before use */
+  /** Legacy alias - normalised to zaiRegion before use */
   region?: ZaiRegion;
   deploymentName?: string;
   authType?: string;

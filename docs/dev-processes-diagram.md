@@ -1,4 +1,4 @@
-# Anastomotic — Dev Mode Process Architecture
+# Anastomotic - Dev Mode Process Architecture
 
 ## What `pnpm dev` Spawns
 
@@ -307,7 +307,7 @@ flowchart TB
 
 ## WebStorm Debug: Why Two Steps?
 
-### Normal Run (no debug) — one step
+### Normal Run (no debug) - one step
 
 ```mermaid
 sequenceDiagram
@@ -327,7 +327,7 @@ sequenceDiagram
     Note over WS: Cannot set breakpoints
 ```
 
-### Debug Run — two steps needed
+### Debug Run - two steps needed
 
 ```mermaid
 sequenceDiagram

@@ -126,7 +126,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request): Promise<CallToo
         multiSelect: question.multiSelect,
         taskId: TASK_ID,
       }),
-      signal: AbortSignal.timeout(300000), // 5 minutes — matches question API server timeout
+      signal: AbortSignal.timeout(300000), // 5 minutes - matches question API server timeout
     });
 
     if (!response.ok) {

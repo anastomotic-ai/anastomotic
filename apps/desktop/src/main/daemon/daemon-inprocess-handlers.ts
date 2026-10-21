@@ -151,7 +151,7 @@ export function registerInProcessHandlers(
     try {
       storage.saveTask(task);
     } catch {
-      // post-start persistence failure — task is running, don't mark as failed
+      // post-start persistence failure - task is running, don't mark as failed
     }
     return task;
   });

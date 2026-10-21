@@ -11,23 +11,7 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac (Apple Silicon) के लिए डाउनलोड करें</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac (Intel) के लिए डाउनलोड करें</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11 के लिए डाउनलोड करें</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux (ARM64) के लिए डाउनलोड करें</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux (x64) के लिए डाउनलोड करें</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux (.deb x64) के लिए डाउनलोड करें</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic वेबसाइट</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic ब्लॉग</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic रिलीज़</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic रिलीज़</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ यह स्थानीय रूप से चलता है
+### यह स्थानीय रूप से चलता है
 
 <div align="left">
 
@@ -55,14 +39,14 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 आप अपनी खुद की AI लाते हैं
+### आप अपनी खुद की AI लाते हैं
 
 <div align="left">
 
 - अपनी स्वयं की API कुंजी (OpenAI, Anthropic, आदि) का उपयोग करें
 - या [Ollama](https://ollama.com) के साथ चलाएं (कोई API कुंजी की आवश्यकता नहीं)
 - कोई सदस्यता नहीं, कोई अपसेल नहीं
-- यह एक उपकरण है—सेवा नहीं
+- यह एक उपकरण है - सेवा नहीं
 
 </div>
 
@@ -71,7 +55,7 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 यह ओपन सोर्स है
+### यह ओपन सोर्स है
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ यह कार्य करता है, केवल चैट नहीं करता
+### यह कार्य करता है, केवल चैट नहीं करता
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic एक ओपन सोर्स AI डेस्कटॉप एज�
 
 |                                                                                                     |                                                                                       |                                                                                     |
 | :-------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------- |
-| **📁 फ़ाइल प्रबंधन**                                                                                | **✍️ दस्तावेज़ लेखन**                                                                 | **🔗 टूल कनेक्शन**                                                                  |
+| **फ़ाइल प्रबंधन**                                                                                   | **दस्तावेज़ लेखन**                                                                    | **टूल कनेक्शन**                                                                     |
 | आपके द्वारा दी गई सामग्री या नियमों के आधार पर फ़ाइलों को सॉर्ट करें, नाम बदलें और स्थानांतरित करें | दस्तावेज़ लिखने, सारांशित करने या फिर से लिखने के लिए इसे संकेत दें                   | Notion, Google Drive, Dropbox और अधिक (स्थानीय API के माध्यम से) के साथ काम करता है |
 |                                                                                                     |                                                                                       |                                                                                     |
-| **⚙️ कस्टम कौशल**                                                                                   | **🛡️ पूर्ण नियंत्रण**                                                                 |                                                                                     |
+| **कस्टम कौशल**                                                                                      | **पूर्ण नियंत्रण**                                                                    |                                                                                     |
 | दोहराए जाने वाले वर्कफ़्लो को परिभाषित करें, उन्हें कौशल के रूप में सहेजें                          | आप हर कार्रवाई को अनुमोदित करते हैं। आप लॉग देख सकते हैं। आप इसे कभी भी रोक सकते हैं। |                                                                                     |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic आपकी मशीन पर स्थानीय रूप स
 |  चरण  | कार्रवाई                   | विवरण                                                                                                                                    |
 | :---: | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **1** | **ऐप इंस्टॉल करें**        | DMG डाउनलोड करें और इसे Applications में खींचें                                                                                          |
-| **2** | **अपने AI को कनेक्ट करें** | अपनी स्वयं की Google, OpenAI, Anthropic (या अन्य) API कुंजी का उपयोग करें — या ChatGPT (Plus/Pro) के साथ साइन इन करें। कोई सदस्यता नहीं। |
+| **2** | **अपने AI को कनेक्ट करें** | अपनी स्वयं की Google, OpenAI, Anthropic (या अन्य) API कुंजी का उपयोग करें - या ChatGPT (Plus/Pro) के साथ साइन इन करें। कोई सदस्यता नहीं। |
 | **3** | **इसे एक्सेस दें**         | चुनें कि वह कौन से फ़ोल्डर देख सकता है। आप नियंत्रण में रहें।                                                                            |
 | **4** | **काम करना शुरू करें**     | इसे एक दस्तावेज़ का सारांश देने, एक फ़ोल्डर साफ़ करने, या एक रिपोर्ट बनाने के लिए कहें। आप सब कुछ अनुमोदित करते हैं।                     |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Mac (Apple Silicon) के लिए डाउनलोड करें**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac (Intel) के लिए डाउनलोड करें**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11 के लिए डाउनलोड करें**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux (ARM64) के लिए डाउनलोड करें**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux (x64) के लिए डाउनलोड करें**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux (.deb x64) के लिए डाउनलोड करें**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic वेबसाइट](https://www.anastomotic.ai/)** · **[Anastomotic ब्लॉग](https://www.anastomotic.ai/blog/)** · **[Anastomotic रिलीज़](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic रिलीज़](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT लाइसेंस · [Anastomotic](https://www.anastomotic.ai) द्वारा निर्मित
+MIT लाइसेंस · [Anastomotic](https://github.com/anastomotic-ai) द्वारा निर्मित
 
 <br />
 

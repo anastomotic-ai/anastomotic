@@ -377,7 +377,7 @@ describe('TaskHistory Integration', () => {
         </MemoryRouter>,
       );
 
-      // Assert — target specifically the delete button, not the favorite star button
+      // Assert - target specifically the delete button, not the favorite star button
       const deleteButton = screen.getByTestId('task-delete-button');
       expect(deleteButton).toBeInTheDocument();
     });
@@ -734,7 +734,7 @@ describe('TaskHistory Integration', () => {
       );
 
       // Assert
-      const taskCard = screen.getByText('Styled task').closest('a');
+      const taskCard = screen.getByText('Styled task').closest('a')?.parentElement;
       expect(taskCard?.className).toContain('rounded-card');
     });
 
@@ -750,7 +750,7 @@ describe('TaskHistory Integration', () => {
       );
 
       // Assert
-      const taskCard = screen.getByText('Hover task').closest('a');
+      const taskCard = screen.getByText('Hover task').closest('a')?.parentElement;
       expect(taskCard?.className).toContain('hover:shadow-card-hover');
     });
 

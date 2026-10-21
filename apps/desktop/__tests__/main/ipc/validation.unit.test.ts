@@ -63,8 +63,10 @@ describe('validation.ts', () => {
         const payload = { age: 30 };
 
         // Act & Assert
-        // Note: Zod returns "Required" for missing fields by default
-        expect(() => validate(testSchema, payload)).toThrow('Invalid payload: Required');
+        // Note: Zod 4 reports missing fields as "expected <type>, received undefined"
+        expect(() => validate(testSchema, payload)).toThrow(
+          'Invalid payload: Invalid input: expected string, received undefined',
+        );
       });
 
       it('should throw an error for wrong types', () => {

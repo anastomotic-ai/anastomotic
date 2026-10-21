@@ -9,17 +9,17 @@ verified: true
 
 ## Overview
 
-This skill provides patterns and best practices for automating Google Sheets interactions through browser automation. Google Sheets is a **canvas-based web app** — standard DOM element references are often unreliable; prefer keyboard shortcuts and coordinate clicks.
+This skill provides patterns and best practices for automating Google Sheets interactions through browser automation. Google Sheets is a **canvas-based web app** - standard DOM element references are often unreliable; prefer keyboard shortcuts and coordinate clicks.
 
 ---
 
 ## Agent Workflow (Always Follow This Order)
 
-1. **Orient** — Take a screenshot. Confirm you're on the right tab/sheet. Identify existing data range.
-2. **Plan** — Decide what cells to read or write, in what order.
-3. **Execute in small steps** — One logical action at a time (one row, one format operation, etc.).
-4. **Verify** — Take a screenshot after each meaningful action to confirm the result before continuing.
-5. **Recover if needed** — If something looks wrong, `Cmd+Z` immediately before doing anything else.
+1. **Orient** - Take a screenshot. Confirm you're on the right tab/sheet. Identify existing data range.
+2. **Plan** - Decide what cells to read or write, in what order.
+3. **Execute in small steps** - One logical action at a time (one row, one format operation, etc.).
+4. **Verify** - Take a screenshot after each meaningful action to confirm the result before continuing.
+5. **Recover if needed** - If something looks wrong, `Cmd+Z` immediately before doing anything else.
 
 ---
 
@@ -29,7 +29,7 @@ This skill provides patterns and best practices for automating Google Sheets int
 
 - Navigate to `https://sheets.google.com`
 - Click "Blank spreadsheet" to create new, or click an existing file
-- After clicking, **wait for the new tab** — Sheets often opens in a new tab. Switch to it before proceeding.
+- After clicking, **wait for the new tab** - Sheets often opens in a new tab. Switch to it before proceeding.
 
 **Opening an existing file:**
 
@@ -48,10 +48,10 @@ This skill provides patterns and best practices for automating Google Sheets int
 
 Before writing anything, read what's already there:
 
-- **Screenshot first** — Get a visual overview of the data layout
-- **`browser_get_text`** — Extracts cell text content; useful for reading values without clicking
-- **`Cmd+End`** — Jumps to the last cell with data; tells you the extent of the dataset
-- **`Cmd+Home`** — Returns to A1
+- **Screenshot first** - Get a visual overview of the data layout
+- **`browser_get_text`** - Extracts cell text content; useful for reading values without clicking
+- **`Cmd+End`** - Jumps to the last cell with data; tells you the extent of the dataset
+- **`Cmd+Home`** - Returns to A1
 
 **To read a specific cell's value:** Click the cell and read the formula bar (visible in screenshot), or use `browser_get_text` and parse the result.
 
@@ -59,27 +59,28 @@ Before writing anything, read what's already there:
 
 ## 3. Navigation & Cell Selection
 
-**DO NOT type cell references into the Name Box** — it often enters text into cells instead of navigating.
+**DO NOT type cell references into the Name Box** - it often enters text into cells instead of navigating.
 
 **Preferred navigation methods:**
-| Goal | Method |
-|------|--------|
-| Go to A1 | `Cmd+Home` |
-| Go to start of row | `Home` |
-| Go to last data cell | `Cmd+End` |
-| Move right | `Tab` |
-| Move down | `Enter` |
-| Move by one cell | Arrow keys |
-| Select entire row | Click the row number on the left (e.g., "2") |
-| Select entire column | Click the column letter at top (e.g., "A") |
-| Select a range | Click start cell, then `Shift+click` end cell |
+
+| Goal                             | Method                                        |
+| -------------------------------- | --------------------------------------------- |
+| Go to A1                         | `Cmd+Home`                                    |
+| Go to start of row               | `Home`                                        |
+| Go to last data cell             | `Cmd+End`                                     |
+| Move right                       | `Tab`                                         |
+| Move down                        | `Enter`                                       |
+| Move by one cell                 | Arrow keys                                    |
+| Select entire row                | Click the row number on the left (e.g., "2")  |
+| Select entire column             | Click the column letter at top (e.g., "A")    |
+| Select a range                   | Click start cell, then `Shift+click` end cell |
 | Select column range (for resize) | Click first column letter, `Shift+click` last |
 
 **Confirming current cell location:**
 
 - Take a screenshot and look at the **Name Box** (top-left, shows current cell address like "A1")
 - Look at the **formula bar** (top center) which shows the selected cell's content
-- The selected cell has a blue/green border — visible in screenshots
+- The selected cell has a blue/green border - visible in screenshots
 
 ---
 
@@ -113,8 +114,8 @@ Before writing anything, read what's already there:
 
 **Avoid:**
 
-- Typing tab characters inside a string to separate columns — they won't work as cell separators
-- Leaving a cell in edit mode (blinking cursor) before navigating away — always confirm with Enter or Tab
+- Typing tab characters inside a string to separate columns - they won't work as cell separators
+- Leaving a cell in edit mode (blinking cursor) before navigating away - always confirm with Enter or Tab
 
 ---
 
@@ -149,7 +150,7 @@ Before writing anything, read what's already there:
 4. Press Cmd+V to paste
 ```
 
-Or: click the cell, then double-click the small blue square in the cell's bottom-right corner (auto-fill handle) — this fills down to match adjacent data.
+Or: click the cell, then double-click the small blue square in the cell's bottom-right corner (auto-fill handle) - this fills down to match adjacent data.
 
 ---
 
@@ -248,21 +249,22 @@ Sheet tabs appear at the **bottom** of the screen.
 
 ## 10. Error Recovery
 
-**Something went wrong — act immediately:**
+**Something went wrong - act immediately:**
 
-1. `Cmd+Z` — Undo the last action (do this before anything else)
+1. `Cmd+Z` - Undo the last action (do this before anything else)
 2. Take a screenshot to assess current state
 3. Re-orient: `Cmd+Home` to go to A1
 4. Re-read the data before retrying
 
 **Common problems and fixes:**
-| Problem | Fix |
-|---------|-----|
-| Text entered into wrong cell | `Cmd+Z`, then navigate correctly and re-enter |
+
+| Problem                                                   | Fix                                                                       |
+| --------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Text entered into wrong cell                              | `Cmd+Z`, then navigate correctly and re-enter                             |
 | Formula shows as text (starts with `=` but not computing) | Click cell, press F2 to edit, confirm cell is not formatted as plain text |
-| Dialog appeared unexpectedly | Screenshot to read it, then press `Escape` or respond appropriately |
-| Sheet opened in new browser tab | Use `browser_tabs` / tabs tool to switch to the new tab |
-| Cell stuck in edit mode | Press `Escape` to cancel edit, or `Enter` to confirm |
+| Dialog appeared unexpectedly                              | Screenshot to read it, then press `Escape` or respond appropriately       |
+| Sheet opened in new browser tab                           | Use `browser_tabs` / tabs tool to switch to the new tab                   |
+| Cell stuck in edit mode                                   | Press `Escape` to cancel edit, or `Enter` to confirm                      |
 
 ---
 
@@ -271,15 +273,15 @@ Sheet tabs appear at the **bottom** of the screen.
 Google Sheets **auto-saves continuously**. You do not need to manually save.
 
 - Watch for "Saving..." → "All changes saved" in the top bar to confirm
-- If you see a "Save" prompt, the file may be a non-Google format (e.g., .xlsx) — click Save to keep changes
+- If you see a "Save" prompt, the file may be a non-Google format (e.g., .xlsx) - click Save to keep changes
 
 ---
 
 ## 12. Browser Automation Tips
 
-- **Google Sheets is a canvas app** — DOM element references (`ref_id`) often don't work for cells. Use coordinate clicks instead.
+- **Google Sheets is a canvas app** - DOM element references (`ref_id`) often don't work for cells. Use coordinate clicks instead.
 - **Always screenshot before and after** significant actions
-- **Use keyboard shortcuts** over toolbar button clicks whenever possible — more reliable
+- **Use keyboard shortcuts** over toolbar button clicks whenever possible - more reliable
 - **Toolbar buttons** can be clicked by coordinate if needed; take a screenshot to locate them first
 - **Name Box** (top-left showing cell address): Read it in screenshots to confirm position, but don't type into it for navigation
 - **After creating a new sheet**, wait for the new browser tab to open, then switch to it before interacting

@@ -1,5 +1,5 @@
 /**
- * Deep memory types — long-term semantic memory, behavioral preferences,
+ * Deep memory types - long-term semantic memory, behavioral preferences,
  * and cross-workspace knowledge transfer.
  */
 

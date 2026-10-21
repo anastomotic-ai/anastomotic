@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "The open source AI coworker that lives on your desktop",
-  "author": "Anastomotic AI",
+  "author": "Rajdeep Singh",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "lint": "pnpm -r --parallel run typecheck && eslint .",
     "typecheck": "pnpm -r --parallel run typecheck",
     "lint:eslint": "eslint .",
+    "lint:text": "node scripts/check-text-symbols.cjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "pnpm -r clean && rm -rf node_modules",

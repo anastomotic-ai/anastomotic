@@ -1,5 +1,5 @@
 /**
- * IntegrationsPanel — container for messaging platform integrations
+ * IntegrationsPanel - container for messaging platform integrations
  */
 import { useTranslation } from 'react-i18next';
 import { WhatsAppCard } from './WhatsAppCard';
@@ -17,10 +17,10 @@ export function IntegrationsPanel() {
         </p>
       </div>
 
-      {/* WhatsApp — fully implemented */}
+      {/* WhatsApp - fully implemented */}
       <WhatsAppCard />
 
-      {/* Slack, Telegram, Teams — coming soon */}
+      {/* Slack, Telegram, Teams - coming soon */}
       {(['Slack', 'Telegram', 'Microsoft Teams'] as const).map((name) => (
         <div
           key={name}

@@ -6,7 +6,7 @@ import type { BedrockApiKeySecrets } from '../types';
 const config = getProviderTestConfig('bedrock-api-key');
 
 test.describe('Bedrock Provider (API Key)', () => {
-  test.skip(!config?.secrets, 'No Bedrock API Key secrets configured — skipping');
+  test.skip(!config?.secrets, 'No Bedrock API Key secrets configured - skipping');
 
   test('should connect with Bedrock API key and complete a task', async ({ window }) => {
     // Runtime guard for TypeScript narrowing (test.skip doesn't narrow)

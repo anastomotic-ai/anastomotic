@@ -45,6 +45,11 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      // Became errors in react-hooks 7.1; existing code predates them
+      'react-hooks/set-state-in-effect': 'warn',
+      'react-hooks/preserve-manual-memoization': 'warn',
+      'react-hooks/refs': 'warn',
+      'react-hooks/purity': 'warn',
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       'react/jsx-key': 'error',

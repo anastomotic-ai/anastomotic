@@ -115,7 +115,6 @@ export function getBundledOpenCodeVersion(): string | null {
     // Use execFileSync (no shell) so installation paths that contain spaces
     // (e.g. "C:\Users\My Name\...") are passed directly to the OS without
     // cmd.exe quoting ambiguity.
-    // See: https://github.com/RajdeepKushwaha5/accomplish/issues/596
     const output = execFileSync(command, ['--version'], {
       encoding: 'utf-8',
       timeout: 5000,
@@ -268,8 +267,7 @@ export async function onBeforeStart(): Promise<void> {
   const azureFoundryConfig = storage.getAzureFoundryConfig();
   const azureFoundryProvider = storage.getConnectedProvider('azure-foundry');
   const azureFoundryCredentials = azureFoundryProvider?.credentials as
-    | AzureFoundryCredentials
-    | undefined;
+    AzureFoundryCredentials | undefined;
 
   const isAzureFoundryEntraId =
     (selectedModel?.provider === 'azure-foundry' &&

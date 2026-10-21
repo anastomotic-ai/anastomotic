@@ -1,12 +1,12 @@
 /**
- * Desktop Control Types — Canonical Source
+ * Desktop Control Types - Canonical Source
  *
  * All types used across the desktop-control MCP tool and the broader monorepo.
  * Imported by:
  *   - mcp-tools/desktop-control/src/types.ts (re-exports for local use)
  *   - common.ts (re-exports for web/desktop consumers)
  *
- * No `any` — enforced by tsconfig strict mode.
+ * No `any` - enforced by tsconfig strict mode.
  */
 
 // ─── Action Types ───────────────────────────────────────────────────

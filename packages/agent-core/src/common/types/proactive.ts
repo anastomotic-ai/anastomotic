@@ -1,13 +1,9 @@
 /**
- * Proactive agent types — file watchers, alerts, and anomaly detection.
+ * Proactive agent types - file watchers, alerts, and anomaly detection.
  */
 
 export type AlertType =
-  | 'file_change'
-  | 'disk_space'
-  | 'schedule_reminder'
-  | 'anomaly'
-  | 'suggestion';
+  'file_change' | 'disk_space' | 'schedule_reminder' | 'anomaly' | 'suggestion';
 export type AlertPriority = 'low' | 'medium' | 'high';
 export type AlertStatus = 'pending' | 'dismissed' | 'acted';
 export type WatcherStatus = 'active' | 'paused' | 'error';

@@ -232,6 +232,11 @@ function renderWithRouter(taskId: string = 'task-123') {
 describe('Execution Page Integration', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockAnastomotic.getSlackMcpOauthStatus.mockResolvedValue({
+      connected: false,
+      pendingAuthorization: false,
+    });
+    mockAnastomotic.loginSlackMcp.mockResolvedValue({ ok: true });
     mockGetEnabledSkills.mockResolvedValue([
       {
         id: 'skill-git-helper',
@@ -529,7 +534,7 @@ describe('Execution Page Integration', () => {
       });
     });
 
-    it('should call sendFollowUp with continue when Continue button is clicked', async () => {
+    it('should deny and interrupt the task when a question is cancelled', async () => {
       mockStoreState.currentTask = createMockTask('task-123', 'Task', 'waiting_permission');
       mockStoreState.permissionRequests = {
         'task-123': {
@@ -543,11 +548,15 @@ describe('Execution Page Integration', () => {
 
       renderWithRouter('task-123');
 
-      const continueButton = screen.getByRole('button', { name: /continue task/i });
-      fireEvent.click(continueButton);
+      const cancelButton = screen.getByTestId('permission-deny-button');
+      expect(cancelButton).toHaveTextContent('Cancel');
+      fireEvent.click(cancelButton);
 
       await waitFor(() => {
-        expect(mockSendFollowUp).toHaveBeenCalledWith('continue', []);
+        expect(mockRespondToPermission).toHaveBeenCalledWith(
+          expect.objectContaining({ requestId: 'perm-1', taskId: 'task-123', decision: 'deny' }),
+        );
+        expect(mockInterruptTask).toHaveBeenCalled();
       });
     });
 
@@ -1068,12 +1077,12 @@ describe('Execution Page Integration', () => {
     });
 
     it('should show task cancelled message for cancelled task', () => {
-      mockStoreState.currentTask = createMockTask('task-123', 'Cancelled', 'cancelled');
+      mockStoreState.currentTask = createMockTask('task-123', 'Stopped by user', 'cancelled');
 
       renderWithRouter('task-123');
 
       // Assert - cancelled tasks render a badge span, not a heading
-      expect(screen.getByText(/cancelled/i)).toBeInTheDocument();
+      expect(screen.getByTestId('execution-status-badge')).toHaveTextContent(/cancelled/i);
     });
 
     it('should show Continue button for interrupted task with session and messages', () => {
@@ -1169,9 +1178,15 @@ describe('Execution Page Integration', () => {
         },
       };
       mockStoreState.currentTask = task;
-      mockAnastomotic.getSlackMcpOauthStatus
-        .mockResolvedValueOnce({ connected: false, pendingAuthorization: false })
-        .mockResolvedValueOnce({ connected: true, pendingAuthorization: false });
+      let slackConnected = false;
+      mockAnastomotic.getSlackMcpOauthStatus.mockImplementation(async () => ({
+        connected: slackConnected,
+        pendingAuthorization: false,
+      }));
+      mockAnastomotic.loginSlackMcp.mockImplementation(async () => {
+        slackConnected = true;
+        return { ok: true };
+      });
 
       renderWithRouter('task-123');
 

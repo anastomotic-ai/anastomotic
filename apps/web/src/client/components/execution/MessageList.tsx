@@ -15,7 +15,7 @@ import { BrowserScriptCard } from '../BrowserScriptCard';
 import { getToolDisplayInfo } from '../../constants/tool-mappings';
 import { SpinningIcon } from './SpinningIcon';
 
-// Hoisted to module scope — stable reference avoids ReactMarkdown reconciliation on every render.
+// Hoisted to module scope - stable reference avoids ReactMarkdown reconciliation on every render.
 // Custom renderer: fenced code blocks get syntax highlighting + copy button;
 // inline backtick code keeps simple prose styling.
 const markdownComponents: Components = {

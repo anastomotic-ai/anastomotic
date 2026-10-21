@@ -1,5 +1,5 @@
 /**
- * SandboxPanel — Docker sandbox configuration UI.
+ * SandboxPanel - Docker sandbox configuration UI.
  *
  * Contributed by SaaiAravindhRaja (PR #612):
  *   - Docker image selection with format validation
@@ -318,10 +318,10 @@ export function SandboxPanel() {
           />
           <span className="text-muted-foreground">
             {config.mode === 'disabled'
-              ? 'Sandbox is disabled — agent runs with full system access'
+              ? 'Sandbox is disabled - agent runs with full system access'
               : config.mode === 'native'
-                ? 'Native OS sandbox enabled — agent runs with restricted access'
-                : 'Docker sandbox enabled — agent runs in an isolated container'}
+                ? 'Native OS sandbox enabled - agent runs with restricted access'
+                : 'Docker sandbox enabled - agent runs in an isolated container'}
           </span>
         </div>
       </div>

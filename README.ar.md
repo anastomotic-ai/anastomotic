@@ -11,23 +11,7 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>تحميل لـ Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>تحميل لـ Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>تحميل لـ Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>تحميل لـ Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>تحميل لـ Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>تحميل لـ Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">موقع Anastomotic</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">مدونة Anastomotic</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">إصدارات Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">إصدارات Anastomotic</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ يعمل محلياً
+### يعمل محلياً
 
 <div align="left">
 
@@ -55,14 +39,14 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 استخدم ذكاءك الاصطناعي
+### استخدم ذكاءك الاصطناعي
 
 <div align="left">
 
 - استخدم مفتاح API الخاص بك (OpenAI، Anthropic، إلخ)
 - أو شغّل مع [Ollama](https://ollama.com) (بدون حاجة لمفتاح API)
 - بدون اشتراك، بدون بيع إضافي
-- إنه أداة — وليس خدمة
+- إنه أداة - وليس خدمة
 
 </div>
 
@@ -71,7 +55,7 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 مفتوح المصدر
+### مفتوح المصدر
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ يتصرف، لا يدردش فقط
+### يتصرف، لا يدردش فقط
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 
 |                                                                        |                                                                     |                                                                  |
 | :--------------------------------------------------------------------- | :------------------------------------------------------------------ | :--------------------------------------------------------------- |
-| **📁 إدارة الملفات**                                                   | **✍️ كتابة المستندات**                                              | **🔗 ربط الأدوات**                                               |
+| **إدارة الملفات**                                                      | **كتابة المستندات**                                                 | **ربط الأدوات**                                                  |
 | فرز وإعادة تسمية ونقل الملفات بناءً على المحتوى أو القواعد التي تحددها | اطلب منه كتابة أو تلخيص أو إعادة كتابة المستندات                    | يعمل مع Notion وGoogle Drive وDropbox والمزيد (عبر APIs المحلية) |
 |                                                                        |                                                                     |                                                                  |
-| **⚙️ مهارات مخصصة**                                                    | **🛡️ تحكم كامل**                                                    |                                                                  |
+| **مهارات مخصصة**                                                       | **تحكم كامل**                                                       |                                                                  |
 | حدد سير عمل قابل للتكرار، احفظها كمهارات                               | أنت توافق على كل إجراء. يمكنك رؤية السجلات. يمكنك إيقافه في أي وقت. |                                                                  |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic هو وكيل سطح مكتب ذكاء اصطناعي مفتوح ا�
 | الخطوة | الإجراء                  | التفاصيل                                                                                                                     |
 | :----: | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | **1**  | **تثبيت التطبيق**        | حمّل ملف DMG واسحبه إلى التطبيقات                                                                                            |
-| **2**  | **ربط الذكاء الاصطناعي** | استخدم مفتاح API الخاص بك من Google أو OpenAI أو Anthropic (أو غيرها) — أو سجّل الدخول بـ ChatGPT (Plus/Pro). بدون اشتراكات. |
+| **2**  | **ربط الذكاء الاصطناعي** | استخدم مفتاح API الخاص بك من Google أو OpenAI أو Anthropic (أو غيرها) - أو سجّل الدخول بـ ChatGPT (Plus/Pro). بدون اشتراكات. |
 | **3**  | **منح الوصول**           | اختر المجلدات التي يمكنه رؤيتها. أنت تتحكم.                                                                                  |
 | **4**  | **ابدأ العمل**           | اطلب منه تلخيص مستند، تنظيم مجلد، أو إنشاء تقرير. أنت توافق على كل شيء.                                                      |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**تحميل لـ Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**تحميل لـ Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**تحميل لـ Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**تحميل لـ Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**تحميل لـ Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**تحميل لـ Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[موقع Anastomotic](https://www.anastomotic.ai/)** · **[مدونة Anastomotic](https://www.anastomotic.ai/blog/)** · **[إصدارات Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[المشكلات](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[إصدارات Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[المشكلات](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-رخصة MIT · صنع بواسطة [Anastomotic](https://www.anastomotic.ai)
+رخصة MIT · صنع بواسطة [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

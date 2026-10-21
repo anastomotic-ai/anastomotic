@@ -21,7 +21,7 @@ export interface TaskConfig {
   /** Model ID for display name in progress events */
   modelId?: string;
   /**
-   * User-attached files (drag-and-drop or file picker). Ephemeral — paths reference
+   * User-attached files (drag-and-drop or file picker). Ephemeral - paths reference
    * the host filesystem at submission time and are not persisted with the task.
    */
   files?: FileAttachmentInfo[];
@@ -90,12 +90,7 @@ export interface TaskResult {
 }
 
 export type StartupStage =
-  | 'starting'
-  | 'browser'
-  | 'environment'
-  | 'loading'
-  | 'connecting'
-  | 'waiting';
+  'starting' | 'browser' | 'environment' | 'loading' | 'connecting' | 'waiting';
 
 /**
  * Array of all valid startup stage values.

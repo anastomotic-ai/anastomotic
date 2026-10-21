@@ -53,7 +53,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           package-manager-cache: false
 
       - name: Determine bump type
@@ -163,7 +163,7 @@ jobs:
           git fetch origin main
           MAIN_VERSION=$(git show origin/main:apps/desktop/package.json | node -p "JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).version")
           if [ "$MAIN_VERSION" == "$VERSION" ]; then
-            echo "Version ${VERSION} already on main — PR was merged in a previous run, skipping"
+            echo "Version ${VERSION} already on main - PR was merged in a previous run, skipping"
             exit 0
           fi
 
@@ -248,7 +248,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Setup Python
@@ -299,7 +299,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Setup Python
@@ -350,7 +350,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install system dependencies
@@ -397,7 +397,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install system dependencies
@@ -444,7 +444,7 @@ jobs:
   #     - name: Setup Node.js
   #       uses: actions/setup-node@v6
   #       with:
-  #         node-version: '20'
+  #         node-version-file: '.nvmrc'
   #         cache: 'pnpm'
   #
   #     - name: Install dependencies
@@ -607,7 +607,7 @@ jobs:
                   type: "section",
                   text: {
                     type: "mrkdwn",
-                    text: "✅ *Anastomotic v\($version) Released!*\n\nDownload the latest version from GitHub."
+                    text: "*Anastomotic v\($version) Released!*\n\nDownload the latest version from GitHub."
                   },
                   accessory: {
                     type: "button",

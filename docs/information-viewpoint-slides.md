@@ -1,4 +1,4 @@
-# Information Viewpoint — Slide-Ready Diagrams
+# Information Viewpoint - Slide-Ready Diagrams
 
 > Simplified versions of the diagrams in `information-viewpoint.md`, designed for presentation slides.
 > For full detail, refer to the complete document.
@@ -12,21 +12,21 @@ graph TB
   subgraph APP["Anastomotic Desktop"]
     direction TB
     subgraph PERSIST["Persisted to Disk"]
-      DB["🗄️ <b>SQLite DB</b><br/><i>Tasks · Messages · Todos<br/>Providers · Skills · Connectors<br/>App Settings</i>"]
-      SEC["🔐 <b>Secure Storage</b><br/><i>API Keys · OAuth Tokens<br/>AES-256-GCM encrypted</i>"]
-      SKILLS_FS["📁 <b>Skills Directory</b><br/><i>SKILL.md files<br/>(official + custom)</i>"]
+      DB["<b>SQLite DB</b><br/><i>Tasks · Messages · Todos<br/>Providers · Skills · Connectors<br/>App Settings</i>"]
+      SEC["<b>Secure Storage</b><br/><i>API Keys · OAuth Tokens<br/>AES-256-GCM encrypted</i>"]
+      SKILLS_FS["<b>Skills Directory</b><br/><i>SKILL.md files<br/>(official + custom)</i>"]
     end
 
     subgraph EPHEMERAL["In-Memory Only"]
-      CE["⚙️ <b>Completion State</b><br/><i>Flow state · retry count<br/>Lost on crash</i>"]
-      PERM["⏳ <b>Permission Promises</b><br/><i>Deferred HTTP responses<br/>5 min timeout</i>"]
-      UI_STATE["🖥️ <b>React Store</b><br/><i>Zustand — rebuilt<br/>from IPC on restart</i>"]
+      CE["<b>Completion State</b><br/><i>Flow state · retry count<br/>Lost on crash</i>"]
+      PERM["<b>Permission Promises</b><br/><i>Deferred HTTP responses<br/>5 min timeout</i>"]
+      UI_STATE["<b>React Store</b><br/><i>Zustand - rebuilt<br/>from IPC on restart</i>"]
     end
   end
 
   subgraph EXTERNAL["External"]
-    OC_SESS["📝 <b>OpenCode Data</b><br/><i>~/.local/share/opencode/<br/>Sessions · messages · own DB</i>"]
-    CONFIG["📄 <b>opencode.json</b><br/><i>Generated per task<br/>System prompt + MCP config</i>"]
+    OC_SESS["<b>OpenCode Data</b><br/><i>~/.local/share/opencode/<br/>Sessions · messages · own DB</i>"]
+    CONFIG["<b>opencode.json</b><br/><i>Generated per task<br/>System prompt + MCP config</i>"]
   end
 
   DB -.->|"source of truth"| UI_STATE
@@ -107,14 +107,14 @@ stateDiagram-v2
 
     queued --> running : PTY spawned
 
-    running --> completed : ✅ Success
-    running --> failed : ❌ Error
-    running --> cancelled : 🚫 User cancels
-    running --> interrupted : ⏸️ User interrupts
+    running --> completed : Success
+    running --> failed : Error
+    running --> cancelled : User cancels
+    running --> interrupted : User interrupts
 
     interrupted --> running : User sends follow-up
 
-    running --> running : 🔄 Permission request\n(dialog shown → resolved)
+    running --> running : Permission request\n(dialog shown → resolved)
 ```
 
 ---
@@ -155,11 +155,11 @@ graph LR
 
 ---
 
-## 5. Data Flow — Task Execution
+## 5. Data Flow - Task Execution
 
 ```mermaid
 graph LR
-  USER["👤 User"] -->|"prompt"| UI["React UI"]
+  USER["User"] -->|"prompt"| UI["React UI"]
   UI -->|"IPC"| MAIN["Electron Main"]
   MAIN -->|"save"| DB[(SQLite)]
   MAIN -->|"spawn PTY"| OC["OpenCode"]
@@ -168,8 +168,8 @@ graph LR
   OC -->|"permissions\n(HTTP :9226)"| MAIN
   MAIN -->|"IPC events\n(50ms batch)"| UI
 
-  OC -->|"tool calls"| FS["💾 Files"]
-  OC -->|"prompts"| AI["☁️ AI Provider"]
+  OC -->|"tool calls"| FS["Files"]
+  OC -->|"prompts"| AI["AI Provider"]
 
   MAIN -->|"save messages"| DB
 
@@ -193,9 +193,9 @@ graph LR
 ```mermaid
 graph LR
   OC["OpenCode"] -->|"HTTP POST"| MCP["MCP Server\n(:9226 / :9227)"]
-  MCP -->|"deferred\npromise"| WAIT["⏳ Waiting..."]
+  MCP -->|"deferred\npromise"| WAIT["Waiting..."]
   MCP -->|"IPC event"| UI["React UI"]
-  UI -->|"shows dialog"| USER["👤 User"]
+  UI -->|"shows dialog"| USER["User"]
   USER -->|"allow / deny"| UI
   UI -->|"IPC response"| MCP
   MCP -->|"HTTP 200"| OC

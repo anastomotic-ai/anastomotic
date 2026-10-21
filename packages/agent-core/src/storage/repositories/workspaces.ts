@@ -33,16 +33,14 @@ export function listWorkspaces(): Workspace[] {
 export function getWorkspace(id: string): Workspace | null {
   const db = getMetaDatabase();
   const row = db.prepare('SELECT * FROM workspaces WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToWorkspace(row) : null;
 }
 
 export function getDefaultWorkspace(): Workspace | null {
   const db = getMetaDatabase();
   const row = db.prepare('SELECT * FROM workspaces WHERE is_default = 1').get() as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToWorkspace(row) : null;
 }
 
@@ -52,8 +50,7 @@ export function createWorkspace(input: WorkspaceCreateInput): Workspace {
   const now = new Date().toISOString();
 
   const maxOrder = db.prepare('SELECT MAX(sort_order) as max_order FROM workspaces').get() as
-    | { max_order: number | null }
-    | undefined;
+    { max_order: number | null } | undefined;
   const order = (maxOrder?.max_order ?? -1) + 1;
 
   db.prepare(

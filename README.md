@@ -11,23 +11,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Download for Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Download for Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Download for Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Download for Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Download for Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Download for Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic website</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic blog</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic releases</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic releases</a>
 </p>
 
 <br />
@@ -42,27 +26,27 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ It runs locally
+### It runs locally
 
 <div align="left">
 
-- Your files stay on your machine
+- Your task history and settings are stored on your machine
 - You decide which folders it can touch
-- Nothing gets sent to Anastomotic (or anyone else)
+- Cloud models receive task content and tool results needed to carry out your request; local models are available
 
 </div>
 
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 You bring your own AI
+### You bring your own AI
 
 <div align="left">
 
 - Use your own API key (OpenAI, Anthropic, etc.)
 - Or run with [Ollama](https://ollama.com) (no API key needed)
 - No subscription, no upsell
-- It's a tool—not a service
+- It's a tool - not a service
 
 </div>
 
@@ -71,7 +55,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 It's open source
+### It's open source
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ It acts, not just chats
+### It acts, not just chats
 
 <div align="left">
 
@@ -109,27 +93,27 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 ### Core Capabilities
 
-| Feature                 | Description                                                 |
-| :---------------------- | :---------------------------------------------------------- |
-| **📁 File Management**  | Sort, rename, and move files based on content or rules      |
-| **✍️ Document Writing** | Write, summarize, or rewrite documents with AI              |
-| **🔗 Tool Connections** | Integrate with Notion, Google Drive, Dropbox via local APIs |
-| **⚙️ Custom Skills**    | Define repeatable workflows and save them as skills         |
-| **🛡️ Full Control**     | Approve every action, view logs, stop anytime               |
+| Feature              | Description                                                 |
+| :------------------- | :---------------------------------------------------------- |
+| **File Management**  | Sort, rename, and move files based on content or rules      |
+| **Document Writing** | Write, summarize, or rewrite documents with AI              |
+| **Tool Connections** | Integrate with Notion, Google Drive, Dropbox via local APIs |
+| **Custom Skills**    | Define repeatable workflows and save them as skills         |
+| **Full Control**     | Approve every action, view logs, stop anytime               |
 
 ### Advanced Features
 
-| Feature                       | Description                                                                                                  |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| **📅 Scheduled Tasks**        | Schedule AI tasks with cron expressions — run daily reports, weekly cleanups, or hourly checks automatically |
-| **💰 Cost Tracking**          | Monitor token usage and API costs per task with detailed breakdowns by model and provider                    |
-| **🧠 Auto-Learning**          | Automatically extracts reusable insights from completed tasks and applies them to improve future results     |
-| **🔀 Multi-Agent Pipelines**  | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines                   |
-| **🔧 Git-Aware Code Agent**   | Detects current branch and repo status — suggests git-related actions contextually on the home screen        |
-| **📤 Export & Share Results** | Export task results as Markdown, JSON, or plain text — or copy to clipboard with one click                   |
-| **💡 Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity        |
-| **🏪 Skill Marketplace**      | Browse and install community skills from a curated marketplace with one-click install                        |
-| **🔔 Notification Webhooks**  | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure             |
+| Feature                    | Description                                                                                                  |
+| :------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| **Scheduled Tasks**        | Schedule AI tasks with cron expressions - run daily reports, weekly cleanups, or hourly checks automatically |
+| **Cost Tracking**          | Monitor token usage and API costs per task with detailed breakdowns by model and provider                    |
+| **Auto-Learning**          | Automatically extracts reusable insights from completed tasks and applies them to improve future results     |
+| **Multi-Agent Pipelines**  | Orchestrate multi-step workflows with sequential, parallel, or conditional agent pipelines                   |
+| **Git-Aware Code Agent**   | Detects current branch and repo status - suggests git-related actions contextually on the home screen        |
+| **Export & Share Results** | Export task results as Markdown, JSON, or plain text - or copy to clipboard with one click                   |
+| **Smart Task Suggestions** | Heuristic suggestion engine on the home page that recommends follow-up tasks based on recent activity        |
+| **Skill Marketplace**      | Browse and install community skills from a curated marketplace with one-click install                        |
+| **Notification Webhooks**  | Send HTTP POST notifications to Slack, Discord, or any webhook URL on task completion or failure             |
 
 <br />
 
@@ -141,10 +125,10 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 |                                                                    |                                                                      |                                                                         |
 | :----------------------------------------------------------------- | :------------------------------------------------------------------- | :---------------------------------------------------------------------- |
-| **📁 File Management**                                             | **✍️ Document Writing**                                              | **🔗 Tool Connections**                                                 |
+| **File Management**                                                | **Document Writing**                                                 | **Tool Connections**                                                    |
 | Sort, rename, and move files based on content or rules you give it | Prompt it to write, summarize, or rewrite documents                  | Works with Notion, Google Drive, Dropbox, and more (through local APIs) |
 |                                                                    |                                                                      |                                                                         |
-| **⚙️ Custom Skills**                                               | **🛡️ Full Control**                                                  |                                                                         |
+| **Custom Skills**                                                  | **Full Control**                                                     |                                                                         |
 | Define repeatable workflows, save them as skills                   | You approve every action. You can see logs. You can stop it anytime. |                                                                         |
 
 <br />
@@ -181,7 +165,7 @@ Anastomotic is an open source AI desktop agent that automates file management, d
 
 ## Privacy and local-first
 
-Anastomotic runs locally on your machine. Your files stay on your device, and you choose which folders it can access.
+Anastomotic runs locally on your machine and stores task history locally. When you select a cloud AI provider, prompts and relevant file content or tool results are sent to that provider. Browser tasks and connectors communicate with the services you use. Local models are available; review your chosen model, tools, and connectors when working with private data.
 
 <br />
 
@@ -206,19 +190,11 @@ Anastomotic runs locally on your machine. Your files stay on your device, and yo
 | Step  | Action              | Details                                                                                                           |
 | :---: | ------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **1** | **Install the App** | Download the DMG and drag it into Applications                                                                    |
-| **2** | **Connect Your AI** | Use your own Google, OpenAI, Anthropic (or other) API key — or sign in with ChatGPT (Plus/Pro). No subscriptions. |
+| **2** | **Connect Your AI** | Use your own Google, OpenAI, Anthropic (or other) API key - or sign in with ChatGPT (Plus/Pro). No subscriptions. |
 | **3** | **Give It Access**  | Choose which folders it can see. You stay in control.                                                             |
 | **4** | **Start Working**   | Ask it to summarize a doc, clean a folder, or create a report. You approve everything.                            |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Download for Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Download for Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Download for Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Download for Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Download for Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Download for Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -253,13 +229,13 @@ pnpm install
 pnpm dev
 ```
 
-That's it.
+See [Contributing](CONTRIBUTING.md) for setup, platform notes, and verification, and the [December 2026 roadmap](docs/roadmap-december-2026.md) for proposed release goals and contributor projects.
 
 <details>
 <summary><strong>Prerequisites</strong></summary>
 
-- Node.js 20+
-- pnpm 9+
+- Node.js 22.13.0 (see `.nvmrc`; the current Vite toolchain requires a recent Node.js release)
+- pnpm 9.15.0 (pinned in `packageManager`)
 
 </details>
 
@@ -295,14 +271,16 @@ That's it.
 
 ```
 apps/
-  desktop/        # Electron app (main + preload + renderer)
+  desktop/        # Electron main process and preload bridge
+  web/            # React interface, embedded by desktop
+  daemon/         # Background task execution service
 packages/
-  shared/         # Shared TypeScript types
+  agent-core/     # Agent runtime, storage, providers, types, and MCP tools
 ```
 
-The desktop app uses Electron with a React UI bundled via Vite. The main process spawns [OpenCode](https://github.com/sst/opencode) CLI using `node-pty` to execute tasks. API keys are stored securely in the OS keychain.
+The desktop app uses Electron with a React UI bundled via Vite. Its agent runtime spawns OpenCode CLI using `node-pty` to execute tasks. API keys are encrypted locally with AES-256-GCM and a machine-derived key.
 
-See [CLAUDE.md](CLAUDE.md) for detailed architecture documentation.
+See [docs/architecture.md](docs/architecture.md) for architecture and [the project assessment](docs/project-assessment.md) for observed limitations and verification results.
 
 </details>
 
@@ -331,11 +309,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic website](https://www.anastomotic.ai/)** · **[Anastomotic blog](https://www.anastomotic.ai/blog/)** · **[Anastomotic releases](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic releases](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT License · Built by [Anastomotic](https://www.anastomotic.ai)
+MIT License · Built by [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

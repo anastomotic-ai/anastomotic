@@ -20,7 +20,7 @@ const AUTO_LABELS: Record<string, string> = {
 };
 const AUTO_FALLBACK = 'Auto (System)';
 
-// Compute once at module level — navigator.language is static
+// Compute once at module level - navigator.language is static
 const systemLang = typeof navigator !== 'undefined' ? navigator.language : 'en';
 const matchedLang = Object.keys(AUTO_LABELS).find(
   (key) => systemLang === key || systemLang.startsWith(key.split('-')[0]),

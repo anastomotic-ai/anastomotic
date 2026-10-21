@@ -1,5 +1,5 @@
 /**
- * Daemon module — public exports
+ * Daemon module - public exports
  *
  * Provides the in-process RPC infrastructure for the daemon architecture.
  * Step 2: server and client run in the same Electron main process.

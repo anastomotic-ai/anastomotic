@@ -23,7 +23,7 @@ export function ConversationListItem({ task }: ConversationListItemProps) {
   const favoritesList = Array.isArray(favorites) ? favorites : [];
   const isFavorited = favoritesList.some((f) => f.taskId === task.id);
   const canFavorite = FAVORITABLE_STATUSES.includes(task.status);
-  // Note: loadFavorites is intentionally not called here — the parent page
+  // Note: loadFavorites is intentionally not called here - the parent page
   // (Home/Execution) is responsible for loading favorites once on mount.
 
   const handleClick = () => {

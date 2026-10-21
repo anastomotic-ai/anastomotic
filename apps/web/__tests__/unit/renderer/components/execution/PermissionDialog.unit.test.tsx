@@ -8,7 +8,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-// Import helpers first — they register vi.mock stubs before PermissionDialog is loaded
+// Import helpers first - they register vi.mock stubs before PermissionDialog is loaded
 import { createToolPermission, createFilePermission } from './permissionDialogTestHelpers';
 
 import { PermissionDialog } from '@/components/execution/PermissionDialog';

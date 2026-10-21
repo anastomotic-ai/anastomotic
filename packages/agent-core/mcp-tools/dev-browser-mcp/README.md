@@ -26,7 +26,7 @@ DEV_BROWSER_PORT=5555 npx tsx src/index.ts
 
 ### Remote CDP mode
 
-Connects directly to any Chrome DevTools Protocol endpoint — no dev-browser HTTP server needed. Pages are managed in a local in-memory registry.
+Connects directly to any Chrome DevTools Protocol endpoint - no dev-browser HTTP server needed. Pages are managed in a local in-memory registry.
 
 ```bash
 # Local headless Chromium

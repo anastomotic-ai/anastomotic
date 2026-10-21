@@ -1,4 +1,4 @@
-# Concurrency Viewpoint — Anastomotic Architecture
+# Concurrency Viewpoint - Anastomotic Architecture
 
 > Rozanski & Woods Concurrency Viewpoint: maps the system's functional elements to runtime processes and threads, identifies inter-process communication, and describes synchronization and coordination mechanisms.
 
@@ -71,7 +71,7 @@ graph TB
 
 ## 2. Task Queue & Execution Model
 
-How tasks are scheduled, queued, and executed — the core concurrency control.
+How tasks are scheduled, queued, and executed - the core concurrency control.
 
 ```mermaid
 graph TB
@@ -147,7 +147,7 @@ graph LR
     L1["① Async, non-blocking, structured"]
     L2["② Push, batched for performance"]
     L3["③④ Text stream, real-time"]
-    L4["⑤ Blocking HTTP — deferred promise pattern"]
+    L4["⑤ Blocking HTTP - deferred promise pattern"]
     L5["⑥ Browser automation protocol"]
   end
 
@@ -160,7 +160,7 @@ graph LR
 
 ---
 
-## 4. Permission Request — Deferred Promise Pattern
+## 4. Permission Request - Deferred Promise Pattern
 
 The most interesting synchronization mechanism: how an MCP HTTP call blocks until a human responds in the UI.
 
@@ -182,7 +182,7 @@ sequenceDiagram
   HTTP->>IPC: webContents.send('permission:request', req)
   IPC->>USER: Permission dialog shown
 
-  Note over OC,USER: ⏳ OpenCode PTY is blocked<br/>HTTP connection held open<br/>Main process event loop continues
+  Note over OC,USER: OpenCode PTY is blocked<br/>HTTP connection held open<br/>Main process event loop continues
 
   USER->>IPC: Click Allow/Deny
   IPC->>PRH: resolvePermissionRequest(id, allowed)
@@ -195,7 +195,7 @@ sequenceDiagram
 
 ---
 
-## 5. Message Batching — Render Optimization
+## 5. Message Batching - Render Optimization
 
 How high-frequency PTY output is batched to avoid overwhelming React rendering.
 
@@ -224,7 +224,7 @@ sequenceDiagram
 
 ---
 
-## 6. Session Resumption — Continuation Lifecycle
+## 6. Session Resumption - Continuation Lifecycle
 
 How the CompletionEnforcer spawns new PTY processes for task continuation, sharing the same OpenCode session.
 
@@ -267,7 +267,7 @@ sequenceDiagram
 | **Max concurrent tasks**   | 10 (default, configurable)            | `TaskManager.maxConcurrentTasks`          |
 | **Task queue max**         | 10 (same as max concurrent)           | Rejects with error if exceeded            |
 | **Process per task**       | 1 PTY (OpenCode Go binary)            | `pty.spawn()` per `executeTask()`         |
-| **Main process threading** | Single-threaded event loop            | Node.js — no thread contention            |
+| **Main process threading** | Single-threaded event loop            | Node.js - no thread contention            |
 | **Renderer threading**     | Single-threaded (Chromium)            | React renders on UI thread                |
 | **Dev-browser server**     | Detached, outlives parent             | `child.unref()`, persists between tasks   |
 | **Permission blocking**    | Deferred Promise, 5min timeout        | HTTP connection held open                 |

@@ -25,13 +25,7 @@ interface MarketplaceItem {
 }
 
 type CategoryFilter =
-  | 'all'
-  | 'development'
-  | 'productivity'
-  | 'data'
-  | 'devops'
-  | 'research'
-  | 'writing';
+  'all' | 'development' | 'productivity' | 'data' | 'devops' | 'research' | 'writing';
 
 const CATEGORY_LABELS: Record<CategoryFilter, string> = {
   all: 'All Categories',

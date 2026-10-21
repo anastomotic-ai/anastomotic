@@ -19,9 +19,9 @@
     "noConnectors": "暂无连接器",
     "manage": "管理",
     "dropFilesHere": "将文件拖放到此处以附加",
-    "dropFilesHint": "（最多 {max} 个文件，每个 {size}MB）",
-    "fileTooLarge": "{name} 超出 {limit} 大小限制",
-    "tooManyFiles": "最多允许 {max} 个文件",
+    "dropFilesHint": "（最多 {{max}} 个文件，每个 {{size}}MB）",
+    "fileTooLarge": "{{name}} 超出 {{limit}} 大小限制",
+    "tooManyFiles": "最多允许 {{max}} 个文件",
     "selectFolder": "选择文件夹"
   },
   "examplePrompts": "示例任务",
@@ -74,8 +74,8 @@
   },
   "selectFolder": "选择文件夹",
   "selectedFolder": {
-    "badge": "📁 {folder}",
+    "badge": "{{folder}}",
     "clearAriaLabel": "清除所选文件夹",
-    "clearButton": "✕"
+    "clearButton": "清除"
   }
 }

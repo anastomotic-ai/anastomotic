@@ -1,5 +1,5 @@
 /**
- * ScreencastController — CDP-based live browser frame capture.
+ * ScreencastController - CDP-based live browser frame capture.
  *
  * Attaches a CDP session to a Playwright page, starts the Chrome
  * Page.startScreencast protocol, and streams JPEG frames via callbacks.

@@ -199,7 +199,7 @@ export function TaskLauncher() {
                             : 'text-muted-foreground',
                         )}
                       >
-                        — &ldquo;{searchQuery}&rdquo;
+                        - &ldquo;{searchQuery}&rdquo;
                       </span>
                     )}
                   </button>

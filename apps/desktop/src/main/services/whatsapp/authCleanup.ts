@@ -1,5 +1,5 @@
 /**
- * authCleanup — WhatsApp auth-state filesystem helpers.
+ * authCleanup - WhatsApp auth-state filesystem helpers.
  *
  * Extracted from WhatsAppService for modularity.
  */

@@ -1,5 +1,5 @@
 /**
- * useBrowserPreview — State management and IPC event hook for BrowserPreview.
+ * useBrowserPreview - State management and IPC event hook for BrowserPreview.
  *
  * Encapsulates:
  *  - Frame / URL / status / error state
@@ -8,7 +8,7 @@
  *  - IPC subscription to browser:frame, browser:navigate, browser:status events
  *
  * IPC subscription logic lives in useBrowserPreviewIpc.ts (extracted to keep
- * this file under 200 lines — CodeRabbit suggestion).
+ * this file under 200 lines - CodeRabbit suggestion).
  *
  * Extracted from BrowserPreview as part of ENG-982 refactor.
  */
@@ -152,7 +152,7 @@ export function useBrowserPreview({
       if (cancelled) {
         return;
       }
-      // Dev-browser server may not be ready yet — reset so we can retry on next tool call
+      // Dev-browser server may not be ready yet - reset so we can retry on next tool call
       screencastStartedRef.current = false;
       statusRef.current = 'idle';
       dispatch({ type: 'IDLE' });
@@ -163,7 +163,7 @@ export function useBrowserPreview({
     };
   }, [currentTool, taskId]);
 
-  // IPC event handlers — defined here so they can close over dispatch and refs
+  // IPC event handlers - defined here so they can close over dispatch and refs
   const handleFrame = useCallback(
     (event: { taskId: string; pageName: string; frame: string; timestamp: number }) => {
       if (event.taskId !== taskId) {

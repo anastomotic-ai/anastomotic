@@ -17,7 +17,7 @@ import { wireTaskBridge, wireStatusListeners } from '../../services/whatsapp/wir
 import type { MessagingConnectionStatus } from '@anastomotic_ai/agent-core/common';
 import { handle } from './utils';
 
-// Per-renderer named handler maps — keyed by webContents id
+// Per-renderer named handler maps - keyed by webContents id
 const _qrHandlers = new Map<number, (qr: string) => void>();
 const _statusHandlers = new Map<number, (status: MessagingConnectionStatus) => void>();
 const _phoneNumberHandlers = new Map<number, (phoneNumber: string) => void>();

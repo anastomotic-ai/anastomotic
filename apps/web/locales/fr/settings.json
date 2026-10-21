@@ -121,6 +121,8 @@
     "toolUnknown": "La prise en charge des outils n'a pas pu être vérifiée",
     "toolUnknownDetail": "Ce modèle peut ou non prendre en charge l'appel d'outils/fonctions. Testez-le pour confirmer.",
     "functionCallingVerified": "Appel de fonctions vérifié",
+    "toolsTag": "outils",
+    "noToolsTag": "sans outils",
     "contextLengthWarning": "Exigence de longueur de contexte",
     "contextLengthWarningDetail": "Assurez-vous que votre modèle est chargé avec une longueur de contexte suffisante (maximum disponible recommandé) dans les paramètres de LM Studio."
   },

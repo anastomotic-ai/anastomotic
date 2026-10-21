@@ -1,5 +1,5 @@
 /**
- * useWhatsAppCard — state machine hook for WhatsApp connection management.
+ * useWhatsAppCard - state machine hook for WhatsApp connection management.
  *
  * Encapsulates IPC bootstrapping, subscription cleanup, and status transitions.
  */

@@ -306,7 +306,7 @@ export function DebugPanel({
                         }
                       }
                     }}
-                    placeholder="Search logs... (⌘F)"
+                    placeholder="Search logs... (Ctrl/Cmd+F)"
                     className="h-7 w-52 pl-7 pr-2 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-500"
                     data-testid="debug-search-input"
                   />

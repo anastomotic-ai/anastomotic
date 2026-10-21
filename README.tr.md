@@ -11,23 +11,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Mac için İndirin (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Mac için İndirin (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Windows 11 için İndirin</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Linux için İndirin (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Linux için İndirin (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Linux için İndirin (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Anastomotic web sitesi</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Anastomotic blogu</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Anastomotic sürümleri</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Anastomotic sürümleri</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ Yerel olarak çalışır
+### Yerel olarak çalışır
 
 <div align="left">
 
@@ -55,14 +39,14 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 Kendi AI'ınızı getirin
+### Kendi AI'ınızı getirin
 
 <div align="left">
 
 - Kendi API anahtarınızı kullanın (OpenAI, Anthropic, vb.)
 - Veya [Ollama](https://ollama.com) ile çalıştırın (API anahtarı gerekmez)
 - Abonelik yok, ek satış yok
-- Bu bir araç—hizmet değil
+- Bu bir araç - hizmet değil
 
 </div>
 
@@ -71,7 +55,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 Açık kaynak
+### Açık kaynak
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ Sadece sohbet değil, eylem
+### Sadece sohbet değil, eylem
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic, bilgisayarınızda yerel olarak dosya yönetimi, belge oluşturma v
 
 |                                                                                           |                                                                                          |                                                                                       |
 | :---------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ |
-| **📁 Dosya Yönetimi**                                                                     | **✍️ Belge Yazma**                                                                       | **🔗 Araç Bağlantıları**                                                              |
+| **Dosya Yönetimi**                                                                        | **Belge Yazma**                                                                          | **Araç Bağlantıları**                                                                 |
 | İçeriğe veya belirlediğiniz kurallara göre dosyaları sıralar, yeniden adlandırır ve taşır | Belge yazmasını, özetlemesini veya yeniden yazmasını isteyin                             | Notion, Google Drive, Dropbox ve daha fazlasıyla çalışır (yerel API'ler aracılığıyla) |
 |                                                                                           |                                                                                          |                                                                                       |
-| **⚙️ Özel Beceriler**                                                                     | **🛡️ Tam Kontrol**                                                                       |                                                                                       |
+| **Özel Beceriler**                                                                        | **Tam Kontrol**                                                                          |                                                                                       |
 | Tekrarlanabilir iş akışları tanımlayın, beceri olarak kaydedin                            | Her eylemi onaylarsınız. Günlükleri görebilirsiniz. İstediğiniz zaman durdurabilirsiniz. |                                                                                       |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic bilgisayarınızda yerel olarak çalışır. Dosyalarınız cihazın
 | Adım  | Eylem                  | Detaylar                                                                                                                        |
 | :---: | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **1** | **Uygulamayı Kurun**   | DMG'yi indirin ve Uygulamalar'a sürükleyin                                                                                      |
-| **2** | **AI'ınızı Bağlayın**  | Kendi Google, OpenAI, Anthropic (veya diğer) API anahtarınızı kullanın — veya ChatGPT (Plus/Pro) ile giriş yapın. Abonelik yok. |
+| **2** | **AI'ınızı Bağlayın**  | Kendi Google, OpenAI, Anthropic (veya diğer) API anahtarınızı kullanın - veya ChatGPT (Plus/Pro) ile giriş yapın. Abonelik yok. |
 | **3** | **Erişim Verin**       | Hangi klasörleri görebileceğini seçin. Kontrol sizde.                                                                           |
 | **4** | **Çalışmaya Başlayın** | Bir belgeyi özetlemesini, klasör düzenlemesini veya rapor oluşturmasını isteyin. Her şeyi onaylarsınız.                         |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Mac için İndirin (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Mac için İndirin (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Windows 11 için İndirin**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Linux için İndirin (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Linux için İndirin (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Linux için İndirin (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Anastomotic web sitesi](https://www.anastomotic.ai/)** · **[Anastomotic blogu](https://www.anastomotic.ai/blog/)** · **[Anastomotic sürümleri](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Anastomotic sürümleri](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-MIT Lisansı · [Anastomotic](https://www.anastomotic.ai) tarafından yapıldı
+MIT Lisansı · [Anastomotic](https://github.com/anastomotic-ai) tarafından yapıldı
 
 <br />
 

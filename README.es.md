@@ -11,23 +11,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Descargar para Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Descargar para Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Descargar para Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Descargar para Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Descargar para Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Descargar para Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Sitio web de Anastomotic</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Blog de Anastomotic</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Versiones de Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Versiones de Anastomotic</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ Se ejecuta localmente
+### Se ejecuta localmente
 
 <div align="left">
 
@@ -55,7 +39,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 Trae tu propia IA
+### Trae tu propia IA
 
 <div align="left">
 
@@ -71,7 +55,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 Es de código abierto
+### Es de código abierto
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ Actúa, no solo chatea
+### Actúa, no solo chatea
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic es un agente de escritorio de IA de código abierto que automatiza l
 
 |                                                                        |                                                                                        |                                                                             |
 | :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **📁 Gestión de Archivos**                                             | **✍️ Escritura de Documentos**                                                         | **🔗 Conexiones de Herramientas**                                           |
+| **Gestión de Archivos**                                                | **Escritura de Documentos**                                                            | **Conexiones de Herramientas**                                              |
 | Ordena, renombra y mueve archivos según contenido o reglas que definas | Pídele que escriba, resuma o reescriba documentos                                      | Funciona con Notion, Google Drive, Dropbox y más (a través de APIs locales) |
 |                                                                        |                                                                                        |                                                                             |
-| **⚙️ Habilidades Personalizadas**                                      | **🛡️ Control Total**                                                                   |                                                                             |
+| **Habilidades Personalizadas**                                         | **Control Total**                                                                      |                                                                             |
 | Define flujos de trabajo repetibles, guárdalos como habilidades        | Apruebas cada acción. Puedes ver los registros. Puedes detenerlo en cualquier momento. |                                                                             |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic se ejecuta localmente en tu máquina. Tus archivos permanecen en tu 
 | Paso  | Acción                 | Detalles                                                                                                                   |
 | :---: | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **1** | **Instala la App**     | Descarga el DMG y arrástralo a Aplicaciones                                                                                |
-| **2** | **Conecta tu IA**      | Usa tu propia clave API de Google, OpenAI, Anthropic (u otra) — o inicia sesión con ChatGPT (Plus/Pro). Sin suscripciones. |
+| **2** | **Conecta tu IA**      | Usa tu propia clave API de Google, OpenAI, Anthropic (u otra) - o inicia sesión con ChatGPT (Plus/Pro). Sin suscripciones. |
 | **3** | **Dale Acceso**        | Elige qué carpetas puede ver. Tú mantienes el control.                                                                     |
 | **4** | **Empieza a Trabajar** | Pídele que resuma un documento, organice una carpeta o cree un informe. Apruebas todo.                                     |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Descargar para Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Descargar para Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Descargar para Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Descargar para Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Descargar para Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Descargar para Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Sitio web de Anastomotic](https://www.anastomotic.ai/)** · **[Blog de Anastomotic](https://www.anastomotic.ai/blog/)** · **[Versiones de Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Versiones de Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-Licencia MIT · Creado por [Anastomotic](https://www.anastomotic.ai)
+Licencia MIT · Creado por [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

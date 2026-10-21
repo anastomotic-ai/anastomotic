@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import type {
   MemoryEntry,
   MemoryStats,
@@ -7,9 +7,8 @@ import type {
 import { getAnastomotic } from '@/lib/anastomotic';
 import { useWorkspaceStore } from '@/stores/workspaceStore';
 
-const api = getAnastomotic();
-
 export function useMemory() {
+  const api = useMemo(() => getAnastomotic(), []);
   const [memories, setMemories] = useState<MemoryEntry[]>([]);
   const [stats, setStats] = useState<MemoryStats | null>(null);
   const [preferences, setPreferences] = useState<BehavioralPreference[]>([]);
@@ -32,7 +31,7 @@ export function useMemory() {
     } finally {
       setIsLoading(false);
     }
-  }, [activeWorkspaceId]);
+  }, [api, activeWorkspaceId]);
 
   useEffect(() => {
     loadMemories();
@@ -48,7 +47,7 @@ export function useMemory() {
       const results = await api.searchMemory(query, activeWorkspaceId || undefined);
       setSearchResults(results.map((r: { entry: MemoryEntry }) => r.entry));
     },
-    [activeWorkspaceId],
+    [api, activeWorkspaceId],
   );
 
   const deleteMemory = useCallback(
@@ -56,7 +55,7 @@ export function useMemory() {
       await api.deleteMemory(id);
       await loadMemories();
     },
-    [loadMemories],
+    [api, loadMemories],
   );
 
   const deletePreference = useCallback(
@@ -64,13 +63,13 @@ export function useMemory() {
       await api.deletePreference(id);
       await loadMemories();
     },
-    [loadMemories],
+    [api, loadMemories],
   );
 
   const clearAll = useCallback(async () => {
     await api.clearMemories(activeWorkspaceId || undefined);
     await loadMemories();
-  }, [activeWorkspaceId, loadMemories]);
+  }, [api, activeWorkspaceId, loadMemories]);
 
   return {
     memories,

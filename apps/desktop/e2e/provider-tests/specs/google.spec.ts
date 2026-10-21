@@ -6,7 +6,7 @@ import type { ApiKeySecrets } from '../types';
 const config = getProviderTestConfig('google');
 
 test.describe('Google Provider', () => {
-  test.skip(!config?.secrets, 'No Google secrets configured — skipping');
+  test.skip(!config?.secrets, 'No Google secrets configured - skipping');
 
   test('should connect with API key and complete a task', async ({ window }) => {
     const secrets = config.secrets as ApiKeySecrets;

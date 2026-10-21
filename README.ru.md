@@ -2,32 +2,16 @@
   <a href="README.md">English</a> | <a href="README.zh-CN.md">中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.ko.md">한국어</a> | <strong>Русский</strong> | <a href="README.es.md">Español</a> | <a href="README.tr.md">Türkçe</a> | <a href="README.ar.md">العربية</a> | <a href="README.id.md">Bahasa Indonesia</a> | <a href="README.ta.md">தமிழ்</a> | <a href="README.hi.md">हिन्दी</a>
 </p>
 
-# Anastomotic™ — открытый ИИ-агент для рабочего стола
+# Anastomotic™ - открытый ИИ-агент для рабочего стола
 
-Anastomotic — это открытый ИИ-агент для рабочего стола, который автоматизирует управление файлами, создание документов и задачи в браузере прямо на вашем компьютере. Используйте свои API-ключи (OpenAI, Anthropic, Google, xAI) или запускайте локальные модели через Ollama.
+Anastomotic - это открытый ИИ-агент для рабочего стола, который автоматизирует управление файлами, создание документов и задачи в браузере прямо на вашем компьютере. Используйте свои API-ключи (OpenAI, Anthropic, Google, xAI) или запускайте локальные модели через Ollama.
 
 <p align="center">
   <strong>Работает локально на вашем компьютере. Свои API-ключи или локальные модели. Лицензия MIT.</strong>
 </p>
 
 <p align="center">
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg"><strong>Скачать для Mac (Apple Silicon)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg"><strong>Скачать для Mac (Intel)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe"><strong>Скачать для Windows 11</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage"><strong>Скачать для Linux (ARM64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage"><strong>Скачать для Linux (x64)</strong></a>
-  ·
-  <a href="https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb"><strong>Скачать для Linux (.deb x64)</strong></a>
-  ·
-  <a href="https://www.anastomotic.ai/">Сайт Anastomotic</a>
-  ·
-  <a href="https://www.anastomotic.ai/blog/">Блог Anastomotic</a>
-  ·
-  <a href="https://github.com/RajdeepKushwaha5/accomplish/releases">Релизы Anastomotic</a>
+  <a href="https://github.com/anastomotic-ai/anastomotic/releases">Релизы Anastomotic</a>
 </p>
 
 <br />
@@ -42,7 +26,7 @@ Anastomotic — это открытый ИИ-агент для рабочего 
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 🖥️ Работает локально
+### Работает локально
 
 <div align="left">
 
@@ -55,7 +39,7 @@ Anastomotic — это открытый ИИ-агент для рабочего 
 </td>
 <td width="50%" valign="top" align="center">
 
-### 🔑 Свой ИИ
+### Свой ИИ
 
 <div align="left">
 
@@ -71,7 +55,7 @@ Anastomotic — это открытый ИИ-агент для рабочего 
 <tr>
 <td width="50%" valign="top" align="center">
 
-### 📖 Открытый исходный код
+### Открытый исходный код
 
 <div align="left">
 
@@ -84,7 +68,7 @@ Anastomotic — это открытый ИИ-агент для рабочего 
 </td>
 <td width="50%" valign="top" align="center">
 
-### ⚡ Действует, а не только общается
+### Действует, а не только общается
 
 <div align="left">
 
@@ -109,10 +93,10 @@ Anastomotic — это открытый ИИ-агент для рабочего 
 
 |                                                                                      |                                                                        |                                                                        |
 | :----------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :--------------------------------------------------------------------- |
-| **📁 Управление файлами**                                                            | **✍️ Работа с документами**                                            | **🔗 Подключение инструментов**                                        |
-| Сортировка, переименование и перемещение файлов по содержимому или заданным правилам | Напишите запрос — агент напишет, суммаризирует или перепишет документы | Работа с Notion, Google Drive, Dropbox и другими (через локальные API) |
+| **Управление файлами**                                                               | **Работа с документами**                                               | **Подключение инструментов**                                           |
+| Сортировка, переименование и перемещение файлов по содержимому или заданным правилам | Напишите запрос - агент напишет, суммаризирует или перепишет документы | Работа с Notion, Google Drive, Dropbox и другими (через локальные API) |
 |                                                                                      |                                                                        |                                                                        |
-| **⚙️ Собственные навыки**                                                            | **🛡️ Полный контроль**                                                 |                                                                        |
+| **Собственные навыки**                                                               | **Полный контроль**                                                    |                                                                        |
 | Описывайте повторяемые сценарии и сохраняйте их как навыки                           | Каждое действие вы одобряете. Логи доступны. Остановка в любой момент. |                                                                        |
 
 <br />
@@ -173,19 +157,11 @@ Anastomotic работает локально на вашем компьютер
 |  Шаг  | Действие                  | Подробности                                                                                                            |
 | :---: | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **1** | **Установите приложение** | Скачайте DMG и перетащите приложение в папку «Программы»                                                               |
-| **2** | **Подключите ИИ**         | Используйте свой API-ключ Google, OpenAI, Anthropic (или другой) — или войдите через ChatGPT (Plus/Pro). Без подписок. |
+| **2** | **Подключите ИИ**         | Используйте свой API-ключ Google, OpenAI, Anthropic (или другой) - или войдите через ChatGPT (Plus/Pro). Без подписок. |
 | **3** | **Выдайте доступ**        | Укажите папки, к которым агент может обращаться. Контроль остаётся за вами.                                            |
 | **4** | **Начните работу**        | Попросите суммаризировать документ, навести порядок в папке или создать отчёт. Всё выполняется с вашего одобрения.     |
 
 <br />
-
-<br />
-
-<div align="center">
-
-[**Скачать для Mac (Apple Silicon)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-arm64.dmg) · [**Скачать для Mac (Intel)**](https://downloads.anastomotic.ai/downloads/0.4.8/macos/Anastomotic-0.4.8-mac-x64.dmg) · [**Скачать для Windows 11**](https://downloads.anastomotic.ai/downloads/0.4.8/windows/Anastomotic-0.4.8-win-x64.exe) · [**Скачать для Linux (ARM64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-arm64.AppImage) · [**Скачать для Linux (x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-x86_64.AppImage) · [**Скачать для Linux (.deb x64)**](https://downloads.anastomotic.ai/downloads/0.4.8/linux/Anastomotic-0.4.8-linux-amd64.deb)
-
-</div>
 
 <br />
 
@@ -204,7 +180,7 @@ Anastomotic работает локально на вашем компьютер
 Можно использовать свои API-ключи (OpenAI, Anthropic, Google, xAI и др.) или запускать локальные модели через Ollama.
 
 **Anastomotic бесплатный?**  
-Да. Anastomotic — открытый проект с лицензией MIT.
+Да. Anastomotic - открытый проект с лицензией MIT.
 
 **Какие платформы поддерживаются?**  
 Сейчас доступны macOS (Apple Silicon) и Windows 11. Также поддерживаются Ubuntu (ARM64) и Ubuntu (x64).
@@ -300,11 +276,11 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-**[Сайт Anastomotic](https://www.anastomotic.ai/)** · **[Блог Anastomotic](https://www.anastomotic.ai/blog/)** · **[Релизы Anastomotic](https://github.com/RajdeepKushwaha5/accomplish/releases)** · **[Issues](https://github.com/RajdeepKushwaha5/accomplish/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
+**[Релизы Anastomotic](https://github.com/anastomotic-ai/anastomotic/releases)** · **[Issues](https://github.com/anastomotic-ai/anastomotic/issues)** · **[Twitter](https://x.com/ANASTOMOTIC_ai)**
 
 <br />
 
-Лицензия MIT · Сделано в [Anastomotic](https://www.anastomotic.ai)
+Лицензия MIT · Сделано в [Anastomotic](https://github.com/anastomotic-ai)
 
 <br />
 

@@ -70,8 +70,7 @@ export function createMemoryEntry(input: MemoryCreateInput): MemoryEntry {
 export function getMemoryEntry(id: string): MemoryEntry | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM memory_entries WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToMemory(row) : null;
 }
 

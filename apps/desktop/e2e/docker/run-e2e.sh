@@ -70,7 +70,7 @@ EXIT_CODE=$(docker wait "$CONTAINER_ID")
 kill $LOGS_PID 2>/dev/null || true
 
 # Extract test results from the stopped container (docker cp works on stopped
-# containers — their filesystem persists until docker rm is called)
+# containers - their filesystem persists until docker rm is called)
 mkdir -p "$REPO_ROOT/apps/desktop/e2e/test-results"
 mkdir -p "$REPO_ROOT/apps/desktop/e2e/html-report"
 docker cp "$CONTAINER_ID:/app/apps/desktop/e2e/test-results/." "$REPO_ROOT/apps/desktop/e2e/test-results/" 2>/dev/null || true

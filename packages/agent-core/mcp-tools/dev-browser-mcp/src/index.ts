@@ -159,7 +159,7 @@ async function getElementCoordinates(element: ElementHandle): Promise<{
   centerY: number;
 } | null> {
   try {
-    // Scroll element into view first — boundingBox() returns viewport-relative
+    // Scroll element into view first - boundingBox() returns viewport-relative
     // coordinates, so the element must be visible for page.mouse.click() to work.
     await element.scrollIntoViewIfNeeded();
     const box = await element.boundingBox();
@@ -416,7 +416,7 @@ async function captureBoundedScreenshot(
 // 'browser-frame' events consumed by the renderer.
 // ---------------------------------------------------------------------------
 
-/** Target ~10 FPS — enough for live preview without flooding stdout */
+/** Target ~10 FPS - enough for live preview without flooding stdout */
 const FRAME_INTERVAL_MS = 100;
 
 /**
@@ -444,7 +444,7 @@ async function startScreencast(pageName?: string): Promise<void> {
   screencastStarting.add(pageKey);
 
   try {
-    // Use getPage() to honour activePageOverride — the same resolved page that
+    // Use getPage() to honour activePageOverride - the same resolved page that
     // browser_navigate() already navigated, not just the raw string name (Fix 4).
     const resolvedPage = await getPage(pageName);
     const context = resolvedPage.context();
@@ -2530,7 +2530,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: 'browser_script',
-      description: `⚡ PREFERRED: Execute complete browser workflows in ONE call. 5-10x faster than individual tools.
+      description: `PREFERRED: Execute complete browser workflows in ONE call. 5-10x faster than individual tools.
 
 ALWAYS use this for multi-step tasks. Actions find elements at RUNTIME using CSS selectors.
 Final page snapshot is AUTO-RETURNED - no need to add snapshot action.
@@ -2702,7 +2702,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request): Promise<CallToo
           await injectActiveTabGlow(page);
 
           // Auto-start screencast so the UI always has a live preview available.
-          // Fire-and-forget — failure here should never break navigation.
+          // Fire-and-forget - failure here should never break navigation.
           // Contributed by samarthsinh2660 (PR #414) for ENG-695.
           void startScreencast(page_name);
 
@@ -2805,7 +2805,7 @@ The page has loaded. Use browser_snapshot() to see the page elements and find in
           }
 
           if (detectedCoordApp) {
-            output += `\n⚠️ COORDINATE-CLICK APP: ${detectedCoordApp}\n`;
+            output += `\nWARNING: COORDINATE-CLICK APP: ${detectedCoordApp}\n`;
             output += `Showing viewport-only elements. Scroll to reveal more. Clicks use coordinate-based clicking.\n`;
           }
 
@@ -2930,7 +2930,7 @@ The page has loaded. Use browser_snapshot() to see the page elements and find in
                     content: [
                       {
                         type: 'text' as const,
-                        text: `Clicked element [ref=${ref}] [box: ${coords.x}, ${coords.y}, ${coords.width}, ${coords.height}]${clickDesc} (coordinate fallback — DOM click failed)`,
+                        text: `Clicked element [ref=${ref}] [box: ${coords.x}, ${coords.y}, ${coords.width}, ${coords.height}]${clickDesc} (coordinate fallback - DOM click failed)`,
                       },
                     ],
                   };
@@ -3065,7 +3065,7 @@ The page has loaded. Use browser_snapshot() to see the page elements and find in
                   content: [
                     {
                       type: 'text',
-                      text: `Typed "${text}" into ${target} [box: ${coords.x}, ${coords.y}, ${coords.width}, ${coords.height}]${enterNote} (coordinate fallback — DOM fill failed)`,
+                      text: `Typed "${text}" into ${target} [box: ${coords.x}, ${coords.y}, ${coords.width}, ${coords.height}]${enterNote} (coordinate fallback - DOM fill failed)`,
                     },
                   ],
                 };
@@ -3611,7 +3611,7 @@ The page has loaded. Use browser_snapshot() to see the page elements and find in
 
             // Move mouse to viewport center before wheeling so the browser routes
             // the wheel event to the correct scrollable container. Apps like Gmail
-            // use nested scroll divs — wheeling at an arbitrary mouse position may
+            // use nested scroll divs - wheeling at an arbitrary mouse position may
             // hit a non-scrollable area and have no effect.
             const scrollViewport = page.viewportSize();
             const centerX = (scrollViewport?.width || 1280) / 2;
@@ -3688,7 +3688,7 @@ The page has loaded. Use browser_snapshot() to see the page elements and find in
                   content: [
                     {
                       type: 'text',
-                      text: `Hovered over [ref=${ref}] at (${coords.centerX}, ${coords.centerY}) [box: ${coords.x}, ${coords.y}, ${coords.width}, ${coords.height}] (coordinate fallback — DOM hover failed)`,
+                      text: `Hovered over [ref=${ref}] at (${coords.centerX}, ${coords.centerY}) [box: ${coords.x}, ${coords.y}, ${coords.width}, ${coords.height}] (coordinate fallback - DOM hover failed)`,
                     },
                   ],
                 };

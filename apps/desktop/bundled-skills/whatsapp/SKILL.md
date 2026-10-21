@@ -7,7 +7,7 @@ verified: true
 
 # WhatsApp Web Automation
 
-This skill automates WhatsApp Web through the browser. Every action requires your explicit request — nothing runs in the background.
+This skill automates WhatsApp Web through the browser. Every action requires your explicit request - nothing runs in the background.
 
 ## Prerequisites
 
@@ -135,12 +135,12 @@ Unread messages:
 - **QR code screen**: Tell the user to open WhatsApp on their phone → Settings → Linked Devices → Link a Device → Scan the QR code
 - **Chat not found**: Try alternative name spellings, or ask the user for the exact contact name as it appears in their WhatsApp
 - **Message failed to send**: Check if the red clock icon appears, retry after a few seconds
-- **WhatsApp disconnected**: Look for "Phone not connected" banner — tell the user to check their phone's internet connection
+- **WhatsApp disconnected**: Look for "Phone not connected" banner - tell the user to check their phone's internet connection
 
 ## Browser Automation Tips
 
 - Always take screenshots before and after significant actions
-- WhatsApp Web uses dynamic rendering — wait for elements to settle after navigation
+- WhatsApp Web uses dynamic rendering - wait for elements to settle after navigation
 - Use coordinate-based clicks when DOM references are unreliable
-- The chat list scrolls — if a contact is not visible, use search instead of scrolling
-- Message timestamps may be relative ("today", "yesterday") — note this when reading
+- The chat list scrolls - if a contact is not visible, use search instead of scrolling
+- Message timestamps may be relative ("today", "yesterday") - note this when reading

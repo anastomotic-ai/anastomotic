@@ -18,7 +18,7 @@ import loadingSymbol from '/assets/loading-symbol.svg';
 
 // Spinning Anastomotic icon component
 const SpinningIcon = ({ className }: { className?: string }) => (
-  <img src={loadingSymbol} alt="" className={cn('animate-spin-ccw', className)} />
+  <img src={loadingSymbol} alt="" className={cn('animate-spin-ccw dark:invert', className)} />
 );
 
 // Browser action type from the MCP tool

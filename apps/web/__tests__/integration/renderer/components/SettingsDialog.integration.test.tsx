@@ -62,6 +62,15 @@ const mockAnastomotic = {
   getDebugMode: vi.fn().mockResolvedValue(false),
   getNotificationsEnabled: vi.fn().mockResolvedValue(true),
   setNotificationsEnabled: vi.fn().mockResolvedValue(undefined),
+  getAutoLearnEnabled: vi.fn().mockResolvedValue(false),
+  setAutoLearnEnabled: vi.fn().mockResolvedValue(undefined),
+  fetchProviderModels: vi.fn().mockResolvedValue({ success: true, models: [] }),
+  getSandboxConfig: vi.fn().mockResolvedValue({
+    mode: 'disabled',
+    allowedPaths: [],
+    networkRestricted: false,
+    allowedHosts: [],
+  }),
   getVersion: vi.fn().mockResolvedValue('0.1.0-test'),
 };
 
@@ -262,9 +271,9 @@ describe('SettingsDialog Integration', () => {
       // Wait for dialog to load with anthropic as active
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
-        // Verify anthropic card has green background (is active)
+        // Verify anthropic card has the active background
         const anthropicCard = screen.getByTestId('provider-card-anthropic');
-        expect(anthropicCard.className).toContain('bg-[#e9f7e7]');
+        expect(anthropicCard.className).toContain('bg-provider-bg-active');
       });
 
       // Verify the initial state: anthropic is active
@@ -277,7 +286,7 @@ describe('SettingsDialog Integration', () => {
     it('should render the Slack authentication card', async () => {
       render(<SettingsDialog {...defaultProps} />);
 
-      fireEvent.click(screen.getByRole('button', { name: 'Connectors' }));
+      fireEvent.click(await screen.findByRole('button', { name: 'Connectors' }));
 
       await waitFor(() => {
         expect(screen.getByTestId('slack-auth-card')).toBeInTheDocument();
@@ -294,7 +303,7 @@ describe('SettingsDialog Integration', () => {
 
       render(<SettingsDialog {...defaultProps} />);
 
-      fireEvent.click(screen.getByRole('button', { name: 'Connectors' }));
+      fireEvent.click(await screen.findByRole('button', { name: 'Connectors' }));
 
       await waitFor(() => {
         expect(screen.getByTestId('slack-auth-button')).toBeInTheDocument();

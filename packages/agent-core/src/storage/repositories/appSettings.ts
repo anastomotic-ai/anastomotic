@@ -235,7 +235,7 @@ export function setRunInBackground(enabled: boolean): void {
 export function getSandboxConfig(): SandboxConfig {
   const row = getRow();
   const parsed = safeParseJsonWithFallback<Partial<SandboxConfig>>(row.sandbox_config);
-  // Validate required fields before merging — bare {} passes JSON.parse but
+  // Validate required fields before merging - bare {} passes JSON.parse but
   // would return an incomplete config if spread directly.
   if (
     parsed &&

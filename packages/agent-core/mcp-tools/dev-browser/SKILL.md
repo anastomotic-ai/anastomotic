@@ -148,7 +148,7 @@ Note: No need to add `snapshot` at the end - it's automatic!
 - **USE THIS for multi-page data collection** - visits each URL, runs your JS, returns compact JSON
 - Provide up to 20 URLs and a JS extraction script
 - Returns JSON only (no snapshots/screenshots) to minimize token usage
-- Errors are skipped per-URL — one failed page won't stop the batch
+- Errors are skipped per-URL - one failed page won't stop the batch
 - 30-second timeout per page
 
 **browser_sequence(actions, page_name?)** - Simpler batching (requires refs beforehand)
@@ -366,7 +366,7 @@ browser_batch_actions({
 })
 ```
 
-Returns: compact JSON with results for each URL — no snapshots, no screenshots, minimal tokens.
+Returns: compact JSON with results for each URL - no snapshots, no screenshots, minimal tokens.
 
 **When to use browser_batch_actions vs browser_script:**
 

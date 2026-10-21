@@ -82,8 +82,8 @@ vi.mock('@/stores/taskStore', () => ({
 }));
 
 // Mock the SettingsDialog to simplify testing
-vi.mock('@/components/layout/SettingsDialog', () => ({
-  SettingsDialog: ({
+vi.mock('@/components/layout/SettingsDialog', () => {
+  const SettingsDialog = ({
     open,
     onOpenChange,
   }: {
@@ -94,8 +94,9 @@ vi.mock('@/components/layout/SettingsDialog', () => ({
       <div data-testid="settings-dialog">
         <button onClick={() => onOpenChange(false)}>Close Settings</button>
       </div>
-    ) : null,
-}));
+    ) : null;
+  return { SettingsDialog, default: SettingsDialog };
+});
 
 // Mock framer-motion to simplify testing animations
 vi.mock('framer-motion', () => {
@@ -130,7 +131,7 @@ vi.mock('framer-motion', () => {
 });
 
 // Need to import after mocks are set up
-import { Sidebar } from '@/components/layout/Sidebar';
+import Sidebar from '@/components/layout/Sidebar';
 
 describe('Sidebar Integration', () => {
   beforeEach(() => {
@@ -196,7 +197,7 @@ describe('Sidebar Integration', () => {
       expect(settingsButton).toBeInTheDocument();
     });
 
-    it('should render logo image', () => {
+    it('should render brand logo', () => {
       // Arrange & Act
       render(
         <MemoryRouter initialEntries={['/']}>
@@ -205,8 +206,7 @@ describe('Sidebar Integration', () => {
       );
 
       // Assert
-      const logo = screen.getByRole('img', { name: /anastomotic/i });
-      expect(logo).toBeInTheDocument();
+      expect(screen.getByText('Anastomotic')).toBeInTheDocument();
     });
 
     it('should call loadTasks on mount', () => {
@@ -371,7 +371,8 @@ describe('Sidebar Integration', () => {
 
       // Assert
       const taskItem = screen.getByText('Active task').closest('[role="button"]');
-      expect(taskItem?.className).toContain('bg-[#EDEBE7]');
+      const classNames = (taskItem?.className || '').split(' ');
+      expect(classNames).toContain('bg-accent');
     });
 
     it('should not highlight inactive conversations', () => {

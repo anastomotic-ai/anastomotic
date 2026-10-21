@@ -13,11 +13,13 @@ import { FAVORITABLE_STATUSES } from '../lib/task-utils';
 import {
   hasAnyReadyProvider,
   getOAuthProviderDisplayName,
+  PROMPT_DEFAULT_MAX_LENGTH,
 } from '@anastomotic_ai/agent-core/common';
 import { Button } from '@/components/ui/button';
 import { StarButton } from '@/components/ui/StarButton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card } from '@/components/ui/card';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import {
   XCircle,
   ArrowBendDownLeft,
@@ -353,8 +355,21 @@ export function ExecutionPage() {
     }
   }, [canFollowUp]);
 
+  const isFollowUpOverLimit = followUp.length > PROMPT_DEFAULT_MAX_LENGTH;
+  let followUpSendLabel = tCommon('buttons.send');
+  if (isFollowUpOverLimit) {
+    followUpSendLabel = tCommon('buttons.messageTooLong');
+  } else if (!followUp.trim() && attachments.length === 0) {
+    followUpSendLabel = tCommon('buttons.enterMessage');
+  }
+
   const handleFollowUp = useCallback(async () => {
-    if (!followUp.trim() && attachments.length === 0) return;
+    if (
+      (!followUp.trim() && attachments.length === 0) ||
+      followUp.length > PROMPT_DEFAULT_MAX_LENGTH
+    ) {
+      return;
+    }
     const isE2EMode = await api.isE2EMode();
     if (!isE2EMode) {
       const settings = await api.getProviderSettings();
@@ -1005,7 +1020,7 @@ export function ExecutionPage() {
                   elapsedTime={elapsedTime}
                 />
 
-                {/* Inline permission / question card — scoped to this task */}
+                {/* Inline permission / question card - scoped to this task */}
                 <AnimatePresence>
                   {permissionRequest && (
                     <PermissionDialog
@@ -1228,19 +1243,27 @@ export function ExecutionPage() {
                       onOpenSettings={handleOpenSpeechSettings}
                       size="md"
                     />
-                    <button
-                      type="button"
-                      onClick={handleFollowUp}
-                      disabled={
-                        (!followUp.trim() && attachments.length === 0) ||
-                        isLoading ||
-                        speechInput.isRecording
-                      }
-                      className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                      title={tCommon('buttons.send')}
-                    >
-                      <ArrowBendDownLeft className="h-4 w-4" />
-                    </button>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          type="button"
+                          onClick={handleFollowUp}
+                          disabled={
+                            (!followUp.trim() && attachments.length === 0) ||
+                            isFollowUpOverLimit ||
+                            isLoading ||
+                            speechInput.isRecording
+                          }
+                          className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                          title={tCommon('buttons.send')}
+                        >
+                          <ArrowBendDownLeft className="h-4 w-4" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <span>{followUpSendLabel}</span>
+                      </TooltipContent>
+                    </Tooltip>
                   </div>
                 </div>
               </div>

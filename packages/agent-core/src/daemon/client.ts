@@ -4,7 +4,7 @@
  * Sends JSON-RPC 2.0 requests to a DaemonServer via a DaemonTransport
  * and receives notifications pushed by the server.
  *
- * ESM module — use .js extensions on imports.
+ * ESM module - use .js extensions on imports.
  */
 
 import type {
@@ -93,7 +93,7 @@ export class DaemonClient {
   }
 
   /**
-   * Health check — ping the daemon.
+   * Health check - ping the daemon.
    */
   async ping(): Promise<{ status: 'ok'; uptime: number }> {
     return this.call('daemon.ping');

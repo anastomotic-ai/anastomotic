@@ -1,12 +1,12 @@
 /**
- * WhatsAppService — Baileys-based WhatsApp channel adapter
+ * WhatsAppService - Baileys-based WhatsApp channel adapter
  *
  * Handles connection lifecycle, QR-code authentication, and message reception.
  *
  * Implementation split across:
- *   normalizeMessage.ts   — inbound message parsing
- *   reconnection.ts       — exponential-backoff reconnect logic
- *   authCleanup.ts        — auth-state filesystem helpers
+ *   normalizeMessage.ts - inbound message parsing
+ *   reconnection.ts - exponential-backoff reconnect logic
+ *   authCleanup.ts - auth-state filesystem helpers
  */
 import { EventEmitter } from 'events';
 import path from 'path';

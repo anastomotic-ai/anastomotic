@@ -121,6 +121,8 @@
     "toolUnknown": "Tool support could not be verified",
     "toolUnknownDetail": "This model may or may not support tool/function calling. Test it to confirm.",
     "functionCallingVerified": "Function calling verified",
+    "toolsTag": "tools",
+    "noToolsTag": "no tools",
     "contextLengthWarning": "Context length requirement",
     "contextLengthWarningDetail": "Ensure your model is loaded with a large enough context length (max available recommended) in LM Studio settings."
   },
@@ -429,7 +431,7 @@
   "about": {
     "title": "About",
     "version": "Version {{version}}",
-    "description": "Anastomotic is a local computer-use AI agent for your Mac that reads your files, creates documents, and automates repetitive knowledge work—all open-source with your AI models of choice.",
+    "description": "Anastomotic is a local computer-use AI agent for your Mac that reads your files, creates documents, and automates repetitive knowledge work - all open-source with your AI models of choice.",
     "contact": "Any questions or feedback? Click here to contact us",
     "visitUs": "Visit us",
     "haveQuestion": "Have a question?",

@@ -59,6 +59,22 @@ function ensureNativeModules(commandEnv) {
     return;
   }
 
+  // node-pty ships Windows prebuilds; only better-sqlite3 needs an Electron build,
+  // and rebuilding it alone does not require Visual Studio.
+  console.log('[desktop] Native prebuild validation failed; rebuilding better-sqlite3');
+  try {
+    runPnpmSync(['exec', 'electron-rebuild', '-f', '-o', 'better-sqlite3'], {
+      cwd: desktopRoot,
+      env: commandEnv,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.log(`[desktop] better-sqlite3 rebuild failed: ${message}`);
+  }
+  if (validateNativeModulesInElectron(commandEnv)) {
+    return;
+  }
+
   console.log('[desktop] Native prebuild validation failed; running electron-rebuild');
   runElectronRebuild(commandEnv);
 }

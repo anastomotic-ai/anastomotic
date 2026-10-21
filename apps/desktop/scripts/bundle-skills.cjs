@@ -25,7 +25,7 @@ const skillsDir = path.join(
   __dirname,
   '..',
   'node_modules',
-  '@ANASTOMOTIC_ai',
+  '@anastomotic_ai',
   'agent-core',
   'mcp-tools',
 );
@@ -141,7 +141,7 @@ async function bundleSkill({ name, entry, outfile, external = [], banner: needsB
   ensureDir(path.dirname(absOutfile));
 
   if (!fs.existsSync(absEntry)) {
-    // Source not available (e.g. using pre-built npm package) — skip if dist already exists
+    // Source not available (e.g. using pre-built npm package) - skip if dist already exists
     if (fs.existsSync(absOutfile)) {
       console.log(
         `[bundle-skills] Skipping ${name}: source not found but dist exists at ${absOutfile}`,

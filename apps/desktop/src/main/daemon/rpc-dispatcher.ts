@@ -20,7 +20,7 @@ function safeLog(level: 'INFO' | 'WARN' | 'ERROR', message: string, data?: unkno
   } catch (_e) {
     /* ignore */
   }
-  // Logger not yet initialized — silently skip (avoids console.* in production)
+  // Logger not yet initialized - silently skip (avoids console.* in production)
 }
 
 export interface JsonRpcRequest {
@@ -78,7 +78,7 @@ function safeWrite(writeFn: (response: string) => void, response: string): void 
   try {
     writeFn(response);
   } catch (_e) {
-    /* socket destroyed — drop response */
+    /* socket destroyed - drop response */
   }
 }
 

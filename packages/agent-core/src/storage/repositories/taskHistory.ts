@@ -133,8 +133,7 @@ export function getTask(taskId: string): StoredTask | undefined {
 export function getTaskWorkspaceId(taskId: string): string | null {
   const db = getDatabase();
   const row = db.prepare('SELECT workspace_id FROM tasks WHERE id = ?').get(taskId) as
-    | { workspace_id: string | null }
-    | undefined;
+    { workspace_id: string | null } | undefined;
   return row?.workspace_id ?? null;
 }
 

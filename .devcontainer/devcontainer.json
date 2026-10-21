@@ -1,9 +1,9 @@
 {
   "name": "Anastomotic Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "features": {},
   "forwardPorts": [5173],
-  "onCreateCommand": "npm install -g pnpm",
+  "onCreateCommand": "npm install -g pnpm@9.15.0",
   "updateContentCommand": "pnpm install",
   "customizations": {
     "vscode": {

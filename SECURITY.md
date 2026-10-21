@@ -2,9 +2,9 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+| Version | Supported |
+| ------- | --------- |
+| 0.3.x   | Yes       |
 
 ## Reporting a Vulnerability
 
@@ -13,7 +13,7 @@ We take security seriously. If you discover a security vulnerability, please rep
 ### How to Report
 
 1. **Do not** open a public GitHub issue for security vulnerabilities
-2. Email security concerns to the maintainers (see GitHub profile)
+2. Report it privately through [GitHub security advisories](https://github.com/anastomotic-ai/anastomotic/security/advisories/new)
 3. Include:
    - Description of the vulnerability
    - Steps to reproduce

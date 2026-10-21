@@ -8,33 +8,33 @@ Referenced from `CLAUDE.md` and the `address-ticket` skill.
 ## Code Quality
 
 ### ESM / agent-core
-- **No `require()` in agent-core** — it is `"type": "module"`; use `import` everywhere
+- **No `require()` in agent-core** - it is `"type": "module"`; use `import` everywhere
 - **`.js` extensions required** on every internal import inside agent-core
   ```ts
-  // ✅
+  // Good
   import { foo } from './utils/bar.js'
-  // ❌
+  // Bad
   import { foo } from './utils/bar'
   ```
-- Do not use internal classes directly — always go through factories:
+- Do not use internal classes directly - always go through factories:
   `createTaskManager`, `createStorage`, `createPermissionHandler`, etc.
 
 ### TypeScript & Style
-- **Always use braces** for `if`/`else`/`for`/`while` — enforced by ESLint `curly` rule
-- **No nested ternaries** — use a mapper object or if/else
-- **No `console.log` in production code** — use the app's existing logger
-- **Reuse UI components** — check `apps/web/src/client/components/ui/` before creating new ones
+- **Always use braces** for `if`/`else`/`for`/`while` - enforced by ESLint `curly` rule
+- **No nested ternaries** - use a mapper object or if/else
+- **No `console.log` in production code** - use the app's existing logger
+- **Reuse UI components** - check `apps/web/src/client/components/ui/` before creating new ones
 
 ### File size
-- **New files must be < 200 lines** — split into logical modules when needed
+- **New files must be < 200 lines** - split into logical modules when needed
 - Exceptions: generated files, SQLite migration files, files the user explicitly allows
 
 ### Image assets
 - Always use ES module imports in the web UI:
   ```ts
-  // ✅
+  // Good
   import logo from '/assets/logo.png'
-  // ❌  (breaks in packaged app)
+  // Bad  (breaks in packaged app)
   const logo = '/assets/logo.png'
   ```
 
@@ -42,7 +42,7 @@ Referenced from `CLAUDE.md` and the `address-ticket` skill.
 
 ## IPC Chain (Electron ↔ Web)
 
-Adding any new main-process capability requires **all four steps** — never skip one:
+Adding any new main-process capability requires **all four steps** - never skip one:
 
 1. **Handler** in `apps/desktop/src/main/ipc/handlers.ts`
 2. **Expose** via `contextBridge` in `apps/desktop/src/preload/index.ts`
@@ -58,8 +58,8 @@ and has at least one test.
 ## SQLite / Migrations
 
 - DB: `anastomotic.db` (prod) / `anastomotic-dev.db` (dev), in Electron user-data directory
-- Current schema version: **6** — in `packages/agent-core/src/storage/migrations/index.ts`
-- **Never modify a released migration file** — always add a new `vXXX-description.ts`,
+- Current schema version: **6** - in `packages/agent-core/src/storage/migrations/index.ts`
+- **Never modify a released migration file** - always add a new `vXXX-description.ts`,
   import it, append it to the `migrations` array, and bump `CURRENT_VERSION`
 
 ---
@@ -88,7 +88,7 @@ Before creating any branch:
 ```bash
 git checkout main
 git pull origin main
-git log origin/main..HEAD   # must be empty — if not, stop and ask
+git log origin/main..HEAD   # must be empty - if not, stop and ask
 ```
 
 Never branch off a stale `main`. If there is local work on `main` that has not been
@@ -138,7 +138,7 @@ pnpm lint:eslint && pnpm format:check
 # 4. Build  (catches import/ESM/alias errors the above miss)
 pnpm build
 
-# 5. Tests — only for workspaces where you changed files
+# 5. Tests - only for workspaces where you changed files
 pnpm -F @anastomotic/web test:unit          # if apps/web changed
 pnpm -F @anastomotic/desktop test:unit      # if apps/desktop changed
 pnpm -F @anastomotic_ai/agent-core test     # if packages/agent-core changed
@@ -154,8 +154,8 @@ pnpm -F @anastomotic/web test:integration
 
 ## Styling (web UI)
 
-- **Tailwind CSS** + **shadcn/ui** components — check `ui/` before creating a new component
-- **CSS variables** for theming — never hardcode color values
+- **Tailwind CSS** + **shadcn/ui** components - check `ui/` before creating a new component
+- **CSS variables** for theming - never hardcode color values
 - **Animations** via `apps/web/src/client/lib/animations.ts` (Framer Motion)
 - **DM Sans** font
 
@@ -164,7 +164,7 @@ pnpm -F @anastomotic/web test:integration
 ## Bundled Node.js
 
 The packaged app ships Node.js v20.18.1. When spawning `npx` / `node` from the main
-process, prepend `bundledPaths.binDir` to `PATH` — otherwise the process exits 127 on
+process, prepend `bundledPaths.binDir` to `PATH` - otherwise the process exits 127 on
 machines without system Node.js.
 
 ---
@@ -178,7 +178,7 @@ machines without system Node.js.
 | `@anastomotic_ai/agent-core` | `packages/agent-core/src/index.ts` |
 | `@anastomotic_ai/agent-core/common` | `packages/agent-core/src/common.ts` |
 
-Desktop does **not** have an `@/*` alias — UI code lives in `apps/web`.
+Desktop does **not** have an `@/*` alias - UI code lives in `apps/web`.
 
 ---
 

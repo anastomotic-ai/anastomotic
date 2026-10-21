@@ -27,10 +27,10 @@ pnpm build:desktop                           # Desktop (builds web first)
 pnpm clean                                   # Clean build outputs and node_modules
 
 # Typecheck / Lint / Format
-pnpm typecheck && pnpm lint:eslint && pnpm format:check
+pnpm typecheck && pnpm lint:eslint && pnpm lint:text && pnpm format:check
 pnpm format                                  # Prettier auto-fix (write mode)
 
-# Tests — always workspace-scoped (no root-level test commands)
+# Tests - always workspace-scoped (no root-level test commands)
 pnpm -F @anastomotic/web test:unit            # Web unit tests
 pnpm -F @anastomotic/web test:integration     # Web integration tests
 pnpm -F @anastomotic/desktop test:unit        # Desktop main-process unit tests
@@ -42,9 +42,9 @@ pnpm -F @anastomotic_ai/agent-core test       # Agent-core tests
 pnpm -F @anastomotic/desktop vitest run --config vitest.unit.config.ts path/to/file.unit.test.ts
 
 # Environment variables for dev/testing
-# CLEAN_START=1        — clear all stored data on start
-# E2E_SKIP_AUTH=1      — skip onboarding flow
-# E2E_MOCK_TASK_EVENTS=1 — mock task events
+# CLEAN_START=1 - clear all stored data on start
+# E2E_SKIP_AUTH=1 - skip onboarding flow
+# E2E_MOCK_TASK_EVENTS=1 - mock task events
 ```
 
 ## Architecture
@@ -54,9 +54,9 @@ pnpm -F @anastomotic/desktop vitest run --config vitest.unit.config.ts path/to/f
 ```
 React UI (apps/web)
   ↓ window.anastomotic.* calls
-Preload (contextBridge) — apps/desktop/src/preload/index.ts
+Preload (contextBridge) - apps/desktop/src/preload/index.ts
   ↓ ipcRenderer.invoke / ipcRenderer.on
-Main Process — apps/desktop/src/main/ipc/handlers.ts
+Main Process - apps/desktop/src/main/ipc/handlers.ts
   ↓ agent-core factories (TaskManager, Storage, etc.)
   ↑ IPC events → taskStore subscriptions in renderer
 ```
@@ -69,11 +69,11 @@ Main Process — apps/desktop/src/main/ipc/handlers.ts
 4. Consume from components or `apps/web/src/client/stores/taskStore.ts`
 5. `pnpm typecheck` to verify the full chain
 
-Never skip a step — all 4 must be done together.
+Never skip a step - all 4 must be done together.
 
 ### agent-core
 
-- **ESM package** (`"type": "module"`) — all internal imports must use `.js` extensions
+- **ESM package** (`"type": "module"`) - all internal imports must use `.js` extensions
 - Shared types: `packages/agent-core/src/common/types/`
 - Factories are the public API: `createTaskManager`, `createStorage`, `createPermissionHandler`, etc.
 - Do not use internal classes directly; use factories
@@ -83,12 +83,12 @@ Never skip a step — all 4 must be done together.
 - DB: `anastomotic.db` (prod) / `anastomotic-dev.db` (dev), in Electron user-data directory
 - Current schema version: **6** (in `packages/agent-core/src/storage/migrations/index.ts`)
 - To add a migration: create `vXXX-description.ts`, import + add to the `migrations` array, bump `CURRENT_VERSION`
-- **Never modify released migration files** — always add a new one
+- **Never modify released migration files** - always add a new one
 
 ### Bundled Node.js
 
 The packaged app ships Node.js v20.18.1. When spawning `npx`/`node` in the main process,
-prepend `bundledPaths.binDir` to `PATH` — otherwise processes fail with exit code 127 on
+prepend `bundledPaths.binDir` to `PATH` - otherwise processes fail with exit code 127 on
 machines without system Node.js. See [docs/architecture.md](docs/architecture.md#spawning-npxnode-in-main-process).
 
 ## TypeScript Path Aliases
@@ -100,21 +100,22 @@ machines without system Node.js. See [docs/architecture.md](docs/architecture.md
 | `@anastomotic_ai/agent-core`        | `packages/agent-core/src/index.ts`  |
 | `@anastomotic_ai/agent-core/common` | `packages/agent-core/src/common.ts` |
 
-Desktop does **not** have an `@/*` alias — UI code lives in `apps/web`.
+Desktop does **not** have an `@/*` alias - UI code lives in `apps/web`.
 
 ## Critical Rules
 
 ### Code
 
-- **No `require()` in agent-core** — it is ESM; use `import`
+- **No `require()` in agent-core** - it is ESM; use `import`
 - **`.js` extensions required** on all imports within agent-core
-- **Image assets** must use ES module imports (`import logo from '/assets/logo.png'`), never absolute paths — they break in the packaged app
+- **Image assets** must use ES module imports (`import logo from '/assets/logo.png'`), never absolute paths - they break in the packaged app
 - **Always use braces** for `if`/`else`/`for`/`while` (enforced by ESLint `curly` rule)
-- **No nested ternaries** — use mapper objects or if/else
-- **No root-level test scripts** — always use `-F @anastomotic/web`, `-F @anastomotic/desktop`, or `-F @anastomotic_ai/agent-core`
-- **Reuse UI components** — check `apps/web/src/client/components/ui/` before creating new ones
-- **New files must be < 200 lines** — split into logical modules if needed (exceptions: generated files, migrations)
-- **No `console.log` in production code** — use the app's existing logger
+- **No nested ternaries** - use mapper objects or if/else
+- **No root-level test scripts** - always use `-F @anastomotic/web`, `-F @anastomotic/desktop`, or `-F @anastomotic_ai/agent-core`
+- **Reuse UI components** - check `apps/web/src/client/components/ui/` before creating new ones
+- **New files must be < 200 lines** - split into logical modules if needed (exceptions: generated files, migrations)
+- **No em dashes or emojis** in code, comments, docs or commit messages (`pnpm lint:text` checks this)
+- **No `console.log` in production code** - use the app's existing logger
 
 ### Never remove features
 
@@ -136,9 +137,9 @@ components, types, IPC handlers, UI elements, routes, and config entries.
 git diff --name-only | grep "package\.json" && pnpm install
 
 # 2. Typecheck → Lint → Format → Build
-pnpm typecheck && pnpm lint:eslint && pnpm format:check && pnpm build
+pnpm typecheck && pnpm lint:eslint && pnpm lint:text && pnpm format:check && pnpm build
 
-# 3. Tests — only workspaces with changed files
+# 3. Tests - only workspaces with changed files
 pnpm -F @anastomotic/web test:unit          # if apps/web changed
 pnpm -F @anastomotic/desktop test:unit      # if apps/desktop changed
 pnpm -F @anastomotic_ai/agent-core test     # if packages/agent-core changed

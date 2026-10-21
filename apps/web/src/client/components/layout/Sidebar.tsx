@@ -13,7 +13,7 @@ import ConversationListItem from './ConversationListItem';
 import SettingsDialog from './SettingsDialog';
 import WorkspaceSelector from './WorkspaceSelector';
 import { Gear, ChatText, MagnifyingGlass } from '@phosphor-icons/react';
-import logoImage from '/assets/logo-1.png';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export default function Sidebar() {
   const navigate = useNavigate();
@@ -122,12 +122,7 @@ export default function Sidebar() {
         <div className="px-3 py-4 border-t border-border flex items-center justify-between">
           {/* Logo - Bottom Left */}
           <div className="flex items-center">
-            <img
-              src={logoImage}
-              alt="Anastomotic"
-              className="dark:invert"
-              style={{ height: '20px', paddingLeft: '6px' }}
-            />
+            <BrandLogo className="pl-1.5" />
           </div>
 
           {/* Settings Button - Bottom Right */}
