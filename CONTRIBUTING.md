@@ -21,6 +21,7 @@ pnpm build        # Build all workspaces
 pnpm typecheck    # Run TypeScript checks
 pnpm lint         # Run linting
 pnpm format:check # Check formatting
+pnpm lint:text    # Check for em dashes and emojis
 ```
 
 `pnpm dev:web` starts the UI server only; desktop features require the Electron bridge. Use `pnpm dev` for the complete local desktop application. Avoid `pnpm dev:clean` for ordinary startup: it clears stored application data.
@@ -66,7 +67,7 @@ For a single non-watching core test run, use `pnpm -F @anastomotic_ai/agent-core
 pnpm -F @anastomotic/daemon test
 ```
 
-For code changes, run `pnpm typecheck`, `pnpm lint:eslint`, `pnpm format:check`, and the affected workspace tests. Report existing failures with reproduction details instead of hiding them or weakening assertions. Real-provider checks require your own credentials; ordinary contributor tasks should have credential-free tests.
+For code changes, run `pnpm typecheck`, `pnpm lint:eslint`, `pnpm lint:text`, `pnpm format:check`, and the affected workspace tests. Report existing failures with reproduction details instead of hiding them or weakening assertions. Real-provider checks require your own credentials; ordinary contributor tasks should have credential-free tests.
 
 ## Code Style
 

@@ -27,7 +27,7 @@ pnpm build:desktop                           # Desktop (builds web first)
 pnpm clean                                   # Clean build outputs and node_modules
 
 # Typecheck / Lint / Format
-pnpm typecheck && pnpm lint:eslint && pnpm format:check
+pnpm typecheck && pnpm lint:eslint && pnpm lint:text && pnpm format:check
 pnpm format                                  # Prettier auto-fix (write mode)
 
 # Tests - always workspace-scoped (no root-level test commands)
@@ -114,6 +114,7 @@ Desktop does **not** have an `@/*` alias - UI code lives in `apps/web`.
 - **No root-level test scripts** - always use `-F @anastomotic/web`, `-F @anastomotic/desktop`, or `-F @anastomotic_ai/agent-core`
 - **Reuse UI components** - check `apps/web/src/client/components/ui/` before creating new ones
 - **New files must be < 200 lines** - split into logical modules if needed (exceptions: generated files, migrations)
+- **No em dashes or emojis** in code, comments, docs or commit messages (`pnpm lint:text` checks this)
 - **No `console.log` in production code** - use the app's existing logger
 
 ### Never remove features
@@ -136,7 +137,7 @@ components, types, IPC handlers, UI elements, routes, and config entries.
 git diff --name-only | grep "package\.json" && pnpm install
 
 # 2. Typecheck → Lint → Format → Build
-pnpm typecheck && pnpm lint:eslint && pnpm format:check && pnpm build
+pnpm typecheck && pnpm lint:eslint && pnpm lint:text && pnpm format:check && pnpm build
 
 # 3. Tests - only workspaces with changed files
 pnpm -F @anastomotic/web test:unit          # if apps/web changed

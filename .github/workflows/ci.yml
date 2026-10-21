@@ -182,6 +182,9 @@ jobs:
       - name: Run type check
         run: pnpm typecheck
 
+      - name: Check text symbols
+        run: pnpm lint:text
+
   # E2E tests (runs in Docker with Xvfb)
   e2e-tests:
     name: E2E Tests (Docker)
