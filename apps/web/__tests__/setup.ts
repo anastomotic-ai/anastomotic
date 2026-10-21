@@ -72,6 +72,10 @@ g.window.anastomotic = {
   pickFiles: vi.fn().mockResolvedValue([]),
   getFilePath: vi.fn((file: File) => file.name),
   processDroppedFiles: vi.fn().mockResolvedValue([]),
+  onTaskProgress: vi.fn(() => () => {}),
+  onTaskUpdate: vi.fn(() => () => {}),
+  getTheme: vi.fn().mockResolvedValue('system'),
+  onThemeChange: vi.fn(() => () => {}),
 };
 
 export {};
