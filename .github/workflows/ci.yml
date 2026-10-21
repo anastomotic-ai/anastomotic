@@ -4,14 +4,24 @@ on:
   push:
     branches: [main]
     paths:
-      - 'apps/desktop/**'
+      - 'apps/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - '.nvmrc'
+      - 'eslint.config.mjs'
       - 'packages/**'
       - 'pnpm-lock.yaml'
       - '.github/workflows/ci.yml'
   pull_request:
     branches: [main]
     paths:
-      - 'apps/desktop/**'
+      - 'apps/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - '.nvmrc'
+      - 'eslint.config.mjs'
       - 'packages/**'
       - 'pnpm-lock.yaml'
       - '.github/workflows/ci.yml'
@@ -24,6 +34,28 @@ env:
   HUSKY: '0'
 
 jobs:
+  web-daemon-tests:
+    name: Web and Daemon Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build agent core
+        run: pnpm -F @anastomotic_ai/agent-core build
+      - name: Run web tests
+        run: pnpm -F @anastomotic/web test
+      - name: Run daemon tests
+        run: pnpm -F @anastomotic/daemon test
+
   # Run core package tests
   core-tests:
     name: Core Package Tests
@@ -39,7 +71,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -69,7 +101,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -103,7 +135,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -138,7 +170,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -166,7 +198,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           package-manager-cache: false
           # Note: No cache here - E2E tests run in Docker so pnpm store isn't on host
 
@@ -232,7 +264,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
