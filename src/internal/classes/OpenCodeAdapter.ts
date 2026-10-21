@@ -559,7 +559,7 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
     if (this.options.platform === 'win32') {
       // Quote if the argument contains spaces, double-quotes, or any cmd.exe
       // metacharacter (&, |, <, >, ^, %) that would be misinterpreted when
-      // executing via cmd.exe /s /c. See: https://github.com/RajdeepKushwaha5/accomplish/issues/596
+      // executing via cmd.exe /s /c.
       if (/[ "&|<>^%]/.test(arg)) {
         // Double embedded quotes per cmd.exe rules; escape % as ^% to prevent
         // environment variable expansion (e.g. %PATH%) inside the quoted string.
@@ -1152,7 +1152,6 @@ export class OpenCodeAdapter extends EventEmitter<OpenCodeAdapterEvents> {
       // Passing args as an array avoids all cmd.exe / PowerShell quoting issues:
       // the OS hands each element to the process as a raw argv entry regardless
       // of what characters it contains (double-quotes, %, ^, &, newlines, etc.).
-      // See: https://github.com/RajdeepKushwaha5/accomplish/issues/596
       return { file: command, args };
     }
 
