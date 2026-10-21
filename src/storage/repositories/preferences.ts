@@ -42,8 +42,7 @@ export function listPreferences(workspaceId?: string): BehavioralPreference[] {
 export function getPreference(id: string): BehavioralPreference | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM behavioral_preferences WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToPreference(row) : null;
 }
 

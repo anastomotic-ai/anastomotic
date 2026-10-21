@@ -41,9 +41,7 @@ export interface BedrockApiKeyCredentials {
 }
 
 export type BedrockCredentials =
-  | BedrockAccessKeyCredentials
-  | BedrockProfileCredentials
-  | BedrockApiKeyCredentials;
+  BedrockAccessKeyCredentials | BedrockProfileCredentials | BedrockApiKeyCredentials;
 
 export interface VertexServiceAccountCredentials {
   authType: 'serviceAccount';

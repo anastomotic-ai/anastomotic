@@ -10,8 +10,7 @@ describe('Multimodal store', () => {
   let dbPath: string;
   let databaseModule: typeof import('../../../src/storage/database.js') | null = null;
   let multimodalModule:
-    | typeof import('../../../src/storage/repositories/multimodalStore.js')
-    | null = null;
+    typeof import('../../../src/storage/repositories/multimodalStore.js') | null = null;
   let consoleLogSpy: ReturnType<typeof vi.spyOn>;
 
   beforeAll(async () => {

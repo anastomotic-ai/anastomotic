@@ -16,14 +16,12 @@ describe('SkillsManager', () => {
   let bundledSkillsPath: string;
   let userSkillsPath: string;
   let SkillsManager:
-    | typeof import('../../../src/internal/classes/SkillsManager.js').SkillsManager
-    | null = null;
+    typeof import('../../../src/internal/classes/SkillsManager.js').SkillsManager | null = null;
   let manager: InstanceType<
     typeof import('../../../src/internal/classes/SkillsManager.js').SkillsManager
   > | null = null;
   let initializeDatabase:
-    | typeof import('../../../src/storage/database.js').initializeDatabase
-    | null = null;
+    typeof import('../../../src/storage/database.js').initializeDatabase | null = null;
   let closeDatabase: typeof import('../../../src/storage/database.js').closeDatabase | null = null;
   let getDatabase: typeof import('../../../src/storage/database.js').getDatabase | null = null;
   let moduleAvailable = false;

@@ -260,8 +260,7 @@ describe('Database', () => {
       const db = databaseModule.initializeDatabase({ databasePath: dbPath });
 
       const result = db.prepare("SELECT value FROM schema_meta WHERE key = 'version'").get() as
-        | { value: string }
-        | undefined;
+        { value: string } | undefined;
 
       expect(result?.value).toBeDefined();
       expect(parseInt(result!.value, 10)).toBeGreaterThan(0);

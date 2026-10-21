@@ -53,8 +53,7 @@ export function createFileWatcher(input: FileWatcherCreateInput): FileWatcherCon
 export function getFileWatcher(id: string): FileWatcherConfig | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM file_watchers WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToWatcher(row) : null;
 }
 
@@ -105,8 +104,7 @@ export function createAlert(input: ProactiveAlertCreateInput): ProactiveAlert {
 export function getAlert(id: string): ProactiveAlert | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM proactive_alerts WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToAlert(row) : null;
 }
 

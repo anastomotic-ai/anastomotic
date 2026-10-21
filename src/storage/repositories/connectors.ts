@@ -69,8 +69,7 @@ export function getEnabledConnectors(): McpConnector[] {
 export function getConnectorById(id: string): McpConnector | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM connectors WHERE id = ?').get(id) as
-    | ConnectorRow
-    | undefined;
+    ConnectorRow | undefined;
   return row ? rowToConnector(row) : null;
 }
 

@@ -160,8 +160,7 @@ export function createPipelineRun(
 export function getPipelineRun(id: string): PipelineRun | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM pipeline_runs WHERE id = ?').get(id) as
-    | PipelineRunRow
-    | undefined;
+    PipelineRunRow | undefined;
   return row ? rowToRun(row) : null;
 }
 

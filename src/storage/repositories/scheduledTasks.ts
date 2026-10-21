@@ -25,8 +25,7 @@ export function getAllScheduledTasks(): ScheduledTask[] {
 export function getScheduledTask(id: string): ScheduledTask | null {
   const db = getDatabase();
   const row = db.prepare('SELECT * FROM scheduled_tasks WHERE id = ?').get(id) as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   return row ? rowToScheduled(row) : null;
 }
 
